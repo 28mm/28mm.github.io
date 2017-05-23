@@ -2,7 +2,7 @@
 title:              "28mm.github.io"
 description:        "Discursions"
 #google_verify:       # Put your Google Verification here
-#google_analytics:    # Put your Google Analytics code
+google_analytics:    UA-99802310-1
 
 # Author Info
 author_name:        "Patrick McMurchie"
