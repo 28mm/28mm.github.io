@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+	<title>Photo Metadata and Search on MacOS · 28mm.github.io</title>
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:title" content="Photo Metadata and Search on MacOS" />
+<meta name="twitter:description" content="Apple’s Photos.app classifies pictures, identifying subjects such as “boat,” and “bicycle,” as well as settings like “cafe,” and “mountains.” It uses this capability to offer vastly better search t...">
+
+<meta name="description" content="Apple’s Photos.app classifies pictures, identifying subjects such as “boat,” and “bicycle,” as well as settings like “cafe,” and “mountains.” It uses this ca...">
+
+
+
+<link rel="icon" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/touch-icon.png">
+<link rel="stylesheet" href="/assets/core.css">
+<link rel="canonical" href="/notes/osx-photo-search">
+<link rel="alternate" type="application/atom+xml" title="28mm.github.io" href="/feed.xml" />
+
+
+
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+	</head>
+
+	<body>
+
+		<aside class="logo">
+
+	
+
+	<a href="/">
+		<img src="http://www.gravatar.com/avatar/f9ca90ff91459baa73f9be03289a7c80.png?s=80" class="gravatar">
+	</a>
+	<span class="logo-prompt">Back to Home</span>
+
+</aside>
+
+
+		<main>
+			<article>
+
+	<div class="center">
+		<h1>Photo Metadata and Search on MacOS</h1>
+		<time>May 25, 2017</time>
+	</div>
+
+	<div class="divider"></div>
+
+	<p>Apple’s Photos.app classifies pictures, identifying subjects such as “boat,” and “bicycle,” as well as settings like “cafe,” and “mountains.” It uses this capability to offer vastly better search than before.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+
+<p>Unfortunately these improvements are neither visible to Spotlight, nor available in the Finder. This post documents a method of reconciling Photos.app metadata with filesystem metadata, so that they are indexed by Spotlight.</p>
+
+<p><strong>I have only tested with MacOS Sierra.</strong> If you encounter issues, <a href="/about">let me know about them</a>.</p>
+
+<ol>
+  <li><a href="#xattrs">The Finder, Extended Attributes, and Spotlight.</a></li>
+  <li><a href="#photos-app">Photos.app Metadata: A SQLite Adventure</a></li>
+  <li><a href="#reconciliation">Reconciling Photos.db With Spotlight Indices</a></li>
+</ol>
+
+<p><a name="xattrs"></a></p>
+<h3 id="the-finder-extended-attributes-and-spotlight">The Finder, Extended Attributes, and Spotlight.</h3>
+
+<p>Quite a bit of old information remains in circulation, about tagging and searching for documents in MacOS. The Finder seems to recognize a few extended attributes, for the purpose of associating tags and comments with files.<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></p>
+
+<p>To keep things simple, I will present only the method that has worked for me.</p>
+
+<p>The <code class="highlighter-rouge">com.apple.metadata:_kMDItemUserTags</code> xattr is used to associate a plist of tags with a file. Spotlight reads this xattr, and indexes its contents. To assign the tags “mountain,” and “alpine” to a file, for instance, you would create a plist:</p>
+
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE plist PUBLIC
+ "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;</span>
+<span class="nt">&lt;plist</span> <span class="na">version=</span><span class="s">"1.0"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;array&gt;</span>
+    <span class="nt">&lt;string&gt;</span>mountain<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;string&gt;</span>alpline<span class="nt">&lt;/string&gt;</span>
+ <span class="nt">&lt;/array&gt;</span>
+<span class="nt">&lt;/plist&gt;</span>
+</code></pre>
+</div>
+
+<p>To associate this <code class="highlighter-rouge">$plist</code> with a <code class="highlighter-rouge">$file</code>, invoke the <code class="highlighter-rouge">xattr</code> command, as shown below.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">[...]$ </span>xattr -w <span class="s2">"com.apple.metadata:_kMDItemUserTags"</span> <span class="se">\</span>
+      <span class="s2">"</span><span class="nv">$plist</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$file</span><span class="s2">"</span>
+</code></pre>
+</div>
+
+<p>At this point, you should be able to find the file, via the 🔎 icon, or the <code class="highlighter-rouge">mdfind</code> command, as shown below.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[...]$ mdfind tag:mountain
+/path/to/matching/file
+/path/to/another/matching/file
+</code></pre>
+</div>
+
+<p><a name="photos-app"></a></p>
+<h3 id="photosapp-metadata-a-sqlite-adventure">Photos.app Metadata: A SQLite Adventure</h3>
+
+<p>Photos.app does its accounting with a SQLite database, which we’ll call <code class="highlighter-rouge">$photodb</code>, and set thus:</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">[...]$ </span><span class="nb">cd</span> ~
+<span class="gp">[...]$ </span><span class="nb">cd </span>Pictures
+<span class="gp">[...]$ </span><span class="nb">cd </span>Photo<span class="se">\ </span>Library.photoslibrary
+<span class="gp">[...]$ </span><span class="nb">cd </span>database
+<span class="gp">[...]$ </span><span class="nv">photodb</span><span class="o">=</span><span class="s2">"</span><span class="nv">$PWD</span><span class="s2">/photos.db"</span>
+</code></pre>
+</div>
+
+<p>Unfortunately, <code class="highlighter-rouge">$photodb</code> is probably open, and locked.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">[...]$ </span>lsof <span class="s2">"</span><span class="nv">$photodb</span><span class="s2">"</span>
+COMMAND     PID    USER   FD   TYPE DEVICE  <span class="o">[</span>...snip...]
+photolibr 15432 patrick    4u   REG    1,1  <span class="o">[</span>...snip...]
+</code></pre>
+</div>
+
+<p>🤔 The trouble with just killing <code class="highlighter-rouge">photolibraryd</code>, is that it will re-spawn, repeatedly. Undoubtedly, <code class="highlighter-rouge">launchd</code> can be told to disable <code class="highlighter-rouge">photolibraryd</code>, but the approved mechanism wasn’t immediately obvious to me.</p>
+
+<p>Instead, I opted for an egregious hack. In order to lock its database, <code class="highlighter-rouge">photoslibraryd</code>, need to be able to write to it. I simply removed write permisions.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">[...]$ </span>chmod -w <span class="s2">"</span><span class="nv">$photodb</span><span class="s2">"</span>
+<span class="gp">[...]$ </span>lsof <span class="s2">"</span><span class="nv">$photodb</span><span class="s2">"</span> | 
+  awk <span class="s1">'{ print $2}'</span>    | 
+  egrep -v PID         | 
+  xargs <span class="nb">kill</span>
+</code></pre>
+</div>
+
+<p>Afterwards–but not yet–don’t forget to restore write permissions<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup> to your photos database! You may want to restart your computer to ensure that <code class="highlighter-rouge">photolibraryd</code>, continues to work.</p>
+
+<p>Now, it’s possible to open <code class="highlighter-rouge">$photodb</code>, and poke around.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">[...]$ </span>sqlite3 <span class="s2">"</span><span class="nv">$photodb</span><span class="s2">"</span>
+SQLite version 3.14.0 2016-07-26 15:17:14
+Enter <span class="s2">".help"</span> <span class="k">for </span>usage hints.
+<span class="gp">sqlite&gt; </span>
+</code></pre>
+</div>
+
+<p>Review the schema with the <code class="highlighter-rouge">.schema</code> command. Quit by sending <code class="highlighter-rouge">Ctrl-d</code>, or with the <code class="highlighter-rouge">.quit</code> command. Tags (and a lot else) are kept in the <code class="highlighter-rouge">RKVersion_stringNote</code> table.</p>
+
+<div class="language-sql highlighter-rouge"><pre class="highlight"><code><span class="n">sqlite</span><span class="o">&gt;</span> <span class="p">.</span><span class="n">headers</span> <span class="k">on</span>
+<span class="n">sqlite</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">RKVersion_stringNote</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<p>We need to find the appropriate value of <code class="highlighter-rouge">keyPath</code>, since this will vary between systems. The following snippet, should suffice to find it:</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">[...]$ </span><span class="nv">KEYPATH</span><span class="o">=</span><span class="k">$(</span> sqlite3 <span class="s2">"</span><span class="nv">$photodb</span><span class="s2">"</span> .schema       | 
+  grep <span class="s1">'RKVersion_stringNote_skIndexUpdateTrigger'</span> | 
+  grep -Eo <span class="s1">'[0-9]{1,4}'</span> <span class="k">)</span>
+</code></pre>
+</div>
+
+<p>Okay, but did it work?</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[...] echo $KEYPATH
+719
+</code></pre>
+</div>
+
+<p>Now we can find the strings containing our tags, and associate them with filesystem paths. Be sure to substitute the value of <code class="highlighter-rouge">$KEYPATH</code> determined above, for the literal <code class="highlighter-rouge">719</code>, below.</p>
+
+<div class="language-sql highlighter-rouge"><pre class="highlight"><code><span class="n">sqlite</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="n">RKMaster</span><span class="p">.</span><span class="n">imagePath</span><span class="p">,</span> <span class="n">RKVersion_stringNote</span><span class="p">.</span><span class="n">value</span>
+<span class="k">FROM</span> <span class="n">RKVersion_stringNote</span>
+<span class="k">INNER</span> <span class="k">JOIN</span> <span class="n">RKMaster</span>
+<span class="k">ON</span> <span class="n">RKVersion_stringNote</span><span class="p">.</span><span class="n">attachedToId</span> <span class="o">=</span> <span class="n">RKMaster</span><span class="p">.</span><span class="n">modelId</span>
+<span class="k">WHERE</span> <span class="n">RKVersion_stringNote</span><span class="p">.</span><span class="n">keyPath</span> <span class="o">=</span> <span class="mi">719</span> <span class="cm">/* !!! */</span>
+</code></pre>
+</div>
+
+<p>Records will resemble the following:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>2015/04/25/20150425-035012/DSC00435.JPG|DSC00435.JPG  \
+00435.JPG JPG October 2012 Outdoor Outside Outdoors   \
+Outsides Land Lands Mountain Mounts Peak Sierra       \
+Sierras Peaks Mountains Mount
+</code></pre>
+</div>
+
+<p>Tags aren’t quoted, but always come last. The trouble is that its not obvious which are 1-grams, 2-grams, or n-grams. Various collisions are possible both between tags, and other substrings.</p>
+
+<p><a name="reconciliation"></a></p>
+<h3 id="reconciling-photosapp-metadata-with-filesystem-metadata">Reconciling Photos.app metadata with filesystem metadata</h3>
+
+<p>Okay, lets put the pieces together. We need four things:</p>
+<ol>
+  <li>a copy of <code class="highlighter-rouge">photos.db</code> in a write-able location.</li>
+  <li>the system-specific value of <code class="highlighter-rouge">$KEYPATH</code></li>
+  <li>the path to our photos library <code class="highlighter-rouge">$PHOTOLIB</code></li>
+  <li><code class="highlighter-rouge">photos2spotlight.py</code> (listing <a href="https://gist.github.com/28mm/9820bd8b6eb27555efe9d6f46dd95a81">here</a>).</li>
+</ol>
+
+<p>Start by getting an idea of what your library contains:</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">[...]$ </span>./photos2spotlight.py --stats <span class="se">\</span>
+  --db /path/to/copy/of/photos.db 
+  --lib <span class="s2">"~/Pictures/Photos</span><span class="se">\ </span><span class="s2">Library.photoslibrary/"</span>
+  --keypath <span class="nv">$KEYPATH</span>
+</code></pre>
+</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>[...snip...]
+    16 Duds
+    16 Clothing
+    16 Accoutrements
+    16 Accoutrement
+    16 Clothings
+    16 Apparels
+    18 Insides
+    18 Interior Rooms
+    18 Inside
+    18 Interior Room
+    18 Indoors
+</code></pre>
+</div>
+
+<p>By default, <code class="highlighter-rouge">photos2spotlight.py</code> will make a dry run. Use the <code class="highlighter-rouge">--write</code> flag to modify fileystem metadata.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">[...]$ </span>./photos2spotlight.py --stats <span class="se">\</span>
+  --db /path/to/copy/of/photos.db
+  --lib	<span class="s2">"~/Pictures/Photos</span><span class="se">\ </span><span class="s2">Library.photoslibrary/"</span>
+  --keypath <span class="nv">$KEYPATH</span>
+  --write
+</code></pre>
+</div>
+
+<p>You should now be able to find photos using Spotlight, the Finder, or the related mdfind command. E.g.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[...]$ mdfind 'tag:Inside'
+.../Masters/2015/04/22/20150422-011045/IMG_0083.JPG
+[...snip...]
+</code></pre>
+</div>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>That’s it. Macs are easy, right?</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Google Photos does this too. It’s dramatically less tedious than manual tagging.&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;&#xfe0e;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>Both <code class="highlighter-rouge">kMDItemFinderComment</code> and <code class="highlighter-rouge">kMDItemOMUserTags</code> are commonly suggested, as well. As far as I can tell, the former is inappropriate, while the latter is disused, except by legacy applications.&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;&#xfe0e;</a></p>
+    </li>
+    <li id="fn:3">
+      <p><code class="highlighter-rouge">[...]$ chmod u+w "$photodb"</code>&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;&#xfe0e;</a></p>
+    </li>
+  </ol>
+</div>
+
+
+</article>
+
+<div class="page-navigation">
+	
+		<a class="home" href="/" title="Back to Homepage">Home</a>
+  
+		<span> &middot; </span>
+    <a class="prev" href="/notes/a-quixotic-apartment-search" title="PREV: A Quixotic Apartment Search.">&gt;&gt;</a>
+  
+</div>
+
+		</main>
+
+		<div class="footer">
+  <span class="block">&copy; 2017 Patrick McMurchie</span>
+</div>
+
+
+	</body>
+
+</html>

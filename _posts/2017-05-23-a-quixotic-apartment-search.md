@@ -2,7 +2,7 @@
 layout: post
 title:  "A Quixotic Apartment Search."
 date:   2017-05-23 00:00:00 -0700
-categories: photos
+categories: photos apartments seattle rent 
 ---
 
   1. [Introduction](#introduction)

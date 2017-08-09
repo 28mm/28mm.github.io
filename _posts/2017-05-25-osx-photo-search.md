@@ -2,7 +2,7 @@
 layout: post
 title:  "Photo Metadata and Search on MacOS"
 date:   2017-05-25 00:00:00 -0700
-categories: photos
+categories: photos metadata spotlight search
 ---
 
 Apple's Photos.app classifies pictures, identifying subjects such as "boat," and "bicycle," as well as settings like "cafe," and "mountains." It uses this capability to offer vastly better search than before.[^1] 
@@ -193,10 +193,7 @@ You should now be able to find photos using Spotlight, the Finder, or the relate
 
 That's it. Macs are easy, right?
 
-Also: I am **looking for a job**, either as a *Systems Administrator*, or *Systems Engineer*, in the Seattle area. If you have an appropriate lead, please get in touch: <mailto:patrick.mcmurchie@gmail.com>
-
 [^1]: Google Photos does this too. It's dramatically less tedious than manual tagging.
-
 
 [^2]: Both `kMDItemFinderComment` and `kMDItemOMUserTags` are commonly suggested, as well. As far as I can tell, the former is inappropriate, while the latter is disused, except by legacy applications.
 
