@@ -3,7 +3,7 @@
   <channel>
     <title>28mm.github.io</title>
     <description>Discursions</description>
-    <link>http://localhost:4000</link>
+    <link></link>
     
       
         <item>
@@ -213,8 +213,8 @@ Sierras Peaks Mountains Mount
 &lt;/div&gt;
 </description>
           <pubDate>2017-05-25T00:00:00-07:00</pubDate>
-          <link>http://localhost:4000/notes/osx-photo-search</link>
-          <guid isPermaLink="true">http://localhost:4000/notes/osx-photo-search</guid>
+          <link>/notes/osx-photo-search</link>
+          <guid isPermaLink="true">/notes/osx-photo-search</guid>
         </item>
       
     
@@ -242,27 +242,27 @@ Sierras Peaks Mountains Mount
 
 &lt;p&gt;A couple years ago, the blog &lt;a href=&quot;http://chrisholdgraf.com/quick-craigslist-data-analysis/&quot;&gt;Predictably Noisy&lt;/a&gt; carried an analysis of Bay Area rents–based on Craigslist data–with a series of figures showing the relationship between apartment size and price per square foot, as well as the distribution of these two variables. To get started, I reproduced those plots for Seattle.&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/seattle-apartments/see-ppsf-by-bedrooms.png&quot; class=&quot;figure&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/seattle-apartments/see-ppsf-by-bedrooms.png&quot; class=&quot;figure&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;In this figure, price per square foot is plotted against area, and the most common floorplans are assigned a color. Space tends to become cheaper, per unit area, as you rent more of it.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/seattle-apartments/see-ppsf-dist.png&quot; class=&quot;figure&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/seattle-apartments/see-ppsf-dist.png&quot; class=&quot;figure&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Here we see that apartments of each type are available at a wide range of prices per square foot. (And that studios command sometimes astonishing rents.)&lt;/p&gt;
 
 &lt;p&gt;Immediately north of Seattle, Snohomish County provides an interesting counterpoint. Fewer apartments are listed here, but only a handful cost more than $3/ft&lt;sup&gt;2&lt;/sup&gt;. In fact a majority are available for around $2/ft&lt;sup&gt;2&lt;/sup&gt;, or less.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/seattle-apartments/sno-ppsf-by-bedrooms.png&quot; class=&quot;figure&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/seattle-apartments/sno-ppsf-by-bedrooms.png&quot; class=&quot;figure&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;how-many-npr-moments-is-too-many&quot;&gt;How Many NPR Moments Is Too Many?&lt;/h2&gt;
 
 &lt;p&gt;Apartments in Snohomish County are offered for reliably low rates, but another feature they share is a long, dystopian commute into seattle. Jean Luc Godard’s 1967 film, &lt;em&gt;Weekend&lt;/em&gt;, neatly captures the experience.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/seattle-apartments/weekend.jpg&quot; alt=&quot;Weekend - Jean Luc Godard (1967)&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/seattle-apartments/weekend.jpg&quot; alt=&quot;Weekend - Jean Luc Godard (1967)&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Is a comparison to &lt;em&gt;Weekend&lt;/em&gt; hyperbolic? The &lt;a href=&quot;http://www.wsdot.com&quot;&gt;WSDOT&lt;/a&gt; publish estimated travel times between Lynnwood and Downtown Seattle. I collected these estimates for the first two weeks of May, 2017, and plotted them, below.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/seattle-apartments/traffic.png&quot; class=&quot;figure&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/seattle-apartments/traffic.png&quot; class=&quot;figure&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;And this is only southbound traffic. Actual commute times from Snohomish County likely exceed these, because most apartments are neither adjacent to the freeway, nor close to Lynnwood.&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
@@ -280,19 +280,19 @@ Sierras Peaks Mountains Mount
 
 &lt;p&gt;To that end, the following figures show expected commutes from Zillow-listed apartments in Seattle, to an office in Ballard, by 9:00 AM on a weekday morning. Walking trips are shown in blue; bus trips are colored according to the number of transfers needed, following an obvious pattern.&lt;/p&gt;
 
-&lt;p&gt;&lt;img class=&quot;figure&quot; src=&quot;http://localhost:4000/assets/seattle-apartments/distance-vs-commute-by-legs.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;figure&quot; src=&quot;/assets/seattle-apartments/distance-vs-commute-by-legs.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Here we see the expected linear relationship between distance and commute duration. However, there is quite a bit of variance (r&lt;sup&gt;2&lt;/sup&gt; = 0.794). We can conclude that proximity alone is a dubious predictor of time lost riding and transferring between buses.&lt;/p&gt;
 
 &lt;h3 id=&quot;what-about-nearby-apartments&quot;&gt;What About Nearby Apartments?&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/seattle-apartments/dvc-small.png&quot; class=&quot;figure&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/seattle-apartments/dvc-small.png&quot; class=&quot;figure&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;For commutes shorter than 1.7 km, distance more reliably predicts commute duration. Perhaps a walking tour within this radius would locate a suitable apartment more quickly? This approach would be considerably less complicated.&lt;/p&gt;
 
 &lt;p&gt;Ideally, I would find an apartment featuring a short commute (less than a half hour) for less than $2.5/ft&lt;sup&gt;2&lt;/sup&gt;. The figure below presents listings in three adjacent postal codes.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/seattle-apartments/zip-search.png&quot; class=&quot;figure&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/seattle-apartments/zip-search.png&quot; class=&quot;figure&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;98107 encompases lower Ballard, and the neighborhood realtors have dubbed &lt;em&gt;Frelard&lt;/em&gt;. Unsurprisingly, it seems to offer the best commute. 98103 extends from Lake Union, in Fremont, to N. 100&lt;sup&gt;th&lt;/sup&gt; St, in Greenwood, and also offers reasonable commutes.&lt;/p&gt;
 
@@ -355,7 +355,7 @@ Sierras Peaks Mountains Mount
 
 &lt;p&gt;So, how does walkability vary between census block groups, in Seattle, and what does it measure?&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/seattle-apartments/map.png&quot; class=&quot;figure&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/seattle-apartments/map.png&quot; class=&quot;figure&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Outside of a few neighborhoods: Downtown, Belltown, Fremont, Wallingford, parts of Ballard, and Capitol Hill, the EPA estimate middling walkability across Seattle.&lt;/p&gt;
 
@@ -432,7 +432,7 @@ Sierras Peaks Mountains Mount
 
 &lt;p&gt;For a first experiment, I collected several hundred pictures each, of three distinctive neighborhoods: the &lt;em&gt;&lt;font color=&quot;#4e73b0&quot;&gt;Lower East Side&lt;/font&gt;&lt;/em&gt;, &lt;em&gt;&lt;font color=&quot;#68ae7c&quot;&gt;Le Marais&lt;/font&gt;&lt;/em&gt;, and San Francisco’s &lt;em&gt;&lt;font color=&quot;#c45155&quot;&gt;Mission District&lt;/font&gt;&lt;/em&gt;. I wanted to know if a general image classifier would identify the unique visual character of these neighborhoods.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/seattle-apartments/google-tsne.png&quot; class=&quot;figure&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/seattle-apartments/google-tsne.png&quot; class=&quot;figure&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;In the figure above, each picture was processed by Google’s &lt;a href=&quot;https://cloud.google.com/vision/&quot;&gt;Cloud Vision API&lt;/a&gt;&lt;sup id=&quot;fnref:8&quot;&gt;&lt;a href=&quot;#fn:8&quot; class=&quot;footnote&quot;&gt;8&lt;/a&gt;&lt;/sup&gt; to produce a vector of confidence scores (i.e. the confidence that a picture depicts a given subject). &lt;em&gt;In other words, they’re grouped by subject, to the extent that an image classifier has made sense of them.&lt;/em&gt;&lt;sup id=&quot;fnref:9&quot;&gt;&lt;a href=&quot;#fn:9&quot; class=&quot;footnote&quot;&gt;9&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
@@ -446,7 +446,7 @@ Sierras Peaks Mountains Mount
 
 &lt;p&gt;And what of Seattle’s &lt;em&gt;&lt;font color=&quot;#4e73b0&quot;&gt;Capitol Hill&lt;/font&gt;&lt;/em&gt;, &lt;em&gt;&lt;font color=&quot;#68ae7c&quot;&gt;Belltown&lt;/font&gt;&lt;/em&gt;, and &lt;em&gt;&lt;font color=&quot;#c45155&quot;&gt;Ballard&lt;/font&gt;&lt;/em&gt; neighborhoods? I would’ve hoped for more distinct groupings. For example, old brick buildings get grouped with new ones.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/seattle-apartments/google-tsne-seattle.png&quot; class=&quot;figure&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/seattle-apartments/google-tsne-seattle.png&quot; class=&quot;figure&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;A general image classifier may be the wrong tool. A human observer given the same task would likely identify different features in each picture, and arrange them according to a different logic.&lt;/p&gt;
 
@@ -495,8 +495,8 @@ Sierras Peaks Mountains Mount
 &lt;/div&gt;
 </description>
           <pubDate>2017-05-23T00:00:00-07:00</pubDate>
-          <link>http://localhost:4000/notes/a-quixotic-apartment-search</link>
-          <guid isPermaLink="true">http://localhost:4000/notes/a-quixotic-apartment-search</guid>
+          <link>/notes/a-quixotic-apartment-search</link>
+          <guid isPermaLink="true">/notes/a-quixotic-apartment-search</guid>
         </item>
       
     
