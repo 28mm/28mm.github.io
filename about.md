@@ -17,13 +17,19 @@ Hello! I am currently **looking for a job**, either as a *systems administrator*
 
 ### Amusements
 
-[Crashme--](https://www.github.com/28mm/Crashme--): a loving resurrecution of Crashme 2.8.5. Crashme-- executes random bytecode and aggregates errors.
+[Crashme--](https://www.github.com/28mm/Crashme--): a loving resurrection of Crashme 2.8.5. Crashme-- executes random bytecode and aggregates errors.
 
 [Splicr](https://www.github.com/28mm/Splicr): a Youtube front-end that plays unusual combinations of cover, studio, and concert recordings, in album order.
 
 [KEX.Py](https://www.github.com/28mm/KEX.Py): a script that publishes Spotify playlists based on past KEXP (90.3 FM, Seattle) programming.
 
 [Photos2spotlight](https://28mm.github.io/notes/osx-photo-search): a script that reconciles Photos.app and Spotlight metadata, enabling search on photographic subject.
+
+----
+
+### Explorations
+
+[A Quixotic Apartment Search](https://28mm.github.io/notes/a-quixotic-apartment-search): web-scraping and gis methods inform my recent apartment search.
 
 ----
 
