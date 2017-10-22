@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+	<title>Exploring Terraform Graphs With D3.js · 28mm.github.io</title>
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:title" content="Exploring Terraform Graphs With D3.js" />
+<meta name="twitter:description" content="TL;DR">
+
+<meta name="description" content="TL;DR">
+
+
+
+<link rel="icon" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/touch-icon.png">
+<link rel="stylesheet" href="/assets/core.css">
+<link rel="canonical" href="/notes/d3-terraform-graphs">
+<link rel="alternate" type="application/atom+xml" title="28mm.github.io" href="/feed.xml" />
+
+
+
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+	</head>
+
+	<body>
+
+		<aside class="logo">
+
+	
+
+	<a href="/">
+		<img src="http://www.gravatar.com/avatar/f9ca90ff91459baa73f9be03289a7c80.png?s=80" class="gravatar">
+	</a>
+	<span class="logo-prompt">Back to Home</span>
+
+</aside>
+
+
+		<main>
+			<article>
+
+	<div class="center">
+		<h1>Exploring Terraform Graphs With D3.js</h1>
+		<time>October 22, 2017</time>
+	</div>
+
+	<div class="divider"></div>
+
+	<h3 id="tldr">TL;DR</h3>
+
+<p>As a newcomer to Terraform (and to AWS), I sometimes find it difficult to reason about the many available resource types, and the dependencies that can exist between them. Especially when coming to terms with larger configurations.</p>
+
+<p>To address this difficulty, I want a tool to help me explore dependency graphs, and resource definitions, interactively. This is the first in a series of posts about building such a tool, using d3.js, starting with the simple example below<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>, and building upon it.</p>
+
+<script src="/assets/terraform-graphs/js/d3.v3.js"></script>
+
+<script src="/assets/terraform-graphs/js/d3-tip.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/assets/terraform-graphs/style.css" />
+
+<div id="demo-1"></div>
+
+<h3 id="terraform-and-dependency-graphs-introduced">Terraform and Dependency Graphs, Introduced</h3>
+
+<p>Terraform is a remarkable piece of software; it’s like Make for infrastructure. Rather than transforming source into libraries and executables, Terraform transforms resource definitions (such as vm instances, dns records, s3 buckets) into running infrastructure.</p>
+
+<p>Like Make, Terraform walks a dependency graph to determine the order in which it should create resources, to identify what can be done in parallel, and to re-create resources affected by changes.</p>
+
+<p>Consider the following example, a straightforward Terraform graph–the same as above–laid out by the graphviz package.<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></p>
+
+<p><img src="/assets/terraform-graphs/demo-1.svg" class="figure" /></p>
+
+<p>This graph is easy to understand because it has only a handful of nodes, and an obvious structure. You can easily find the single instance, its provider (aws, in this case), and the few variables they depend on. Here is a slighly more complex example.<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup></p>
+
+<p><img src="/assets/terraform-graphs/demo-2.svg" class="figure" /></p>
+
+<p>This is graph remains fairly legible. But larger examples tend to sprawl, making resources harder to find, and dependencies harder to trace.<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup></p>
+
+<p><img src="/assets/terraform-graphs/docker-demo-3.svg" class="figure" /></p>
+
+<h3 id="interactive-dependency-graphs">Interactive Dependency Graphs</h3>
+
+<p>These visualizations could be improved in various ways. Adding color, and varying the shapes used, for instance, as well as collapsing less interesting parts of the graph. But an interactive visualization offers these possibilities and more.</p>
+
+<p>As a reminder of how this might work, here is the first example, again. The root node is made larger than its dependencies, and nodes of different types are assigned colors, according to an arbitrary scheme.</p>
+
+<div id="demo-2"></div>
+
+<p>And here is is the second. This example is worryingly dense, compared with the Graphviz version, but being able to call up resource definititions with the mouse is a striking advantage.</p>
+
+<div id="demo-3"></div>
+
+<p>One possible improvement here is to use curved edges, so that their direction is more obvious. (Tracing an edge in the clockwise direction brings you to a dependency.)</p>
+
+<div id="demo-4"></div>
+
+<p>That’s an encouraging result, but what about a much larger graph, like the sprawling third example?</p>
+
+<div id="demo-5"></div>
+
+<p>This version is harder to make sense of than the Graphviz version! It contains so many types of resource, for example, that it exhausts the 20-color palette, used previously.</p>
+
+<p>Additionally, many of the edges overlap, or are drawn so close together, that they become hard to distinguish.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>So far this has been a fun exercise, and I’m satisfied with it as a proof of concept. However, larger configurations remain a problem. In the next post, I plan to take up this problem, and explore possible solutions to it.</p>
+
+<p>Have a suggestion? <a href="mailto:patrick.mcmurchie@gmail.com">patrick.mcmurchie@gmail.com</a></p>
+
+<script src="/assets/terraform-graphs/js/terraform-graph.js"></script>
+
+<script>
+activate('#demo-1', '/assets/terraform-graphs/demo-1.json', 580, 300, false);
+activate('#demo-2', '/assets/terraform-graphs/demo-1.json', 580, 300, false);
+activate('#demo-3', '/assets/terraform-graphs/demo-3.json', 580, 400, false);
+activate('#demo-4', '/assets/terraform-graphs/demo-3.json', 580, 400, true);
+activate('#demo-5', '/assets/terraform-graphs/docker-demo-3.json', 580, 600, true);
+</script>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p><code class="highlighter-rouge">.tf</code> files borrowed from Udemy’s Terraform course materials, <a href="https://github.com/wardviaene/terraform-course/tree/master/demo-1">here</a>.&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;&#xfe0e;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>Terraform directly supports this type of visualization, through its <code class="highlighter-rouge">graph</code> argument: <code class="highlighter-rouge">terraform graph | dot -Tsvg &gt; graph.svg</code>.&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;&#xfe0e;</a></p>
+    </li>
+    <li id="fn:3">
+      <p><code class="highlighter-rouge">.tf</code> files borrowed from Hashicorp’s aws provider examples, <a href="https://github.com/terraform-providers/terraform-provider-aws">here</a>.&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;&#xfe0e;</a></p>
+    </li>
+    <li id="fn:4">
+      <p><code class="highlighter-rouge">.tf</code> files borrowed from Udemy’s Terraform course materials <a href="https://github.com/wardviaene/terraform-course/tree/master/docker-demo-3">here</a>&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;&#xfe0e;</a></p>
+    </li>
+  </ol>
+</div>
+
+
+</article>
+
+<div class="page-navigation">
+	
+		<a class="home" href="/" title="Back to Homepage">Home</a>
+  
+		<span> &middot; </span>
+    <a class="prev" href="/notes/osx-photo-search" title="PREV: Photo Metadata and Search on MacOS">&gt;&gt;</a>
+  
+</div>
+
+		</main>
+
+		<div class="footer">
+  <span class="block">&copy; 2017 Patrick McMurchie</span>
+</div>
+
+
+	</body>
+
+</html>
