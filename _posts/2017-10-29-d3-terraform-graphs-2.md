@@ -18,7 +18,7 @@ This post takes up the problems of horizontal sprawl, better tooltips, meaningfu
 
 ### Reconciling Graphviz and D3.js
 
-Graphviz has one thing going for it, so far: its layouts. It can place nodes in order of their dependencies (top to bottom, in this case), whereas the D3.js experiments became impenetrable.
+Graphviz has one thing going for it, so far: its layouts. It can place nodes in order of their dependencies (top to bottom, in this case), whereas the D3.js experiments sometimes became crowded and disorderly.
 
 However, compared with D3.js, its output is static, dated (1970s, I'd venture), and given to sprawling sideways. What about a combination of the two, using graphviz for layout and D3.js for interactions?
 
