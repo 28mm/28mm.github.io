@@ -1,0 +1,231 @@
+{
+    "nodes": [
+        {
+            "label": "[root] aws_eip.default",
+            "simple_name": "aws_eip.default",
+            "type": "aws_eip",
+            "resource_name": "default",
+            "group": 8,
+            "svg_id": "node_0",
+            "definition": {},
+            "def": {
+                "instance": "${aws_instance.web.id}",
+                "vpc": true
+            }
+        },
+        {
+            "label": "[root] aws_instance.web",
+            "simple_name": "aws_instance.web",
+            "type": "aws_instance",
+            "resource_name": "web",
+            "group": 19,
+            "svg_id": "node_1",
+            "definition": {},
+            "def": {
+                "instance_type": "t2.micro",
+                "ami": "${lookup(var.aws_amis, var.aws_region)}",
+                "key_name": "${var.key_name}",
+                "security_groups": [
+                    "${aws_security_group.default.name}"
+                ],
+                "user_data": "${file(\"userdata.sh\")}",
+                "tags": {
+                    "Name": "eip-example"
+                }
+            }
+        },
+        {
+            "label": "[root] aws_security_group.default",
+            "simple_name": "aws_security_group.default",
+            "type": "aws_security_group",
+            "resource_name": "default",
+            "group": 1,
+            "svg_id": "node_2",
+            "definition": {},
+            "def": {
+                "name": "eip_example",
+                "description": "Used in the terraform",
+                "ingress": [
+                    {
+                        "from_port": 22,
+                        "to_port": 22,
+                        "protocol": "tcp",
+                        "cidr_blocks": [
+                            "0.0.0.0/0"
+                        ]
+                    },
+                    {
+                        "from_port": 80,
+                        "to_port": 80,
+                        "protocol": "tcp",
+                        "cidr_blocks": [
+                            "0.0.0.0/0"
+                        ]
+                    }
+                ],
+                "egress": {
+                    "from_port": 0,
+                    "to_port": 0,
+                    "protocol": "-1",
+                    "cidr_blocks": [
+                        "0.0.0.0/0"
+                    ]
+                }
+            }
+        },
+        {
+            "label": "[root] provider.aws",
+            "simple_name": "provider.aws",
+            "type": "provider",
+            "resource_name": "aws",
+            "group": 10,
+            "svg_id": "node_3",
+            "definition": {},
+            "def": []
+        },
+        {
+            "label": "[root] var.aws_amis",
+            "simple_name": "var.aws_amis",
+            "type": "var",
+            "resource_name": "aws_amis",
+            "group": 3,
+            "svg_id": "node_4",
+            "definition": {},
+            "def": {
+                "default": {
+                    "us-east-1": "ami-5f709f34",
+                    "us-west-2": "ami-7f675e4f"
+                }
+            }
+        },
+        {
+            "label": "[root] var.key_name",
+            "simple_name": "var.key_name",
+            "type": "var",
+            "resource_name": "key_name",
+            "group": 3,
+            "svg_id": "node_5",
+            "definition": {},
+            "def": {
+                "description": "Name of the SSH keypair to use in AWS."
+            }
+        },
+        {
+            "label": "[root] meta.count-boundary (count boundary fixup)",
+            "simple_name": "meta.count-boundary (count boundary fixup)",
+            "type": "meta",
+            "resource_name": "count-boundary",
+            "group": 6,
+            "svg_id": "node_6",
+            "definition": {},
+            "def": []
+        },
+        {
+            "label": "[root] output.address",
+            "simple_name": "output.address",
+            "type": "output",
+            "resource_name": "address",
+            "group": 9,
+            "svg_id": "node_7",
+            "definition": {},
+            "def": []
+        },
+        {
+            "label": "[root] output.elastic ip",
+            "simple_name": "output.elastic ip",
+            "type": "output",
+            "resource_name": "elastic",
+            "group": 9,
+            "svg_id": "node_8",
+            "definition": {},
+            "def": []
+        },
+        {
+            "label": "[root] provider.aws (close)",
+            "simple_name": "provider.aws (close)",
+            "type": "provider",
+            "resource_name": "aws",
+            "group": 6,
+            "svg_id": "node_9",
+            "definition": {},
+            "def": []
+        },
+        {
+            "label": "[root] var.aws_region",
+            "simple_name": "var.aws_region",
+            "type": "var",
+            "resource_name": "aws_region",
+            "group": 3,
+            "svg_id": "node_10",
+            "definition": {},
+            "def": {
+                "description": "The AWS region to create things in.",
+                "default": "us-east-1"
+            }
+        },
+        {
+            "label": "[root] root",
+            "simple_name": "root",
+            "type": "",
+            "resource_name": "",
+            "group": 15,
+            "svg_id": "node_11",
+            "definition": {},
+            "def": []
+        }
+    ],
+    "links": [
+        {
+            "source": "[root] aws_eip.default",
+            "target": "[root] aws_instance.web"
+        },
+        {
+            "source": "[root] aws_instance.web",
+            "target": "[root] aws_security_group.default"
+        },
+        {
+            "source": "[root] aws_instance.web",
+            "target": "[root] var.aws_amis"
+        },
+        {
+            "source": "[root] aws_instance.web",
+            "target": "[root] var.key_name"
+        },
+        {
+            "source": "[root] aws_security_group.default",
+            "target": "[root] provider.aws"
+        },
+        {
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "target": "[root] output.address"
+        },
+        {
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "target": "[root] output.elastic ip"
+        },
+        {
+            "source": "[root] output.address",
+            "target": "[root] aws_instance.web"
+        },
+        {
+            "source": "[root] output.elastic ip",
+            "target": "[root] aws_eip.default"
+        },
+        {
+            "source": "[root] provider.aws (close)",
+            "target": "[root] aws_eip.default"
+        },
+        {
+            "source": "[root] provider.aws",
+            "target": "[root] var.aws_region"
+        },
+        {
+            "source": "[root] root",
+            "target": "[root] meta.count-boundary (count boundary fixup)"
+        },
+        {
+            "source": "[root] root",
+            "target": "[root] provider.aws (close)"
+        }
+    ]
+}

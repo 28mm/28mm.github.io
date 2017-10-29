@@ -3,7 +3,7 @@ layout: page
 title: Patrick McMurchie
 ---
 
-Hello! I am currently **looking for a job**, either as a *systems administrator*, or *systems engineer*, in the Seattle or the Bay Area.
+Hello! I am currently **looking for a job**, either as a *systems administrator*, or *systems engineer*, in the Seattle area. Freelance or contract positions are also welcome.
 
 ----
 
@@ -29,10 +29,7 @@ Hello! I am currently **looking for a job**, either as a *systems administrator*
 
 ### Explorations
 
-Exploring Terraform Graphs with D3.js: [part 1](/notes/d3-terraform-graphs), [part 2](/notes/d3-terraform-graphs-2)
-
-[A Quixotic Apartment Search](/notes/a-quixotic-apartment-search): web-scraping and gis methods inform my recent apartment search.
-
+[A Quixotic Apartment Search](https://28mm.github.io/notes/a-quixotic-apartment-search): web-scraping and gis methods inform my recent apartment search.
 
 ----
 

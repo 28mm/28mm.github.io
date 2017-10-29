@@ -1,0 +1,117 @@
+{
+    "nodes": [
+        {
+            "id": "[root] aws_instance.example",
+            "simple_name": "aws_instance.example",
+            "group": 20,
+            "svg_id": "node_0",
+            "def": {
+                "ami": "${lookup(var.AMIS, var.AWS_REGION)}",
+                "instance_type": "t2.micro"
+            }
+        },
+        {
+            "id": "[root] provider.aws",
+            "simple_name": "provider.aws",
+            "group": 13,
+            "svg_id": "node_1",
+            "def": []
+        },
+        {
+            "id": "[root] var.AMIS",
+            "simple_name": "var.AMIS",
+            "group": 2,
+            "svg_id": "node_2",
+            "def": {
+                "type": "map",
+                "default": {
+                    "us-east-1": "ami-13be557e",
+                    "us-west-2": "ami-06b94666",
+                    "eu-west-1": "ami-0d729a60"
+                }
+            }
+        },
+        {
+            "id": "[root] meta.count-boundary (count boundary fixup)",
+            "simple_name": "meta.count-boundary (count boundary fixup)",
+            "group": 15,
+            "svg_id": "node_3",
+            "def": []
+        },
+        {
+            "id": "[root] provider.aws (close)",
+            "simple_name": "provider.aws (close)",
+            "group": 15,
+            "svg_id": "node_4",
+            "def": []
+        },
+        {
+            "id": "[root] var.AWS_ACCESS_KEY",
+            "simple_name": "var.AWS_ACCESS_KEY",
+            "group": 2,
+            "svg_id": "node_5",
+            "def": {}
+        },
+        {
+            "id": "[root] var.AWS_REGION",
+            "simple_name": "var.AWS_REGION",
+            "group": 2,
+            "svg_id": "node_6",
+            "def": {
+                "default": "eu-west-1"
+            }
+        },
+        {
+            "id": "[root] var.AWS_SECRET_KEY",
+            "simple_name": "var.AWS_SECRET_KEY",
+            "group": 2,
+            "svg_id": "node_7",
+            "def": {}
+        },
+        {
+            "id": "[root] root",
+            "simple_name": "root",
+            "group": 11,
+            "svg_id": "node_8",
+            "def": []
+        }
+    ],
+    "links": [
+        {
+            "source": "[root] aws_instance.example",
+            "target": "[root] provider.aws"
+        },
+        {
+            "source": "[root] aws_instance.example",
+            "target": "[root] var.AMIS"
+        },
+        {
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "target": "[root] aws_instance.example"
+        },
+        {
+            "source": "[root] provider.aws (close)",
+            "target": "[root] aws_instance.example"
+        },
+        {
+            "source": "[root] provider.aws",
+            "target": "[root] var.AWS_ACCESS_KEY"
+        },
+        {
+            "source": "[root] provider.aws",
+            "target": "[root] var.AWS_REGION"
+        },
+        {
+            "source": "[root] provider.aws",
+            "target": "[root] var.AWS_SECRET_KEY"
+        },
+        {
+            "source": "[root] root",
+            "target": "[root] meta.count-boundary (count boundary fixup)"
+        },
+        {
+            "source": "[root] root",
+            "target": "[root] provider.aws (close)"
+        }
+    ]
+}

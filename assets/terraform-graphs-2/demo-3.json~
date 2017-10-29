@@ -1,0 +1,412 @@
+{
+    "nodes": [
+        {
+            "label": "[root] aws_elb.web",
+            "simple_name": "aws_elb.web",
+            "type": "aws_elb",
+            "resource_name": "web",
+            "group": 10,
+            "svg_id": "node_0",
+            "definition": {},
+            "def": {
+                "name": "terraform-example-elb",
+                "subnets": [
+                    "${aws_subnet.default.id}"
+                ],
+                "security_groups": [
+                    "${aws_security_group.elb.id}"
+                ],
+                "instances": [
+                    "${aws_instance.web.id}"
+                ],
+                "listener": {
+                    "instance_port": 80,
+                    "instance_protocol": "http",
+                    "lb_port": 80,
+                    "lb_protocol": "http"
+                }
+            }
+        },
+        {
+            "label": "[root] aws_instance.web",
+            "simple_name": "aws_instance.web",
+            "type": "aws_instance",
+            "resource_name": "web",
+            "group": 10,
+            "svg_id": "node_1",
+            "definition": {},
+            "def": {
+                "connection": {
+                    "user": "ubuntu"
+                },
+                "instance_type": "t2.micro",
+                "ami": "${lookup(var.aws_amis, var.aws_region)}",
+                "key_name": "${aws_key_pair.auth.id}",
+                "vpc_security_group_ids": [
+                    "${aws_security_group.default.id}"
+                ],
+                "subnet_id": "${aws_subnet.default.id}",
+                "provisioner": {
+                    "remote-exec": {
+                        "inline": [
+                            "sudo apt-get -y update",
+                            "sudo apt-get -y install nginx",
+                            "sudo service nginx start"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "label": "[root] aws_internet_gateway.default",
+            "simple_name": "aws_internet_gateway.default",
+            "type": "aws_internet_gateway",
+            "resource_name": "default",
+            "group": 10,
+            "svg_id": "node_2",
+            "definition": {},
+            "def": {
+                "vpc_id": "${aws_vpc.default.id}"
+            }
+        },
+        {
+            "label": "[root] aws_key_pair.auth",
+            "simple_name": "aws_key_pair.auth",
+            "type": "aws_key_pair",
+            "resource_name": "auth",
+            "group": 10,
+            "svg_id": "node_3",
+            "definition": {},
+            "def": {
+                "key_name": "${var.key_name}",
+                "public_key": "${file(var.public_key_path)}"
+            }
+        },
+        {
+            "label": "[root] aws_route.internet_access",
+            "simple_name": "aws_route.internet_access",
+            "type": "aws_route",
+            "resource_name": "internet_access",
+            "group": 10,
+            "svg_id": "node_4",
+            "definition": {},
+            "def": {
+                "route_table_id": "${aws_vpc.default.main_route_table_id}",
+                "destination_cidr_block": "0.0.0.0/0",
+                "gateway_id": "${aws_internet_gateway.default.id}"
+            }
+        },
+        {
+            "label": "[root] aws_security_group.default",
+            "simple_name": "aws_security_group.default",
+            "type": "aws_security_group",
+            "resource_name": "default",
+            "group": 2,
+            "svg_id": "node_5",
+            "definition": {},
+            "def": {
+                "name": "terraform_example",
+                "description": "Used in the terraform",
+                "vpc_id": "${aws_vpc.default.id}",
+                "ingress": [
+                    {
+                        "from_port": 22,
+                        "to_port": 22,
+                        "protocol": "tcp",
+                        "cidr_blocks": [
+                            "0.0.0.0/0"
+                        ]
+                    },
+                    {
+                        "from_port": 80,
+                        "to_port": 80,
+                        "protocol": "tcp",
+                        "cidr_blocks": [
+                            "10.0.0.0/16"
+                        ]
+                    }
+                ],
+                "egress": {
+                    "from_port": 0,
+                    "to_port": 0,
+                    "protocol": "-1",
+                    "cidr_blocks": [
+                        "0.0.0.0/0"
+                    ]
+                }
+            }
+        },
+        {
+            "label": "[root] aws_security_group.elb",
+            "simple_name": "aws_security_group.elb",
+            "type": "aws_security_group",
+            "resource_name": "elb",
+            "group": 2,
+            "svg_id": "node_6",
+            "definition": {},
+            "def": {
+                "name": "terraform_example_elb",
+                "description": "Used in the terraform",
+                "vpc_id": "${aws_vpc.default.id}",
+                "ingress": {
+                    "from_port": 80,
+                    "to_port": 80,
+                    "protocol": "tcp",
+                    "cidr_blocks": [
+                        "0.0.0.0/0"
+                    ]
+                },
+                "egress": {
+                    "from_port": 0,
+                    "to_port": 0,
+                    "protocol": "-1",
+                    "cidr_blocks": [
+                        "0.0.0.0/0"
+                    ]
+                }
+            }
+        },
+        {
+            "label": "[root] aws_subnet.default",
+            "simple_name": "aws_subnet.default",
+            "type": "aws_subnet",
+            "resource_name": "default",
+            "group": 5,
+            "svg_id": "node_7",
+            "definition": {},
+            "def": {
+                "vpc_id": "${aws_vpc.default.id}",
+                "cidr_block": "10.0.1.0/24",
+                "map_public_ip_on_launch": true
+            }
+        },
+        {
+            "label": "[root] aws_vpc.default",
+            "simple_name": "aws_vpc.default",
+            "type": "aws_vpc",
+            "resource_name": "default",
+            "group": 10,
+            "svg_id": "node_8",
+            "definition": {},
+            "def": {
+                "cidr_block": "10.0.0.0/16"
+            }
+        },
+        {
+            "label": "[root] provider.aws",
+            "simple_name": "provider.aws",
+            "type": "provider",
+            "resource_name": "aws",
+            "group": 10,
+            "svg_id": "node_9",
+            "definition": {},
+            "def": []
+        },
+        {
+            "label": "[root] var.aws_amis",
+            "simple_name": "var.aws_amis",
+            "type": "var",
+            "resource_name": "aws_amis",
+            "group": 1,
+            "svg_id": "node_10",
+            "definition": {},
+            "def": {
+                "default": {
+                    "eu-west-1": "ami-674cbc1e",
+                    "us-east-1": "ami-1d4e7a66",
+                    "us-west-1": "ami-969ab1f6",
+                    "us-west-2": "ami-8803e0f0"
+                }
+            }
+        },
+        {
+            "label": "[root] var.key_name",
+            "simple_name": "var.key_name",
+            "type": "var",
+            "resource_name": "key_name",
+            "group": 1,
+            "svg_id": "node_11",
+            "definition": {},
+            "def": {
+                "description": "Desired name of AWS key pair"
+            }
+        },
+        {
+            "label": "[root] var.public_key_path",
+            "simple_name": "var.public_key_path",
+            "type": "var",
+            "resource_name": "public_key_path",
+            "group": 1,
+            "svg_id": "node_12",
+            "definition": {},
+            "def": {
+                "description": "Path to the SSH public key to be used for authentication.\nEnsure this keypair is added to your local SSH agent so provisioners can\nconnect.\n\nExample: ~/.ssh/terraform.pub"
+            }
+        },
+        {
+            "label": "[root] meta.count-boundary (count boundary fixup)",
+            "simple_name": "meta.count-boundary (count boundary fixup)",
+            "type": "meta",
+            "resource_name": "count-boundary",
+            "group": 10,
+            "svg_id": "node_13",
+            "definition": {},
+            "def": []
+        },
+        {
+            "label": "[root] output.address",
+            "simple_name": "output.address",
+            "type": "output",
+            "resource_name": "address",
+            "group": 10,
+            "svg_id": "node_14",
+            "definition": {},
+            "def": []
+        },
+        {
+            "label": "[root] provider.aws (close)",
+            "simple_name": "provider.aws (close)",
+            "type": "provider",
+            "resource_name": "aws",
+            "group": 10,
+            "svg_id": "node_15",
+            "definition": {},
+            "def": []
+        },
+        {
+            "label": "[root] var.aws_region",
+            "simple_name": "var.aws_region",
+            "type": "var",
+            "resource_name": "aws_region",
+            "group": 1,
+            "svg_id": "node_16",
+            "definition": {},
+            "def": {
+                "description": "AWS region to launch servers.",
+                "default": "us-west-2"
+            }
+        },
+        {
+            "label": "[root] provisioner.remote-exec (close)",
+            "simple_name": "provisioner.remote-exec (close)",
+            "type": "provisioner",
+            "resource_name": "remote-exec",
+            "group": 10,
+            "svg_id": "node_17",
+            "definition": {},
+            "def": []
+        },
+        {
+            "label": "[root] root",
+            "simple_name": "root",
+            "type": "",
+            "resource_name": "",
+            "group": 9,
+            "svg_id": "node_18",
+            "definition": {},
+            "def": []
+        }
+    ],
+    "links": [
+        {
+            "source": "[root] aws_elb.web",
+            "target": "[root] aws_instance.web"
+        },
+        {
+            "source": "[root] aws_elb.web",
+            "target": "[root] aws_security_group.elb"
+        },
+        {
+            "source": "[root] aws_instance.web",
+            "target": "[root] aws_key_pair.auth"
+        },
+        {
+            "source": "[root] aws_instance.web",
+            "target": "[root] aws_security_group.default"
+        },
+        {
+            "source": "[root] aws_instance.web",
+            "target": "[root] aws_subnet.default"
+        },
+        {
+            "source": "[root] aws_instance.web",
+            "target": "[root] var.aws_amis"
+        },
+        {
+            "source": "[root] aws_internet_gateway.default",
+            "target": "[root] aws_vpc.default"
+        },
+        {
+            "source": "[root] aws_key_pair.auth",
+            "target": "[root] provider.aws"
+        },
+        {
+            "source": "[root] aws_key_pair.auth",
+            "target": "[root] var.key_name"
+        },
+        {
+            "source": "[root] aws_key_pair.auth",
+            "target": "[root] var.public_key_path"
+        },
+        {
+            "source": "[root] aws_route.internet_access",
+            "target": "[root] aws_internet_gateway.default"
+        },
+        {
+            "source": "[root] aws_security_group.default",
+            "target": "[root] aws_vpc.default"
+        },
+        {
+            "source": "[root] aws_security_group.elb",
+            "target": "[root] aws_vpc.default"
+        },
+        {
+            "source": "[root] aws_subnet.default",
+            "target": "[root] aws_vpc.default"
+        },
+        {
+            "source": "[root] aws_vpc.default",
+            "target": "[root] provider.aws"
+        },
+        {
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "target": "[root] aws_route.internet_access"
+        },
+        {
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "target": "[root] output.address"
+        },
+        {
+            "source": "[root] output.address",
+            "target": "[root] aws_elb.web"
+        },
+        {
+            "source": "[root] provider.aws (close)",
+            "target": "[root] aws_elb.web"
+        },
+        {
+            "source": "[root] provider.aws (close)",
+            "target": "[root] aws_route.internet_access"
+        },
+        {
+            "source": "[root] provider.aws",
+            "target": "[root] var.aws_region"
+        },
+        {
+            "source": "[root] provisioner.remote-exec (close)",
+            "target": "[root] aws_instance.web"
+        },
+        {
+            "source": "[root] root",
+            "target": "[root] meta.count-boundary (count boundary fixup)"
+        },
+        {
+            "source": "[root] root",
+            "target": "[root] provider.aws (close)"
+        },
+        {
+            "source": "[root] root",
+            "target": "[root] provisioner.remote-exec (close)"
+        }
+    ]
+}

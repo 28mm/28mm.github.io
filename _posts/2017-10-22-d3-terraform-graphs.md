@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Exploring Terraform Graphs With D3.js"
+title:  "Exploring Terraform Graphs With D3.js Part 1"
 date:   2017-10-22 00:00:00 -0700
 categories: terraform devops d3 d3.js graphs
 ---
@@ -9,7 +9,7 @@ categories: terraform devops d3 d3.js graphs
 
 As a newcomer to Terraform (and to AWS), I sometimes find it difficult to reason about the many available resource types, and the dependencies that can exist between them. Especially when coming to terms with larger configurations.
 
-To address this difficulty, I want a tool to help me explore dependency graphs, and resource definitions, interactively. This is the first in a series of posts about building such a tool, using d3.js, starting with the simple example below[^1], and building upon it.
+To address this difficulty, I want a tool to help me explore dependency graphs, and resource definitions, interactively. This is the first in a series ([part two](notes/d3-terraform-graphs-2)) of posts about building such a tool, using d3.js, starting with the simple example below[^1], and building upon it.
 
 <script src="/assets/terraform-graphs/js/d3.v3.js"></script>
 <script src="/assets/terraform-graphs/js/d3-tip.js"></script>
