@@ -3,7 +3,7 @@ layout: page
 title: Patrick McMurchie
 ---
 
-Hello! I am currently **looking for a job**, either as a *systems administrator*, or *systems engineer*, in the Seattle or the Bay Area.
+Hello! I am currently **looking for a job**, either as a *systems administrator*, or *systems engineer*, in Seattle or the Bay Area.
 
 ----
 
