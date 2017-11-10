@@ -9,6 +9,8 @@ Hello! I am currently **looking for a job**, either as a *systems administrator*
 
 ### Recent Work
 
+[Blast Radius](http://www.github.com/28mm/blast-radius): a tool for reasoning about *Terraform* dependency graphs through interactive visualizations. [Documentation](https://28mm.github.io/blast-radius-docs/), [Examples](https://28mm.github.io/blast-radius-docs/examples/).
+
 <http://pci.compatible.sh>: a comprehensive database of linux pci device drivers distributed with redhat, centos, fedora, and upstream (kernel.org) releases since 2005.
 
 [Fovea](https://www.github.com/28mm/Fovea): a unified cli for computer vision web services from Clarifai, Google, Microsoft, AWS Rekognition, IBM Watson, Sighthound, et. al.) 

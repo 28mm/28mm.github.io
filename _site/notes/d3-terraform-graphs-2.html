@@ -61,7 +61,7 @@
 
 <h3 id="tldr">TL;DR</h3>
 
-<p>This is the second in a series of posts exploring methods of visualizing Terraform dependency graphs, with the goal of producing a tool useful for learning and documentation.</p>
+<p>This is the second in a series of posts exploring methods of visualizing Terraform dependency graphs, with the goal of producing a tool useful for learning and documentation. (<a href="/notes/d3-terraform-graphs">part one</a>, <a href="/notes/d3-terraform-graphs-2">part two</a>, <a href="https://www.github.com/28mm/blast-radius">code</a>.)</p>
 
 <div id="demo1"></div>
 
@@ -71,7 +71,7 @@
 
 <h3 id="reconciling-graphviz-and-d3js">Reconciling Graphviz and D3.js</h3>
 
-<p>Graphviz has one thing going for it, so far: its layouts. It can place nodes in order of their dependencies (top to bottom, in this case), whereas the D3.js experiments became impenetrable.</p>
+<p>Graphviz has one thing going for it, so far: its layouts. It can place nodes in order of their dependencies (top to bottom, in this case), whereas the D3.js experiments sometimes became crowded and disorderly.</p>
 
 <p>However, compared with D3.js, its output is static, dated (1970s, I’d venture), and given to sprawling sideways. What about a combination of the two, using graphviz for layout and D3.js for interactions?</p>
 

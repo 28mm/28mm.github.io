@@ -8,7 +8,7 @@ categories: terraform devops d3 d3.js graphs
 
 ### TL;DR
 
-This is the second in a series of posts exploring methods of visualizing Terraform dependency graphs, with the goal of producing a tool useful for learning and documentation.
+This is the second in a series of posts exploring methods of visualizing Terraform dependency graphs, with the goal of producing a tool useful for learning and documentation. ([part one](/notes/d3-terraform-graphs), [part two](/notes/d3-terraform-graphs-2), [code](https://www.github.com/28mm/blast-radius).)
 
 <div id="demo1"></div>
 
