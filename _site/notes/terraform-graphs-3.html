@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+	<title>Exploring Terraform Graphs With D3.js Part 3 · 28mm.github.io</title>
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:title" content="Exploring Terraform Graphs With D3.js Part 3" />
+<meta name="twitter:description" content="">
+
+<meta name="description" content="">
+
+
+
+<link rel="icon" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/touch-icon.png">
+<link rel="stylesheet" href="/assets/core.css">
+<link rel="canonical" href="/notes/terraform-graphs-3">
+<link rel="alternate" type="application/atom+xml" title="28mm.github.io" href="/feed.xml" />
+
+
+
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+	</head>
+
+	<body>
+
+		<aside class="logo">
+
+	
+
+	<a href="/">
+		<img src="http://www.gravatar.com/avatar/f9ca90ff91459baa73f9be03289a7c80.png?s=80" class="gravatar">
+	</a>
+	<span class="logo-prompt">Back to Home</span>
+
+</aside>
+
+
+		<main>
+			<article>
+
+	<div class="center">
+		<h1>Exploring Terraform Graphs With D3.js Part 3</h1>
+		<time>December 1, 2017</time>
+	</div>
+
+	<div class="divider"></div>
+
+	<link rel="stylesheet" type="text/css" href="/assets/terraform-graphs-3/style.css" />
+
+<h3 id="tldr">TL;DR</h3>
+
+<p>This is the third in a series of posts exploring methods of visualizing Terraform dependency graphs, with the goal of producing a tool useful for learning and documentation.</p>
+
+<div id="demo1"></div>
+
+<p>Above is a representative example. Roll your mouse over one of the nodes to see its definition and to highlight its dependencies. For further information, refer to <a href="/notes/d3-terraform-graphs">part one</a>, <a href="/notes/d3-terraform-graphs-2">part two</a>, or <a href="/notes/terraform-graphs-3">part three</a> of this series; or to <a href="https://www.github.com/28mm/blast-radius">GitHub</a>, where <em><a href="/blast-radius-docs">Blast Radius</a></em> is hosted.</p>
+
+<h3 id="terraform-modules">Terraform Modules</h3>
+
+<p>Modules greatly simplify Terraform administration, by isolating reusable components. Earlier versions of <em><a href="https://www.github.com/28mm/blast-radius">Blast Radius</a></em><sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> didn’t handle modules very well, or at all.</p>
+
+<p>For a <a href="https://28mm.github.io/notes/echo-location">recent project</a>,<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> I wanted to launch a single AWS instance in a large number of AWS regions; a perfect fit for modules. Here is a single instance of that module, launched in the AWS <code class="highlighter-rouge">us-east-1</code> region, and named the same.</p>
+
+<div id="demo2"></div>
+
+<p>Here’s the same module reused to launch copies of that instance in both <code class="highlighter-rouge">us-east-1</code> (Northern Virginia), and <code class="highlighter-rouge">ap-northeast-2</code> (Seoul).</p>
+
+<div id="demo3"></div>
+
+<p>And, here is the same module reused to launch instances in seven regions. This graph in particular highlights the limitations of the visual language used: it is <em>too</em> colorful, and <em>too</em> broad. Illegible, in other words.</p>
+
+<div id="demo4"></div>
+
+<p>Something like Terraform’s <code class="highlighter-rouge">--module-depth</code> parameter would simplify larger diagrams like this one. Better handling of the module registry and other remote sources, is needed as well… but it’s a start.</p>
+
+<h3 id="narrowing-some-figures">Narrowing (Some) Figures</h3>
+
+<p>In previous posts, I’ve described the tendency for Graphviz layouts of Terraform graphs to sprawl sideways. Some of this is unavoidable, but gains can be realized at the expense of vertical scrolling.</p>
+
+<p><em>Variable</em> resources often share a parent. Rather than lay these variables out side by side, they could be “stacked,” one atop the other, without sacrificing clarity.</p>
+
+<div id="demo11"></div>
+
+<p>(<em>Output</em> resources often share the same (single) dependency, and parent, and can be “stacked” in the same way. This figure demonstrates that possibility, as well.)</p>
+
+<h3 id="code--examples">Code &amp; Examples</h3>
+
+<p>The code used to produce these figures can be found on GitHub, as the <em><a href="https://www.github.com/28mm/blast-radius">Blast Radius</a></em> project.</p>
+
+<p>Further examples–most of them borrowed from examples/ directories in the Terraform provider ecosystem–can be found on the project’s <a href="/blast-radius-docs/">documentation</a> page.</p>
+
+<p>If you’re interested in testing <em><a href="https://www.github.com/28mm/blast-radius">Blast Radius</a></em> in your environment, you can obtain an experimental distribution from the Python Package Index.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">[...]$ </span>brew install graphviz
+<span class="gp">[...]$ </span>pip3 install blastradius
+</code></pre>
+</div>
+
+<p>Or clone the GitHub repository, and install an edtitable copy (via <code class="highlighter-rouge">pip3 -e</code>).</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">[...]$ </span>git clone https://github.com/28mm/blast-radius.git
+<span class="gp">[...]$ </span><span class="nb">cd </span>blast-radius
+<span class="gp">[...]$ </span>pip3 install -e .
+</code></pre>
+</div>
+
+<p><em><a href="https://www.github.com/28mm/blast-radius">Blast Radius</a></em> requires an <code class="highlighter-rouge">init</code>-ed Terraform project to run.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">[...]$ </span><span class="nb">cd </span>path/to/terraform/project
+<span class="gp">[...]$ </span>terraform init
+<span class="gp">[...]$ </span>blast-radius --serve
+</code></pre>
+</div>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>While I’m pleased <em><a href="https://www.github.com/28mm/blast-radius">Blast Radius</a></em>, as an exploratory project, more work is needed to make it generally useful. In particular, I’d like to shore up module support, do smarter tooltip layouts, and make it easier to embed figures.</p>
+
+<p>What do you think?
+<strong>Comment</strong> and <strong>Suggestion</strong> to <strong><a href="mailto:patrick.mcmurchie@gmail.com">patrick.mcmurchie@gmail.com</a></strong></p>
+
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<script src="/assets/terraform-graphs-2/js/d3-tip.js"></script>
+
+<script src="/assets/terraform-graphs-3/terraform-graph.js"></script>
+
+<script src="/assets/terraform-graphs-3/categories.js"></script>
+
+<script>
+
+// use the oldest version of svg_activate
+svg_activate('div#demo1', 
+    '/assets/terraform-graphs-3/demo-1.svg', 
+    '/assets/terraform-graphs-3/demo-1.json',
+    '65%');
+
+
+svg_activate('div#demo2', 
+    '/assets/terraform-graphs-3/demo2.svg', 
+    '/assets/terraform-graphs-3/demo2.json',
+    '100%');
+
+svg_activate('div#demo3', 
+    '/assets/terraform-graphs-3/demo3.svg', 
+    '/assets/terraform-graphs-3/demo3.json',
+    '100%');
+
+svg_activate('div#demo4', 
+    '/assets/terraform-graphs-3/demo4.svg', 
+    '/assets/terraform-graphs-3/demo4.json',
+    '100%');
+
+svg_activate('div#demo11', 
+    '/assets/terraform-graphs-3/demo11.svg', 
+    '/assets/terraform-graphs-3/demo11.json',
+    '65%');
+
+
+</script>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p><a href="https://www.github.com/28mm/blast-radius">https://www.github.com/28mm/blast-radius</a>&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;&#xfe0e;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>This project attempts to geolocate IPs by measuring latency from points around the world. <a href="https://28mm.github.io/notes/echo-location">https://28mm.github.io/notes/echo-location</a>&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;&#xfe0e;</a></p>
+    </li>
+  </ol>
+</div>
+
+
+</article>
+
+<div class="page-navigation">
+	
+    <a class="next" href="/notes/echo-location" title="NEXT: IP Geolocation with ICMP Part 1">&lt;&lt;</a>
+		<span> &middot; </span>
+  
+		<a class="home" href="/" title="Back to Homepage">Home</a>
+  
+		<span> &middot; </span>
+    <a class="prev" href="/notes/d3-terraform-graphs-2" title="PREV: Exploring Terraform Graphs With D3.js Part 2">&gt;&gt;</a>
+  
+</div>
+
+		</main>
+
+		<div class="footer">
+  <span class="block">&copy; 2017 Patrick McMurchie</span>
+</div>
+
+
+	</body>
+
+</html>

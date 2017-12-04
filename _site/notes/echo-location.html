@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+	<title>IP Geolocation with ICMP Part 1 · 28mm.github.io</title>
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:title" content="IP Geolocation with ICMP Part 1" />
+<meta name="twitter:description" content="TL;DR">
+
+<meta name="description" content="TL;DR">
+
+
+
+<link rel="icon" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/touch-icon.png">
+<link rel="stylesheet" href="/assets/core.css">
+<link rel="canonical" href="/notes/echo-location">
+<link rel="alternate" type="application/atom+xml" title="28mm.github.io" href="/feed.xml" />
+
+
+
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+	</head>
+
+	<body>
+
+		<aside class="logo">
+
+	
+
+	<a href="/">
+		<img src="http://www.gravatar.com/avatar/f9ca90ff91459baa73f9be03289a7c80.png?s=80" class="gravatar">
+	</a>
+	<span class="logo-prompt">Back to Home</span>
+
+</aside>
+
+
+		<main>
+			<article>
+
+	<div class="center">
+		<h1>IP Geolocation with ICMP Part 1</h1>
+		<time>December 2, 2017</time>
+	</div>
+
+	<div class="divider"></div>
+
+	<!--<link rel="stylesheet" type="text/css" href="/assets/terraform-graphs-3/style.css">-->
+<link rel="stylesheet" type="text/css" href="/assets/echo-locate-1/style.css" />
+
+<h3 id="tldr">TL;DR</h3>
+
+<p>Network latency is a measure of time, but also a proxy for distance. Using this property, it’s possible to geolocate a server by measuring the round-trip-time (rtt) of packets sent from multiple locations. This post explores that idea, using the AWS public cloud.</p>
+
+<div id="example1"></div>
+
+<p>As an illustration, mouseover one of the datacenters in the above figure to see how far it’s requests may have travelled to reach <a href="https://www.washington.edu">www.washington.edu</a> (whose servers are presumably in Seattle, or nearby).</p>
+
+<h3 id="introduction">Introduction</h3>
+
+<p>I became intested in this topic after reading the the apocryphal <em><a href="https://www.ibiblio.org/harris/500milemail.html">case of the 500-mile email</a>,</em><sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> which concerns a <em>Sendmail</em> administrator, in Durham, North Carolina, whose users complain that they cannot send email farther than 500 miles. A preposterous limitation.</p>
+
+<div id="example2"></div>
+
+<p>He determines that <em>Sendmail</em> is aborting connections that take longer than 3 milliseconds to establish. Recalling that the speed of light is 2.998e+8 m/s, 3 ms equates to roughly 560 miles. Roughly the distance cited in the users’ reports!</p>
+
+<p>I’ve always liked this story; I suspect because computer networks are often very abstract, and layer 1 can feel a long way down. Revisiting it recently, I began thinking about other uses of the same principle, and geolocation in particular.</p>
+
+<h3 id="a-first-experiment">A First Experiment</h3>
+
+<p>I am writing this from a desk in Seattle, but what if I didn’t know that? Could I establish my own location if I were amnesiac and unwilling to ask? What if I only had <em>Ping</em> and a map of the world?</p>
+
+<p>To get started I borrowed a list of public IP addresses associated with various AWS regions from the <em><a href="https://ec2-reachability.amazonaws.com">EC2 Reachability Test</a><sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></em>, and plotted the distance suggested by the least measured rtt from my desk to each one.<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup></p>
+
+<div id="experiment1"></div>
+
+<p>This experiment places me within 921 miles of AWS’ us-west-2 region. An answer that’s neither wrong, precise, nor all that bad.</p>
+
+<h3 id="around-the-world-in-6912e9-milliseconds">Around The World In 6.912e+9 Milliseconds</h3>
+
+<p>The global presence of cloud services like AWS, GCP, and Azure makes it both inexpensive and convenient to test latency from various points around the world.</p>
+
+<p>The map below presents a sample of datacenters from AWS and Google Cloud Platform with the caveat that they may be slightly misplaced, because their precise locations aren’t always known. (Or, aren’t known to <em>me</em>.)</p>
+
+<div id="example3"></div>
+
+<p>What’s needed, now, is a mechanism for launching vm instances in a selection of these datacenters. <em><a href="https://www.terraform.io/">Terraform</a></em><sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup> provides this, serving as a kind of <em>Make</em> for cloud infrastructure; and one that supports multiple vendors.</p>
+
+<p>In a follow-up post, I’ll pursue this idea, using Terraform to manage instances in multiple public clouds at once, to measure latency from various points around the world. <em>Stay tuned…</em></p>
+
+<p><strong>Comment</strong> and <strong>Suggestion</strong> to <strong><a href="mailto:patrick.mcmurchie@gmail.com">patrick.mcmurchie@gmail.com</a></strong></p>
+
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<script src="https://d3js.org/d3-geo.v1.min.js"></script>
+
+<script src="/assets/echo-locate-1/d3-tip.js"></script>
+
+<script src="/assets/echo-locate-1/example-1.js"></script>
+
+<script src="/assets/echo-locate-1/example-2.js"></script>
+
+<script src="/assets/echo-locate-1/example-3.js"></script>
+
+<script src="/assets/echo-locate-1/experiment-1.js"></script>
+
+<script>
+// use the oldest version of svg_activate
+example1('div#example1', 
+    '/assets/echo-locate-1/world-map.json');
+example2('div#example2', 
+    '/assets/echo-locate-1/usa-map.json');
+experiment1('div#experiment1', 
+    '/assets/echo-locate-1/world-map.json');
+example3('div#example3',
+    '/assets/echo-locate-1/world-map.json');
+
+</script>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p><a href="https://www.ibiblio.org/harris/500milemail.html">https://www.ibiblio.org/harris/500milemail.html</a>&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;&#xfe0e;</a></p>
+    </li>
+    <li id="fn:2">
+      <p><a href="http://ec2-reachability.amazonaws.com">http://ec2-reachability.amazonaws.com</a>&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;&#xfe0e;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>I am using the speed of light in a vacuum (<em>c</em>) multiplied by 2/3 to correct for its slower passage through fiber optic media.&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;&#xfe0e;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>I’ve written about Terraform in two previous posts: <a href="https://28mm.github.io/notes/d3-terraform-graphs">part one</a>, <a href="https://28mm.github.io/notes/d3-terraform-graphs-2">part two</a>, <a href="/notes/terraform-graphs-3">part three</a>. The project that resulted from these posts is called <em><a href="https://www.github.com/28mm/blast-radius">Blast Radius</a></em>, and is available on GitHub.&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;&#xfe0e;</a></p>
+    </li>
+  </ol>
+</div>
+
+
+</article>
+
+<div class="page-navigation">
+	
+		<a class="home" href="/" title="Back to Homepage">Home</a>
+  
+		<span> &middot; </span>
+    <a class="prev" href="/notes/terraform-graphs-3" title="PREV: Exploring Terraform Graphs With D3.js Part 3">&gt;&gt;</a>
+  
+</div>
+
+		</main>
+
+		<div class="footer">
+  <span class="block">&copy; 2017 Patrick McMurchie</span>
+</div>
+
+
+	</body>
+
+</html>

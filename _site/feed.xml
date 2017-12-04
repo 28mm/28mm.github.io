@@ -7,12 +7,244 @@
     
       
         <item>
+          <title>IP Geolocation with ICMP Part 1</title>
+          <description>&lt;!--&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/terraform-graphs-3/style.css&quot;&gt;--&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/echo-locate-1/style.css&quot; /&gt;
+
+&lt;h3 id=&quot;tldr&quot;&gt;TL;DR&lt;/h3&gt;
+
+&lt;p&gt;Network latency is a measure of time, but also a proxy for distance. Using this property, it’s possible to geolocate a server by measuring the round-trip-time (rtt) of packets sent from multiple locations. This post explores that idea, using the AWS public cloud.&lt;/p&gt;
+
+&lt;div id=&quot;example1&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;As an illustration, mouseover one of the datacenters in the above figure to see how far it’s requests may have travelled to reach &lt;a href=&quot;https://www.washington.edu&quot;&gt;www.washington.edu&lt;/a&gt; (whose servers are presumably in Seattle, or nearby).&lt;/p&gt;
+
+&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
+
+&lt;p&gt;I became intested in this topic after reading the the apocryphal &lt;em&gt;&lt;a href=&quot;https://www.ibiblio.org/harris/500milemail.html&quot;&gt;case of the 500-mile email&lt;/a&gt;,&lt;/em&gt;&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; which concerns a &lt;em&gt;Sendmail&lt;/em&gt; administrator, in Durham, North Carolina, whose users complain that they cannot send email farther than 500 miles. A preposterous limitation.&lt;/p&gt;
+
+&lt;div id=&quot;example2&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;He determines that &lt;em&gt;Sendmail&lt;/em&gt; is aborting connections that take longer than 3 milliseconds to establish. Recalling that the speed of light is 2.998e+8 m/s, 3 ms equates to roughly 560 miles. Roughly the distance cited in the users’ reports!&lt;/p&gt;
+
+&lt;p&gt;I’ve always liked this story; I suspect because computer networks are often very abstract, and layer 1 can feel a long way down. Revisiting it recently, I began thinking about other uses of the same principle, and geolocation in particular.&lt;/p&gt;
+
+&lt;h3 id=&quot;a-first-experiment&quot;&gt;A First Experiment&lt;/h3&gt;
+
+&lt;p&gt;I am writing this from a desk in Seattle, but what if I didn’t know that? Could I establish my own location if I were amnesiac and unwilling to ask? What if I only had &lt;em&gt;Ping&lt;/em&gt; and a map of the world?&lt;/p&gt;
+
+&lt;p&gt;To get started I borrowed a list of public IP addresses associated with various AWS regions from the &lt;em&gt;&lt;a href=&quot;https://ec2-reachability.amazonaws.com&quot;&gt;EC2 Reachability Test&lt;/a&gt;&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/em&gt;, and plotted the distance suggested by the least measured rtt from my desk to each one.&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;div id=&quot;experiment1&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;This experiment places me within 921 miles of AWS’ us-west-2 region. An answer that’s neither wrong, precise, nor all that bad.&lt;/p&gt;
+
+&lt;h3 id=&quot;around-the-world-in-6912e9-milliseconds&quot;&gt;Around The World In 6.912e+9 Milliseconds&lt;/h3&gt;
+
+&lt;p&gt;The global presence of cloud services like AWS, GCP, and Azure makes it both inexpensive and convenient to test latency from various points around the world.&lt;/p&gt;
+
+&lt;p&gt;The map below presents a sample of datacenters from AWS and Google Cloud Platform with the caveat that they may be slightly misplaced, because their precise locations aren’t always known. (Or, aren’t known to &lt;em&gt;me&lt;/em&gt;.)&lt;/p&gt;
+
+&lt;div id=&quot;example3&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;What’s needed, now, is a mechanism for launching vm instances in a selection of these datacenters. &lt;em&gt;&lt;a href=&quot;https://www.terraform.io/&quot;&gt;Terraform&lt;/a&gt;&lt;/em&gt;&lt;sup id=&quot;fnref:4&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt; provides this, serving as a kind of &lt;em&gt;Make&lt;/em&gt; for cloud infrastructure; and one that supports multiple vendors.&lt;/p&gt;
+
+&lt;p&gt;In a follow-up post, I’ll pursue this idea, using Terraform to manage instances in multiple public clouds at once, to measure latency from various points around the world. &lt;em&gt;Stay tuned…&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Comment&lt;/strong&gt; and &lt;strong&gt;Suggestion&lt;/strong&gt; to &lt;strong&gt;&lt;a href=&quot;mailto:patrick.mcmurchie@gmail.com&quot;&gt;patrick.mcmurchie@gmail.com&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;script src=&quot;https://d3js.org/d3.v4.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;https://d3js.org/d3-geo.v1.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;/assets/echo-locate-1/d3-tip.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;/assets/echo-locate-1/example-1.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;/assets/echo-locate-1/example-2.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;/assets/echo-locate-1/example-3.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;/assets/echo-locate-1/experiment-1.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+// use the oldest version of svg_activate
+example1('div#example1', 
+    '/assets/echo-locate-1/world-map.json');
+example2('div#example2', 
+    '/assets/echo-locate-1/usa-map.json');
+experiment1('div#experiment1', 
+    '/assets/echo-locate-1/world-map.json');
+example3('div#example3',
+    '/assets/echo-locate-1/world-map.json');
+
+&lt;/script&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://www.ibiblio.org/harris/500milemail.html&quot;&gt;https://www.ibiblio.org/harris/500milemail.html&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://ec2-reachability.amazonaws.com&quot;&gt;http://ec2-reachability.amazonaws.com&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:3&quot;&gt;
+      &lt;p&gt;I am using the speed of light in a vacuum (&lt;em&gt;c&lt;/em&gt;) multiplied by 2/3 to correct for its slower passage through fiber optic media.&amp;nbsp;&lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:4&quot;&gt;
+      &lt;p&gt;I’ve written about Terraform in two previous posts: &lt;a href=&quot;https://28mm.github.io/notes/d3-terraform-graphs&quot;&gt;part one&lt;/a&gt;, &lt;a href=&quot;https://28mm.github.io/notes/d3-terraform-graphs-2&quot;&gt;part two&lt;/a&gt;, &lt;a href=&quot;/notes/terraform-graphs-3&quot;&gt;part three&lt;/a&gt;. The project that resulted from these posts is called &lt;em&gt;&lt;a href=&quot;https://www.github.com/28mm/blast-radius&quot;&gt;Blast Radius&lt;/a&gt;&lt;/em&gt;, and is available on GitHub.&amp;nbsp;&lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2017-12-02T23:00:01-08:00</pubDate>
+          <link>http://localhost:4000/notes/echo-location</link>
+          <guid isPermaLink="true">http://localhost:4000/notes/echo-location</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Exploring Terraform Graphs With D3.js Part 3</title>
+          <description>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/terraform-graphs-3/style.css&quot; /&gt;
+
+&lt;h3 id=&quot;tldr&quot;&gt;TL;DR&lt;/h3&gt;
+
+&lt;p&gt;This is the third in a series of posts exploring methods of visualizing Terraform dependency graphs, with the goal of producing a tool useful for learning and documentation.&lt;/p&gt;
+
+&lt;div id=&quot;demo1&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;Above is a representative example. Roll your mouse over one of the nodes to see its definition and to highlight its dependencies. For further information, refer to &lt;a href=&quot;/notes/d3-terraform-graphs&quot;&gt;part one&lt;/a&gt;, &lt;a href=&quot;/notes/d3-terraform-graphs-2&quot;&gt;part two&lt;/a&gt;, or &lt;a href=&quot;/notes/terraform-graphs-3&quot;&gt;part three&lt;/a&gt; of this series; or to &lt;a href=&quot;https://www.github.com/28mm/blast-radius&quot;&gt;GitHub&lt;/a&gt;, where &lt;em&gt;&lt;a href=&quot;/blast-radius-docs&quot;&gt;Blast Radius&lt;/a&gt;&lt;/em&gt; is hosted.&lt;/p&gt;
+
+&lt;h3 id=&quot;terraform-modules&quot;&gt;Terraform Modules&lt;/h3&gt;
+
+&lt;p&gt;Modules greatly simplify Terraform administration, by isolating reusable components. Earlier versions of &lt;em&gt;&lt;a href=&quot;https://www.github.com/28mm/blast-radius&quot;&gt;Blast Radius&lt;/a&gt;&lt;/em&gt;&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; didn’t handle modules very well, or at all.&lt;/p&gt;
+
+&lt;p&gt;For a &lt;a href=&quot;https://28mm.github.io/notes/echo-location&quot;&gt;recent project&lt;/a&gt;,&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; I wanted to launch a single AWS instance in a large number of AWS regions; a perfect fit for modules. Here is a single instance of that module, launched in the AWS &lt;code class=&quot;highlighter-rouge&quot;&gt;us-east-1&lt;/code&gt; region, and named the same.&lt;/p&gt;
+
+&lt;div id=&quot;demo2&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;Here’s the same module reused to launch copies of that instance in both &lt;code class=&quot;highlighter-rouge&quot;&gt;us-east-1&lt;/code&gt; (Northern Virginia), and &lt;code class=&quot;highlighter-rouge&quot;&gt;ap-northeast-2&lt;/code&gt; (Seoul).&lt;/p&gt;
+
+&lt;div id=&quot;demo3&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;And, here is the same module reused to launch instances in seven regions. This graph in particular highlights the limitations of the visual language used: it is &lt;em&gt;too&lt;/em&gt; colorful, and &lt;em&gt;too&lt;/em&gt; broad. Illegible, in other words.&lt;/p&gt;
+
+&lt;div id=&quot;demo4&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;Something like Terraform’s &lt;code class=&quot;highlighter-rouge&quot;&gt;--module-depth&lt;/code&gt; parameter would simplify larger diagrams like this one. Better handling of the module registry and other remote sources, is needed as well… but it’s a start.&lt;/p&gt;
+
+&lt;h3 id=&quot;narrowing-some-figures&quot;&gt;Narrowing (Some) Figures&lt;/h3&gt;
+
+&lt;p&gt;In previous posts, I’ve described the tendency for Graphviz layouts of Terraform graphs to sprawl sideways. Some of this is unavoidable, but gains can be realized at the expense of vertical scrolling.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Variable&lt;/em&gt; resources often share a parent. Rather than lay these variables out side by side, they could be “stacked,” one atop the other, without sacrificing clarity.&lt;/p&gt;
+
+&lt;div id=&quot;demo11&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;(&lt;em&gt;Output&lt;/em&gt; resources often share the same (single) dependency, and parent, and can be “stacked” in the same way. This figure demonstrates that possibility, as well.)&lt;/p&gt;
+
+&lt;h3 id=&quot;code--examples&quot;&gt;Code &amp;amp; Examples&lt;/h3&gt;
+
+&lt;p&gt;The code used to produce these figures can be found on GitHub, as the &lt;em&gt;&lt;a href=&quot;https://www.github.com/28mm/blast-radius&quot;&gt;Blast Radius&lt;/a&gt;&lt;/em&gt; project.&lt;/p&gt;
+
+&lt;p&gt;Further examples–most of them borrowed from examples/ directories in the Terraform provider ecosystem–can be found on the project’s &lt;a href=&quot;/blast-radius-docs/&quot;&gt;documentation&lt;/a&gt; page.&lt;/p&gt;
+
+&lt;p&gt;If you’re interested in testing &lt;em&gt;&lt;a href=&quot;https://www.github.com/28mm/blast-radius&quot;&gt;Blast Radius&lt;/a&gt;&lt;/em&gt; in your environment, you can obtain an experimental distribution from the Python Package Index.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;brew install graphviz
+&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;pip3 install blastradius
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Or clone the GitHub repository, and install an edtitable copy (via &lt;code class=&quot;highlighter-rouge&quot;&gt;pip3 -e&lt;/code&gt;).&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;git clone https://github.com/28mm/blast-radius.git
+&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;blast-radius
+&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;pip3 install -e .
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://www.github.com/28mm/blast-radius&quot;&gt;Blast Radius&lt;/a&gt;&lt;/em&gt; requires an &lt;code class=&quot;highlighter-rouge&quot;&gt;init&lt;/code&gt;-ed Terraform project to run.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;path/to/terraform/project
+&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;terraform init
+&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;blast-radius --serve
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;While I’m pleased &lt;em&gt;&lt;a href=&quot;https://www.github.com/28mm/blast-radius&quot;&gt;Blast Radius&lt;/a&gt;&lt;/em&gt;, as an exploratory project, more work is needed to make it generally useful. In particular, I’d like to shore up module support, do smarter tooltip layouts, and make it easier to embed figures.&lt;/p&gt;
+
+&lt;p&gt;What do you think?
+&lt;strong&gt;Comment&lt;/strong&gt; and &lt;strong&gt;Suggestion&lt;/strong&gt; to &lt;strong&gt;&lt;a href=&quot;mailto:patrick.mcmurchie@gmail.com&quot;&gt;patrick.mcmurchie@gmail.com&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;script src=&quot;https://d3js.org/d3.v4.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;/assets/terraform-graphs-2/js/d3-tip.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;/assets/terraform-graphs-3/terraform-graph.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;/assets/terraform-graphs-3/categories.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+
+// use the oldest version of svg_activate
+svg_activate('div#demo1', 
+    '/assets/terraform-graphs-3/demo-1.svg', 
+    '/assets/terraform-graphs-3/demo-1.json',
+    '65%');
+
+
+svg_activate('div#demo2', 
+    '/assets/terraform-graphs-3/demo2.svg', 
+    '/assets/terraform-graphs-3/demo2.json',
+    '100%');
+
+svg_activate('div#demo3', 
+    '/assets/terraform-graphs-3/demo3.svg', 
+    '/assets/terraform-graphs-3/demo3.json',
+    '100%');
+
+svg_activate('div#demo4', 
+    '/assets/terraform-graphs-3/demo4.svg', 
+    '/assets/terraform-graphs-3/demo4.json',
+    '100%');
+
+svg_activate('div#demo11', 
+    '/assets/terraform-graphs-3/demo11.svg', 
+    '/assets/terraform-graphs-3/demo11.json',
+    '65%');
+
+
+&lt;/script&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://www.github.com/28mm/blast-radius&quot;&gt;https://www.github.com/28mm/blast-radius&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;This project attempts to geolocate IPs by measuring latency from points around the world. &lt;a href=&quot;https://28mm.github.io/notes/echo-location&quot;&gt;https://28mm.github.io/notes/echo-location&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2017-12-01T23:00:00-08:00</pubDate>
+          <link>http://localhost:4000/notes/terraform-graphs-3</link>
+          <guid isPermaLink="true">http://localhost:4000/notes/terraform-graphs-3</guid>
+        </item>
+      
+    
+      
+        <item>
           <title>Exploring Terraform Graphs With D3.js Part 2</title>
           <description>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/terraform-graphs-2/style.css&quot; /&gt;
 
 &lt;h3 id=&quot;tldr&quot;&gt;TL;DR&lt;/h3&gt;
 
-&lt;p&gt;This is the second in a series of posts exploring methods of visualizing Terraform dependency graphs, with the goal of producing a tool useful for learning and documentation. (&lt;a href=&quot;/notes/d3-terraform-graphs&quot;&gt;part one&lt;/a&gt;, &lt;a href=&quot;/notes/d3-terraform-graphs-2&quot;&gt;part two&lt;/a&gt;, &lt;a href=&quot;https://www.github.com/28mm/blast-radius&quot;&gt;code&lt;/a&gt;.)&lt;/p&gt;
+&lt;p&gt;This is the second in a series of posts exploring methods of visualizing Terraform dependency graphs, with the goal of producing a tool useful for learning and documentation. (&lt;a href=&quot;/notes/d3-terraform-graphs&quot;&gt;part one&lt;/a&gt;, &lt;a href=&quot;/notes/d3-terraform-graphs-2&quot;&gt;part two&lt;/a&gt;, &lt;a href=&quot;/notes/terraform-graphs-3&quot;&gt;part three&lt;/a&gt;, &lt;a href=&quot;https://www.github.com/28mm/blast-radius&quot;&gt;code&lt;/a&gt;.)&lt;/p&gt;
 
 &lt;div id=&quot;demo1&quot;&gt;&lt;/div&gt;
 
@@ -158,7 +390,7 @@ svg_activate('div#demo6',
 
 &lt;p&gt;As a newcomer to Terraform (and to AWS), I sometimes find it difficult to reason about the many available resource types, and the dependencies that can exist between them. Especially when coming to terms with larger configurations.&lt;/p&gt;
 
-&lt;p&gt;To address this difficulty, I want a tool to help me explore dependency graphs, and resource definitions, interactively. This is the first in a series (&lt;a href=&quot;/notes/d3-terraform-graphs&quot;&gt;part one&lt;/a&gt;, &lt;a href=&quot;/notes/d3-terraform-graphs-2&quot;&gt;part two&lt;/a&gt;, &lt;a href=&quot;https://www.github.com/28mm/blast-radius&quot;&gt;code&lt;/a&gt;) of posts about building such a tool, using d3.js, starting with the simple example below&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, and building upon it.&lt;/p&gt;
+&lt;p&gt;To address this difficulty, I want a tool to help me explore dependency graphs, and resource definitions, interactively. This is the first in a series (&lt;a href=&quot;/notes/d3-terraform-graphs&quot;&gt;part one&lt;/a&gt;, &lt;a href=&quot;/notes/d3-terraform-graphs-2&quot;&gt;part two&lt;/a&gt;, &lt;a href=&quot;/notes/terraform-graphs-3&quot;&gt;part three&lt;/a&gt;, &lt;a href=&quot;https://www.github.com/28mm/blast-radius&quot;&gt;code&lt;/a&gt;) of posts about building such a tool, using d3.js, starting with the simple example below&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, and building upon it.&lt;/p&gt;
 
 &lt;script src=&quot;/assets/terraform-graphs/js/d3.v3.js&quot;&gt;&lt;/script&gt;
 
