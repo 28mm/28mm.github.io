@@ -31,20 +31,12 @@ Hello! I am currently **looking for a job**, either as a *systems administrator*
 
 ### Explorations
 
-Exploring Terraform Graphs with D3.js: [part 1](/notes/d3-terraform-graphs), [part 2](/notes/d3-terraform-graphs-2)
+IP Geolocation with ICMP: [part 1](/notes/echo-location). *Ping*, *traceroute*, the speed of light, and interactive maps.
 
-[A Quixotic Apartment Search](/notes/a-quixotic-apartment-search): web-scraping and gis methods inform my recent apartment search.
+Exploring *Terraform* Graphs with *D3.js*: [part 1](/notes/d3-terraform-graphs), [part 2](/notes/d3-terraform-graphs-2), [part 3](/notes/terraform-graphs-3). This project lead to *[Blast Radius](https://www.github.com/28mm/blast-radius)*. 
+
+[A Quixotic Apartment Search](/notes/a-quixotic-apartment-search): web-scraping and gis methods informed my recent apartment search.
 
 
 ----
-
-### Social
-
-e. <mailto:patrick.mcmurchie@gmail.com>
-
-g. <https://www.github.com/28mm>
-
-f. <https://facebook.com/patrick.mcmurchie>
-
-i. <https://instagram.com/patrick.mcmurchie>
 
