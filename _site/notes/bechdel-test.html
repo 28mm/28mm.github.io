@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+	<title>The Bechdel Test, FiveThirtyEight, Rotten Tomatoes · 28mm.github.io</title>
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:title" content="The Bechdel Test, FiveThirtyEight, Rotten Tomatoes" />
+<meta name="twitter:description" content="TL;DR">
+
+<meta name="description" content="TL;DR">
+
+
+
+<link rel="icon" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/touch-icon.png">
+<link rel="stylesheet" href="/assets/core.css">
+<link rel="canonical" href="/notes/bechdel-test">
+<link rel="alternate" type="application/atom+xml" title="28mm.github.io" href="/feed.xml" />
+
+
+
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+	</head>
+
+	<body>
+
+		<aside class="logo">
+
+	
+
+	<a href="/">
+		<img src="http://www.gravatar.com/avatar/f9ca90ff91459baa73f9be03289a7c80.png?s=80" class="gravatar">
+	</a>
+	<span class="logo-prompt">Back to Home</span>
+
+</aside>
+
+
+		<main>
+			<article>
+
+	<div class="center">
+		<h1>The Bechdel Test, FiveThirtyEight, Rotten Tomatoes</h1>
+		<time>December 25, 2017</time>
+	</div>
+
+	<div class="divider"></div>
+
+	<link rel="stylesheet" type="text/css" href="/assets/bechdel/style.css" />
+
+<h3 id="tldr">TL;DR</h3>
+
+<div id="bechdel-1"></div>
+
+<p>Each point in this figure represents one of the top 50 grossing films of 2016, positioned to reflect the number of positive reviews it recieved from top critics (x-axis), and negative reviews (y-axis), both according to <a href="https://www.rottentomatoes.com/">Rotten Tomatoes</a>.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+
+<p>Points are further colored to reflect whether the film passes the <a href="https://bechdeltest.com">Bechdel Test</a>.<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> Mouseover any point to see the film’s name, and additional details.</p>
+
+<h3 id="introduction">Introduction</h3>
+
+<p><a href="https://www.fivethirtyeight.com">FiveThirtyEight</a> recently published a <a href="https://projects.fivethirtyeight.com/next-bechdel/">revisitation of the Bechdel Test</a><sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>–a litmus for Womens’ representation in film–in which they invited contributors to re-imagine the test, using new criteria.</p>
+
+<p>The canonical Bechdel Test asks whether a film counts at least two named female characters in its cast, and whether they converse about subjects other than men. A rather low bar!</p>
+
+<p>FiveThirtyEight’s proposed variants consider the representation of other groups (e.g. Latinas), the role of female supporting cast, and the makeup of the film’s crew.</p>
+
+<p>How does a film’s performance on the Bechdel Test compare with its critical reception? FiveThirtyEight scored the top-50 grossing films of 2016, on each of its Bechdel Test variants. This post joins those data with critical scores collected from Rotten Tomatoes.</p>
+
+<h3 id="rotten-tomatoes-and-critical-opinion">Rotten Tomatoes and Critical Opinion</h3>
+
+<p>Do top critics–those who write for large audiences, according to Rotten Tomatoes–prefer films that pass the Bechdel Test? Do they not? This sample suggests little preference, either way.</p>
+
+<div id="bechdel-2"></div>
+
+<p>What if a more inclusive sample of critics is consulted? Again, little preference is shown.</p>
+
+<div id="bechdel-3"></div>
+
+<h3 id="critical-consensus">Critical Consensus</h3>
+
+<p>It’s also worth wondering how well the two groups of critics agree, in general, since the ability to choose between them is a prominant feature of Rotten Tomatoes.</p>
+
+<div id="bechdel-4"></div>
+
+<p>They agree fairly well, at least for these 50 commercially successful films.</p>
+
+<h3 id="variations-of-the-bechdel-test">Variations of the Bechdel Test</h3>
+
+<p>What about FiveThirtyEight’s proposed Bechdel Test variations? Select a variant from the menu below to update the graph. For descriptions of each test, see <a href="https://projects.fivethirtyeight.com/next-bechdel/">the article</a> on FiveThirtyEight.</p>
+
+<p><select onchange="testchange()" id="testselect">
+	<option value="bechdel">Bechdel</option>
+	<option value="peirce" selected="selected">Peirce</option>
+	<option value="landau">Landua</option>
+	<option value="feldman">Feldman</option>
+	<option value="villareal">Villareal</option>
+	<option value="hagen">Hagen</option>
+	<option value="ko">Ko</option>
+	<option value="villarobos">Villarobos</option>
+	<option value="waithe">Waithe</option>
+	<option value="koeze_dottle">Koeze-Dottle</option>
+	<option value="uphold">Uphold</option>
+	<option value="white">White</option>
+	&lt;option value=rees_davies&gt;Rees-Davies&lt;/option&gt;
+</select></p>
+
+<div id="bechdel-5"></div>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>The Bechdel Test, and its variations are a useful litmus to use when selecting a film. Combined with critical consensus, it offers a convenient means of avoiding the worst and most redundant films of the year.</p>
+
+<p>Nevertheless, It’s worth noting that the Bechdel Test alone is no guaruntee of quality.</p>
+
+<p><strong>Comment</strong> and <strong>Suggestion</strong> to <strong><a href="mailto:patrick.mcmurchie@gmail.com">patrick.mcmurchie@gmail.com</a></strong></p>
+
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<script src="https://d3js.org/d3-geo.v1.min.js"></script>
+
+<script src="/assets/echo-locate-1/d3-tip.js"></script>
+
+<!--<script src="/assets/bechdel/bechdel.js"></script>-->
+
+<script>
+var b1 = function(selector) {
+// set the dimensions and margins of the graph
+var margin = {top: 20, right: 20, bottom: 45, left: 55},
+    width = 500 - margin.left - margin.right,
+    height = 300 - margin.top - margin.bottom;
+
+// set the ranges
+var x = d3.scaleLinear().range([0, width]);
+var y = d3.scaleLinear().range([height, 0]);
+
+// append the svg obgect to the body of the page
+// appends a 'group' element to 'svg'
+// moves the 'group' element to the top left margin
+var svg = d3.select(selector).append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+// Get the data
+d3.csv("/assets/bechdel/bechdel.csv", function(error, data) {
+  if (error) throw error;
+
+  // format the data
+  data.forEach(function(d) {
+      d.top_up   = +d.top_up;
+      d.top_down = +d.top_down;
+      d.bechdel  = (+d.bechdel == 0) ? true : false;
+  });
+
+  // Scale the range of the data
+  x.domain(d3.extent(data, function(d) { return d.top_up; }));
+  y.domain(d3.extent(data, function(d) { return d.top_down; }));
+
+  var color = d3.scaleOrdinal(d3['schemeCategory10']);
+
+  // setup tooltips
+  var tip = d3.tip()
+      .attr('class', 'd3-tip')
+      .offset([-10, 0])
+      .html(function (d) {
+          return '<span class="t">' + d.movie + ': ' + d.top_critics + '%</span><br><span class="t">Bechdel Test: ' + ((d.bechdel) ? "passed" : "failed") + '</span>';
+      });
+  svg.call(tip);
+
+
+  
+  // Add the scatterplot
+  svg.selectAll("dot")
+      .data(data)
+    .enter().append("circle")
+      .attr("r", 6)
+      .attr("cx", function(d) { return x(d.top_up); })
+      .attr("cy", function(d) { return y(d.top_down); })
+      .attr("fill", function(d) { return color(d.bechdel); } )
+      .attr("opacity", 0.75)
+      .on('mouseover', tip.show)
+      .on('mouseout', tip.hide);
+
+  // Add the X Axis
+  svg.append("g")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+
+  // Add the Y Axis
+  svg.append("g")
+      .call(d3.axisLeft(y));
+
+  // text label for the x axis
+  svg.append("text")             
+      .attr("transform",
+            "translate(" + (width/2) + " ," + 
+                           (height + margin.top + 20) + ")")
+      .style("text-anchor", "middle")
+      .style("font-weight", "bold")
+      .text("Positive Reviews (Top Critics)");
+
+   });
+
+
+  // text label for the y axis
+  svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 - margin.left)
+      .attr("x",0 - (height / 2))
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .style("font-weight", "bold")
+      .text("Negative Reviews");      
+};
+
+
+b1("#bechdel-1");
+b1("#bechdel-2")
+
+var b2 = function(selector) {
+// set the dimensions and margins of the graph
+var margin = {top: 20, right: 20, bottom: 45, left: 55},
+    width = 500 - margin.left - margin.right,
+    height = 300 - margin.top - margin.bottom;
+
+// set the ranges
+var x = d3.scaleLinear().range([0, width]);
+var y = d3.scaleLinear().range([height, 0]);
+
+// append the svg obgect to the body of the page
+// appends a 'group' element to 'svg'
+// moves the 'group' element to the top left margin
+var svg = d3.select(selector).append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+// Get the data
+d3.csv("/assets/bechdel/bechdel.csv", function(error, data) {
+  if (error) throw error;
+
+  // format the data
+  data.forEach(function(d) {
+      d.all_up   = +d.all_up -d.top_up;
+      d.all_down = +d.all_down -d.top_down;
+      d.bechdel  = (+d.bechdel == 0) ? true : false;
+  });
+
+  // Scale the range of the data
+  x.domain(d3.extent(data, function(d) { return d.all_up; }));
+  y.domain(d3.extent(data, function(d) { return d.all_down; }));
+
+  var color = d3.scaleOrdinal(d3['schemeCategory10']);
+
+
+  // setup tooltips
+  var tip = d3.tip()
+      .attr('class', 'd3-tip')
+      .offset([-10, 0])
+      .html(function (d) {
+          return '<span class="t">' + d.movie + ': ' + d.all_critics + '%</span><br><span class="t">Bechdel Test: ' + ((d.bechdel) ? "passed" : "failed") + '</span>';
+      });
+  svg.call(tip);
+
+  // Add the scatterplot
+  svg.selectAll("dot")
+      .data(data)
+    .enter().append("circle")
+      .attr("r", 6)
+      .attr("cx", function(d) { return x(d.all_up); })
+      .attr("cy", function(d) { return y(d.all_down); })
+      .attr("fill", function(d) { return color(d.bechdel); } )
+      .attr("opacity", 0.75)
+      .on('mouseover', tip.show)
+      .on('mouseout', tip.hide);
+
+  // Add the X Axis
+  svg.append("g")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+
+  // Add the Y Axis
+  svg.append("g")
+      .call(d3.axisLeft(y));
+
+  // text label for the x axis
+  svg.append("text")             
+      .attr("transform",
+            "translate(" + (width/2) + " ," + 
+                           (height + margin.top + 20) + ")")
+      .style("text-anchor", "middle")
+      .style("font-weight", "bold")
+      .text("Positive Reviews (All Critics)");
+
+   });
+
+
+  // text label for the y axis
+  svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 - margin.left)
+      .attr("x",0 - (height / 2))
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .style("font-weight", "bold")
+      .text("Negative Reviews");      
+};
+
+
+b2("#bechdel-3");
+
+
+
+var b3 = function(selector) {
+// set the dimensions and margins of the graph
+var margin = {top: 20, right: 20, bottom: 45, left: 55},
+    width = 500 - margin.left - margin.right,
+    height = 300 - margin.top - margin.bottom;
+
+// set the ranges
+var x = d3.scaleLinear().range([0, width]);
+var y = d3.scaleLinear().range([height, 0]);
+
+// append the svg obgect to the body of the page
+// appends a 'group' element to 'svg'
+// moves the 'group' element to the top left margin
+var svg = d3.select(selector).append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+// Get the data
+d3.csv("/assets/bechdel/bechdel.csv", function(error, data) {
+  if (error) throw error;
+
+  // format the data
+  data.forEach(function(d) {
+      d.top_critics   = +d.top_critics;
+      d.all_critics = +d.all_critics;
+      d.bechdel  = (+d.bechdel == 0) ? true : false;
+  });
+
+  // Scale the range of the data
+  x.domain([0, 100]);
+  y.domain([0, 100]);
+
+  var color = d3.scaleOrdinal(d3['schemeCategory10']);
+
+
+  // setup tooltips
+  var tip = d3.tip()
+      .attr('class', 'd3-tip')
+      .offset([-10, 0])
+      .html(function (d) {
+          return '<span class="t">' + d.movie + ': ' + d.all_critics + '%</span><br><span class="t">Bechdel Test: ' + ((d.bechdel) ? "passed" : "failed") + '</span>';
+      });
+  svg.call(tip);
+
+  // Add the scatterplot
+  svg.selectAll("dot")
+      .data(data)
+    .enter().append("circle")
+      .attr("r", 6)
+      .attr("cx", function(d) { return x(d.top_critics); })
+      .attr("cy", function(d) { return y(d.all_critics); })
+      .attr("fill", function(d) { return color(d.bechdel); } )
+      .attr("opacity", 0.75)
+      .on('mouseover', tip.show)
+      .on('mouseout', tip.hide);
+
+  // Add the X Axis
+  svg.append("g")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+
+  // Add the Y Axis
+  svg.append("g")
+      .call(d3.axisLeft(y));
+
+  // text label for the x axis
+  svg.append("text")             
+      .attr("transform",
+            "translate(" + (width/2) + " ," + 
+                           (height + margin.top + 20) + ")")
+      .style("text-anchor", "middle")
+      .style("font-weight", "bold")
+      .text("Top Critics (% Positive)");
+
+   });
+
+  // text label for the y axis
+  svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 - margin.left)
+      .attr("x",0 - (height / 2))
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .style("font-weight", "bold")
+      .text("All Critics (% Positive)");      
+};
+
+
+b3("#bechdel-4");
+
+//
+//
+
+
+
+var b5 = function(selector) {
+// set the dimensions and margins of the graph
+var margin = {top: 20, right: 20, bottom: 45, left: 55},
+    width = 500 - margin.left - margin.right,
+    height = 300 - margin.top - margin.bottom;
+
+// set the ranges
+var x = d3.scaleLinear().range([0, width]);
+var y = d3.scaleLinear().range([height, 0]);
+
+// append the svg obgect to the body of the page
+// appends a 'group' element to 'svg'
+// moves the 'group' element to the top left margin
+var svg = d3.select(selector).append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+// Get the data
+d3.csv("/assets/bechdel/bechdel.csv", function(error, data) {
+  if (error) throw error;
+
+  // format the data
+  data.forEach(function(d) {
+      d.top_critics   = +d.top_critics;
+      d.all_critics = +d.all_critics;
+      d.bechdel  = (+d.bechdel == 0) ? true : false;
+      d.peirce  = (+d.peirce == 0) ? true : false;
+      d.landau  = (+d.landau == 0) ? true : false;
+      d.feldman  = (+d.feldman == 0) ? true : false;
+      d.villareal  = (+d.villareal == 0) ? true : false;
+      d.hagen  = (+d.hagen == 0) ? true : false;
+      d.ko  = (+d.ko == 0) ? true : false;
+      d.villarobos  = (+d.villarobos == 0) ? true : false;
+      d.waithe  = (+d.waithe == 0) ? true : false;
+      d.koeze_dottle  = (+d.koeze_dottle == 0) ? true : false;
+      d.uphold  = (+d.uphold == 0) ? true : false;
+      d.white  = (+d.white == 0) ? true : false;
+      d.rees_davies  = (+d['rees-davis'] == 0) ? true : false;
+  });
+
+  // Scale the range of the data
+  x.domain([0, 100]);
+  y.domain([0, 100]);
+
+  var color = d3.scaleOrdinal(d3['schemeCategory10']);
+
+
+  testchange = function() {
+    var e = document.getElementById("testselect");
+    var test = e.options[e.selectedIndex].value;
+    console.log(e.options[e.selectedIndex].text);
+
+    svg.selectAll("circle").data([]).exit().remove();
+
+
+  // setup tooltips
+  var tip = d3.tip()
+      .attr('class', 'd3-tip')
+      .offset([-10, 0])
+      .html(function (d) {
+          return '<span class="t">' + d.movie + ': ' + d.all_critics + '%</span><br><span class="t">' + test + ' test: ' + ((d[test]) ? "passed" : "failed") + '</span>';
+      });
+  svg.call(tip);
+
+    svg.selectAll("dot")
+      .data(data)
+      .enter()
+      .append("circle")
+      .attr("r", 6)
+      .attr("cx", function(d) { return x(d.top_critics); })
+      .attr("cy", function(d) { return y(d.all_critics); })
+      .attr("fill", function(d) { return color(d[test]); } )
+      .attr("opacity", 0.75)
+      .on('mouseover', tip.show)
+      .on('mouseout', tip.hide);
+      
+
+}
+
+      testchange();
+
+  // Add the X Axis
+  svg.append("g")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+
+  // Add the Y Axis
+  svg.append("g")
+      .call(d3.axisLeft(y));
+
+  // text label for the x axis
+  svg.append("text")             
+      .attr("transform",
+            "translate(" + (width/2) + " ," + 
+                           (height + margin.top + 20) + ")")
+      .style("text-anchor", "middle")
+      .style("font-weight", "bold")
+      .text("Top Critics (% Positive)");
+
+   });
+
+  // text label for the y axis
+  svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 - margin.left)
+      .attr("x",0 - (height / 2))
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .style("font-weight", "bold")
+      .text("All Critics (% Positive)");
+
+};
+
+
+b5("#bechdel-5");
+
+
+
+
+</script>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p><a href="https://www.rottentomatoes.com/">https://www.rottentomatoes.com/</a>&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;&#xfe0e;</a></p>
+    </li>
+    <li id="fn:2">
+      <p><a href="http://bechdeltest.com/">http://bechdeltest.com/</a>&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;&#xfe0e;</a></p>
+    </li>
+    <li id="fn:3">
+      <p><a href="https://projects.fivethirtyeight.com/next-bechdel/">https://projects.fivethirtyeight.com/next-bechdel/</a>&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;&#xfe0e;</a></p>
+    </li>
+  </ol>
+</div>
+
+
+</article>
+<!--
+<div class="page-navigation">
+	
+		<a class="home" href="/" title="Back to Homepage">Home</a>
+  
+		<span> &middot; </span>
+    <a class="prev" href="/notes/echo-location" title="PREV: IP Geolocation with ICMP Part 1">&gt;&gt;</a>
+  
+-->
+</div>
+
+		</main>
+
+		<div class="footer">
+<!-- begin social -->
+<div class="container">
+	<div class="row">
+		<div class="span10 offset1">
+			<div class="social-icons">
+				<ul>
+					<li><a href="https://facebook.com/patrick.mcmurchie"><i class="fa fa-facebook-official"></i></a></li>
+					<li><a href="https://www.instagram.com/patrick.mcmurchie/"><i class="fa fa-instagram"></i></a></li>
+					<li><a href="https://www.github.com/28mm"><i class="fa fa-github"></i></a></li>
+<li><a href="mailto:patrick.mcmurchie@gmail.com"><i class="fa fa-envelope"></i></a></li>				
+
+</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end social -->
+  <span class="block ftr">&copy; 2018 <a href="/about">Patrick McMurchie</a></span>
+</div>
+
+
+	</body>
+
+</html>
