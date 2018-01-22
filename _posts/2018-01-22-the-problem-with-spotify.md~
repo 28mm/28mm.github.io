@@ -1,104 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-
-	<head>
-		<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-
-	<title>The Bechdel Test, FiveThirtyEight, Rotten Tomatoes · 28mm.github.io</title>
-
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@" />
-<meta name="twitter:title" content="The Bechdel Test, FiveThirtyEight, Rotten Tomatoes" />
-<meta name="twitter:description" content="TL;DR">
-
-<meta name="description" content="TL;DR">
-
-
-
-<link rel="icon" href="/assets/favicon.png">
-<link rel="apple-touch-icon" href="/assets/touch-icon.png">
-<link rel="stylesheet" href="/assets/core.css">
-<link rel="canonical" href="/notes/bechdel-test">
-<link rel="alternate" type="application/atom+xml" title="28mm.github.io" href="/feed.xml" />
-
-
-
-
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-
-	</head>
-
-	<body>
-
-		<aside class="logo">
-
-	
-
-	<a href="/">
-		<img src="http://www.gravatar.com/avatar/f9ca90ff91459baa73f9be03289a7c80.png?s=80" class="gravatar">
-	</a>
-	<span class="logo-prompt">Back to Home</span>
-
-</aside>
-
-
-		<main>
-			<article>
-
-	<div class="center">
-		<h1>The Bechdel Test, FiveThirtyEight, Rotten Tomatoes</h1>
-		<time>December 25, 2017</time>
-	</div>
-
-	<div class="divider"></div>
-
-	<link rel="stylesheet" type="text/css" href="/assets/bechdel/style.css" />
-
-<h3 id="tldr">TL;DR</h3>
+---
+layout: post
+title:  "The Bechdel Test, FiveThirtyEight, Rotten Tomatoes"
+date:   2017-12-26 00:00:01 -0700
+categories: latency ping icmp ttl rtt aws cloud server d3.js map 
+---
+<link rel="stylesheet" type="text/css" href="/assets/bechdel/style.css">
+### TL;DR
 
 <div id="bechdel-1"></div>
 
-<p>Each point in this figure represents one of the top 50 grossing films of 2016, positioned to reflect the number of positive reviews it recieved from top critics (x-axis), and negative reviews (y-axis), both according to <a href="https://www.rottentomatoes.com/">Rotten Tomatoes</a>.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+Each point in this figure represents one of the top 50 grossing films of 2016, positioned to reflect the number of positive reviews it recieved from top critics (x-axis), and negative reviews (y-axis), both according to [Rotten Tomatoes](https://www.rottentomatoes.com/).[^1] 
 
-<p>Points are further colored to reflect whether the film passes the <a href="https://bechdeltest.com">Bechdel Test</a>.<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> Mouseover any point to see the film’s name, and additional details.</p>
+Points are further colored to reflect whether the film passes the [Bechdel Test](https://bechdeltest.com).[^2] Mouseover any point to see the film's name, and additional details.
 
-<h3 id="introduction">Introduction</h3>
+### Introduction
 
-<p><a href="https://www.fivethirtyeight.com">FiveThirtyEight</a> recently published a <a href="https://projects.fivethirtyeight.com/next-bechdel/">revisitation of the Bechdel Test</a><sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>–a litmus for Womens’ representation in film–in which they invited contributors to re-imagine the test, using new criteria.</p>
+[FiveThirtyEight](https://www.fivethirtyeight.com) recently published a [revisitation of the Bechdel Test](https://projects.fivethirtyeight.com/next-bechdel/)[^3]--a litmus for Womens' representation in film--in which they invited contributors to re-imagine the test, using new criteria.
 
-<p>The canonical Bechdel Test asks whether a film counts at least two named female characters in its cast, and whether they converse about subjects other than men. A rather low bar!</p>
+The canonical Bechdel Test asks whether a film counts at least two named female characters in its cast, and whether they converse about subjects other than men. A rather low bar!
 
-<p>FiveThirtyEight’s proposed variants consider the representation of other groups (e.g. Latinas), the role of female supporting cast, and the makeup of the film’s crew.</p>
+FiveThirtyEight's proposed variants consider the representation of other groups (e.g. Latinas), the role of female supporting cast, and the makeup of the film's crew.
 
-<p>How does a film’s performance on the Bechdel Test compare with its critical reception? FiveThirtyEight scored the top-50 grossing films of 2016, on each of its Bechdel Test variants. This post joins those data with critical scores collected from Rotten Tomatoes.</p>
+How does a film's performance on the Bechdel Test compare with its critical reception? FiveThirtyEight scored the top-50 grossing films of 2016, on each of its Bechdel Test variants. This post joins those data with critical scores collected from Rotten Tomatoes.
 
-<h3 id="rotten-tomatoes-and-critical-opinion">Rotten Tomatoes and Critical Opinion</h3>
+### Rotten Tomatoes and Critical Opinion
 
-<p>Do top critics–those who write for large audiences, according to Rotten Tomatoes–prefer films that pass the Bechdel Test? Do they not? This sample suggests little preference, either way.</p>
+Do top critics--those who write for large audiences, according to Rotten Tomatoes--prefer films that pass the Bechdel Test? Do they not? This sample suggests little preference, either way.
 
 <div id="bechdel-2"></div>
 
-<p>What if a more inclusive sample of critics is consulted? Again, little preference is shown.</p>
+What if a more inclusive sample of critics is consulted? Again, little preference is shown.
 
 <div id="bechdel-3"></div>
 
-<h3 id="critical-consensus">Critical Consensus</h3>
+### Critical Consensus
 
-<p>It’s also worth wondering how well the two groups of critics agree, in general, since the ability to choose between them is a prominant feature of Rotten Tomatoes.</p>
+It's also worth wondering how well the two groups of critics agree, in general, since the ability to choose between them is a prominant feature of Rotten Tomatoes.
 
 <div id="bechdel-4"></div>
 
-<p>They agree fairly well, at least for these 50 commercially successful films.</p>
+They agree fairly well, at least for these 50 commercially successful films.
 
-<h3 id="variations-of-the-bechdel-test">Variations of the Bechdel Test</h3>
+### Variations of the Bechdel Test
 
-<p>What about FiveThirtyEight’s proposed Bechdel Test variations? Select a variant from the menu below to update the graph. For descriptions of each test, see <a href="https://projects.fivethirtyeight.com/next-bechdel/">the article</a> on FiveThirtyEight.</p>
+What about FiveThirtyEight's proposed Bechdel Test variations? Select a variant from the menu below to update the graph. For descriptions of each test, see [the article](https://projects.fivethirtyeight.com/next-bechdel/) on FiveThirtyEight.
 
-<p><select onchange="testchange()" id="testselect">
+<select onchange="testchange()" id="testselect">
 	<option value="bechdel">Bechdel</option>
 	<option value="peirce" selected="selected">Peirce</option>
 	<option value="landau">Landua</option>
@@ -111,25 +58,26 @@
 	<option value="koeze_dottle">Koeze-Dottle</option>
 	<option value="uphold">Uphold</option>
 	<option value="white">White</option>
-	&lt;option value=rees_davies&gt;Rees-Davies&lt;/option&gt;
-</select></p>
+	<option value=rees_davies>Rees-Davies</option>
+</select>
 
 <div id="bechdel-5"></div>
 
-<h3 id="conclusion">Conclusion</h3>
+### Conclusion
 
-<p>The Bechdel Test, and its variations are a useful litmus to use when selecting a film. Combined with critical consensus, it offers a convenient means of avoiding the worst and most redundant films of the year.</p>
+The Bechdel Test, and its variations are a useful litmus to use when selecting a film. Combined with critical consensus, it offers a convenient means of avoiding the worst and most redundant films of the year.
 
-<p>Nevertheless, It’s worth noting that the Bechdel Test alone is no guaruntee of quality.</p>
+Nevertheless, It's worth noting that the Bechdel Test alone is no guaruntee of quality.
 
-<p><strong>Comment</strong> and <strong>Suggestion</strong> to <strong><a href="mailto:patrick.mcmurchie@gmail.com">patrick.mcmurchie@gmail.com</a></strong></p>
+**Comment** and **Suggestion** to **<mailto:patrick.mcmurchie@gmail.com>**
+
+[^1]: [https://www.rottentomatoes.com/](https://www.rottentomatoes.com/)
+[^2]: [http://bechdeltest.com/](http://bechdeltest.com/)
+[^3]: [https://projects.fivethirtyeight.com/next-bechdel/](https://projects.fivethirtyeight.com/next-bechdel/)
 
 <script src="https://d3js.org/d3.v4.js"></script>
-
 <script src="https://d3js.org/d3-geo.v1.min.js"></script>
-
 <script src="/assets/echo-locate-1/d3-tip.js"></script>
-
 <!--<script src="/assets/bechdel/bechdel.js"></script>-->
 
 <script>
@@ -547,60 +495,3 @@ b5("#bechdel-5");
 
 </script>
 
-<div class="footnotes">
-  <ol>
-    <li id="fn:1">
-      <p><a href="https://www.rottentomatoes.com/">https://www.rottentomatoes.com/</a>&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;&#xfe0e;</a></p>
-    </li>
-    <li id="fn:2">
-      <p><a href="http://bechdeltest.com/">http://bechdeltest.com/</a>&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;&#xfe0e;</a></p>
-    </li>
-    <li id="fn:3">
-      <p><a href="https://projects.fivethirtyeight.com/next-bechdel/">https://projects.fivethirtyeight.com/next-bechdel/</a>&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;&#xfe0e;</a></p>
-    </li>
-  </ol>
-</div>
-
-
-</article>
-<!--
-<div class="page-navigation">
-	
-    <a class="next" href="/notes/the-problem-with-spotify" title="NEXT: Finding New Music: Two Experiments">&lt;&lt;</a>
-		<span> &middot; </span>
-  
-		<a class="home" href="/" title="Back to Homepage">Home</a>
-  
-		<span> &middot; </span>
-    <a class="prev" href="/notes/echo-location" title="PREV: IP Geolocation with ICMP Part 1">&gt;&gt;</a>
-  
--->
-</div>
-
-		</main>
-
-		<div class="footer">
-<!-- begin social -->
-<div class="container">
-	<div class="row">
-		<div class="span10 offset1">
-			<div class="social-icons">
-				<ul>
-					<li><a href="https://facebook.com/patrick.mcmurchie"><i class="fa fa-facebook-official"></i></a></li>
-					<li><a href="https://www.instagram.com/patrick.mcmurchie/"><i class="fa fa-instagram"></i></a></li>
-					<li><a href="https://www.github.com/28mm"><i class="fa fa-github"></i></a></li>
-<li><a href="mailto:patrick.mcmurchie@gmail.com"><i class="fa fa-envelope"></i></a></li>				
-
-</ul>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- end social -->
-  <span class="block ftr">&copy; 2018 <a href="/about">Patrick McMurchie</a></span>
-</div>
-
-
-	</body>
-
-</html>
