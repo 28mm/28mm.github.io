@@ -3,7 +3,7 @@ layout: page
 title: Patrick McMurchie
 ---
 
-Hello! I am currently **looking for a job**, either as a *systems administrator*, or *systems engineer*, in Seattle or the Bay Area.
+<a href="mailto:patrick.mcmurchie@gmail.com">Patrick McMurchie</a> is a Seattle-resident systems administrator and quite a strong typist. Offers of beer and/or employment met with equal favor. Strongly interested in IaC, and open to re-location.
 
 ----
 

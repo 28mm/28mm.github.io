@@ -1,0 +1,4902 @@
+{
+    "edges": [
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_0",
+            "target": "[root] module.ap-northeast-2.aws_network_acl.acl"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_1",
+            "target": "[root] module.ap-northeast-2.aws_route_table_association.public_routes"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_2",
+            "target": "[root] module.ap-northeast-2.aws_security_group_rule.egress"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_3",
+            "target": "[root] module.ap-northeast-2.aws_security_group_rule.ssh-ingress"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_4",
+            "target": "[root] module.ap-southeast-1.aws_network_acl.acl"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_5",
+            "target": "[root] module.ap-southeast-1.aws_route_table_association.public_routes"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_6",
+            "target": "[root] module.ap-southeast-1.aws_security_group_rule.egress"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_7",
+            "target": "[root] module.ap-southeast-1.aws_security_group_rule.ssh-ingress"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_8",
+            "target": "[root] module.ca-central-1.aws_network_acl.acl"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_9",
+            "target": "[root] module.ca-central-1.aws_route_table_association.public_routes"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_10",
+            "target": "[root] module.ca-central-1.aws_security_group_rule.egress"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_11",
+            "target": "[root] module.ca-central-1.aws_security_group_rule.ssh-ingress"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_12",
+            "target": "[root] module.us-east-1.aws_network_acl.acl"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_13",
+            "target": "[root] module.us-east-1.aws_route_table_association.public_routes"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_14",
+            "target": "[root] module.us-east-1.aws_security_group_rule.egress"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_15",
+            "target": "[root] module.us-east-1.aws_security_group_rule.ssh-ingress"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_16",
+            "target": "[root] module.us-east-2.aws_network_acl.acl"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_17",
+            "target": "[root] module.us-east-2.aws_route_table_association.public_routes"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_18",
+            "target": "[root] module.us-east-2.aws_security_group_rule.egress"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_19",
+            "target": "[root] module.us-east-2.aws_security_group_rule.ssh-ingress"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_20",
+            "target": "[root] module.us-west-1.aws_network_acl.acl"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_21",
+            "target": "[root] module.us-west-1.aws_route_table_association.public_routes"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_22",
+            "target": "[root] module.us-west-1.aws_security_group_rule.egress"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_23",
+            "target": "[root] module.us-west-1.aws_security_group_rule.ssh-ingress"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_24",
+            "target": "[root] module.us-west-2.aws_network_acl.acl"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_25",
+            "target": "[root] module.us-west-2.aws_route_table_association.public_routes"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_26",
+            "target": "[root] module.us-west-2.aws_security_group_rule.egress"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_27",
+            "target": "[root] module.us-west-2.aws_security_group_rule.ssh-ingress"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_28",
+            "target": "[root] output.ap-northeast-2"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_29",
+            "target": "[root] output.ap-southeast-1-wip"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_30",
+            "target": "[root] output.ca-central-1-wip"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_31",
+            "target": "[root] output.us-east-1-wip"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_32",
+            "target": "[root] output.us-east-2-wip"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_33",
+            "target": "[root] output.us-west-1-wip"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] meta.count-boundary (count boundary fixup)",
+            "svg_id": "edge_34",
+            "target": "[root] output.us-west-2-wip"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-northeast-2.aws_eip.wip",
+            "svg_id": "edge_35",
+            "target": "[root] module.ap-northeast-2.aws_instance.worker"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-northeast-2.aws_instance.worker",
+            "svg_id": "edge_36",
+            "target": "[root] module.ap-northeast-2.aws_key_pair.auth"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-northeast-2.aws_instance.worker",
+            "svg_id": "edge_37",
+            "target": "[root] module.ap-northeast-2.aws_security_group.sg"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-northeast-2.aws_instance.worker",
+            "svg_id": "edge_38",
+            "target": "[root] module.ap-northeast-2.aws_subnet.main"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-northeast-2.aws_instance.worker",
+            "svg_id": "edge_39",
+            "target": "[root] module.ap-northeast-2.var.images"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-northeast-2.aws_internet_gateway.gw",
+            "svg_id": "edge_40",
+            "target": "[root] module.ap-northeast-2.aws_vpc.vpc"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-northeast-2.aws_key_pair.auth",
+            "svg_id": "edge_41",
+            "target": "[root] module.ap-northeast-2.provider.aws"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-northeast-2.aws_key_pair.auth",
+            "svg_id": "edge_42",
+            "target": "[root] module.ap-northeast-2.var.key_name"
+        },
+        {
+            "edge_type": 2,
+            "source": "[root] module.ap-northeast-2.aws_key_pair.auth",
+            "svg_id": "edge_43",
+            "target": "[root] module.ap-northeast-2.var.public_key_path"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-northeast-2.aws_network_acl.acl",
+            "svg_id": "edge_44",
+            "target": "[root] module.ap-northeast-2.aws_vpc.vpc"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-northeast-2.aws_route_table.public",
+            "svg_id": "edge_45",
+            "target": "[root] module.ap-northeast-2.aws_internet_gateway.gw"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-northeast-2.aws_route_table_association.public_routes",
+            "svg_id": "edge_46",
+            "target": "[root] module.ap-northeast-2.aws_route_table.public"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-northeast-2.aws_route_table_association.public_routes",
+            "svg_id": "edge_47",
+            "target": "[root] module.ap-northeast-2.aws_subnet.main"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-northeast-2.aws_security_group.sg",
+            "svg_id": "edge_48",
+            "target": "[root] module.ap-northeast-2.aws_vpc.vpc"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-northeast-2.aws_security_group_rule.egress",
+            "svg_id": "edge_49",
+            "target": "[root] module.ap-northeast-2.aws_security_group.sg"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-northeast-2.aws_security_group_rule.ssh-ingress",
+            "svg_id": "edge_50",
+            "target": "[root] module.ap-northeast-2.aws_security_group.sg"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-northeast-2.aws_subnet.main",
+            "svg_id": "edge_51",
+            "target": "[root] module.ap-northeast-2.aws_vpc.vpc"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-northeast-2.aws_subnet.main",
+            "svg_id": "edge_52",
+            "target": "[root] module.ap-northeast-2.var.subnet_cidr"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-northeast-2.aws_vpc.vpc",
+            "svg_id": "edge_53",
+            "target": "[root] module.ap-northeast-2.provider.aws"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-northeast-2.aws_vpc.vpc",
+            "svg_id": "edge_54",
+            "target": "[root] module.ap-northeast-2.var.vpc_cidr"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-northeast-2.output.wip",
+            "svg_id": "edge_55",
+            "target": "[root] module.ap-northeast-2.aws_eip.wip"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-northeast-2.provider.aws (close)",
+            "svg_id": "edge_56",
+            "target": "[root] module.ap-northeast-2.aws_eip.wip"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-northeast-2.provider.aws (close)",
+            "svg_id": "edge_57",
+            "target": "[root] module.ap-northeast-2.aws_network_acl.acl"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-northeast-2.provider.aws (close)",
+            "svg_id": "edge_58",
+            "target": "[root] module.ap-northeast-2.aws_route_table_association.public_routes"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-northeast-2.provider.aws (close)",
+            "svg_id": "edge_59",
+            "target": "[root] module.ap-northeast-2.aws_security_group_rule.egress"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-northeast-2.provider.aws (close)",
+            "svg_id": "edge_60",
+            "target": "[root] module.ap-northeast-2.aws_security_group_rule.ssh-ingress"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-northeast-2.provider.aws",
+            "svg_id": "edge_61",
+            "target": "[root] module.ap-northeast-2.var.aws_access_key"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-northeast-2.provider.aws",
+            "svg_id": "edge_62",
+            "target": "[root] module.ap-northeast-2.var.aws_region"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-northeast-2.provider.aws",
+            "svg_id": "edge_63",
+            "target": "[root] module.ap-northeast-2.var.aws_secret_key"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-northeast-2.var.aws_access_key",
+            "svg_id": "edge_64",
+            "target": "[root] var.aws_access_key"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-northeast-2.var.aws_secret_key",
+            "svg_id": "edge_65",
+            "target": "[root] var.aws_secret_key"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-southeast-1.aws_eip.wip",
+            "svg_id": "edge_66",
+            "target": "[root] module.ap-southeast-1.aws_instance.worker"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-southeast-1.aws_instance.worker",
+            "svg_id": "edge_67",
+            "target": "[root] module.ap-southeast-1.aws_key_pair.auth"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-southeast-1.aws_instance.worker",
+            "svg_id": "edge_68",
+            "target": "[root] module.ap-southeast-1.aws_security_group.sg"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-southeast-1.aws_instance.worker",
+            "svg_id": "edge_69",
+            "target": "[root] module.ap-southeast-1.aws_subnet.main"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-southeast-1.aws_instance.worker",
+            "svg_id": "edge_70",
+            "target": "[root] module.ap-southeast-1.var.images"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-southeast-1.aws_internet_gateway.gw",
+            "svg_id": "edge_71",
+            "target": "[root] module.ap-southeast-1.aws_vpc.vpc"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-southeast-1.aws_key_pair.auth",
+            "svg_id": "edge_72",
+            "target": "[root] module.ap-southeast-1.provider.aws"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-southeast-1.aws_key_pair.auth",
+            "svg_id": "edge_73",
+            "target": "[root] module.ap-southeast-1.var.key_name"
+        },
+        {
+            "edge_type": 2,
+            "source": "[root] module.ap-southeast-1.aws_key_pair.auth",
+            "svg_id": "edge_74",
+            "target": "[root] module.ap-southeast-1.var.public_key_path"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-southeast-1.aws_network_acl.acl",
+            "svg_id": "edge_75",
+            "target": "[root] module.ap-southeast-1.aws_vpc.vpc"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-southeast-1.aws_route_table.public",
+            "svg_id": "edge_76",
+            "target": "[root] module.ap-southeast-1.aws_internet_gateway.gw"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-southeast-1.aws_route_table_association.public_routes",
+            "svg_id": "edge_77",
+            "target": "[root] module.ap-southeast-1.aws_route_table.public"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-southeast-1.aws_route_table_association.public_routes",
+            "svg_id": "edge_78",
+            "target": "[root] module.ap-southeast-1.aws_subnet.main"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-southeast-1.aws_security_group.sg",
+            "svg_id": "edge_79",
+            "target": "[root] module.ap-southeast-1.aws_vpc.vpc"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-southeast-1.aws_security_group_rule.egress",
+            "svg_id": "edge_80",
+            "target": "[root] module.ap-southeast-1.aws_security_group.sg"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-southeast-1.aws_security_group_rule.ssh-ingress",
+            "svg_id": "edge_81",
+            "target": "[root] module.ap-southeast-1.aws_security_group.sg"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-southeast-1.aws_subnet.main",
+            "svg_id": "edge_82",
+            "target": "[root] module.ap-southeast-1.aws_vpc.vpc"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-southeast-1.aws_subnet.main",
+            "svg_id": "edge_83",
+            "target": "[root] module.ap-southeast-1.var.subnet_cidr"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-southeast-1.aws_vpc.vpc",
+            "svg_id": "edge_84",
+            "target": "[root] module.ap-southeast-1.provider.aws"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-southeast-1.aws_vpc.vpc",
+            "svg_id": "edge_85",
+            "target": "[root] module.ap-southeast-1.var.vpc_cidr"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-southeast-1.output.wip",
+            "svg_id": "edge_86",
+            "target": "[root] module.ap-southeast-1.aws_eip.wip"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-southeast-1.provider.aws (close)",
+            "svg_id": "edge_87",
+            "target": "[root] module.ap-southeast-1.aws_eip.wip"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-southeast-1.provider.aws (close)",
+            "svg_id": "edge_88",
+            "target": "[root] module.ap-southeast-1.aws_network_acl.acl"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-southeast-1.provider.aws (close)",
+            "svg_id": "edge_89",
+            "target": "[root] module.ap-southeast-1.aws_route_table_association.public_routes"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-southeast-1.provider.aws (close)",
+            "svg_id": "edge_90",
+            "target": "[root] module.ap-southeast-1.aws_security_group_rule.egress"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-southeast-1.provider.aws (close)",
+            "svg_id": "edge_91",
+            "target": "[root] module.ap-southeast-1.aws_security_group_rule.ssh-ingress"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-southeast-1.provider.aws",
+            "svg_id": "edge_92",
+            "target": "[root] module.ap-southeast-1.var.aws_access_key"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-southeast-1.provider.aws",
+            "svg_id": "edge_93",
+            "target": "[root] module.ap-southeast-1.var.aws_region"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-southeast-1.provider.aws",
+            "svg_id": "edge_94",
+            "target": "[root] module.ap-southeast-1.var.aws_secret_key"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-southeast-1.var.aws_access_key",
+            "svg_id": "edge_95",
+            "target": "[root] var.aws_access_key"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ap-southeast-1.var.aws_secret_key",
+            "svg_id": "edge_96",
+            "target": "[root] var.aws_secret_key"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ca-central-1.aws_eip.wip",
+            "svg_id": "edge_97",
+            "target": "[root] module.ca-central-1.aws_instance.worker"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ca-central-1.aws_instance.worker",
+            "svg_id": "edge_98",
+            "target": "[root] module.ca-central-1.aws_key_pair.auth"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ca-central-1.aws_instance.worker",
+            "svg_id": "edge_99",
+            "target": "[root] module.ca-central-1.aws_security_group.sg"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ca-central-1.aws_instance.worker",
+            "svg_id": "edge_100",
+            "target": "[root] module.ca-central-1.aws_subnet.main"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ca-central-1.aws_instance.worker",
+            "svg_id": "edge_101",
+            "target": "[root] module.ca-central-1.var.images"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ca-central-1.aws_internet_gateway.gw",
+            "svg_id": "edge_102",
+            "target": "[root] module.ca-central-1.aws_vpc.vpc"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ca-central-1.aws_key_pair.auth",
+            "svg_id": "edge_103",
+            "target": "[root] module.ca-central-1.provider.aws"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ca-central-1.aws_key_pair.auth",
+            "svg_id": "edge_104",
+            "target": "[root] module.ca-central-1.var.key_name"
+        },
+        {
+            "edge_type": 2,
+            "source": "[root] module.ca-central-1.aws_key_pair.auth",
+            "svg_id": "edge_105",
+            "target": "[root] module.ca-central-1.var.public_key_path"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ca-central-1.aws_network_acl.acl",
+            "svg_id": "edge_106",
+            "target": "[root] module.ca-central-1.aws_vpc.vpc"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ca-central-1.aws_route_table.public",
+            "svg_id": "edge_107",
+            "target": "[root] module.ca-central-1.aws_internet_gateway.gw"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ca-central-1.aws_route_table_association.public_routes",
+            "svg_id": "edge_108",
+            "target": "[root] module.ca-central-1.aws_route_table.public"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ca-central-1.aws_route_table_association.public_routes",
+            "svg_id": "edge_109",
+            "target": "[root] module.ca-central-1.aws_subnet.main"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ca-central-1.aws_security_group.sg",
+            "svg_id": "edge_110",
+            "target": "[root] module.ca-central-1.aws_vpc.vpc"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ca-central-1.aws_security_group_rule.egress",
+            "svg_id": "edge_111",
+            "target": "[root] module.ca-central-1.aws_security_group.sg"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ca-central-1.aws_security_group_rule.ssh-ingress",
+            "svg_id": "edge_112",
+            "target": "[root] module.ca-central-1.aws_security_group.sg"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ca-central-1.aws_subnet.main",
+            "svg_id": "edge_113",
+            "target": "[root] module.ca-central-1.aws_vpc.vpc"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ca-central-1.aws_subnet.main",
+            "svg_id": "edge_114",
+            "target": "[root] module.ca-central-1.var.subnet_cidr"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ca-central-1.aws_vpc.vpc",
+            "svg_id": "edge_115",
+            "target": "[root] module.ca-central-1.provider.aws"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ca-central-1.aws_vpc.vpc",
+            "svg_id": "edge_116",
+            "target": "[root] module.ca-central-1.var.vpc_cidr"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ca-central-1.output.wip",
+            "svg_id": "edge_117",
+            "target": "[root] module.ca-central-1.aws_eip.wip"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ca-central-1.provider.aws (close)",
+            "svg_id": "edge_118",
+            "target": "[root] module.ca-central-1.aws_eip.wip"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ca-central-1.provider.aws (close)",
+            "svg_id": "edge_119",
+            "target": "[root] module.ca-central-1.aws_network_acl.acl"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ca-central-1.provider.aws (close)",
+            "svg_id": "edge_120",
+            "target": "[root] module.ca-central-1.aws_route_table_association.public_routes"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ca-central-1.provider.aws (close)",
+            "svg_id": "edge_121",
+            "target": "[root] module.ca-central-1.aws_security_group_rule.egress"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ca-central-1.provider.aws (close)",
+            "svg_id": "edge_122",
+            "target": "[root] module.ca-central-1.aws_security_group_rule.ssh-ingress"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ca-central-1.provider.aws",
+            "svg_id": "edge_123",
+            "target": "[root] module.ca-central-1.var.aws_access_key"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ca-central-1.provider.aws",
+            "svg_id": "edge_124",
+            "target": "[root] module.ca-central-1.var.aws_region"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ca-central-1.provider.aws",
+            "svg_id": "edge_125",
+            "target": "[root] module.ca-central-1.var.aws_secret_key"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ca-central-1.var.aws_access_key",
+            "svg_id": "edge_126",
+            "target": "[root] var.aws_access_key"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.ca-central-1.var.aws_secret_key",
+            "svg_id": "edge_127",
+            "target": "[root] var.aws_secret_key"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-1.aws_eip.wip",
+            "svg_id": "edge_128",
+            "target": "[root] module.us-east-1.aws_instance.worker"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-1.aws_instance.worker",
+            "svg_id": "edge_129",
+            "target": "[root] module.us-east-1.aws_key_pair.auth"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-1.aws_instance.worker",
+            "svg_id": "edge_130",
+            "target": "[root] module.us-east-1.aws_security_group.sg"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-1.aws_instance.worker",
+            "svg_id": "edge_131",
+            "target": "[root] module.us-east-1.aws_subnet.main"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-1.aws_instance.worker",
+            "svg_id": "edge_132",
+            "target": "[root] module.us-east-1.var.images"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-1.aws_internet_gateway.gw",
+            "svg_id": "edge_133",
+            "target": "[root] module.us-east-1.aws_vpc.vpc"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-1.aws_key_pair.auth",
+            "svg_id": "edge_134",
+            "target": "[root] module.us-east-1.provider.aws"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-1.aws_key_pair.auth",
+            "svg_id": "edge_135",
+            "target": "[root] module.us-east-1.var.key_name"
+        },
+        {
+            "edge_type": 2,
+            "source": "[root] module.us-east-1.aws_key_pair.auth",
+            "svg_id": "edge_136",
+            "target": "[root] module.us-east-1.var.public_key_path"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-1.aws_network_acl.acl",
+            "svg_id": "edge_137",
+            "target": "[root] module.us-east-1.aws_vpc.vpc"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-1.aws_route_table.public",
+            "svg_id": "edge_138",
+            "target": "[root] module.us-east-1.aws_internet_gateway.gw"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-1.aws_route_table_association.public_routes",
+            "svg_id": "edge_139",
+            "target": "[root] module.us-east-1.aws_route_table.public"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-1.aws_route_table_association.public_routes",
+            "svg_id": "edge_140",
+            "target": "[root] module.us-east-1.aws_subnet.main"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-1.aws_security_group.sg",
+            "svg_id": "edge_141",
+            "target": "[root] module.us-east-1.aws_vpc.vpc"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-1.aws_security_group_rule.egress",
+            "svg_id": "edge_142",
+            "target": "[root] module.us-east-1.aws_security_group.sg"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-1.aws_security_group_rule.ssh-ingress",
+            "svg_id": "edge_143",
+            "target": "[root] module.us-east-1.aws_security_group.sg"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-1.aws_subnet.main",
+            "svg_id": "edge_144",
+            "target": "[root] module.us-east-1.aws_vpc.vpc"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-1.aws_subnet.main",
+            "svg_id": "edge_145",
+            "target": "[root] module.us-east-1.var.subnet_cidr"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-1.aws_vpc.vpc",
+            "svg_id": "edge_146",
+            "target": "[root] module.us-east-1.provider.aws"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-1.aws_vpc.vpc",
+            "svg_id": "edge_147",
+            "target": "[root] module.us-east-1.var.vpc_cidr"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-1.output.wip",
+            "svg_id": "edge_148",
+            "target": "[root] module.us-east-1.aws_eip.wip"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-1.provider.aws (close)",
+            "svg_id": "edge_149",
+            "target": "[root] module.us-east-1.aws_eip.wip"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-1.provider.aws (close)",
+            "svg_id": "edge_150",
+            "target": "[root] module.us-east-1.aws_network_acl.acl"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-1.provider.aws (close)",
+            "svg_id": "edge_151",
+            "target": "[root] module.us-east-1.aws_route_table_association.public_routes"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-1.provider.aws (close)",
+            "svg_id": "edge_152",
+            "target": "[root] module.us-east-1.aws_security_group_rule.egress"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-1.provider.aws (close)",
+            "svg_id": "edge_153",
+            "target": "[root] module.us-east-1.aws_security_group_rule.ssh-ingress"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-1.provider.aws",
+            "svg_id": "edge_154",
+            "target": "[root] module.us-east-1.var.aws_access_key"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-1.provider.aws",
+            "svg_id": "edge_155",
+            "target": "[root] module.us-east-1.var.aws_region"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-1.provider.aws",
+            "svg_id": "edge_156",
+            "target": "[root] module.us-east-1.var.aws_secret_key"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-1.var.aws_access_key",
+            "svg_id": "edge_157",
+            "target": "[root] var.aws_access_key"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-1.var.aws_secret_key",
+            "svg_id": "edge_158",
+            "target": "[root] var.aws_secret_key"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-2.aws_eip.wip",
+            "svg_id": "edge_159",
+            "target": "[root] module.us-east-2.aws_instance.worker"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-2.aws_instance.worker",
+            "svg_id": "edge_160",
+            "target": "[root] module.us-east-2.aws_key_pair.auth"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-2.aws_instance.worker",
+            "svg_id": "edge_161",
+            "target": "[root] module.us-east-2.aws_security_group.sg"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-2.aws_instance.worker",
+            "svg_id": "edge_162",
+            "target": "[root] module.us-east-2.aws_subnet.main"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-2.aws_instance.worker",
+            "svg_id": "edge_163",
+            "target": "[root] module.us-east-2.var.images"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-2.aws_internet_gateway.gw",
+            "svg_id": "edge_164",
+            "target": "[root] module.us-east-2.aws_vpc.vpc"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-2.aws_key_pair.auth",
+            "svg_id": "edge_165",
+            "target": "[root] module.us-east-2.provider.aws"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-2.aws_key_pair.auth",
+            "svg_id": "edge_166",
+            "target": "[root] module.us-east-2.var.key_name"
+        },
+        {
+            "edge_type": 2,
+            "source": "[root] module.us-east-2.aws_key_pair.auth",
+            "svg_id": "edge_167",
+            "target": "[root] module.us-east-2.var.public_key_path"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-2.aws_network_acl.acl",
+            "svg_id": "edge_168",
+            "target": "[root] module.us-east-2.aws_vpc.vpc"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-2.aws_route_table.public",
+            "svg_id": "edge_169",
+            "target": "[root] module.us-east-2.aws_internet_gateway.gw"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-2.aws_route_table_association.public_routes",
+            "svg_id": "edge_170",
+            "target": "[root] module.us-east-2.aws_route_table.public"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-2.aws_route_table_association.public_routes",
+            "svg_id": "edge_171",
+            "target": "[root] module.us-east-2.aws_subnet.main"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-2.aws_security_group.sg",
+            "svg_id": "edge_172",
+            "target": "[root] module.us-east-2.aws_vpc.vpc"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-2.aws_security_group_rule.egress",
+            "svg_id": "edge_173",
+            "target": "[root] module.us-east-2.aws_security_group.sg"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-2.aws_security_group_rule.ssh-ingress",
+            "svg_id": "edge_174",
+            "target": "[root] module.us-east-2.aws_security_group.sg"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-2.aws_subnet.main",
+            "svg_id": "edge_175",
+            "target": "[root] module.us-east-2.aws_vpc.vpc"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-2.aws_subnet.main",
+            "svg_id": "edge_176",
+            "target": "[root] module.us-east-2.var.subnet_cidr"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-2.aws_vpc.vpc",
+            "svg_id": "edge_177",
+            "target": "[root] module.us-east-2.provider.aws"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-2.aws_vpc.vpc",
+            "svg_id": "edge_178",
+            "target": "[root] module.us-east-2.var.vpc_cidr"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-2.output.wip",
+            "svg_id": "edge_179",
+            "target": "[root] module.us-east-2.aws_eip.wip"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-2.provider.aws (close)",
+            "svg_id": "edge_180",
+            "target": "[root] module.us-east-2.aws_eip.wip"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-2.provider.aws (close)",
+            "svg_id": "edge_181",
+            "target": "[root] module.us-east-2.aws_network_acl.acl"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-2.provider.aws (close)",
+            "svg_id": "edge_182",
+            "target": "[root] module.us-east-2.aws_route_table_association.public_routes"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-2.provider.aws (close)",
+            "svg_id": "edge_183",
+            "target": "[root] module.us-east-2.aws_security_group_rule.egress"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-2.provider.aws (close)",
+            "svg_id": "edge_184",
+            "target": "[root] module.us-east-2.aws_security_group_rule.ssh-ingress"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-2.provider.aws",
+            "svg_id": "edge_185",
+            "target": "[root] module.us-east-2.var.aws_access_key"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-2.provider.aws",
+            "svg_id": "edge_186",
+            "target": "[root] module.us-east-2.var.aws_region"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-2.provider.aws",
+            "svg_id": "edge_187",
+            "target": "[root] module.us-east-2.var.aws_secret_key"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-2.var.aws_access_key",
+            "svg_id": "edge_188",
+            "target": "[root] var.aws_access_key"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-east-2.var.aws_secret_key",
+            "svg_id": "edge_189",
+            "target": "[root] var.aws_secret_key"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-1.aws_eip.wip",
+            "svg_id": "edge_190",
+            "target": "[root] module.us-west-1.aws_instance.worker"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-1.aws_instance.worker",
+            "svg_id": "edge_191",
+            "target": "[root] module.us-west-1.aws_key_pair.auth"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-1.aws_instance.worker",
+            "svg_id": "edge_192",
+            "target": "[root] module.us-west-1.aws_security_group.sg"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-1.aws_instance.worker",
+            "svg_id": "edge_193",
+            "target": "[root] module.us-west-1.aws_subnet.main"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-1.aws_instance.worker",
+            "svg_id": "edge_194",
+            "target": "[root] module.us-west-1.var.images"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-1.aws_internet_gateway.gw",
+            "svg_id": "edge_195",
+            "target": "[root] module.us-west-1.aws_vpc.vpc"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-1.aws_key_pair.auth",
+            "svg_id": "edge_196",
+            "target": "[root] module.us-west-1.provider.aws"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-1.aws_key_pair.auth",
+            "svg_id": "edge_197",
+            "target": "[root] module.us-west-1.var.key_name"
+        },
+        {
+            "edge_type": 2,
+            "source": "[root] module.us-west-1.aws_key_pair.auth",
+            "svg_id": "edge_198",
+            "target": "[root] module.us-west-1.var.public_key_path"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-1.aws_network_acl.acl",
+            "svg_id": "edge_199",
+            "target": "[root] module.us-west-1.aws_vpc.vpc"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-1.aws_route_table.public",
+            "svg_id": "edge_200",
+            "target": "[root] module.us-west-1.aws_internet_gateway.gw"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-1.aws_route_table_association.public_routes",
+            "svg_id": "edge_201",
+            "target": "[root] module.us-west-1.aws_route_table.public"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-1.aws_route_table_association.public_routes",
+            "svg_id": "edge_202",
+            "target": "[root] module.us-west-1.aws_subnet.main"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-1.aws_security_group.sg",
+            "svg_id": "edge_203",
+            "target": "[root] module.us-west-1.aws_vpc.vpc"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-1.aws_security_group_rule.egress",
+            "svg_id": "edge_204",
+            "target": "[root] module.us-west-1.aws_security_group.sg"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-1.aws_security_group_rule.ssh-ingress",
+            "svg_id": "edge_205",
+            "target": "[root] module.us-west-1.aws_security_group.sg"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-1.aws_subnet.main",
+            "svg_id": "edge_206",
+            "target": "[root] module.us-west-1.aws_vpc.vpc"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-1.aws_subnet.main",
+            "svg_id": "edge_207",
+            "target": "[root] module.us-west-1.var.subnet_cidr"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-1.aws_vpc.vpc",
+            "svg_id": "edge_208",
+            "target": "[root] module.us-west-1.provider.aws"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-1.aws_vpc.vpc",
+            "svg_id": "edge_209",
+            "target": "[root] module.us-west-1.var.vpc_cidr"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-1.output.wip",
+            "svg_id": "edge_210",
+            "target": "[root] module.us-west-1.aws_eip.wip"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-1.provider.aws (close)",
+            "svg_id": "edge_211",
+            "target": "[root] module.us-west-1.aws_eip.wip"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-1.provider.aws (close)",
+            "svg_id": "edge_212",
+            "target": "[root] module.us-west-1.aws_network_acl.acl"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-1.provider.aws (close)",
+            "svg_id": "edge_213",
+            "target": "[root] module.us-west-1.aws_route_table_association.public_routes"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-1.provider.aws (close)",
+            "svg_id": "edge_214",
+            "target": "[root] module.us-west-1.aws_security_group_rule.egress"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-1.provider.aws (close)",
+            "svg_id": "edge_215",
+            "target": "[root] module.us-west-1.aws_security_group_rule.ssh-ingress"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-1.provider.aws",
+            "svg_id": "edge_216",
+            "target": "[root] module.us-west-1.var.aws_access_key"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-1.provider.aws",
+            "svg_id": "edge_217",
+            "target": "[root] module.us-west-1.var.aws_region"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-1.provider.aws",
+            "svg_id": "edge_218",
+            "target": "[root] module.us-west-1.var.aws_secret_key"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-1.var.aws_access_key",
+            "svg_id": "edge_219",
+            "target": "[root] var.aws_access_key"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-1.var.aws_secret_key",
+            "svg_id": "edge_220",
+            "target": "[root] var.aws_secret_key"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-2.aws_eip.wip",
+            "svg_id": "edge_221",
+            "target": "[root] module.us-west-2.aws_instance.worker"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-2.aws_instance.worker",
+            "svg_id": "edge_222",
+            "target": "[root] module.us-west-2.aws_key_pair.auth"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-2.aws_instance.worker",
+            "svg_id": "edge_223",
+            "target": "[root] module.us-west-2.aws_security_group.sg"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-2.aws_instance.worker",
+            "svg_id": "edge_224",
+            "target": "[root] module.us-west-2.aws_subnet.main"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-2.aws_instance.worker",
+            "svg_id": "edge_225",
+            "target": "[root] module.us-west-2.var.images"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-2.aws_internet_gateway.gw",
+            "svg_id": "edge_226",
+            "target": "[root] module.us-west-2.aws_vpc.vpc"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-2.aws_key_pair.auth",
+            "svg_id": "edge_227",
+            "target": "[root] module.us-west-2.provider.aws"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-2.aws_key_pair.auth",
+            "svg_id": "edge_228",
+            "target": "[root] module.us-west-2.var.key_name"
+        },
+        {
+            "edge_type": 2,
+            "source": "[root] module.us-west-2.aws_key_pair.auth",
+            "svg_id": "edge_229",
+            "target": "[root] module.us-west-2.var.public_key_path"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-2.aws_network_acl.acl",
+            "svg_id": "edge_230",
+            "target": "[root] module.us-west-2.aws_vpc.vpc"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-2.aws_route_table.public",
+            "svg_id": "edge_231",
+            "target": "[root] module.us-west-2.aws_internet_gateway.gw"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-2.aws_route_table_association.public_routes",
+            "svg_id": "edge_232",
+            "target": "[root] module.us-west-2.aws_route_table.public"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-2.aws_route_table_association.public_routes",
+            "svg_id": "edge_233",
+            "target": "[root] module.us-west-2.aws_subnet.main"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-2.aws_security_group.sg",
+            "svg_id": "edge_234",
+            "target": "[root] module.us-west-2.aws_vpc.vpc"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-2.aws_security_group_rule.egress",
+            "svg_id": "edge_235",
+            "target": "[root] module.us-west-2.aws_security_group.sg"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-2.aws_security_group_rule.ssh-ingress",
+            "svg_id": "edge_236",
+            "target": "[root] module.us-west-2.aws_security_group.sg"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-2.aws_subnet.main",
+            "svg_id": "edge_237",
+            "target": "[root] module.us-west-2.aws_vpc.vpc"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-2.aws_subnet.main",
+            "svg_id": "edge_238",
+            "target": "[root] module.us-west-2.var.subnet_cidr"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-2.aws_vpc.vpc",
+            "svg_id": "edge_239",
+            "target": "[root] module.us-west-2.provider.aws"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-2.aws_vpc.vpc",
+            "svg_id": "edge_240",
+            "target": "[root] module.us-west-2.var.vpc_cidr"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-2.output.wip",
+            "svg_id": "edge_241",
+            "target": "[root] module.us-west-2.aws_eip.wip"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-2.provider.aws (close)",
+            "svg_id": "edge_242",
+            "target": "[root] module.us-west-2.aws_eip.wip"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-2.provider.aws (close)",
+            "svg_id": "edge_243",
+            "target": "[root] module.us-west-2.aws_network_acl.acl"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-2.provider.aws (close)",
+            "svg_id": "edge_244",
+            "target": "[root] module.us-west-2.aws_route_table_association.public_routes"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-2.provider.aws (close)",
+            "svg_id": "edge_245",
+            "target": "[root] module.us-west-2.aws_security_group_rule.egress"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-2.provider.aws (close)",
+            "svg_id": "edge_246",
+            "target": "[root] module.us-west-2.aws_security_group_rule.ssh-ingress"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-2.provider.aws",
+            "svg_id": "edge_247",
+            "target": "[root] module.us-west-2.var.aws_access_key"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-2.provider.aws",
+            "svg_id": "edge_248",
+            "target": "[root] module.us-west-2.var.aws_region"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-2.provider.aws",
+            "svg_id": "edge_249",
+            "target": "[root] module.us-west-2.var.aws_secret_key"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-2.var.aws_access_key",
+            "svg_id": "edge_250",
+            "target": "[root] var.aws_access_key"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] module.us-west-2.var.aws_secret_key",
+            "svg_id": "edge_251",
+            "target": "[root] var.aws_secret_key"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] output.ap-northeast-2",
+            "svg_id": "edge_252",
+            "target": "[root] module.ap-northeast-2.output.wip"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] output.ap-southeast-1-wip",
+            "svg_id": "edge_253",
+            "target": "[root] module.ap-southeast-1.output.wip"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] output.ca-central-1-wip",
+            "svg_id": "edge_254",
+            "target": "[root] module.ca-central-1.output.wip"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] output.us-east-1-wip",
+            "svg_id": "edge_255",
+            "target": "[root] module.us-east-1.output.wip"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] output.us-east-2-wip",
+            "svg_id": "edge_256",
+            "target": "[root] module.us-east-2.output.wip"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] output.us-west-1-wip",
+            "svg_id": "edge_257",
+            "target": "[root] module.us-west-1.output.wip"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] output.us-west-2-wip",
+            "svg_id": "edge_258",
+            "target": "[root] module.us-west-2.output.wip"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] root",
+            "svg_id": "edge_259",
+            "target": "[root] meta.count-boundary (count boundary fixup)"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] root",
+            "svg_id": "edge_260",
+            "target": "[root] module.ap-northeast-2.provider.aws (close)"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] root",
+            "svg_id": "edge_261",
+            "target": "[root] module.ap-southeast-1.provider.aws (close)"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] root",
+            "svg_id": "edge_262",
+            "target": "[root] module.ca-central-1.provider.aws (close)"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] root",
+            "svg_id": "edge_263",
+            "target": "[root] module.us-east-1.provider.aws (close)"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] root",
+            "svg_id": "edge_264",
+            "target": "[root] module.us-east-2.provider.aws (close)"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] root",
+            "svg_id": "edge_265",
+            "target": "[root] module.us-west-1.provider.aws (close)"
+        },
+        {
+            "edge_type": 1,
+            "source": "[root] root",
+            "svg_id": "edge_266",
+            "target": "[root] module.us-west-2.provider.aws (close)"
+        },
+        {
+            "edge_type": 3,
+            "source": "[root] module.ap-northeast-2.var.key_name",
+            "svg_id": "edge_267",
+            "target": "[root] module.ap-northeast-2.var.public_key_path"
+        },
+        {
+            "edge_type": 3,
+            "source": "[root] module.ap-southeast-1.var.key_name",
+            "svg_id": "edge_268",
+            "target": "[root] module.ap-southeast-1.var.public_key_path"
+        },
+        {
+            "edge_type": 3,
+            "source": "[root] module.ca-central-1.var.key_name",
+            "svg_id": "edge_269",
+            "target": "[root] module.ca-central-1.var.public_key_path"
+        },
+        {
+            "edge_type": 3,
+            "source": "[root] module.us-east-1.var.key_name",
+            "svg_id": "edge_270",
+            "target": "[root] module.us-east-1.var.public_key_path"
+        },
+        {
+            "edge_type": 3,
+            "source": "[root] module.us-east-2.var.key_name",
+            "svg_id": "edge_271",
+            "target": "[root] module.us-east-2.var.public_key_path"
+        },
+        {
+            "edge_type": 3,
+            "source": "[root] module.us-west-1.var.key_name",
+            "svg_id": "edge_272",
+            "target": "[root] module.us-west-1.var.public_key_path"
+        },
+        {
+            "edge_type": 3,
+            "source": "[root] module.us-west-2.var.key_name",
+            "svg_id": "edge_273",
+            "target": "[root] module.us-west-2.var.public_key_path"
+        }
+    ],
+    "nodes": [
+        {
+            "cluster": "root",
+            "definition": {
+                "instance": "${aws_instance.worker.id}",
+                "vpc": true
+            },
+            "group": 20000,
+            "label": "[root] module.ap-northeast-2.aws_eip.wip",
+            "module": "module.ap-northeast-2",
+            "modules": [
+                "ap-northeast-2"
+            ],
+            "resource_name": "wip",
+            "simple_name": "module.ap-northeast-2.aws_eip.wip",
+            "svg_id": "node_0",
+            "type": "aws_eip"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "ami": "${lookup(var.images, var.aws_region)}",
+                "instance_type": "t2.micro",
+                "key_name": "${aws_key_pair.auth.id}",
+                "subnet_id": "${aws_subnet.main.id}",
+                "vpc_security_group_ids": [
+                    "${aws_security_group.sg.id}"
+                ]
+            },
+            "group": 20000,
+            "label": "[root] module.ap-northeast-2.aws_instance.worker",
+            "module": "module.ap-northeast-2",
+            "modules": [
+                "ap-northeast-2"
+            ],
+            "resource_name": "worker",
+            "simple_name": "module.ap-northeast-2.aws_instance.worker",
+            "svg_id": "node_1",
+            "type": "aws_instance"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-northeast-2.aws_internet_gateway.gw",
+            "module": "module.ap-northeast-2",
+            "modules": [
+                "ap-northeast-2"
+            ],
+            "resource_name": "gw",
+            "simple_name": "module.ap-northeast-2.aws_internet_gateway.gw",
+            "svg_id": "node_2",
+            "type": "aws_internet_gateway"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "key_name": "${var.key_name}",
+                "public_key": "${file(var.public_key_path)}"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-northeast-2.aws_key_pair.auth",
+            "module": "module.ap-northeast-2",
+            "modules": [
+                "ap-northeast-2"
+            ],
+            "resource_name": "auth",
+            "simple_name": "module.ap-northeast-2.aws_key_pair.auth",
+            "svg_id": "node_3",
+            "type": "aws_key_pair"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "egress": {
+                    "action": "allow",
+                    "cidr_block": "0.0.0.0/0",
+                    "from_port": 0,
+                    "protocol": "-1",
+                    "rule_no": 2,
+                    "to_port": 0
+                },
+                "ingress": {
+                    "action": "allow",
+                    "cidr_block": "0.0.0.0/0",
+                    "from_port": 0,
+                    "protocol": "-1",
+                    "rule_no": 1,
+                    "to_port": 0
+                },
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-northeast-2.aws_network_acl.acl",
+            "module": "module.ap-northeast-2",
+            "modules": [
+                "ap-northeast-2"
+            ],
+            "resource_name": "acl",
+            "simple_name": "module.ap-northeast-2.aws_network_acl.acl",
+            "svg_id": "node_4",
+            "type": "aws_network_acl"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "route": {
+                    "cidr_block": "0.0.0.0/0",
+                    "gateway_id": "${aws_internet_gateway.gw.id}"
+                },
+                "tags": {
+                    "Name": "open/permissive ACL. See security groups."
+                },
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-northeast-2.aws_route_table.public",
+            "module": "module.ap-northeast-2",
+            "modules": [
+                "ap-northeast-2"
+            ],
+            "resource_name": "public",
+            "simple_name": "module.ap-northeast-2.aws_route_table.public",
+            "svg_id": "node_5",
+            "type": "aws_route_table"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "route_table_id": "${aws_route_table.public.id}",
+                "subnet_id": "${aws_subnet.main.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-northeast-2.aws_route_table_association.public_routes",
+            "module": "module.ap-northeast-2",
+            "modules": [
+                "ap-northeast-2"
+            ],
+            "resource_name": "public_routes",
+            "simple_name": "module.ap-northeast-2.aws_route_table_association.public_routes",
+            "svg_id": "node_6",
+            "type": "aws_route_table_association"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "description": "catch-all security group",
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-northeast-2.aws_security_group.sg",
+            "module": "module.ap-northeast-2",
+            "modules": [
+                "ap-northeast-2"
+            ],
+            "resource_name": "sg",
+            "simple_name": "module.ap-northeast-2.aws_security_group.sg",
+            "svg_id": "node_7",
+            "type": "aws_security_group"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "cidr_blocks": [
+                    "0.0.0.0/0"
+                ],
+                "from_port": 0,
+                "protocol": "-1",
+                "security_group_id": "${aws_security_group.sg.id}",
+                "to_port": 0,
+                "type": "egress"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-northeast-2.aws_security_group_rule.egress",
+            "module": "module.ap-northeast-2",
+            "modules": [
+                "ap-northeast-2"
+            ],
+            "resource_name": "egress",
+            "simple_name": "module.ap-northeast-2.aws_security_group_rule.egress",
+            "svg_id": "node_8",
+            "type": "aws_security_group_rule"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "cidr_blocks": [
+                    "0.0.0.0/0"
+                ],
+                "from_port": 22,
+                "protocol": "tcp",
+                "security_group_id": "${aws_security_group.sg.id}",
+                "to_port": 22,
+                "type": "ingress"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-northeast-2.aws_security_group_rule.ssh-ingress",
+            "module": "module.ap-northeast-2",
+            "modules": [
+                "ap-northeast-2"
+            ],
+            "resource_name": "ssh-ingress",
+            "simple_name": "module.ap-northeast-2.aws_security_group_rule.ssh-ingress",
+            "svg_id": "node_9",
+            "type": "aws_security_group_rule"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "cidr_block": "${var.subnet_cidr}",
+                "map_public_ip_on_launch": true,
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-northeast-2.aws_subnet.main",
+            "module": "module.ap-northeast-2",
+            "modules": [
+                "ap-northeast-2"
+            ],
+            "resource_name": "main",
+            "simple_name": "module.ap-northeast-2.aws_subnet.main",
+            "svg_id": "node_10",
+            "type": "aws_subnet"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "cidr_block": "${var.vpc_cidr}"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-northeast-2.aws_vpc.vpc",
+            "module": "module.ap-northeast-2",
+            "modules": [
+                "ap-northeast-2"
+            ],
+            "resource_name": "vpc",
+            "simple_name": "module.ap-northeast-2.aws_vpc.vpc",
+            "svg_id": "node_11",
+            "type": "aws_vpc"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "access_key": "${var.aws_access_key}",
+                "region": "${var.aws_region}",
+                "secret_key": "${var.aws_secret_key}"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-northeast-2.provider.aws",
+            "module": "module.ap-northeast-2",
+            "modules": [
+                "ap-northeast-2"
+            ],
+            "resource_name": "aws",
+            "simple_name": "module.ap-northeast-2.provider.aws",
+            "svg_id": "node_12",
+            "type": "provider"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "instance": "${aws_instance.worker.id}",
+                "vpc": true
+            },
+            "group": 20000,
+            "label": "[root] module.ap-southeast-1.aws_eip.wip",
+            "module": "module.ap-southeast-1",
+            "modules": [
+                "ap-southeast-1"
+            ],
+            "resource_name": "wip",
+            "simple_name": "module.ap-southeast-1.aws_eip.wip",
+            "svg_id": "node_13",
+            "type": "aws_eip"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "ami": "${lookup(var.images, var.aws_region)}",
+                "instance_type": "t2.micro",
+                "key_name": "${aws_key_pair.auth.id}",
+                "subnet_id": "${aws_subnet.main.id}",
+                "vpc_security_group_ids": [
+                    "${aws_security_group.sg.id}"
+                ]
+            },
+            "group": 20000,
+            "label": "[root] module.ap-southeast-1.aws_instance.worker",
+            "module": "module.ap-southeast-1",
+            "modules": [
+                "ap-southeast-1"
+            ],
+            "resource_name": "worker",
+            "simple_name": "module.ap-southeast-1.aws_instance.worker",
+            "svg_id": "node_14",
+            "type": "aws_instance"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-southeast-1.aws_internet_gateway.gw",
+            "module": "module.ap-southeast-1",
+            "modules": [
+                "ap-southeast-1"
+            ],
+            "resource_name": "gw",
+            "simple_name": "module.ap-southeast-1.aws_internet_gateway.gw",
+            "svg_id": "node_15",
+            "type": "aws_internet_gateway"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "key_name": "${var.key_name}",
+                "public_key": "${file(var.public_key_path)}"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-southeast-1.aws_key_pair.auth",
+            "module": "module.ap-southeast-1",
+            "modules": [
+                "ap-southeast-1"
+            ],
+            "resource_name": "auth",
+            "simple_name": "module.ap-southeast-1.aws_key_pair.auth",
+            "svg_id": "node_16",
+            "type": "aws_key_pair"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "egress": {
+                    "action": "allow",
+                    "cidr_block": "0.0.0.0/0",
+                    "from_port": 0,
+                    "protocol": "-1",
+                    "rule_no": 2,
+                    "to_port": 0
+                },
+                "ingress": {
+                    "action": "allow",
+                    "cidr_block": "0.0.0.0/0",
+                    "from_port": 0,
+                    "protocol": "-1",
+                    "rule_no": 1,
+                    "to_port": 0
+                },
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-southeast-1.aws_network_acl.acl",
+            "module": "module.ap-southeast-1",
+            "modules": [
+                "ap-southeast-1"
+            ],
+            "resource_name": "acl",
+            "simple_name": "module.ap-southeast-1.aws_network_acl.acl",
+            "svg_id": "node_17",
+            "type": "aws_network_acl"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "route": {
+                    "cidr_block": "0.0.0.0/0",
+                    "gateway_id": "${aws_internet_gateway.gw.id}"
+                },
+                "tags": {
+                    "Name": "open/permissive ACL. See security groups."
+                },
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-southeast-1.aws_route_table.public",
+            "module": "module.ap-southeast-1",
+            "modules": [
+                "ap-southeast-1"
+            ],
+            "resource_name": "public",
+            "simple_name": "module.ap-southeast-1.aws_route_table.public",
+            "svg_id": "node_18",
+            "type": "aws_route_table"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "route_table_id": "${aws_route_table.public.id}",
+                "subnet_id": "${aws_subnet.main.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-southeast-1.aws_route_table_association.public_routes",
+            "module": "module.ap-southeast-1",
+            "modules": [
+                "ap-southeast-1"
+            ],
+            "resource_name": "public_routes",
+            "simple_name": "module.ap-southeast-1.aws_route_table_association.public_routes",
+            "svg_id": "node_19",
+            "type": "aws_route_table_association"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "description": "catch-all security group",
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-southeast-1.aws_security_group.sg",
+            "module": "module.ap-southeast-1",
+            "modules": [
+                "ap-southeast-1"
+            ],
+            "resource_name": "sg",
+            "simple_name": "module.ap-southeast-1.aws_security_group.sg",
+            "svg_id": "node_20",
+            "type": "aws_security_group"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "cidr_blocks": [
+                    "0.0.0.0/0"
+                ],
+                "from_port": 0,
+                "protocol": "-1",
+                "security_group_id": "${aws_security_group.sg.id}",
+                "to_port": 0,
+                "type": "egress"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-southeast-1.aws_security_group_rule.egress",
+            "module": "module.ap-southeast-1",
+            "modules": [
+                "ap-southeast-1"
+            ],
+            "resource_name": "egress",
+            "simple_name": "module.ap-southeast-1.aws_security_group_rule.egress",
+            "svg_id": "node_21",
+            "type": "aws_security_group_rule"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "cidr_blocks": [
+                    "0.0.0.0/0"
+                ],
+                "from_port": 22,
+                "protocol": "tcp",
+                "security_group_id": "${aws_security_group.sg.id}",
+                "to_port": 22,
+                "type": "ingress"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-southeast-1.aws_security_group_rule.ssh-ingress",
+            "module": "module.ap-southeast-1",
+            "modules": [
+                "ap-southeast-1"
+            ],
+            "resource_name": "ssh-ingress",
+            "simple_name": "module.ap-southeast-1.aws_security_group_rule.ssh-ingress",
+            "svg_id": "node_22",
+            "type": "aws_security_group_rule"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "cidr_block": "${var.subnet_cidr}",
+                "map_public_ip_on_launch": true,
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-southeast-1.aws_subnet.main",
+            "module": "module.ap-southeast-1",
+            "modules": [
+                "ap-southeast-1"
+            ],
+            "resource_name": "main",
+            "simple_name": "module.ap-southeast-1.aws_subnet.main",
+            "svg_id": "node_23",
+            "type": "aws_subnet"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "cidr_block": "${var.vpc_cidr}"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-southeast-1.aws_vpc.vpc",
+            "module": "module.ap-southeast-1",
+            "modules": [
+                "ap-southeast-1"
+            ],
+            "resource_name": "vpc",
+            "simple_name": "module.ap-southeast-1.aws_vpc.vpc",
+            "svg_id": "node_24",
+            "type": "aws_vpc"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "access_key": "${var.aws_access_key}",
+                "region": "${var.aws_region}",
+                "secret_key": "${var.aws_secret_key}"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-southeast-1.provider.aws",
+            "module": "module.ap-southeast-1",
+            "modules": [
+                "ap-southeast-1"
+            ],
+            "resource_name": "aws",
+            "simple_name": "module.ap-southeast-1.provider.aws",
+            "svg_id": "node_25",
+            "type": "provider"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "instance": "${aws_instance.worker.id}",
+                "vpc": true
+            },
+            "group": 20000,
+            "label": "[root] module.ca-central-1.aws_eip.wip",
+            "module": "module.ca-central-1",
+            "modules": [
+                "ca-central-1"
+            ],
+            "resource_name": "wip",
+            "simple_name": "module.ca-central-1.aws_eip.wip",
+            "svg_id": "node_26",
+            "type": "aws_eip"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "ami": "${lookup(var.images, var.aws_region)}",
+                "instance_type": "t2.micro",
+                "key_name": "${aws_key_pair.auth.id}",
+                "subnet_id": "${aws_subnet.main.id}",
+                "vpc_security_group_ids": [
+                    "${aws_security_group.sg.id}"
+                ]
+            },
+            "group": 20000,
+            "label": "[root] module.ca-central-1.aws_instance.worker",
+            "module": "module.ca-central-1",
+            "modules": [
+                "ca-central-1"
+            ],
+            "resource_name": "worker",
+            "simple_name": "module.ca-central-1.aws_instance.worker",
+            "svg_id": "node_27",
+            "type": "aws_instance"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.ca-central-1.aws_internet_gateway.gw",
+            "module": "module.ca-central-1",
+            "modules": [
+                "ca-central-1"
+            ],
+            "resource_name": "gw",
+            "simple_name": "module.ca-central-1.aws_internet_gateway.gw",
+            "svg_id": "node_28",
+            "type": "aws_internet_gateway"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "key_name": "${var.key_name}",
+                "public_key": "${file(var.public_key_path)}"
+            },
+            "group": 20000,
+            "label": "[root] module.ca-central-1.aws_key_pair.auth",
+            "module": "module.ca-central-1",
+            "modules": [
+                "ca-central-1"
+            ],
+            "resource_name": "auth",
+            "simple_name": "module.ca-central-1.aws_key_pair.auth",
+            "svg_id": "node_29",
+            "type": "aws_key_pair"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "egress": {
+                    "action": "allow",
+                    "cidr_block": "0.0.0.0/0",
+                    "from_port": 0,
+                    "protocol": "-1",
+                    "rule_no": 2,
+                    "to_port": 0
+                },
+                "ingress": {
+                    "action": "allow",
+                    "cidr_block": "0.0.0.0/0",
+                    "from_port": 0,
+                    "protocol": "-1",
+                    "rule_no": 1,
+                    "to_port": 0
+                },
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.ca-central-1.aws_network_acl.acl",
+            "module": "module.ca-central-1",
+            "modules": [
+                "ca-central-1"
+            ],
+            "resource_name": "acl",
+            "simple_name": "module.ca-central-1.aws_network_acl.acl",
+            "svg_id": "node_30",
+            "type": "aws_network_acl"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "route": {
+                    "cidr_block": "0.0.0.0/0",
+                    "gateway_id": "${aws_internet_gateway.gw.id}"
+                },
+                "tags": {
+                    "Name": "open/permissive ACL. See security groups."
+                },
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.ca-central-1.aws_route_table.public",
+            "module": "module.ca-central-1",
+            "modules": [
+                "ca-central-1"
+            ],
+            "resource_name": "public",
+            "simple_name": "module.ca-central-1.aws_route_table.public",
+            "svg_id": "node_31",
+            "type": "aws_route_table"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "route_table_id": "${aws_route_table.public.id}",
+                "subnet_id": "${aws_subnet.main.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.ca-central-1.aws_route_table_association.public_routes",
+            "module": "module.ca-central-1",
+            "modules": [
+                "ca-central-1"
+            ],
+            "resource_name": "public_routes",
+            "simple_name": "module.ca-central-1.aws_route_table_association.public_routes",
+            "svg_id": "node_32",
+            "type": "aws_route_table_association"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "description": "catch-all security group",
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.ca-central-1.aws_security_group.sg",
+            "module": "module.ca-central-1",
+            "modules": [
+                "ca-central-1"
+            ],
+            "resource_name": "sg",
+            "simple_name": "module.ca-central-1.aws_security_group.sg",
+            "svg_id": "node_33",
+            "type": "aws_security_group"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "cidr_blocks": [
+                    "0.0.0.0/0"
+                ],
+                "from_port": 0,
+                "protocol": "-1",
+                "security_group_id": "${aws_security_group.sg.id}",
+                "to_port": 0,
+                "type": "egress"
+            },
+            "group": 20000,
+            "label": "[root] module.ca-central-1.aws_security_group_rule.egress",
+            "module": "module.ca-central-1",
+            "modules": [
+                "ca-central-1"
+            ],
+            "resource_name": "egress",
+            "simple_name": "module.ca-central-1.aws_security_group_rule.egress",
+            "svg_id": "node_34",
+            "type": "aws_security_group_rule"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "cidr_blocks": [
+                    "0.0.0.0/0"
+                ],
+                "from_port": 22,
+                "protocol": "tcp",
+                "security_group_id": "${aws_security_group.sg.id}",
+                "to_port": 22,
+                "type": "ingress"
+            },
+            "group": 20000,
+            "label": "[root] module.ca-central-1.aws_security_group_rule.ssh-ingress",
+            "module": "module.ca-central-1",
+            "modules": [
+                "ca-central-1"
+            ],
+            "resource_name": "ssh-ingress",
+            "simple_name": "module.ca-central-1.aws_security_group_rule.ssh-ingress",
+            "svg_id": "node_35",
+            "type": "aws_security_group_rule"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "cidr_block": "${var.subnet_cidr}",
+                "map_public_ip_on_launch": true,
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.ca-central-1.aws_subnet.main",
+            "module": "module.ca-central-1",
+            "modules": [
+                "ca-central-1"
+            ],
+            "resource_name": "main",
+            "simple_name": "module.ca-central-1.aws_subnet.main",
+            "svg_id": "node_36",
+            "type": "aws_subnet"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "cidr_block": "${var.vpc_cidr}"
+            },
+            "group": 20000,
+            "label": "[root] module.ca-central-1.aws_vpc.vpc",
+            "module": "module.ca-central-1",
+            "modules": [
+                "ca-central-1"
+            ],
+            "resource_name": "vpc",
+            "simple_name": "module.ca-central-1.aws_vpc.vpc",
+            "svg_id": "node_37",
+            "type": "aws_vpc"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "access_key": "${var.aws_access_key}",
+                "region": "${var.aws_region}",
+                "secret_key": "${var.aws_secret_key}"
+            },
+            "group": 20000,
+            "label": "[root] module.ca-central-1.provider.aws",
+            "module": "module.ca-central-1",
+            "modules": [
+                "ca-central-1"
+            ],
+            "resource_name": "aws",
+            "simple_name": "module.ca-central-1.provider.aws",
+            "svg_id": "node_38",
+            "type": "provider"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "instance": "${aws_instance.worker.id}",
+                "vpc": true
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-1.aws_eip.wip",
+            "module": "module.us-east-1",
+            "modules": [
+                "us-east-1"
+            ],
+            "resource_name": "wip",
+            "simple_name": "module.us-east-1.aws_eip.wip",
+            "svg_id": "node_39",
+            "type": "aws_eip"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "ami": "${lookup(var.images, var.aws_region)}",
+                "instance_type": "t2.micro",
+                "key_name": "${aws_key_pair.auth.id}",
+                "subnet_id": "${aws_subnet.main.id}",
+                "vpc_security_group_ids": [
+                    "${aws_security_group.sg.id}"
+                ]
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-1.aws_instance.worker",
+            "module": "module.us-east-1",
+            "modules": [
+                "us-east-1"
+            ],
+            "resource_name": "worker",
+            "simple_name": "module.us-east-1.aws_instance.worker",
+            "svg_id": "node_40",
+            "type": "aws_instance"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-1.aws_internet_gateway.gw",
+            "module": "module.us-east-1",
+            "modules": [
+                "us-east-1"
+            ],
+            "resource_name": "gw",
+            "simple_name": "module.us-east-1.aws_internet_gateway.gw",
+            "svg_id": "node_41",
+            "type": "aws_internet_gateway"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "key_name": "${var.key_name}",
+                "public_key": "${file(var.public_key_path)}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-1.aws_key_pair.auth",
+            "module": "module.us-east-1",
+            "modules": [
+                "us-east-1"
+            ],
+            "resource_name": "auth",
+            "simple_name": "module.us-east-1.aws_key_pair.auth",
+            "svg_id": "node_42",
+            "type": "aws_key_pair"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "egress": {
+                    "action": "allow",
+                    "cidr_block": "0.0.0.0/0",
+                    "from_port": 0,
+                    "protocol": "-1",
+                    "rule_no": 2,
+                    "to_port": 0
+                },
+                "ingress": {
+                    "action": "allow",
+                    "cidr_block": "0.0.0.0/0",
+                    "from_port": 0,
+                    "protocol": "-1",
+                    "rule_no": 1,
+                    "to_port": 0
+                },
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-1.aws_network_acl.acl",
+            "module": "module.us-east-1",
+            "modules": [
+                "us-east-1"
+            ],
+            "resource_name": "acl",
+            "simple_name": "module.us-east-1.aws_network_acl.acl",
+            "svg_id": "node_43",
+            "type": "aws_network_acl"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "route": {
+                    "cidr_block": "0.0.0.0/0",
+                    "gateway_id": "${aws_internet_gateway.gw.id}"
+                },
+                "tags": {
+                    "Name": "open/permissive ACL. See security groups."
+                },
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-1.aws_route_table.public",
+            "module": "module.us-east-1",
+            "modules": [
+                "us-east-1"
+            ],
+            "resource_name": "public",
+            "simple_name": "module.us-east-1.aws_route_table.public",
+            "svg_id": "node_44",
+            "type": "aws_route_table"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "route_table_id": "${aws_route_table.public.id}",
+                "subnet_id": "${aws_subnet.main.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-1.aws_route_table_association.public_routes",
+            "module": "module.us-east-1",
+            "modules": [
+                "us-east-1"
+            ],
+            "resource_name": "public_routes",
+            "simple_name": "module.us-east-1.aws_route_table_association.public_routes",
+            "svg_id": "node_45",
+            "type": "aws_route_table_association"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "description": "catch-all security group",
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-1.aws_security_group.sg",
+            "module": "module.us-east-1",
+            "modules": [
+                "us-east-1"
+            ],
+            "resource_name": "sg",
+            "simple_name": "module.us-east-1.aws_security_group.sg",
+            "svg_id": "node_46",
+            "type": "aws_security_group"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "cidr_blocks": [
+                    "0.0.0.0/0"
+                ],
+                "from_port": 0,
+                "protocol": "-1",
+                "security_group_id": "${aws_security_group.sg.id}",
+                "to_port": 0,
+                "type": "egress"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-1.aws_security_group_rule.egress",
+            "module": "module.us-east-1",
+            "modules": [
+                "us-east-1"
+            ],
+            "resource_name": "egress",
+            "simple_name": "module.us-east-1.aws_security_group_rule.egress",
+            "svg_id": "node_47",
+            "type": "aws_security_group_rule"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "cidr_blocks": [
+                    "0.0.0.0/0"
+                ],
+                "from_port": 22,
+                "protocol": "tcp",
+                "security_group_id": "${aws_security_group.sg.id}",
+                "to_port": 22,
+                "type": "ingress"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-1.aws_security_group_rule.ssh-ingress",
+            "module": "module.us-east-1",
+            "modules": [
+                "us-east-1"
+            ],
+            "resource_name": "ssh-ingress",
+            "simple_name": "module.us-east-1.aws_security_group_rule.ssh-ingress",
+            "svg_id": "node_48",
+            "type": "aws_security_group_rule"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "cidr_block": "${var.subnet_cidr}",
+                "map_public_ip_on_launch": true,
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-1.aws_subnet.main",
+            "module": "module.us-east-1",
+            "modules": [
+                "us-east-1"
+            ],
+            "resource_name": "main",
+            "simple_name": "module.us-east-1.aws_subnet.main",
+            "svg_id": "node_49",
+            "type": "aws_subnet"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "cidr_block": "${var.vpc_cidr}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-1.aws_vpc.vpc",
+            "module": "module.us-east-1",
+            "modules": [
+                "us-east-1"
+            ],
+            "resource_name": "vpc",
+            "simple_name": "module.us-east-1.aws_vpc.vpc",
+            "svg_id": "node_50",
+            "type": "aws_vpc"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "access_key": "${var.aws_access_key}",
+                "region": "${var.aws_region}",
+                "secret_key": "${var.aws_secret_key}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-1.provider.aws",
+            "module": "module.us-east-1",
+            "modules": [
+                "us-east-1"
+            ],
+            "resource_name": "aws",
+            "simple_name": "module.us-east-1.provider.aws",
+            "svg_id": "node_51",
+            "type": "provider"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "instance": "${aws_instance.worker.id}",
+                "vpc": true
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-2.aws_eip.wip",
+            "module": "module.us-east-2",
+            "modules": [
+                "us-east-2"
+            ],
+            "resource_name": "wip",
+            "simple_name": "module.us-east-2.aws_eip.wip",
+            "svg_id": "node_52",
+            "type": "aws_eip"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "ami": "${lookup(var.images, var.aws_region)}",
+                "instance_type": "t2.micro",
+                "key_name": "${aws_key_pair.auth.id}",
+                "subnet_id": "${aws_subnet.main.id}",
+                "vpc_security_group_ids": [
+                    "${aws_security_group.sg.id}"
+                ]
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-2.aws_instance.worker",
+            "module": "module.us-east-2",
+            "modules": [
+                "us-east-2"
+            ],
+            "resource_name": "worker",
+            "simple_name": "module.us-east-2.aws_instance.worker",
+            "svg_id": "node_53",
+            "type": "aws_instance"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-2.aws_internet_gateway.gw",
+            "module": "module.us-east-2",
+            "modules": [
+                "us-east-2"
+            ],
+            "resource_name": "gw",
+            "simple_name": "module.us-east-2.aws_internet_gateway.gw",
+            "svg_id": "node_54",
+            "type": "aws_internet_gateway"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "key_name": "${var.key_name}",
+                "public_key": "${file(var.public_key_path)}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-2.aws_key_pair.auth",
+            "module": "module.us-east-2",
+            "modules": [
+                "us-east-2"
+            ],
+            "resource_name": "auth",
+            "simple_name": "module.us-east-2.aws_key_pair.auth",
+            "svg_id": "node_55",
+            "type": "aws_key_pair"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "egress": {
+                    "action": "allow",
+                    "cidr_block": "0.0.0.0/0",
+                    "from_port": 0,
+                    "protocol": "-1",
+                    "rule_no": 2,
+                    "to_port": 0
+                },
+                "ingress": {
+                    "action": "allow",
+                    "cidr_block": "0.0.0.0/0",
+                    "from_port": 0,
+                    "protocol": "-1",
+                    "rule_no": 1,
+                    "to_port": 0
+                },
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-2.aws_network_acl.acl",
+            "module": "module.us-east-2",
+            "modules": [
+                "us-east-2"
+            ],
+            "resource_name": "acl",
+            "simple_name": "module.us-east-2.aws_network_acl.acl",
+            "svg_id": "node_56",
+            "type": "aws_network_acl"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "route": {
+                    "cidr_block": "0.0.0.0/0",
+                    "gateway_id": "${aws_internet_gateway.gw.id}"
+                },
+                "tags": {
+                    "Name": "open/permissive ACL. See security groups."
+                },
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-2.aws_route_table.public",
+            "module": "module.us-east-2",
+            "modules": [
+                "us-east-2"
+            ],
+            "resource_name": "public",
+            "simple_name": "module.us-east-2.aws_route_table.public",
+            "svg_id": "node_57",
+            "type": "aws_route_table"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "route_table_id": "${aws_route_table.public.id}",
+                "subnet_id": "${aws_subnet.main.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-2.aws_route_table_association.public_routes",
+            "module": "module.us-east-2",
+            "modules": [
+                "us-east-2"
+            ],
+            "resource_name": "public_routes",
+            "simple_name": "module.us-east-2.aws_route_table_association.public_routes",
+            "svg_id": "node_58",
+            "type": "aws_route_table_association"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "description": "catch-all security group",
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-2.aws_security_group.sg",
+            "module": "module.us-east-2",
+            "modules": [
+                "us-east-2"
+            ],
+            "resource_name": "sg",
+            "simple_name": "module.us-east-2.aws_security_group.sg",
+            "svg_id": "node_59",
+            "type": "aws_security_group"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "cidr_blocks": [
+                    "0.0.0.0/0"
+                ],
+                "from_port": 0,
+                "protocol": "-1",
+                "security_group_id": "${aws_security_group.sg.id}",
+                "to_port": 0,
+                "type": "egress"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-2.aws_security_group_rule.egress",
+            "module": "module.us-east-2",
+            "modules": [
+                "us-east-2"
+            ],
+            "resource_name": "egress",
+            "simple_name": "module.us-east-2.aws_security_group_rule.egress",
+            "svg_id": "node_60",
+            "type": "aws_security_group_rule"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "cidr_blocks": [
+                    "0.0.0.0/0"
+                ],
+                "from_port": 22,
+                "protocol": "tcp",
+                "security_group_id": "${aws_security_group.sg.id}",
+                "to_port": 22,
+                "type": "ingress"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-2.aws_security_group_rule.ssh-ingress",
+            "module": "module.us-east-2",
+            "modules": [
+                "us-east-2"
+            ],
+            "resource_name": "ssh-ingress",
+            "simple_name": "module.us-east-2.aws_security_group_rule.ssh-ingress",
+            "svg_id": "node_61",
+            "type": "aws_security_group_rule"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "cidr_block": "${var.subnet_cidr}",
+                "map_public_ip_on_launch": true,
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-2.aws_subnet.main",
+            "module": "module.us-east-2",
+            "modules": [
+                "us-east-2"
+            ],
+            "resource_name": "main",
+            "simple_name": "module.us-east-2.aws_subnet.main",
+            "svg_id": "node_62",
+            "type": "aws_subnet"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "cidr_block": "${var.vpc_cidr}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-2.aws_vpc.vpc",
+            "module": "module.us-east-2",
+            "modules": [
+                "us-east-2"
+            ],
+            "resource_name": "vpc",
+            "simple_name": "module.us-east-2.aws_vpc.vpc",
+            "svg_id": "node_63",
+            "type": "aws_vpc"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "access_key": "${var.aws_access_key}",
+                "region": "${var.aws_region}",
+                "secret_key": "${var.aws_secret_key}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-2.provider.aws",
+            "module": "module.us-east-2",
+            "modules": [
+                "us-east-2"
+            ],
+            "resource_name": "aws",
+            "simple_name": "module.us-east-2.provider.aws",
+            "svg_id": "node_64",
+            "type": "provider"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "instance": "${aws_instance.worker.id}",
+                "vpc": true
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-1.aws_eip.wip",
+            "module": "module.us-west-1",
+            "modules": [
+                "us-west-1"
+            ],
+            "resource_name": "wip",
+            "simple_name": "module.us-west-1.aws_eip.wip",
+            "svg_id": "node_65",
+            "type": "aws_eip"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "ami": "${lookup(var.images, var.aws_region)}",
+                "instance_type": "t2.micro",
+                "key_name": "${aws_key_pair.auth.id}",
+                "subnet_id": "${aws_subnet.main.id}",
+                "vpc_security_group_ids": [
+                    "${aws_security_group.sg.id}"
+                ]
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-1.aws_instance.worker",
+            "module": "module.us-west-1",
+            "modules": [
+                "us-west-1"
+            ],
+            "resource_name": "worker",
+            "simple_name": "module.us-west-1.aws_instance.worker",
+            "svg_id": "node_66",
+            "type": "aws_instance"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-1.aws_internet_gateway.gw",
+            "module": "module.us-west-1",
+            "modules": [
+                "us-west-1"
+            ],
+            "resource_name": "gw",
+            "simple_name": "module.us-west-1.aws_internet_gateway.gw",
+            "svg_id": "node_67",
+            "type": "aws_internet_gateway"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "key_name": "${var.key_name}",
+                "public_key": "${file(var.public_key_path)}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-1.aws_key_pair.auth",
+            "module": "module.us-west-1",
+            "modules": [
+                "us-west-1"
+            ],
+            "resource_name": "auth",
+            "simple_name": "module.us-west-1.aws_key_pair.auth",
+            "svg_id": "node_68",
+            "type": "aws_key_pair"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "egress": {
+                    "action": "allow",
+                    "cidr_block": "0.0.0.0/0",
+                    "from_port": 0,
+                    "protocol": "-1",
+                    "rule_no": 2,
+                    "to_port": 0
+                },
+                "ingress": {
+                    "action": "allow",
+                    "cidr_block": "0.0.0.0/0",
+                    "from_port": 0,
+                    "protocol": "-1",
+                    "rule_no": 1,
+                    "to_port": 0
+                },
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-1.aws_network_acl.acl",
+            "module": "module.us-west-1",
+            "modules": [
+                "us-west-1"
+            ],
+            "resource_name": "acl",
+            "simple_name": "module.us-west-1.aws_network_acl.acl",
+            "svg_id": "node_69",
+            "type": "aws_network_acl"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "route": {
+                    "cidr_block": "0.0.0.0/0",
+                    "gateway_id": "${aws_internet_gateway.gw.id}"
+                },
+                "tags": {
+                    "Name": "open/permissive ACL. See security groups."
+                },
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-1.aws_route_table.public",
+            "module": "module.us-west-1",
+            "modules": [
+                "us-west-1"
+            ],
+            "resource_name": "public",
+            "simple_name": "module.us-west-1.aws_route_table.public",
+            "svg_id": "node_70",
+            "type": "aws_route_table"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "route_table_id": "${aws_route_table.public.id}",
+                "subnet_id": "${aws_subnet.main.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-1.aws_route_table_association.public_routes",
+            "module": "module.us-west-1",
+            "modules": [
+                "us-west-1"
+            ],
+            "resource_name": "public_routes",
+            "simple_name": "module.us-west-1.aws_route_table_association.public_routes",
+            "svg_id": "node_71",
+            "type": "aws_route_table_association"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "description": "catch-all security group",
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-1.aws_security_group.sg",
+            "module": "module.us-west-1",
+            "modules": [
+                "us-west-1"
+            ],
+            "resource_name": "sg",
+            "simple_name": "module.us-west-1.aws_security_group.sg",
+            "svg_id": "node_72",
+            "type": "aws_security_group"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "cidr_blocks": [
+                    "0.0.0.0/0"
+                ],
+                "from_port": 0,
+                "protocol": "-1",
+                "security_group_id": "${aws_security_group.sg.id}",
+                "to_port": 0,
+                "type": "egress"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-1.aws_security_group_rule.egress",
+            "module": "module.us-west-1",
+            "modules": [
+                "us-west-1"
+            ],
+            "resource_name": "egress",
+            "simple_name": "module.us-west-1.aws_security_group_rule.egress",
+            "svg_id": "node_73",
+            "type": "aws_security_group_rule"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "cidr_blocks": [
+                    "0.0.0.0/0"
+                ],
+                "from_port": 22,
+                "protocol": "tcp",
+                "security_group_id": "${aws_security_group.sg.id}",
+                "to_port": 22,
+                "type": "ingress"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-1.aws_security_group_rule.ssh-ingress",
+            "module": "module.us-west-1",
+            "modules": [
+                "us-west-1"
+            ],
+            "resource_name": "ssh-ingress",
+            "simple_name": "module.us-west-1.aws_security_group_rule.ssh-ingress",
+            "svg_id": "node_74",
+            "type": "aws_security_group_rule"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "cidr_block": "${var.subnet_cidr}",
+                "map_public_ip_on_launch": true,
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-1.aws_subnet.main",
+            "module": "module.us-west-1",
+            "modules": [
+                "us-west-1"
+            ],
+            "resource_name": "main",
+            "simple_name": "module.us-west-1.aws_subnet.main",
+            "svg_id": "node_75",
+            "type": "aws_subnet"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "cidr_block": "${var.vpc_cidr}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-1.aws_vpc.vpc",
+            "module": "module.us-west-1",
+            "modules": [
+                "us-west-1"
+            ],
+            "resource_name": "vpc",
+            "simple_name": "module.us-west-1.aws_vpc.vpc",
+            "svg_id": "node_76",
+            "type": "aws_vpc"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "access_key": "${var.aws_access_key}",
+                "region": "${var.aws_region}",
+                "secret_key": "${var.aws_secret_key}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-1.provider.aws",
+            "module": "module.us-west-1",
+            "modules": [
+                "us-west-1"
+            ],
+            "resource_name": "aws",
+            "simple_name": "module.us-west-1.provider.aws",
+            "svg_id": "node_77",
+            "type": "provider"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "instance": "${aws_instance.worker.id}",
+                "vpc": true
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-2.aws_eip.wip",
+            "module": "module.us-west-2",
+            "modules": [
+                "us-west-2"
+            ],
+            "resource_name": "wip",
+            "simple_name": "module.us-west-2.aws_eip.wip",
+            "svg_id": "node_78",
+            "type": "aws_eip"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "ami": "${lookup(var.images, var.aws_region)}",
+                "instance_type": "t2.micro",
+                "key_name": "${aws_key_pair.auth.id}",
+                "subnet_id": "${aws_subnet.main.id}",
+                "vpc_security_group_ids": [
+                    "${aws_security_group.sg.id}"
+                ]
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-2.aws_instance.worker",
+            "module": "module.us-west-2",
+            "modules": [
+                "us-west-2"
+            ],
+            "resource_name": "worker",
+            "simple_name": "module.us-west-2.aws_instance.worker",
+            "svg_id": "node_79",
+            "type": "aws_instance"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-2.aws_internet_gateway.gw",
+            "module": "module.us-west-2",
+            "modules": [
+                "us-west-2"
+            ],
+            "resource_name": "gw",
+            "simple_name": "module.us-west-2.aws_internet_gateway.gw",
+            "svg_id": "node_80",
+            "type": "aws_internet_gateway"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "key_name": "${var.key_name}",
+                "public_key": "${file(var.public_key_path)}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-2.aws_key_pair.auth",
+            "module": "module.us-west-2",
+            "modules": [
+                "us-west-2"
+            ],
+            "resource_name": "auth",
+            "simple_name": "module.us-west-2.aws_key_pair.auth",
+            "svg_id": "node_81",
+            "type": "aws_key_pair"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "egress": {
+                    "action": "allow",
+                    "cidr_block": "0.0.0.0/0",
+                    "from_port": 0,
+                    "protocol": "-1",
+                    "rule_no": 2,
+                    "to_port": 0
+                },
+                "ingress": {
+                    "action": "allow",
+                    "cidr_block": "0.0.0.0/0",
+                    "from_port": 0,
+                    "protocol": "-1",
+                    "rule_no": 1,
+                    "to_port": 0
+                },
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-2.aws_network_acl.acl",
+            "module": "module.us-west-2",
+            "modules": [
+                "us-west-2"
+            ],
+            "resource_name": "acl",
+            "simple_name": "module.us-west-2.aws_network_acl.acl",
+            "svg_id": "node_82",
+            "type": "aws_network_acl"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "route": {
+                    "cidr_block": "0.0.0.0/0",
+                    "gateway_id": "${aws_internet_gateway.gw.id}"
+                },
+                "tags": {
+                    "Name": "open/permissive ACL. See security groups."
+                },
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-2.aws_route_table.public",
+            "module": "module.us-west-2",
+            "modules": [
+                "us-west-2"
+            ],
+            "resource_name": "public",
+            "simple_name": "module.us-west-2.aws_route_table.public",
+            "svg_id": "node_83",
+            "type": "aws_route_table"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "route_table_id": "${aws_route_table.public.id}",
+                "subnet_id": "${aws_subnet.main.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-2.aws_route_table_association.public_routes",
+            "module": "module.us-west-2",
+            "modules": [
+                "us-west-2"
+            ],
+            "resource_name": "public_routes",
+            "simple_name": "module.us-west-2.aws_route_table_association.public_routes",
+            "svg_id": "node_84",
+            "type": "aws_route_table_association"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "description": "catch-all security group",
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-2.aws_security_group.sg",
+            "module": "module.us-west-2",
+            "modules": [
+                "us-west-2"
+            ],
+            "resource_name": "sg",
+            "simple_name": "module.us-west-2.aws_security_group.sg",
+            "svg_id": "node_85",
+            "type": "aws_security_group"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "cidr_blocks": [
+                    "0.0.0.0/0"
+                ],
+                "from_port": 0,
+                "protocol": "-1",
+                "security_group_id": "${aws_security_group.sg.id}",
+                "to_port": 0,
+                "type": "egress"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-2.aws_security_group_rule.egress",
+            "module": "module.us-west-2",
+            "modules": [
+                "us-west-2"
+            ],
+            "resource_name": "egress",
+            "simple_name": "module.us-west-2.aws_security_group_rule.egress",
+            "svg_id": "node_86",
+            "type": "aws_security_group_rule"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "cidr_blocks": [
+                    "0.0.0.0/0"
+                ],
+                "from_port": 22,
+                "protocol": "tcp",
+                "security_group_id": "${aws_security_group.sg.id}",
+                "to_port": 22,
+                "type": "ingress"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-2.aws_security_group_rule.ssh-ingress",
+            "module": "module.us-west-2",
+            "modules": [
+                "us-west-2"
+            ],
+            "resource_name": "ssh-ingress",
+            "simple_name": "module.us-west-2.aws_security_group_rule.ssh-ingress",
+            "svg_id": "node_87",
+            "type": "aws_security_group_rule"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "cidr_block": "${var.subnet_cidr}",
+                "map_public_ip_on_launch": true,
+                "vpc_id": "${aws_vpc.vpc.id}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-2.aws_subnet.main",
+            "module": "module.us-west-2",
+            "modules": [
+                "us-west-2"
+            ],
+            "resource_name": "main",
+            "simple_name": "module.us-west-2.aws_subnet.main",
+            "svg_id": "node_88",
+            "type": "aws_subnet"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "cidr_block": "${var.vpc_cidr}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-2.aws_vpc.vpc",
+            "module": "module.us-west-2",
+            "modules": [
+                "us-west-2"
+            ],
+            "resource_name": "vpc",
+            "simple_name": "module.us-west-2.aws_vpc.vpc",
+            "svg_id": "node_89",
+            "type": "aws_vpc"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "access_key": "${var.aws_access_key}",
+                "region": "${var.aws_region}",
+                "secret_key": "${var.aws_secret_key}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-2.provider.aws",
+            "module": "module.us-west-2",
+            "modules": [
+                "us-west-2"
+            ],
+            "resource_name": "aws",
+            "simple_name": "module.us-west-2.provider.aws",
+            "svg_id": "node_90",
+            "type": "provider"
+        },
+        {
+            "cluster": "root",
+            "definition": "",
+            "group": 20000,
+            "label": "[root] meta.count-boundary (count boundary fixup)",
+            "module": "root",
+            "modules": [
+                "root"
+            ],
+            "resource_name": "count-boundary",
+            "simple_name": "meta.count-boundary (count boundary fixup)",
+            "svg_id": "node_91",
+            "type": "meta"
+        },
+        {
+            "cluster": "cluster[root] meta.count-boundary (count boundary fixup)_output_[root] module.ap-northeast-2.output.wip",
+            "definition": {
+                "value": "${module.ap-northeast-2.wip}"
+            },
+            "group": 20000,
+            "label": "[root] output.ap-northeast-2",
+            "module": "root",
+            "modules": [
+                "root"
+            ],
+            "resource_name": "ap-northeast-2",
+            "simple_name": "output.ap-northeast-2",
+            "svg_id": "node_92",
+            "type": "output"
+        },
+        {
+            "cluster": "cluster[root] meta.count-boundary (count boundary fixup)_output_[root] module.ap-southeast-1.output.wip",
+            "definition": {
+                "value": "${module.ap-southeast-1.wip}"
+            },
+            "group": 20000,
+            "label": "[root] output.ap-southeast-1-wip",
+            "module": "root",
+            "modules": [
+                "root"
+            ],
+            "resource_name": "ap-southeast-1-wip",
+            "simple_name": "output.ap-southeast-1-wip",
+            "svg_id": "node_93",
+            "type": "output"
+        },
+        {
+            "cluster": "cluster[root] meta.count-boundary (count boundary fixup)_output_[root] module.ca-central-1.output.wip",
+            "definition": {
+                "value": "${module.ca-central-1.wip}"
+            },
+            "group": 20000,
+            "label": "[root] output.ca-central-1-wip",
+            "module": "root",
+            "modules": [
+                "root"
+            ],
+            "resource_name": "ca-central-1-wip",
+            "simple_name": "output.ca-central-1-wip",
+            "svg_id": "node_94",
+            "type": "output"
+        },
+        {
+            "cluster": "cluster[root] meta.count-boundary (count boundary fixup)_output_[root] module.us-east-1.output.wip",
+            "definition": {
+                "value": "${module.us-east-1.wip}"
+            },
+            "group": 20000,
+            "label": "[root] output.us-east-1-wip",
+            "module": "root",
+            "modules": [
+                "root"
+            ],
+            "resource_name": "us-east-1-wip",
+            "simple_name": "output.us-east-1-wip",
+            "svg_id": "node_95",
+            "type": "output"
+        },
+        {
+            "cluster": "cluster[root] meta.count-boundary (count boundary fixup)_output_[root] module.us-east-2.output.wip",
+            "definition": {
+                "value": "${module.us-east-2.wip}"
+            },
+            "group": 20000,
+            "label": "[root] output.us-east-2-wip",
+            "module": "root",
+            "modules": [
+                "root"
+            ],
+            "resource_name": "us-east-2-wip",
+            "simple_name": "output.us-east-2-wip",
+            "svg_id": "node_96",
+            "type": "output"
+        },
+        {
+            "cluster": "cluster[root] meta.count-boundary (count boundary fixup)_output_[root] module.us-west-1.output.wip",
+            "definition": {
+                "value": "${module.us-west-1.wip}"
+            },
+            "group": 20000,
+            "label": "[root] output.us-west-1-wip",
+            "module": "root",
+            "modules": [
+                "root"
+            ],
+            "resource_name": "us-west-1-wip",
+            "simple_name": "output.us-west-1-wip",
+            "svg_id": "node_97",
+            "type": "output"
+        },
+        {
+            "cluster": "cluster[root] meta.count-boundary (count boundary fixup)_output_[root] module.us-west-2.output.wip",
+            "definition": {
+                "value": "${module.us-west-2.wip}"
+            },
+            "group": 20000,
+            "label": "[root] output.us-west-2-wip",
+            "module": "root",
+            "modules": [
+                "root"
+            ],
+            "resource_name": "us-west-2-wip",
+            "simple_name": "output.us-west-2-wip",
+            "svg_id": "node_98",
+            "type": "output"
+        },
+        {
+            "cluster": "cluster[root] module.ap-northeast-2.aws_instance.worker_var_",
+            "definition": {
+                "default": {
+                    "ap-northeast-1": "ami-571e3c30",
+                    "ap-northeast-2": "ami-97cb19f9",
+                    "ap-south-1": "ami-11f0837e",
+                    "ap-southeast-1": "ami-30318f53",
+                    "ap-southeast-2": "ami-24959b47",
+                    "ca-central-1": "ami-daeb57be",
+                    "eu-central-1": "ami-7cbc6e13",
+                    "eu-west-1": "ami-0d063c6b",
+                    "eu-west-2": "ami-c22236a6",
+                    "sa-east-1": "ami-864f2dea",
+                    "us-east-1": "ami-ae7bfdb8",
+                    "us-east-2": "ami-9cbf9bf9",
+                    "us-west-1": "ami-7c280d1c",
+                    "us-west-2": "ami-0c2aba6c"
+                },
+                "type": "map"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-northeast-2.var.images",
+            "module": "module.ap-northeast-2",
+            "modules": [
+                "ap-northeast-2"
+            ],
+            "resource_name": "images",
+            "simple_name": "module.ap-northeast-2.var.images",
+            "svg_id": "node_99",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.ap-northeast-2.aws_key_pair.auth_var_",
+            "definition": {
+                "default": "user_provided_key",
+                "description": "name of key for instance access"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-northeast-2.var.key_name",
+            "module": "module.ap-northeast-2",
+            "modules": [
+                "ap-northeast-2"
+            ],
+            "resource_name": "key_name",
+            "simple_name": "module.ap-northeast-2.var.key_name",
+            "svg_id": "node_100",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.ap-northeast-2.aws_key_pair.auth_var_",
+            "definition": {
+                "description": "path public key for instance access"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-northeast-2.var.public_key_path",
+            "module": "module.ap-northeast-2",
+            "modules": [
+                "ap-northeast-2"
+            ],
+            "resource_name": "public_key_path",
+            "simple_name": "module.ap-northeast-2.var.public_key_path",
+            "svg_id": "node_101",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.ap-northeast-2.aws_subnet.main_var_",
+            "definition": {
+                "default": "10.0.1.0/24",
+                "description": ""
+            },
+            "group": 20000,
+            "label": "[root] module.ap-northeast-2.var.subnet_cidr",
+            "module": "module.ap-northeast-2",
+            "modules": [
+                "ap-northeast-2"
+            ],
+            "resource_name": "subnet_cidr",
+            "simple_name": "module.ap-northeast-2.var.subnet_cidr",
+            "svg_id": "node_102",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.ap-northeast-2.aws_vpc.vpc_var_",
+            "definition": {
+                "default": "10.0.0.0/16",
+                "description": "cidr block for our vpc"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-northeast-2.var.vpc_cidr",
+            "module": "module.ap-northeast-2",
+            "modules": [
+                "ap-northeast-2"
+            ],
+            "resource_name": "vpc_cidr",
+            "simple_name": "module.ap-northeast-2.var.vpc_cidr",
+            "svg_id": "node_103",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] output.ap-northeast-2_output_[root] module.ap-northeast-2.aws_eip.wip",
+            "definition": {
+                "value": "${aws_eip.wip.public_ip}"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-northeast-2.output.wip",
+            "module": "module.ap-northeast-2",
+            "modules": [
+                "ap-northeast-2"
+            ],
+            "resource_name": "wip",
+            "simple_name": "module.ap-northeast-2.output.wip",
+            "svg_id": "node_104",
+            "type": "output"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "access_key": "${var.aws_access_key}",
+                "region": "${var.aws_region}",
+                "secret_key": "${var.aws_secret_key}"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-northeast-2.provider.aws (close)",
+            "module": "module.ap-northeast-2",
+            "modules": [
+                "ap-northeast-2"
+            ],
+            "resource_name": "aws",
+            "simple_name": "module.ap-northeast-2.provider.aws (close)",
+            "svg_id": "node_105",
+            "type": "provider"
+        },
+        {
+            "cluster": "cluster[root] module.ap-northeast-2.provider.aws_var_[root] var.aws_access_key",
+            "definition": {
+                "default": ""
+            },
+            "group": 20000,
+            "label": "[root] module.ap-northeast-2.var.aws_access_key",
+            "module": "module.ap-northeast-2",
+            "modules": [
+                "ap-northeast-2"
+            ],
+            "resource_name": "aws_access_key",
+            "simple_name": "module.ap-northeast-2.var.aws_access_key",
+            "svg_id": "node_106",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.ap-northeast-2.provider.aws_var_",
+            "definition": {
+                "description": "aws region"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-northeast-2.var.aws_region",
+            "module": "module.ap-northeast-2",
+            "modules": [
+                "ap-northeast-2"
+            ],
+            "resource_name": "aws_region",
+            "simple_name": "module.ap-northeast-2.var.aws_region",
+            "svg_id": "node_107",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.ap-northeast-2.provider.aws_var_[root] var.aws_secret_key",
+            "definition": {
+                "default": ""
+            },
+            "group": 20000,
+            "label": "[root] module.ap-northeast-2.var.aws_secret_key",
+            "module": "module.ap-northeast-2",
+            "modules": [
+                "ap-northeast-2"
+            ],
+            "resource_name": "aws_secret_key",
+            "simple_name": "module.ap-northeast-2.var.aws_secret_key",
+            "svg_id": "node_108",
+            "type": "var"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "default": ""
+            },
+            "group": 20000,
+            "label": "[root] var.aws_access_key",
+            "module": "root",
+            "modules": [
+                "root"
+            ],
+            "resource_name": "aws_access_key",
+            "simple_name": "var.aws_access_key",
+            "svg_id": "node_109",
+            "type": "var"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "default": ""
+            },
+            "group": 20000,
+            "label": "[root] var.aws_secret_key",
+            "module": "root",
+            "modules": [
+                "root"
+            ],
+            "resource_name": "aws_secret_key",
+            "simple_name": "var.aws_secret_key",
+            "svg_id": "node_110",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.ap-southeast-1.aws_instance.worker_var_",
+            "definition": {
+                "default": {
+                    "ap-northeast-1": "ami-571e3c30",
+                    "ap-northeast-2": "ami-97cb19f9",
+                    "ap-south-1": "ami-11f0837e",
+                    "ap-southeast-1": "ami-30318f53",
+                    "ap-southeast-2": "ami-24959b47",
+                    "ca-central-1": "ami-daeb57be",
+                    "eu-central-1": "ami-7cbc6e13",
+                    "eu-west-1": "ami-0d063c6b",
+                    "eu-west-2": "ami-c22236a6",
+                    "sa-east-1": "ami-864f2dea",
+                    "us-east-1": "ami-ae7bfdb8",
+                    "us-east-2": "ami-9cbf9bf9",
+                    "us-west-1": "ami-7c280d1c",
+                    "us-west-2": "ami-0c2aba6c"
+                },
+                "type": "map"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-southeast-1.var.images",
+            "module": "module.ap-southeast-1",
+            "modules": [
+                "ap-southeast-1"
+            ],
+            "resource_name": "images",
+            "simple_name": "module.ap-southeast-1.var.images",
+            "svg_id": "node_111",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.ap-southeast-1.aws_key_pair.auth_var_",
+            "definition": {
+                "default": "user_provided_key",
+                "description": "name of key for instance access"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-southeast-1.var.key_name",
+            "module": "module.ap-southeast-1",
+            "modules": [
+                "ap-southeast-1"
+            ],
+            "resource_name": "key_name",
+            "simple_name": "module.ap-southeast-1.var.key_name",
+            "svg_id": "node_112",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.ap-southeast-1.aws_key_pair.auth_var_",
+            "definition": {
+                "description": "path public key for instance access"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-southeast-1.var.public_key_path",
+            "module": "module.ap-southeast-1",
+            "modules": [
+                "ap-southeast-1"
+            ],
+            "resource_name": "public_key_path",
+            "simple_name": "module.ap-southeast-1.var.public_key_path",
+            "svg_id": "node_113",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.ap-southeast-1.aws_subnet.main_var_",
+            "definition": {
+                "default": "10.0.1.0/24",
+                "description": ""
+            },
+            "group": 20000,
+            "label": "[root] module.ap-southeast-1.var.subnet_cidr",
+            "module": "module.ap-southeast-1",
+            "modules": [
+                "ap-southeast-1"
+            ],
+            "resource_name": "subnet_cidr",
+            "simple_name": "module.ap-southeast-1.var.subnet_cidr",
+            "svg_id": "node_114",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.ap-southeast-1.aws_vpc.vpc_var_",
+            "definition": {
+                "default": "10.0.0.0/16",
+                "description": "cidr block for our vpc"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-southeast-1.var.vpc_cidr",
+            "module": "module.ap-southeast-1",
+            "modules": [
+                "ap-southeast-1"
+            ],
+            "resource_name": "vpc_cidr",
+            "simple_name": "module.ap-southeast-1.var.vpc_cidr",
+            "svg_id": "node_115",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] output.ap-southeast-1-wip_output_[root] module.ap-southeast-1.aws_eip.wip",
+            "definition": {
+                "value": "${aws_eip.wip.public_ip}"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-southeast-1.output.wip",
+            "module": "module.ap-southeast-1",
+            "modules": [
+                "ap-southeast-1"
+            ],
+            "resource_name": "wip",
+            "simple_name": "module.ap-southeast-1.output.wip",
+            "svg_id": "node_116",
+            "type": "output"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "access_key": "${var.aws_access_key}",
+                "region": "${var.aws_region}",
+                "secret_key": "${var.aws_secret_key}"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-southeast-1.provider.aws (close)",
+            "module": "module.ap-southeast-1",
+            "modules": [
+                "ap-southeast-1"
+            ],
+            "resource_name": "aws",
+            "simple_name": "module.ap-southeast-1.provider.aws (close)",
+            "svg_id": "node_117",
+            "type": "provider"
+        },
+        {
+            "cluster": "cluster[root] module.ap-southeast-1.provider.aws_var_[root] var.aws_access_key",
+            "definition": {
+                "default": ""
+            },
+            "group": 20000,
+            "label": "[root] module.ap-southeast-1.var.aws_access_key",
+            "module": "module.ap-southeast-1",
+            "modules": [
+                "ap-southeast-1"
+            ],
+            "resource_name": "aws_access_key",
+            "simple_name": "module.ap-southeast-1.var.aws_access_key",
+            "svg_id": "node_118",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.ap-southeast-1.provider.aws_var_",
+            "definition": {
+                "description": "aws region"
+            },
+            "group": 20000,
+            "label": "[root] module.ap-southeast-1.var.aws_region",
+            "module": "module.ap-southeast-1",
+            "modules": [
+                "ap-southeast-1"
+            ],
+            "resource_name": "aws_region",
+            "simple_name": "module.ap-southeast-1.var.aws_region",
+            "svg_id": "node_119",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.ap-southeast-1.provider.aws_var_[root] var.aws_secret_key",
+            "definition": {
+                "default": ""
+            },
+            "group": 20000,
+            "label": "[root] module.ap-southeast-1.var.aws_secret_key",
+            "module": "module.ap-southeast-1",
+            "modules": [
+                "ap-southeast-1"
+            ],
+            "resource_name": "aws_secret_key",
+            "simple_name": "module.ap-southeast-1.var.aws_secret_key",
+            "svg_id": "node_120",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.ca-central-1.aws_instance.worker_var_",
+            "definition": {
+                "default": {
+                    "ap-northeast-1": "ami-571e3c30",
+                    "ap-northeast-2": "ami-97cb19f9",
+                    "ap-south-1": "ami-11f0837e",
+                    "ap-southeast-1": "ami-30318f53",
+                    "ap-southeast-2": "ami-24959b47",
+                    "ca-central-1": "ami-daeb57be",
+                    "eu-central-1": "ami-7cbc6e13",
+                    "eu-west-1": "ami-0d063c6b",
+                    "eu-west-2": "ami-c22236a6",
+                    "sa-east-1": "ami-864f2dea",
+                    "us-east-1": "ami-ae7bfdb8",
+                    "us-east-2": "ami-9cbf9bf9",
+                    "us-west-1": "ami-7c280d1c",
+                    "us-west-2": "ami-0c2aba6c"
+                },
+                "type": "map"
+            },
+            "group": 20000,
+            "label": "[root] module.ca-central-1.var.images",
+            "module": "module.ca-central-1",
+            "modules": [
+                "ca-central-1"
+            ],
+            "resource_name": "images",
+            "simple_name": "module.ca-central-1.var.images",
+            "svg_id": "node_121",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.ca-central-1.aws_key_pair.auth_var_",
+            "definition": {
+                "default": "user_provided_key",
+                "description": "name of key for instance access"
+            },
+            "group": 20000,
+            "label": "[root] module.ca-central-1.var.key_name",
+            "module": "module.ca-central-1",
+            "modules": [
+                "ca-central-1"
+            ],
+            "resource_name": "key_name",
+            "simple_name": "module.ca-central-1.var.key_name",
+            "svg_id": "node_122",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.ca-central-1.aws_key_pair.auth_var_",
+            "definition": {
+                "description": "path public key for instance access"
+            },
+            "group": 20000,
+            "label": "[root] module.ca-central-1.var.public_key_path",
+            "module": "module.ca-central-1",
+            "modules": [
+                "ca-central-1"
+            ],
+            "resource_name": "public_key_path",
+            "simple_name": "module.ca-central-1.var.public_key_path",
+            "svg_id": "node_123",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.ca-central-1.aws_subnet.main_var_",
+            "definition": {
+                "default": "10.0.1.0/24",
+                "description": ""
+            },
+            "group": 20000,
+            "label": "[root] module.ca-central-1.var.subnet_cidr",
+            "module": "module.ca-central-1",
+            "modules": [
+                "ca-central-1"
+            ],
+            "resource_name": "subnet_cidr",
+            "simple_name": "module.ca-central-1.var.subnet_cidr",
+            "svg_id": "node_124",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.ca-central-1.aws_vpc.vpc_var_",
+            "definition": {
+                "default": "10.0.0.0/16",
+                "description": "cidr block for our vpc"
+            },
+            "group": 20000,
+            "label": "[root] module.ca-central-1.var.vpc_cidr",
+            "module": "module.ca-central-1",
+            "modules": [
+                "ca-central-1"
+            ],
+            "resource_name": "vpc_cidr",
+            "simple_name": "module.ca-central-1.var.vpc_cidr",
+            "svg_id": "node_125",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] output.ca-central-1-wip_output_[root] module.ca-central-1.aws_eip.wip",
+            "definition": {
+                "value": "${aws_eip.wip.public_ip}"
+            },
+            "group": 20000,
+            "label": "[root] module.ca-central-1.output.wip",
+            "module": "module.ca-central-1",
+            "modules": [
+                "ca-central-1"
+            ],
+            "resource_name": "wip",
+            "simple_name": "module.ca-central-1.output.wip",
+            "svg_id": "node_126",
+            "type": "output"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "access_key": "${var.aws_access_key}",
+                "region": "${var.aws_region}",
+                "secret_key": "${var.aws_secret_key}"
+            },
+            "group": 20000,
+            "label": "[root] module.ca-central-1.provider.aws (close)",
+            "module": "module.ca-central-1",
+            "modules": [
+                "ca-central-1"
+            ],
+            "resource_name": "aws",
+            "simple_name": "module.ca-central-1.provider.aws (close)",
+            "svg_id": "node_127",
+            "type": "provider"
+        },
+        {
+            "cluster": "cluster[root] module.ca-central-1.provider.aws_var_[root] var.aws_access_key",
+            "definition": {
+                "default": ""
+            },
+            "group": 20000,
+            "label": "[root] module.ca-central-1.var.aws_access_key",
+            "module": "module.ca-central-1",
+            "modules": [
+                "ca-central-1"
+            ],
+            "resource_name": "aws_access_key",
+            "simple_name": "module.ca-central-1.var.aws_access_key",
+            "svg_id": "node_128",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.ca-central-1.provider.aws_var_",
+            "definition": {
+                "description": "aws region"
+            },
+            "group": 20000,
+            "label": "[root] module.ca-central-1.var.aws_region",
+            "module": "module.ca-central-1",
+            "modules": [
+                "ca-central-1"
+            ],
+            "resource_name": "aws_region",
+            "simple_name": "module.ca-central-1.var.aws_region",
+            "svg_id": "node_129",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.ca-central-1.provider.aws_var_[root] var.aws_secret_key",
+            "definition": {
+                "default": ""
+            },
+            "group": 20000,
+            "label": "[root] module.ca-central-1.var.aws_secret_key",
+            "module": "module.ca-central-1",
+            "modules": [
+                "ca-central-1"
+            ],
+            "resource_name": "aws_secret_key",
+            "simple_name": "module.ca-central-1.var.aws_secret_key",
+            "svg_id": "node_130",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.us-east-1.aws_instance.worker_var_",
+            "definition": {
+                "default": {
+                    "ap-northeast-1": "ami-571e3c30",
+                    "ap-northeast-2": "ami-97cb19f9",
+                    "ap-south-1": "ami-11f0837e",
+                    "ap-southeast-1": "ami-30318f53",
+                    "ap-southeast-2": "ami-24959b47",
+                    "ca-central-1": "ami-daeb57be",
+                    "eu-central-1": "ami-7cbc6e13",
+                    "eu-west-1": "ami-0d063c6b",
+                    "eu-west-2": "ami-c22236a6",
+                    "sa-east-1": "ami-864f2dea",
+                    "us-east-1": "ami-ae7bfdb8",
+                    "us-east-2": "ami-9cbf9bf9",
+                    "us-west-1": "ami-7c280d1c",
+                    "us-west-2": "ami-0c2aba6c"
+                },
+                "type": "map"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-1.var.images",
+            "module": "module.us-east-1",
+            "modules": [
+                "us-east-1"
+            ],
+            "resource_name": "images",
+            "simple_name": "module.us-east-1.var.images",
+            "svg_id": "node_131",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.us-east-1.aws_key_pair.auth_var_",
+            "definition": {
+                "default": "user_provided_key",
+                "description": "name of key for instance access"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-1.var.key_name",
+            "module": "module.us-east-1",
+            "modules": [
+                "us-east-1"
+            ],
+            "resource_name": "key_name",
+            "simple_name": "module.us-east-1.var.key_name",
+            "svg_id": "node_132",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.us-east-1.aws_key_pair.auth_var_",
+            "definition": {
+                "description": "path public key for instance access"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-1.var.public_key_path",
+            "module": "module.us-east-1",
+            "modules": [
+                "us-east-1"
+            ],
+            "resource_name": "public_key_path",
+            "simple_name": "module.us-east-1.var.public_key_path",
+            "svg_id": "node_133",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.us-east-1.aws_subnet.main_var_",
+            "definition": {
+                "default": "10.0.1.0/24",
+                "description": ""
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-1.var.subnet_cidr",
+            "module": "module.us-east-1",
+            "modules": [
+                "us-east-1"
+            ],
+            "resource_name": "subnet_cidr",
+            "simple_name": "module.us-east-1.var.subnet_cidr",
+            "svg_id": "node_134",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.us-east-1.aws_vpc.vpc_var_",
+            "definition": {
+                "default": "10.0.0.0/16",
+                "description": "cidr block for our vpc"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-1.var.vpc_cidr",
+            "module": "module.us-east-1",
+            "modules": [
+                "us-east-1"
+            ],
+            "resource_name": "vpc_cidr",
+            "simple_name": "module.us-east-1.var.vpc_cidr",
+            "svg_id": "node_135",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] output.us-east-1-wip_output_[root] module.us-east-1.aws_eip.wip",
+            "definition": {
+                "value": "${aws_eip.wip.public_ip}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-1.output.wip",
+            "module": "module.us-east-1",
+            "modules": [
+                "us-east-1"
+            ],
+            "resource_name": "wip",
+            "simple_name": "module.us-east-1.output.wip",
+            "svg_id": "node_136",
+            "type": "output"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "access_key": "${var.aws_access_key}",
+                "region": "${var.aws_region}",
+                "secret_key": "${var.aws_secret_key}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-1.provider.aws (close)",
+            "module": "module.us-east-1",
+            "modules": [
+                "us-east-1"
+            ],
+            "resource_name": "aws",
+            "simple_name": "module.us-east-1.provider.aws (close)",
+            "svg_id": "node_137",
+            "type": "provider"
+        },
+        {
+            "cluster": "cluster[root] module.us-east-1.provider.aws_var_[root] var.aws_access_key",
+            "definition": {
+                "default": ""
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-1.var.aws_access_key",
+            "module": "module.us-east-1",
+            "modules": [
+                "us-east-1"
+            ],
+            "resource_name": "aws_access_key",
+            "simple_name": "module.us-east-1.var.aws_access_key",
+            "svg_id": "node_138",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.us-east-1.provider.aws_var_",
+            "definition": {
+                "description": "aws region"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-1.var.aws_region",
+            "module": "module.us-east-1",
+            "modules": [
+                "us-east-1"
+            ],
+            "resource_name": "aws_region",
+            "simple_name": "module.us-east-1.var.aws_region",
+            "svg_id": "node_139",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.us-east-1.provider.aws_var_[root] var.aws_secret_key",
+            "definition": {
+                "default": ""
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-1.var.aws_secret_key",
+            "module": "module.us-east-1",
+            "modules": [
+                "us-east-1"
+            ],
+            "resource_name": "aws_secret_key",
+            "simple_name": "module.us-east-1.var.aws_secret_key",
+            "svg_id": "node_140",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.us-east-2.aws_instance.worker_var_",
+            "definition": {
+                "default": {
+                    "ap-northeast-1": "ami-571e3c30",
+                    "ap-northeast-2": "ami-97cb19f9",
+                    "ap-south-1": "ami-11f0837e",
+                    "ap-southeast-1": "ami-30318f53",
+                    "ap-southeast-2": "ami-24959b47",
+                    "ca-central-1": "ami-daeb57be",
+                    "eu-central-1": "ami-7cbc6e13",
+                    "eu-west-1": "ami-0d063c6b",
+                    "eu-west-2": "ami-c22236a6",
+                    "sa-east-1": "ami-864f2dea",
+                    "us-east-1": "ami-ae7bfdb8",
+                    "us-east-2": "ami-9cbf9bf9",
+                    "us-west-1": "ami-7c280d1c",
+                    "us-west-2": "ami-0c2aba6c"
+                },
+                "type": "map"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-2.var.images",
+            "module": "module.us-east-2",
+            "modules": [
+                "us-east-2"
+            ],
+            "resource_name": "images",
+            "simple_name": "module.us-east-2.var.images",
+            "svg_id": "node_141",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.us-east-2.aws_key_pair.auth_var_",
+            "definition": {
+                "default": "user_provided_key",
+                "description": "name of key for instance access"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-2.var.key_name",
+            "module": "module.us-east-2",
+            "modules": [
+                "us-east-2"
+            ],
+            "resource_name": "key_name",
+            "simple_name": "module.us-east-2.var.key_name",
+            "svg_id": "node_142",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.us-east-2.aws_key_pair.auth_var_",
+            "definition": {
+                "description": "path public key for instance access"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-2.var.public_key_path",
+            "module": "module.us-east-2",
+            "modules": [
+                "us-east-2"
+            ],
+            "resource_name": "public_key_path",
+            "simple_name": "module.us-east-2.var.public_key_path",
+            "svg_id": "node_143",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.us-east-2.aws_subnet.main_var_",
+            "definition": {
+                "default": "10.0.1.0/24",
+                "description": ""
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-2.var.subnet_cidr",
+            "module": "module.us-east-2",
+            "modules": [
+                "us-east-2"
+            ],
+            "resource_name": "subnet_cidr",
+            "simple_name": "module.us-east-2.var.subnet_cidr",
+            "svg_id": "node_144",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.us-east-2.aws_vpc.vpc_var_",
+            "definition": {
+                "default": "10.0.0.0/16",
+                "description": "cidr block for our vpc"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-2.var.vpc_cidr",
+            "module": "module.us-east-2",
+            "modules": [
+                "us-east-2"
+            ],
+            "resource_name": "vpc_cidr",
+            "simple_name": "module.us-east-2.var.vpc_cidr",
+            "svg_id": "node_145",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] output.us-east-2-wip_output_[root] module.us-east-2.aws_eip.wip",
+            "definition": {
+                "value": "${aws_eip.wip.public_ip}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-2.output.wip",
+            "module": "module.us-east-2",
+            "modules": [
+                "us-east-2"
+            ],
+            "resource_name": "wip",
+            "simple_name": "module.us-east-2.output.wip",
+            "svg_id": "node_146",
+            "type": "output"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "access_key": "${var.aws_access_key}",
+                "region": "${var.aws_region}",
+                "secret_key": "${var.aws_secret_key}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-2.provider.aws (close)",
+            "module": "module.us-east-2",
+            "modules": [
+                "us-east-2"
+            ],
+            "resource_name": "aws",
+            "simple_name": "module.us-east-2.provider.aws (close)",
+            "svg_id": "node_147",
+            "type": "provider"
+        },
+        {
+            "cluster": "cluster[root] module.us-east-2.provider.aws_var_[root] var.aws_access_key",
+            "definition": {
+                "default": ""
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-2.var.aws_access_key",
+            "module": "module.us-east-2",
+            "modules": [
+                "us-east-2"
+            ],
+            "resource_name": "aws_access_key",
+            "simple_name": "module.us-east-2.var.aws_access_key",
+            "svg_id": "node_148",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.us-east-2.provider.aws_var_",
+            "definition": {
+                "description": "aws region"
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-2.var.aws_region",
+            "module": "module.us-east-2",
+            "modules": [
+                "us-east-2"
+            ],
+            "resource_name": "aws_region",
+            "simple_name": "module.us-east-2.var.aws_region",
+            "svg_id": "node_149",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.us-east-2.provider.aws_var_[root] var.aws_secret_key",
+            "definition": {
+                "default": ""
+            },
+            "group": 20000,
+            "label": "[root] module.us-east-2.var.aws_secret_key",
+            "module": "module.us-east-2",
+            "modules": [
+                "us-east-2"
+            ],
+            "resource_name": "aws_secret_key",
+            "simple_name": "module.us-east-2.var.aws_secret_key",
+            "svg_id": "node_150",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.us-west-1.aws_instance.worker_var_",
+            "definition": {
+                "default": {
+                    "ap-northeast-1": "ami-571e3c30",
+                    "ap-northeast-2": "ami-97cb19f9",
+                    "ap-south-1": "ami-11f0837e",
+                    "ap-southeast-1": "ami-30318f53",
+                    "ap-southeast-2": "ami-24959b47",
+                    "ca-central-1": "ami-daeb57be",
+                    "eu-central-1": "ami-7cbc6e13",
+                    "eu-west-1": "ami-0d063c6b",
+                    "eu-west-2": "ami-c22236a6",
+                    "sa-east-1": "ami-864f2dea",
+                    "us-east-1": "ami-ae7bfdb8",
+                    "us-east-2": "ami-9cbf9bf9",
+                    "us-west-1": "ami-7c280d1c",
+                    "us-west-2": "ami-0c2aba6c"
+                },
+                "type": "map"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-1.var.images",
+            "module": "module.us-west-1",
+            "modules": [
+                "us-west-1"
+            ],
+            "resource_name": "images",
+            "simple_name": "module.us-west-1.var.images",
+            "svg_id": "node_151",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.us-west-1.aws_key_pair.auth_var_",
+            "definition": {
+                "default": "user_provided_key",
+                "description": "name of key for instance access"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-1.var.key_name",
+            "module": "module.us-west-1",
+            "modules": [
+                "us-west-1"
+            ],
+            "resource_name": "key_name",
+            "simple_name": "module.us-west-1.var.key_name",
+            "svg_id": "node_152",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.us-west-1.aws_key_pair.auth_var_",
+            "definition": {
+                "description": "path public key for instance access"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-1.var.public_key_path",
+            "module": "module.us-west-1",
+            "modules": [
+                "us-west-1"
+            ],
+            "resource_name": "public_key_path",
+            "simple_name": "module.us-west-1.var.public_key_path",
+            "svg_id": "node_153",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.us-west-1.aws_subnet.main_var_",
+            "definition": {
+                "default": "10.0.1.0/24",
+                "description": ""
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-1.var.subnet_cidr",
+            "module": "module.us-west-1",
+            "modules": [
+                "us-west-1"
+            ],
+            "resource_name": "subnet_cidr",
+            "simple_name": "module.us-west-1.var.subnet_cidr",
+            "svg_id": "node_154",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.us-west-1.aws_vpc.vpc_var_",
+            "definition": {
+                "default": "10.0.0.0/16",
+                "description": "cidr block for our vpc"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-1.var.vpc_cidr",
+            "module": "module.us-west-1",
+            "modules": [
+                "us-west-1"
+            ],
+            "resource_name": "vpc_cidr",
+            "simple_name": "module.us-west-1.var.vpc_cidr",
+            "svg_id": "node_155",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] output.us-west-1-wip_output_[root] module.us-west-1.aws_eip.wip",
+            "definition": {
+                "value": "${aws_eip.wip.public_ip}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-1.output.wip",
+            "module": "module.us-west-1",
+            "modules": [
+                "us-west-1"
+            ],
+            "resource_name": "wip",
+            "simple_name": "module.us-west-1.output.wip",
+            "svg_id": "node_156",
+            "type": "output"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "access_key": "${var.aws_access_key}",
+                "region": "${var.aws_region}",
+                "secret_key": "${var.aws_secret_key}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-1.provider.aws (close)",
+            "module": "module.us-west-1",
+            "modules": [
+                "us-west-1"
+            ],
+            "resource_name": "aws",
+            "simple_name": "module.us-west-1.provider.aws (close)",
+            "svg_id": "node_157",
+            "type": "provider"
+        },
+        {
+            "cluster": "cluster[root] module.us-west-1.provider.aws_var_[root] var.aws_access_key",
+            "definition": {
+                "default": ""
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-1.var.aws_access_key",
+            "module": "module.us-west-1",
+            "modules": [
+                "us-west-1"
+            ],
+            "resource_name": "aws_access_key",
+            "simple_name": "module.us-west-1.var.aws_access_key",
+            "svg_id": "node_158",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.us-west-1.provider.aws_var_",
+            "definition": {
+                "description": "aws region"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-1.var.aws_region",
+            "module": "module.us-west-1",
+            "modules": [
+                "us-west-1"
+            ],
+            "resource_name": "aws_region",
+            "simple_name": "module.us-west-1.var.aws_region",
+            "svg_id": "node_159",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.us-west-1.provider.aws_var_[root] var.aws_secret_key",
+            "definition": {
+                "default": ""
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-1.var.aws_secret_key",
+            "module": "module.us-west-1",
+            "modules": [
+                "us-west-1"
+            ],
+            "resource_name": "aws_secret_key",
+            "simple_name": "module.us-west-1.var.aws_secret_key",
+            "svg_id": "node_160",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.us-west-2.aws_instance.worker_var_",
+            "definition": {
+                "default": {
+                    "ap-northeast-1": "ami-571e3c30",
+                    "ap-northeast-2": "ami-97cb19f9",
+                    "ap-south-1": "ami-11f0837e",
+                    "ap-southeast-1": "ami-30318f53",
+                    "ap-southeast-2": "ami-24959b47",
+                    "ca-central-1": "ami-daeb57be",
+                    "eu-central-1": "ami-7cbc6e13",
+                    "eu-west-1": "ami-0d063c6b",
+                    "eu-west-2": "ami-c22236a6",
+                    "sa-east-1": "ami-864f2dea",
+                    "us-east-1": "ami-ae7bfdb8",
+                    "us-east-2": "ami-9cbf9bf9",
+                    "us-west-1": "ami-7c280d1c",
+                    "us-west-2": "ami-0c2aba6c"
+                },
+                "type": "map"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-2.var.images",
+            "module": "module.us-west-2",
+            "modules": [
+                "us-west-2"
+            ],
+            "resource_name": "images",
+            "simple_name": "module.us-west-2.var.images",
+            "svg_id": "node_161",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.us-west-2.aws_key_pair.auth_var_",
+            "definition": {
+                "default": "user_provided_key",
+                "description": "name of key for instance access"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-2.var.key_name",
+            "module": "module.us-west-2",
+            "modules": [
+                "us-west-2"
+            ],
+            "resource_name": "key_name",
+            "simple_name": "module.us-west-2.var.key_name",
+            "svg_id": "node_162",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.us-west-2.aws_key_pair.auth_var_",
+            "definition": {
+                "description": "path public key for instance access"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-2.var.public_key_path",
+            "module": "module.us-west-2",
+            "modules": [
+                "us-west-2"
+            ],
+            "resource_name": "public_key_path",
+            "simple_name": "module.us-west-2.var.public_key_path",
+            "svg_id": "node_163",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.us-west-2.aws_subnet.main_var_",
+            "definition": {
+                "default": "10.0.1.0/24",
+                "description": ""
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-2.var.subnet_cidr",
+            "module": "module.us-west-2",
+            "modules": [
+                "us-west-2"
+            ],
+            "resource_name": "subnet_cidr",
+            "simple_name": "module.us-west-2.var.subnet_cidr",
+            "svg_id": "node_164",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.us-west-2.aws_vpc.vpc_var_",
+            "definition": {
+                "default": "10.0.0.0/16",
+                "description": "cidr block for our vpc"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-2.var.vpc_cidr",
+            "module": "module.us-west-2",
+            "modules": [
+                "us-west-2"
+            ],
+            "resource_name": "vpc_cidr",
+            "simple_name": "module.us-west-2.var.vpc_cidr",
+            "svg_id": "node_165",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] output.us-west-2-wip_output_[root] module.us-west-2.aws_eip.wip",
+            "definition": {
+                "value": "${aws_eip.wip.public_ip}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-2.output.wip",
+            "module": "module.us-west-2",
+            "modules": [
+                "us-west-2"
+            ],
+            "resource_name": "wip",
+            "simple_name": "module.us-west-2.output.wip",
+            "svg_id": "node_166",
+            "type": "output"
+        },
+        {
+            "cluster": "root",
+            "definition": {
+                "access_key": "${var.aws_access_key}",
+                "region": "${var.aws_region}",
+                "secret_key": "${var.aws_secret_key}"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-2.provider.aws (close)",
+            "module": "module.us-west-2",
+            "modules": [
+                "us-west-2"
+            ],
+            "resource_name": "aws",
+            "simple_name": "module.us-west-2.provider.aws (close)",
+            "svg_id": "node_167",
+            "type": "provider"
+        },
+        {
+            "cluster": "cluster[root] module.us-west-2.provider.aws_var_[root] var.aws_access_key",
+            "definition": {
+                "default": ""
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-2.var.aws_access_key",
+            "module": "module.us-west-2",
+            "modules": [
+                "us-west-2"
+            ],
+            "resource_name": "aws_access_key",
+            "simple_name": "module.us-west-2.var.aws_access_key",
+            "svg_id": "node_168",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.us-west-2.provider.aws_var_",
+            "definition": {
+                "description": "aws region"
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-2.var.aws_region",
+            "module": "module.us-west-2",
+            "modules": [
+                "us-west-2"
+            ],
+            "resource_name": "aws_region",
+            "simple_name": "module.us-west-2.var.aws_region",
+            "svg_id": "node_169",
+            "type": "var"
+        },
+        {
+            "cluster": "cluster[root] module.us-west-2.provider.aws_var_[root] var.aws_secret_key",
+            "definition": {
+                "default": ""
+            },
+            "group": 20000,
+            "label": "[root] module.us-west-2.var.aws_secret_key",
+            "module": "module.us-west-2",
+            "modules": [
+                "us-west-2"
+            ],
+            "resource_name": "aws_secret_key",
+            "simple_name": "module.us-west-2.var.aws_secret_key",
+            "svg_id": "node_170",
+            "type": "var"
+        },
+        {
+            "cluster": "root",
+            "definition": "",
+            "group": 20000,
+            "label": "[root] root",
+            "module": "root",
+            "modules": [
+                "root"
+            ],
+            "resource_name": "",
+            "simple_name": "root",
+            "svg_id": "node_171",
+            "type": ""
+        }
+    ]
+}

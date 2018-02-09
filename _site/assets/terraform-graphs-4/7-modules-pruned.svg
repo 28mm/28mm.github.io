@@ -1,0 +1,1355 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="686.13544"
+   height="754.63849"
+   style="overflow:hidden"
+   version="1.1"
+   id="svg969"
+   sodipodi:docname="7-modules-pruned.svg"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+  <metadata
+     id="metadata975">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs973" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1711"
+     inkscape:window-height="922"
+     id="namedview971"
+     showgrid="false"
+     inkscape:zoom="0.15"
+     inkscape:cx="-292.36136"
+     inkscape:cy="813.70545"
+     inkscape:window-x="0"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg969" />
+  <g
+     id="viewport-20180201041701256"
+     class="svg-pan-zoom_viewport"
+     transform="matrix(1.104888,0,0,1.104888,1.3574219e-6,0)">
+    <g
+       id="graph0"
+       class="graph"
+       transform="translate(4,679)">
+      <polygon
+         stroke="transparent"
+         points="617,-679 617,4 -4,4 -4,-679 "
+         id="polygon503"
+         style="fill:#ffffff" />
+      <!-- [root] var.aws_access_key -->
+      <g
+         id="node_109"
+         class="node"
+         style="fill:#2ca02c">
+        <polygon
+           points="137,-33 137,-18 64,-18 64,-33 "
+           style="fill:#2ca02c;stroke:#000000"
+           id="polygon505" />
+        <text
+           x="93.298798"
+           y="-23.6"
+           font-size="8.00"
+           id="text507"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">var</text>
+        <polygon
+           points="137,-18 137,-3 64,-3 64,-18 "
+           id="polygon509"
+           style="fill:none;stroke:#000000" />
+        <text
+           x="66.894501"
+           y="-8.6000004"
+           font-size="8.00"
+           id="text511"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">aws_access_key</text>
+      </g>
+      <!-- [root] var.aws_secret_key -->
+      <g
+         id="node_110"
+         class="node"
+         style="fill:#2ca02c">
+        <polygon
+           points="315,-33 315,-18 242,-18 242,-33 "
+           style="fill:#2ca02c;stroke:#000000"
+           id="polygon514" />
+        <text
+           x="271.2988"
+           y="-23.6"
+           font-size="8.00"
+           id="text516"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">var</text>
+        <polygon
+           points="315,-18 315,-3 242,-3 242,-18 "
+           id="polygon518"
+           style="fill:none;stroke:#000000" />
+        <text
+           x="244.8945"
+           y="-8.6000004"
+           font-size="8.00"
+           id="text520"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">aws_secret_key</text>
+      </g>
+      <!-- [root] root -->
+      <g
+         id="node_171"
+         class="node"
+         style="fill:#ff7f0e">
+        <polygon
+           points="339.6911,-639 408.3089,-639 408.3089,-675 339.6911,-675 "
+           style="fill:#ff7f0e;stroke:#000000"
+           id="polygon523" />
+        <text
+           x="374"
+           y="-655.13129"
+           font-size="8.00"
+           id="text525"
+           style="font-size:8px;font-family:'courier new';text-anchor:middle;fill:#000000">[root] root</text>
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.provider.aws (close) -->
+      <g
+         id="node_137"
+         class="node"
+         style="fill:#ff7f0e">
+        <polygon
+           points="408,-602.5 408,-587.5 340,-587.5 340,-602.5 "
+           id="polygon528"
+           style="fill:#9467bd;stroke:#000000" />
+        <text
+           x="342.79489"
+           y="-593.09998"
+           font-size="8.00"
+           id="text530"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">(M) us-east-1</text>
+        <polygon
+           points="408,-587.5 408,-572.5 340,-572.5 340,-587.5 "
+           style="fill:#ff7f0e;stroke:#000000"
+           id="polygon532" />
+        <text
+           x="354.79691"
+           y="-578.09998"
+           font-size="8.00"
+           id="text534"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">provider</text>
+        <polygon
+           points="408,-572.5 408,-557.5 340,-557.5 340,-572.5 "
+           id="polygon536"
+           style="fill:none;stroke:#000000" />
+        <text
+           x="366.7988"
+           y="-563.09998"
+           font-size="8.00"
+           id="text538"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">aws</text>
+      </g>
+      <!-- [root] root&#45;&gt;[root] module.us&#45;east&#45;1.provider.aws (close) -->
+      <g
+         id="edge_263"
+         class="edge">
+        <path
+           d="m 374,-638.8706 c 0,7.6852 0,16.8854 0,25.6842"
+           id="path541"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <polygon
+           points="370.5001,-613.1566 377.5001,-613.1565 374,-603.1565 "
+           id="polygon543"
+           style="fill:#000000;stroke:#000000" />
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_eip.wip -->
+      <g
+         id="node_39"
+         class="node"
+         style="fill:#1f77b4">
+        <polygon
+           points="188,-521.5 188,-506.5 120,-506.5 120,-521.5 "
+           id="polygon546"
+           style="fill:#9467bd;stroke:#000000" />
+        <text
+           x="122.7949"
+           y="-512.09998"
+           font-size="8.00"
+           id="text548"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">(M) us-east-1</text>
+        <polygon
+           points="188,-506.5 188,-491.5 120,-491.5 120,-506.5 "
+           style="fill:#1f77b4;stroke:#000000"
+           id="polygon550" />
+        <text
+           x="137.1973"
+           y="-497.10001"
+           font-size="8.00"
+           id="text552"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">aws_eip</text>
+        <polygon
+           points="188,-491.5 188,-476.5 120,-476.5 120,-491.5 "
+           id="polygon554"
+           style="fill:none;stroke:#000000" />
+        <text
+           x="146.7988"
+           y="-482.10001"
+           font-size="8.00"
+           id="text556"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">wip</text>
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_instance.worker -->
+      <g
+         id="node_40"
+         class="node"
+         style="fill:#1f77b4">
+        <polygon
+           points="183,-440.5 183,-425.5 115,-425.5 115,-440.5 "
+           id="polygon559"
+           style="fill:#9467bd;stroke:#000000" />
+        <text
+           x="117.7949"
+           y="-431.10001"
+           font-size="8.00"
+           id="text561"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">(M) us-east-1</text>
+        <polygon
+           points="183,-425.5 183,-410.5 115,-410.5 115,-425.5 "
+           style="fill:#1f77b4;stroke:#000000"
+           id="polygon563" />
+        <text
+           x="120.1953"
+           y="-416.10001"
+           font-size="8.00"
+           id="text565"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">aws_instance</text>
+        <polygon
+           points="183,-410.5 183,-395.5 115,-395.5 115,-410.5 "
+           id="polygon567"
+           style="fill:none;stroke:#000000" />
+        <text
+           x="134.5977"
+           y="-401.10001"
+           font-size="8.00"
+           id="text569"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">worker</text>
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_eip.wip&#45;&gt;[root] module.us&#45;east&#45;1.aws_instance.worker -->
+      <g
+         id="edge_128"
+         class="edge">
+        <path
+           d="m 152.6072,-476.937 c -0.4889,7.9206 -1.0486,16.9882 -1.579,25.5796"
+           id="path572"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <polygon
+           points="147.5255,-451.4196 154.5122,-450.9883 150.4027,-441.2229 "
+           id="polygon574"
+           style="fill:#000000;stroke:#000000" />
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_key_pair.auth -->
+      <g
+         id="node_42"
+         class="node"
+         style="fill:#1f77b4">
+        <polygon
+           points="73,-359.5 73,-344.5 5,-344.5 5,-359.5 "
+           id="polygon577"
+           style="fill:#9467bd;stroke:#000000" />
+        <text
+           x="7.7948999"
+           y="-350.10001"
+           font-size="8.00"
+           id="text579"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">(M) us-east-1</text>
+        <polygon
+           points="73,-344.5 73,-329.5 5,-329.5 5,-344.5 "
+           style="fill:#1f77b4;stroke:#000000"
+           id="polygon581" />
+        <text
+           x="10.1953"
+           y="-335.10001"
+           font-size="8.00"
+           id="text583"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">aws_key_pair</text>
+        <polygon
+           points="73,-329.5 73,-314.5 5,-314.5 5,-329.5 "
+           id="polygon585"
+           style="fill:none;stroke:#000000" />
+        <text
+           x="29.398399"
+           y="-320.10001"
+           font-size="8.00"
+           id="text587"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">auth</text>
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_instance.worker&#45;&gt;[root] module.us&#45;east&#45;1.aws_key_pair.auth -->
+      <g
+         id="edge_129"
+         class="edge">
+        <path
+           d="m 118.3589,-395.937 c -12.5294,9.2262 -27.1723,20.0087 -40.4448,29.7821"
+           id="path590"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <polygon
+           points="75.8354,-368.9708 79.9861,-363.3341 69.8583,-360.2229 "
+           id="polygon592"
+           style="fill:#000000;stroke:#000000" />
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_security_group.sg -->
+      <g
+         id="node_46"
+         class="node"
+         style="fill:#aec7e8">
+        <polygon
+           points="524,-359.5 524,-344.5 432,-344.5 432,-359.5 "
+           id="polygon595"
+           style="fill:#9467bd;stroke:#000000" />
+        <text
+           x="446.79489"
+           y="-350.10001"
+           font-size="8.00"
+           id="text597"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">(M) us-east-1</text>
+        <polygon
+           points="524,-344.5 524,-329.5 432,-329.5 432,-344.5 "
+           style="fill:#aec7e8;stroke:#000000"
+           id="polygon599" />
+        <text
+           x="434.793"
+           y="-335.10001"
+           font-size="8.00"
+           id="text601"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">aws_security_group</text>
+        <polygon
+           points="524,-329.5 524,-314.5 432,-314.5 432,-329.5 "
+           id="polygon603"
+           style="fill:none;stroke:#000000" />
+        <text
+           x="473.19919"
+           y="-320.10001"
+           font-size="8.00"
+           id="text605"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">sg</text>
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_instance.worker&#45;&gt;[root] module.us&#45;east&#45;1.aws_security_group.sg -->
+      <g
+         id="edge_130"
+         class="edge">
+        <path
+           d="m 183.2092,-408.6766 c 14.4103,4.0545 31.382,8.7207 46.7908,12.6766 65.5407,16.826 141.299,34.4301 191.6658,45.8753"
+           id="path608"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <polygon
+           points="421.176,-346.647 422.7238,-353.4737 431.7024,-347.8492 "
+           id="polygon610"
+           style="fill:#000000;stroke:#000000" />
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_subnet.main -->
+      <g
+         id="node_49"
+         class="node"
+         style="fill:#aec7e8">
+        <polygon
+           points="245,-359.5 245,-344.5 177,-344.5 177,-359.5 "
+           id="polygon613"
+           style="fill:#9467bd;stroke:#000000" />
+        <text
+           x="179.79491"
+           y="-350.10001"
+           font-size="8.00"
+           id="text615"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">(M) us-east-1</text>
+        <polygon
+           points="245,-344.5 245,-329.5 177,-329.5 177,-344.5 "
+           style="fill:#aec7e8;stroke:#000000"
+           id="polygon617" />
+        <text
+           x="186.99609"
+           y="-335.10001"
+           font-size="8.00"
+           id="text619"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">aws_subnet</text>
+        <polygon
+           points="245,-329.5 245,-314.5 177,-314.5 177,-329.5 "
+           id="polygon621"
+           style="fill:none;stroke:#000000" />
+        <text
+           x="201.39841"
+           y="-320.10001"
+           font-size="8.00"
+           id="text623"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">main</text>
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_instance.worker&#45;&gt;[root] module.us&#45;east&#45;1.aws_subnet.main -->
+      <g
+         id="edge_131"
+         class="edge">
+        <path
+           d="m 166.2705,-395.937 c 6.529,8.5299 14.0762,18.39 21.09,27.5531"
+           id="path626"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <polygon
+           points="184.7497,-366.0364 190.3082,-370.2911 193.6071,-360.2229 "
+           id="polygon628"
+           style="fill:#000000;stroke:#000000" />
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.var.images -->
+      <g
+         id="node_131"
+         class="node"
+         style="fill:#2ca02c">
+        <polygon
+           points="159,-359.5 159,-344.5 91,-344.5 91,-359.5 "
+           id="polygon631"
+           style="fill:#9467bd;stroke:#000000" />
+        <text
+           x="93.794899"
+           y="-350.10001"
+           font-size="8.00"
+           id="text633"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">(M) us-east-1</text>
+        <polygon
+           points="159,-344.5 159,-329.5 91,-329.5 91,-344.5 "
+           style="fill:#2ca02c;stroke:#000000"
+           id="polygon635" />
+        <text
+           x="117.7988"
+           y="-335.10001"
+           font-size="8.00"
+           id="text637"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">var</text>
+        <polygon
+           points="159,-329.5 159,-314.5 91,-314.5 91,-329.5 "
+           id="polygon639"
+           style="fill:none;stroke:#000000" />
+        <text
+           x="110.5977"
+           y="-320.10001"
+           font-size="8.00"
+           id="text641"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">images</text>
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_instance.worker&#45;&gt;[root] module.us&#45;east&#45;1.var.images -->
+      <g
+         id="edge_132"
+         class="edge">
+        <path
+           d="m 142.3147,-395.937 c -2.3727,8.0076 -5.0927,17.1876 -7.6631,25.8627"
+           id="path644"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <polygon
+           points="131.2179,-370.8053 137.9295,-368.8166 131.7327,-360.2229 "
+           id="polygon646"
+           style="fill:#000000;stroke:#000000" />
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_internet_gateway.gw -->
+      <g
+         id="node_41"
+         class="node"
+         style="fill:#aec7e8">
+        <polygon
+           points="365,-359.5 365,-344.5 263,-344.5 263,-359.5 "
+           id="polygon649"
+           style="fill:#9467bd;stroke:#000000" />
+        <text
+           x="282.79489"
+           y="-350.10001"
+           font-size="8.00"
+           id="text651"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">(M) us-east-1</text>
+        <polygon
+           points="365,-344.5 365,-329.5 263,-329.5 263,-344.5 "
+           style="fill:#aec7e8;stroke:#000000"
+           id="polygon653" />
+        <text
+           x="265.99219"
+           y="-335.10001"
+           font-size="8.00"
+           id="text655"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">aws_internet_gateway</text>
+        <polygon
+           points="365,-329.5 365,-314.5 263,-314.5 263,-329.5 "
+           id="polygon657"
+           style="fill:none;stroke:#000000" />
+        <text
+           x="309.19919"
+           y="-320.10001"
+           font-size="8.00"
+           id="text659"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">gw</text>
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_vpc.vpc -->
+      <g
+         id="node_50"
+         class="node"
+         style="fill:#aec7e8">
+        <polygon
+           points="348,-278.5 348,-263.5 280,-263.5 280,-278.5 "
+           id="polygon662"
+           style="fill:#9467bd;stroke:#000000" />
+        <text
+           x="282.79489"
+           y="-269.10001"
+           font-size="8.00"
+           id="text664"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">(M) us-east-1</text>
+        <polygon
+           points="348,-263.5 348,-248.5 280,-248.5 280,-263.5 "
+           style="fill:#aec7e8;stroke:#000000"
+           id="polygon666" />
+        <text
+           x="297.1973"
+           y="-254.10001"
+           font-size="8.00"
+           id="text668"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">aws_vpc</text>
+        <polygon
+           points="348,-248.5 348,-233.5 280,-233.5 280,-248.5 "
+           id="polygon670"
+           style="fill:none;stroke:#000000" />
+        <text
+           x="306.7988"
+           y="-239.10001"
+           font-size="8.00"
+           id="text672"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">vpc</text>
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_internet_gateway.gw&#45;&gt;[root] module.us&#45;east&#45;1.aws_vpc.vpc -->
+      <g
+         id="edge_133"
+         class="edge">
+        <path
+           d="m 314,-314.937 c 0,7.9206 0,16.9882 0,25.5796"
+           id="path675"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <polygon
+           points="310.5001,-289.223 317.5001,-289.2229 314,-279.2229 "
+           id="polygon677"
+           style="fill:#000000;stroke:#000000" />
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.provider.aws -->
+      <g
+         id="node_51"
+         class="node"
+         style="fill:#ff7f0e">
+        <polygon
+           points="223,-197.5 223,-182.5 155,-182.5 155,-197.5 "
+           id="polygon680"
+           style="fill:#9467bd;stroke:#000000" />
+        <text
+           x="157.79491"
+           y="-188.10001"
+           font-size="8.00"
+           id="text682"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">(M) us-east-1</text>
+        <polygon
+           points="223,-182.5 223,-167.5 155,-167.5 155,-182.5 "
+           style="fill:#ff7f0e;stroke:#000000"
+           id="polygon684" />
+        <text
+           x="169.79691"
+           y="-173.10001"
+           font-size="8.00"
+           id="text686"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">provider</text>
+        <polygon
+           points="223,-167.5 223,-152.5 155,-152.5 155,-167.5 "
+           id="polygon688"
+           style="fill:none;stroke:#000000" />
+        <text
+           x="181.7988"
+           y="-158.10001"
+           font-size="8.00"
+           id="text690"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">aws</text>
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_key_pair.auth&#45;&gt;[root] module.us&#45;east&#45;1.provider.aws -->
+      <g
+         id="edge_134"
+         class="edge">
+        <path
+           d="m 59.8569,-314.9746 c 26.3448,28.4524 71.7742,77.5162 101.1273,109.2175"
+           id="path693"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <polygon
+           points="158.7168,-203.0543 163.8531,-207.8102 168.079,-198.0946 "
+           id="polygon695"
+           style="fill:#000000;stroke:#000000" />
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.var.key_name -->
+      <g
+         id="node_132"
+         class="node"
+         style="fill:#2ca02c">
+        <polygon
+           points="73,-278.5 73,-263.5 5,-263.5 5,-278.5 "
+           id="polygon698"
+           style="fill:#9467bd;stroke:#000000" />
+        <text
+           x="7.7948999"
+           y="-269.10001"
+           font-size="8.00"
+           id="text700"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">(M) us-east-1</text>
+        <polygon
+           points="73,-263.5 73,-248.5 5,-248.5 5,-263.5 "
+           style="fill:#2ca02c;stroke:#000000"
+           id="polygon702" />
+        <text
+           x="31.7988"
+           y="-254.10001"
+           font-size="8.00"
+           id="text704"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">var</text>
+        <polygon
+           points="73,-248.5 73,-233.5 5,-233.5 5,-248.5 "
+           id="polygon706"
+           style="fill:none;stroke:#000000" />
+        <text
+           x="19.7969"
+           y="-239.10001"
+           font-size="8.00"
+           id="text708"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">key_name</text>
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_key_pair.auth&#45;&gt;[root] module.us&#45;east&#45;1.var.key_name -->
+      <g
+         id="edge_135"
+         class="edge">
+        <path
+           d="m 39,-314.937 c 0,7.9206 0,16.9882 0,25.5796"
+           id="path711"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <polygon
+           points="35.5001,-289.223 42.5001,-289.2229 39,-279.2229 "
+           id="polygon713"
+           style="fill:#000000;stroke:#000000" />
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_network_acl.acl -->
+      <g
+         id="node_43"
+         class="node"
+         style="fill:#aec7e8">
+        <polygon
+           points="413,-440.5 413,-425.5 335,-425.5 335,-440.5 "
+           id="polygon716"
+           style="fill:#9467bd;stroke:#000000" />
+        <text
+           x="342.79489"
+           y="-431.10001"
+           font-size="8.00"
+           id="text718"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">(M) us-east-1</text>
+        <polygon
+           points="413,-425.5 413,-410.5 335,-410.5 335,-425.5 "
+           style="fill:#aec7e8;stroke:#000000"
+           id="polygon720" />
+        <text
+           x="337.99411"
+           y="-416.10001"
+           font-size="8.00"
+           id="text722"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">aws_network_acl</text>
+        <polygon
+           points="413,-410.5 413,-395.5 335,-395.5 335,-410.5 "
+           id="polygon724"
+           style="fill:none;stroke:#000000" />
+        <text
+           x="366.7988"
+           y="-401.10001"
+           font-size="8.00"
+           id="text726"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">acl</text>
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_network_acl.acl&#45;&gt;[root] module.us&#45;east&#45;1.aws_vpc.vpc -->
+      <g
+         id="edge_137"
+         class="edge">
+        <path
+           d="m 378.9175,-395.6986 c 3.5598,21.6656 6.0431,54.7039 -4.9175,80.6986 -4.5466,10.783 -12.1597,20.5654 -20.4634,28.9113"
+           id="path729"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <polygon
+           points="351.0218,-288.5287 355.8101,-283.4225 346.1214,-279.1352 "
+           id="polygon731"
+           style="fill:#000000;stroke:#000000" />
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_route_table.public -->
+      <g
+         id="node_44"
+         class="node"
+         style="fill:#aec7e8">
+        <polygon
+           points="317,-440.5 317,-425.5 239,-425.5 239,-440.5 "
+           id="polygon734"
+           style="fill:#9467bd;stroke:#000000" />
+        <text
+           x="246.79491"
+           y="-431.10001"
+           font-size="8.00"
+           id="text736"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">(M) us-east-1</text>
+        <polygon
+           points="317,-425.5 317,-410.5 239,-410.5 239,-425.5 "
+           style="fill:#aec7e8;stroke:#000000"
+           id="polygon738" />
+        <text
+           x="241.99409"
+           y="-416.10001"
+           font-size="8.00"
+           id="text740"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">aws_route_table</text>
+        <polygon
+           points="317,-410.5 317,-395.5 239,-395.5 239,-410.5 "
+           id="polygon742"
+           style="fill:none;stroke:#000000" />
+        <text
+           x="263.59769"
+           y="-401.10001"
+           font-size="8.00"
+           id="text744"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">public</text>
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_route_table.public&#45;&gt;[root] module.us&#45;east&#45;1.aws_internet_gateway.gw -->
+      <g
+         id="edge_138"
+         class="edge">
+        <path
+           d="m 288.028,-395.937 c 3.6363,8.1817 7.8166,17.5873 11.7457,26.4277"
+           id="path747"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <polygon
+           points="296.6411,-367.9396 303.0378,-370.7826 303.9009,-360.2229 "
+           id="polygon749"
+           style="fill:#000000;stroke:#000000" />
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_route_table_association.public_routes -->
+      <g
+         id="node_45"
+         class="node"
+         style="fill:#aec7e8">
+        <polygon
+           points="346,-521.5 346,-506.5 211,-506.5 211,-521.5 "
+           id="polygon752"
+           style="fill:#9467bd;stroke:#000000" />
+        <text
+           x="247.29491"
+           y="-512.09998"
+           font-size="8.00"
+           id="text754"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">(M) us-east-1</text>
+        <polygon
+           points="346,-506.5 346,-491.5 211,-491.5 211,-506.5 "
+           style="fill:#aec7e8;stroke:#000000"
+           id="polygon756" />
+        <text
+           x="213.6895"
+           y="-497.10001"
+           font-size="8.00"
+           id="text758"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">aws_route_table_association</text>
+        <polygon
+           points="346,-491.5 346,-476.5 211,-476.5 211,-491.5 "
+           id="polygon760"
+           style="fill:none;stroke:#000000" />
+        <text
+           x="247.29491"
+           y="-482.10001"
+           font-size="8.00"
+           id="text762"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">public_routes</text>
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_route_table_association.public_routes&#45;&gt;[root] module.us&#45;east&#45;1.aws_route_table.public -->
+      <g
+         id="edge_139"
+         class="edge">
+        <path
+           d="m 278,-476.937 c 0,7.9206 0,16.9882 0,25.5796"
+           id="path765"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <polygon
+           points="274.5001,-451.223 281.5001,-451.2229 278,-441.2229 "
+           id="polygon767"
+           style="fill:#000000;stroke:#000000" />
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_route_table_association.public_routes&#45;&gt;[root] module.us&#45;east&#45;1.aws_subnet.main -->
+      <g
+         id="edge_140"
+         class="edge">
+        <path
+           d="M 254.9048,-476.9125 C 245.7987,-466.7539 236.0812,-454.1094 230,-441 c -10.3254,22.2586 -15.0462,49.6499 -17.2013,70.6616"
+           id="path770"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <polygon
+           points="209.3047,-370.5595 216.2776,-369.9438 211.9115,-360.2904 "
+           id="polygon772"
+           style="fill:#000000;stroke:#000000" />
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_security_group.sg&#45;&gt;[root] module.us&#45;east&#45;1.aws_vpc.vpc -->
+      <g
+         id="edge_141"
+         class="edge">
+        <path
+           d="m 432.3169,-314.937 c -23.4076,11.5611 -51.7629,25.5658 -74.8462,36.9667"
+           id="path775"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <polygon
+           points="355.6726,-280.9859 358.7725,-274.7097 348.2565,-273.4194 "
+           id="polygon777"
+           style="fill:#000000;stroke:#000000" />
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_security_group_rule.egress -->
+      <g
+         id="node_47"
+         class="node"
+         style="fill:#aec7e8">
+        <polygon
+           points="547,-440.5 547,-425.5 431,-425.5 431,-440.5 "
+           id="polygon780"
+           style="fill:#9467bd;stroke:#000000" />
+        <text
+           x="457.79489"
+           y="-431.10001"
+           font-size="8.00"
+           id="text782"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">(M) us-east-1</text>
+        <polygon
+           points="547,-425.5 547,-410.5 431,-410.5 431,-425.5 "
+           style="fill:#aec7e8;stroke:#000000"
+           id="polygon784" />
+        <text
+           x="433.79099"
+           y="-416.10001"
+           font-size="8.00"
+           id="text786"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">aws_security_group_rule</text>
+        <polygon
+           points="547,-410.5 547,-395.5 431,-395.5 431,-410.5 "
+           id="polygon788"
+           style="fill:none;stroke:#000000" />
+        <text
+           x="474.59769"
+           y="-401.10001"
+           font-size="8.00"
+           id="text790"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">egress</text>
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_security_group_rule.egress&#45;&gt;[root] module.us&#45;east&#45;1.aws_security_group.sg -->
+      <g
+         id="edge_142"
+         class="edge">
+        <path
+           d="m 485.9359,-395.937 c -1.0756,7.9206 -2.307,16.9882 -3.4738,25.5796"
+           id="path793"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <polygon
+           points="478.9634,-370.603 485.8998,-369.661 481.0858,-360.2229 "
+           id="polygon795"
+           style="fill:#000000;stroke:#000000" />
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_security_group_rule.ssh&#45;ingress -->
+      <g
+         id="node_48"
+         class="node"
+         style="fill:#aec7e8">
+        <polygon
+           points="613,-521.5 613,-506.5 497,-506.5 497,-521.5 "
+           id="polygon798"
+           style="fill:#9467bd;stroke:#000000" />
+        <text
+           x="523.79492"
+           y="-512.09998"
+           font-size="8.00"
+           id="text800"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">(M) us-east-1</text>
+        <polygon
+           points="613,-506.5 613,-491.5 497,-491.5 497,-506.5 "
+           style="fill:#aec7e8;stroke:#000000"
+           id="polygon802" />
+        <text
+           x="499.79099"
+           y="-497.10001"
+           font-size="8.00"
+           id="text804"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">aws_security_group_rule</text>
+        <polygon
+           points="613,-491.5 613,-476.5 497,-476.5 497,-491.5 "
+           id="polygon806"
+           style="fill:none;stroke:#000000" />
+        <text
+           x="528.5957"
+           y="-482.10001"
+           font-size="8.00"
+           id="text808"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">ssh-ingress</text>
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_security_group_rule.ssh&#45;ingress&#45;&gt;[root] module.us&#45;east&#45;1.aws_security_group.sg -->
+      <g
+         id="edge_143"
+         class="edge">
+        <path
+           d="m 560.9096,-476.7746 c 4.4308,21.9066 7.7877,55.3801 -4.9096,80.7746 -5.794,11.588 -15.0958,21.4762 -25.29,29.645"
+           id="path811"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <polygon
+           points="528.3308,-368.9475 532.5068,-363.3296 522.3932,-360.1727 "
+           id="polygon813"
+           style="fill:#000000;stroke:#000000" />
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_subnet.main&#45;&gt;[root] module.us&#45;east&#45;1.aws_vpc.vpc -->
+      <g
+         id="edge_144"
+         class="edge">
+        <path
+           d="m 239.6912,-314.937 c 11.6214,9.1391 25.1846,19.8053 37.519,29.5052"
+           id="path816"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <polygon
+           points="275.0813,-282.6534 279.4084,-288.1558 285.1054,-279.2229 "
+           id="polygon818"
+           style="fill:#000000;stroke:#000000" />
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.var.subnet_cidr -->
+      <g
+         id="node_134"
+         class="node"
+         style="fill:#2ca02c">
+        <polygon
+           points="245,-278.5 245,-263.5 177,-263.5 177,-278.5 "
+           id="polygon821"
+           style="fill:#9467bd;stroke:#000000" />
+        <text
+           x="179.79491"
+           y="-269.10001"
+           font-size="8.00"
+           id="text823"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">(M) us-east-1</text>
+        <polygon
+           points="245,-263.5 245,-248.5 177,-248.5 177,-263.5 "
+           style="fill:#2ca02c;stroke:#000000"
+           id="polygon825" />
+        <text
+           x="203.7988"
+           y="-254.10001"
+           font-size="8.00"
+           id="text827"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">var</text>
+        <polygon
+           points="245,-248.5 245,-233.5 177,-233.5 177,-248.5 "
+           id="polygon829"
+           style="fill:none;stroke:#000000" />
+        <text
+           x="184.5957"
+           y="-239.10001"
+           font-size="8.00"
+           id="text831"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">subnet_cidr</text>
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_subnet.main&#45;&gt;[root] module.us&#45;east&#45;1.var.subnet_cidr -->
+      <g
+         id="edge_145"
+         class="edge">
+        <path
+           d="m 211,-314.937 c 0,7.9206 0,16.9882 0,25.5796"
+           id="path834"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <polygon
+           points="207.5001,-289.223 214.5001,-289.2229 211,-279.2229 "
+           id="polygon836"
+           style="fill:#000000;stroke:#000000" />
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_vpc.vpc&#45;&gt;[root] module.us&#45;east&#45;1.provider.aws -->
+      <g
+         id="edge_146"
+         class="edge">
+        <path
+           d="m 279.8432,-234.3664 c -14.8818,9.6434 -32.4835,21.0493 -48.2117,31.2412"
+           id="path839"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <polygon
+           points="229.6043,-205.9822 233.411,-200.1077 223.1155,-197.6068 "
+           id="polygon841"
+           style="fill:#000000;stroke:#000000" />
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.var.vpc_cidr -->
+      <g
+         id="node_135"
+         class="node"
+         style="fill:#2ca02c">
+        <polygon
+           points="348,-197.5 348,-182.5 280,-182.5 280,-197.5 "
+           id="polygon844"
+           style="fill:#9467bd;stroke:#000000" />
+        <text
+           x="282.79489"
+           y="-188.10001"
+           font-size="8.00"
+           id="text846"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">(M) us-east-1</text>
+        <polygon
+           points="348,-182.5 348,-167.5 280,-167.5 280,-182.5 "
+           style="fill:#2ca02c;stroke:#000000"
+           id="polygon848" />
+        <text
+           x="306.7988"
+           y="-173.10001"
+           font-size="8.00"
+           id="text850"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">var</text>
+        <polygon
+           points="348,-167.5 348,-152.5 280,-152.5 280,-167.5 "
+           id="polygon852"
+           style="fill:none;stroke:#000000" />
+        <text
+           x="294.79691"
+           y="-158.10001"
+           font-size="8.00"
+           id="text854"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">vpc_cidr</text>
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.aws_vpc.vpc&#45;&gt;[root] module.us&#45;east&#45;1.var.vpc_cidr -->
+      <g
+         id="edge_147"
+         class="edge">
+        <path
+           d="m 314,-233.937 c 0,7.9206 0,16.9882 0,25.5796"
+           id="path857"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <polygon
+           points="310.5001,-208.223 317.5001,-208.2229 314,-198.2229 "
+           id="polygon859"
+           style="fill:#000000;stroke:#000000" />
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.var.aws_access_key -->
+      <g
+         id="node_138"
+         class="node"
+         style="fill:#2ca02c">
+        <polygon
+           points="137,-116.5 137,-101.5 64,-101.5 64,-116.5 "
+           id="polygon862"
+           style="fill:#9467bd;stroke:#000000" />
+        <text
+           x="69.294899"
+           y="-107.1"
+           font-size="8.00"
+           id="text864"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">(M) us-east-1</text>
+        <polygon
+           points="137,-101.5 137,-86.5 64,-86.5 64,-101.5 "
+           style="fill:#2ca02c;stroke:#000000"
+           id="polygon866" />
+        <text
+           x="93.298798"
+           y="-92.099998"
+           font-size="8.00"
+           id="text868"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">var</text>
+        <polygon
+           points="137,-86.5 137,-71.5 64,-71.5 64,-86.5 "
+           id="polygon870"
+           style="fill:none;stroke:#000000" />
+        <text
+           x="66.894501"
+           y="-77.099998"
+           font-size="8.00"
+           id="text872"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">aws_access_key</text>
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.provider.aws&#45;&gt;[root] module.us&#45;east&#45;1.var.aws_access_key -->
+      <g
+         id="edge_154"
+         class="edge">
+        <path
+           d="m 164.2085,-152.937 c -9.8504,8.9651 -21.3155,19.3996 -31.8091,28.9499"
+           id="path875"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <polygon
+           points="130.007,-126.5423 134.7187,-121.3654 124.9672,-117.2229 "
+           id="polygon877"
+           style="fill:#000000;stroke:#000000" />
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.var.aws_region -->
+      <g
+         id="node_139"
+         class="node"
+         style="fill:#2ca02c">
+        <polygon
+           points="223,-116.5 223,-101.5 155,-101.5 155,-116.5 "
+           id="polygon880"
+           style="fill:#9467bd;stroke:#000000" />
+        <text
+           x="157.79491"
+           y="-107.1"
+           font-size="8.00"
+           id="text882"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">(M) us-east-1</text>
+        <polygon
+           points="223,-101.5 223,-86.5 155,-86.5 155,-101.5 "
+           style="fill:#2ca02c;stroke:#000000"
+           id="polygon884" />
+        <text
+           x="181.7988"
+           y="-92.099998"
+           font-size="8.00"
+           id="text886"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">var</text>
+        <polygon
+           points="223,-86.5 223,-71.5 155,-71.5 155,-86.5 "
+           id="polygon888"
+           style="fill:none;stroke:#000000" />
+        <text
+           x="164.99609"
+           y="-77.099998"
+           font-size="8.00"
+           id="text890"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">aws_region</text>
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.provider.aws&#45;&gt;[root] module.us&#45;east&#45;1.var.aws_region -->
+      <g
+         id="edge_155"
+         class="edge">
+        <path
+           d="m 189,-152.937 c 0,7.9206 0,16.9882 0,25.5796"
+           id="path893"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <polygon
+           points="185.5001,-127.223 192.5001,-127.2229 189,-117.2229 "
+           id="polygon895"
+           style="fill:#000000;stroke:#000000" />
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.var.aws_secret_key -->
+      <g
+         id="node_140"
+         class="node"
+         style="fill:#2ca02c">
+        <polygon
+           points="315,-116.5 315,-101.5 242,-101.5 242,-116.5 "
+           id="polygon898"
+           style="fill:#9467bd;stroke:#000000" />
+        <text
+           x="247.29491"
+           y="-107.1"
+           font-size="8.00"
+           id="text900"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">(M) us-east-1</text>
+        <polygon
+           points="315,-101.5 315,-86.5 242,-86.5 242,-101.5 "
+           style="fill:#2ca02c;stroke:#000000"
+           id="polygon902" />
+        <text
+           x="271.2988"
+           y="-92.099998"
+           font-size="8.00"
+           id="text904"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">var</text>
+        <polygon
+           points="315,-86.5 315,-71.5 242,-71.5 242,-86.5 "
+           id="polygon906"
+           style="fill:none;stroke:#000000" />
+        <text
+           x="244.8945"
+           y="-77.099998"
+           font-size="8.00"
+           id="text908"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">aws_secret_key</text>
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.provider.aws&#45;&gt;[root] module.us&#45;east&#45;1.var.aws_secret_key -->
+      <g
+         id="edge_156"
+         class="edge">
+        <path
+           d="m 213.7915,-152.937 c 9.8504,8.9651 21.3155,19.3996 31.8091,28.9499"
+           id="path911"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <polygon
+           points="243.2813,-121.3654 247.993,-126.5423 253.0328,-117.2229 "
+           id="polygon913"
+           style="fill:#000000;stroke:#000000" />
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.var.public_key_path -->
+      <g
+         id="node_133"
+         class="node"
+         style="fill:#2ca02c">
+        <polygon
+           points="78,-197.5 78,-182.5 0,-182.5 0,-197.5 "
+           id="polygon916"
+           style="fill:#9467bd;stroke:#000000" />
+        <text
+           x="7.7948999"
+           y="-188.10001"
+           font-size="8.00"
+           id="text918"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">(M) us-east-1</text>
+        <polygon
+           points="78,-182.5 78,-167.5 0,-167.5 0,-182.5 "
+           style="fill:#2ca02c;stroke:#000000"
+           id="polygon920" />
+        <text
+           x="31.7988"
+           y="-173.10001"
+           font-size="8.00"
+           id="text922"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">var</text>
+        <polygon
+           points="78,-167.5 78,-152.5 0,-152.5 0,-167.5 "
+           id="polygon924"
+           style="fill:none;stroke:#000000" />
+        <text
+           x="2.9941001"
+           y="-158.10001"
+           font-size="8.00"
+           id="text926"
+           style="font-size:8px;font-family:'courier new';text-anchor:start;fill:#000000">public_key_path</text>
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.var.key_name&#45;&gt;[root] module.us&#45;east&#45;1.var.public_key_path -->
+      <g
+         id="edge_270"
+         class="edge">
+        <path
+           d="m 39,-233.937 c 0,11.141 0,24.5514 0,35.7141"
+           id="path929"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000;stroke-dasharray:5, 2" />
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.provider.aws (close)&#45;&gt;[root] module.us&#45;east&#45;1.aws_eip.wip -->
+      <g
+         id="edge_149"
+         class="edge">
+        <path
+           d="M 339.7448,-570.256 C 304.5195,-559.4113 248.2845,-541.2313 201,-522 c -1.1784,0.4793 -2.3692,0.9738 -3.5674,1.4804"
+           id="path932"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <polygon
+           points="195.9262,-523.6807 198.7451,-517.2733 188.1823,-516.45 "
+           id="polygon934"
+           style="fill:#000000;stroke:#000000" />
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.provider.aws (close)&#45;&gt;[root] module.us&#45;east&#45;1.aws_network_acl.acl -->
+      <g
+         id="edge_150"
+         class="edge">
+        <path
+           d="m 374,-557.9746 c 0,27.729 0,75.0347 0,106.7666"
+           id="path937"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <polygon
+           points="370.5001,-451.0947 377.5001,-451.0946 374,-441.0946 "
+           id="polygon939"
+           style="fill:#000000;stroke:#000000" />
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.provider.aws (close)&#45;&gt;[root] module.us&#45;east&#45;1.aws_route_table_association.public_routes -->
+      <g
+         id="edge_151"
+         class="edge">
+        <path
+           d="m 347.2586,-557.937 c -10.7283,9.0521 -23.2323,19.6023 -34.6403,29.2278"
+           id="path942"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <polygon
+           points="310.3168,-531.3467 314.8309,-525.9967 304.9309,-522.2229 "
+           id="polygon944"
+           style="fill:#000000;stroke:#000000" />
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.provider.aws (close)&#45;&gt;[root] module.us&#45;east&#45;1.aws_security_group_rule.egress -->
+      <g
+         id="edge_152"
+         class="edge">
+        <path
+           d="m 389.9903,-557.9746 c 20.0265,28.2113 54.4376,76.6861 76.9561,108.4078"
+           id="path947"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <polygon
+           points="464.318,-447.223 470.026,-451.275 472.9606,-441.0946 "
+           id="polygon949"
+           style="fill:#000000;stroke:#000000" />
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.provider.aws (close)&#45;&gt;[root] module.us&#45;east&#45;1.aws_security_group_rule.ssh&#45;ingress -->
+      <g
+         id="edge_153"
+         class="edge">
+        <path
+           d="m 408.0447,-565.2645 c 24.5796,10.9997 58.4098,26.1392 87.4156,39.1197"
+           id="path952"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <polygon
+           points="494.133,-522.9044 496.9924,-529.2938 504.6904,-522.0143 "
+           id="polygon954"
+           style="fill:#000000;stroke:#000000" />
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.var.aws_access_key&#45;&gt;[root] var.aws_access_key -->
+      <g
+         id="edge_157"
+         class="edge">
+        <path
+           d="m 100,-71.9612 c 0,8.0571 0,17.24 0,25.7176"
+           id="path957"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <polygon
+           points="96.5001,-46.0205 103.5001,-46.0204 100,-36.0205 "
+           id="polygon959"
+           style="fill:#000000;stroke:#000000" />
+      </g>
+      <!-- [root] module.us&#45;east&#45;1.var.aws_secret_key&#45;&gt;[root] var.aws_secret_key -->
+      <g
+         id="edge_158"
+         class="edge">
+        <path
+           d="m 278,-71.9612 c 0,8.0571 0,17.24 0,25.7176"
+           id="path962"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000" />
+        <polygon
+           points="274.5001,-46.0205 281.5001,-46.0204 278,-36.0205 "
+           id="polygon964"
+           style="fill:#000000;stroke:#000000" />
+      </g>
+    </g>
+  </g>
+</svg>
