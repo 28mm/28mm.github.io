@@ -7,6 +7,129 @@
     
       
         <item>
+          <title>Exploring Terraform Graphs With D3.js Part 4</title>
+          <description>&lt;script src=&quot;/assets/terraform-graphs-4/jquery.slim.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!--&lt;script src=&quot;/assets/terraform-graphs-4/bootstrap.min.js&quot;&gt;&lt;/script&gt;--&gt;
+&lt;script src=&quot;/assets/terraform-graphs-4/fontawesome-all.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;/assets/terraform-graphs-4/d3.v4.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;/assets/terraform-graphs-4/d3-tip.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;/assets/terraform-graphs-4/blast-radius.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;/assets/terraform-graphs-4/categories.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;/assets/terraform-graphs-4/svg-pan-zoom.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;/assets/terraform-graphs-4/selectize.js&quot;&gt;&lt;/script&gt;
+
+&lt;!--&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/terraform-graphs-4/bootstrap.min.css&quot;&gt;--&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/terraform-graphs-4/selectize.css&quot; /&gt;
+
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/terraform-graphs-4/style.css&quot; /&gt;
+
+&lt;h3 id=&quot;tldr&quot;&gt;TL;DR&lt;/h3&gt;
+
+&lt;p&gt;This is the fourth in a series of posts about &lt;em&gt;&lt;a href=&quot;/blast-radius-docs/&quot;&gt;Blast Radius&lt;/a&gt;&lt;/em&gt;, a tool for producing interactive visualizations of &lt;em&gt;Terraform&lt;/em&gt; dependency graphs.&lt;/p&gt;
+
+&lt;p&gt;Part three (parts: &lt;a href=&quot;/notes/d3-terraform-graphs&quot;&gt;one&lt;/a&gt;, &lt;a href=&quot;/notes/d3-terraform-graphs-2&quot;&gt;two&lt;/a&gt;, &lt;a href=&quot;/notes/terraform-graphs-3&quot;&gt;three&lt;/a&gt;, &lt;a href=&quot;/notes/d3-terraform-graphs-4&quot;&gt;four&lt;/a&gt;) introduced module support, and a marginal improvement in the width of some figures, but stopped short of capably handling large real-world graphs.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/terraform-graphs-4/7-modules.svg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The figure above (with interactions &lt;em&gt;disabled&lt;/em&gt;) demonstrates the issue: when configurations grow beyond a certain threshold, relationships between resources become harder to follow. This post considers several partial solutions.&lt;/p&gt;
+
+&lt;h3 id=&quot;pan-and-zoom&quot;&gt;Pan and Zoom&lt;/h3&gt;
+
+&lt;p&gt;Thus far the best way of navigating larger graphs has been the browser’s scrolling and zoom features. But these are mind-meltingly awkward, for our purpose.&lt;/p&gt;
+
+&lt;p&gt;One issue is that browser-zoom applies globally, magnifying unrelated features to grotesque proportions, or causing them to vanish—just as the graph comes fully into view.&lt;/p&gt;
+
+&lt;p&gt;And the less said about horizontal scrolling, the better. &lt;em&gt;&lt;a href=&quot;https://github.com/ariutta/svg-pan-zoom&quot;&gt;svg-pan-zoom.js&lt;/a&gt;&lt;/em&gt; implements click-and-drag panning, as well as various zooming mechanisms–the scrollwheel seems most natural to me.&lt;/p&gt;
+
+&lt;p&gt;&lt;button id=&quot;pz-zoom-out&quot; class=&quot;btn&quot;&gt;&lt;i class=&quot;fas fa-search-minus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;button id=&quot;pz-zoom-in&quot; class=&quot;btn&quot;&gt;&lt;i class=&quot;fas fa-search-plus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;button id=&quot;pz-download&quot; class=&quot;btn&quot;&gt;&lt;i class=&quot;fas fa-download&quot;&gt;&lt;/i&gt;&lt;/button&gt;&lt;/p&gt;
+&lt;div id=&quot;pz&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;This example is somewhat hampered by its small size and mail-slot proportions. Better examples, on broader canvas, such as &lt;a href=&quot;https://28mm.github.io/blast-radius-docs/examples/terraform-provider-aws/networking/&quot;&gt;this&lt;/a&gt; are available &lt;a href=&quot;https://28mm.github.io/blast-radius-docs/examples/&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;(These features are badly broken on mobile, now, where pan and zoom gestures had worked well-enough, previously. Apologies if you are reading this on a phone or tablet!)&lt;/p&gt;
+
+&lt;h3 id=&quot;search&quot;&gt;Search&lt;/h3&gt;
+
+&lt;p&gt;Pan and zoom work best when the resource of interest along with resources related to it are already selected. Until then, panning isn’t a very efficient means of exploration.&lt;/p&gt;
+
+&lt;form class=&quot;form-inline my-2 my-lg-0&quot; id=&quot;graph-search-form&quot;&gt;
+&lt;select style=&quot;width: 100%&quot; id=&quot;graph-search&quot;&gt;&lt;/select&gt;
+&lt;/form&gt;
+&lt;p&gt;&lt;button id=&quot;graph-zoom-out&quot; class=&quot;btn&quot;&gt;&lt;i class=&quot;fas fa-search-minus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;button id=&quot;graph-zoom-in&quot; class=&quot;btn&quot;&gt;&lt;i class=&quot;fas fa-search-plus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;button id=&quot;graph-download&quot; class=&quot;btn&quot;&gt;&lt;i class=&quot;fas fa-download&quot;&gt;&lt;/i&gt;&lt;/button&gt;&lt;/p&gt;
+&lt;div id=&quot;graph&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;There are some rough edges to be worked out, but it does what’s needed.&lt;/p&gt;
+
+&lt;h3 id=&quot;prune-to-sub-graph&quot;&gt;Prune to Sub-Graph&lt;/h3&gt;
+
+&lt;p&gt;Here is the same graph, again (with interactions &lt;em&gt;disabled&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/terraform-graphs-4/7-modules.svg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And below is the same graph with a single resource highlighted, along with its dependencies and dependents. This is an improvement, especially with pan and zoom, but less helpful in cases where the subgraph is not as contained in one region of the figure.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/terraform-graphs-4/7-modules-selected.svg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The &lt;em&gt;prune to selection&lt;/em&gt; button generates a new figure with only the selected resource’s dependencies and dependents.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/terraform-graphs-4/7-modules-pruned.svg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Sub-graphs retain the color scheme from the larger diagram, but their layout differs (often dramtically). Unfortunately, it isn’t easily possible to bias &lt;em&gt;Graphviz&lt;/em&gt; in favor of its previous layout; nodes jump around with abandon.&lt;/p&gt;
+
+&lt;h3 id=&quot;docker-support&quot;&gt;Docker Support&lt;/h3&gt;
+
+&lt;p&gt;One annoyance often met by new users is &lt;em&gt;Blast Radius&lt;/em&gt;’ reliance on recent versions of Python (3.5+), and Graphviz. Docker is a convenient way to hide the sordid details of Python versioning and package management.&lt;/p&gt;
+
+&lt;p&gt;An update image is available from the docker registry as &lt;code class=&quot;highlighter-rouge&quot;&gt;28mm/blast-radius&lt;/code&gt;. If the current working directory contains a terraform project, invoke it like so:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;docker run --cap-add&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;SYS_ADMIN -it --rm -p 5000:5000 -v &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;:/workdir:ro 28mm/blast-radius
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Further discussion can be found in the README. Thanks to Buc and Daniel for contributing this.&lt;/p&gt;
+
+&lt;h3 id=&quot;performance&quot;&gt;Performance&lt;/h3&gt;
+
+&lt;p&gt;A further limitation–beyond layout and navigability–for larger graphs is performance. I’ve had reports of graphs taking 10+ minutes to generate! A lower bound for runtime is &lt;code class=&quot;highlighter-rouge&quot;&gt;terraform graph | dot -Tsvg&lt;/code&gt;, since &lt;em&gt;Blast Radius&lt;/em&gt; depends on both these programs.&lt;/p&gt;
+
+&lt;p&gt;Some testing with larger projects would be useful. (If anyone reading this, who has an especially large project, wishes to help: I’m interested in &lt;code class=&quot;highlighter-rouge&quot;&gt;time terraform graph | dot -Tsvg&lt;/code&gt; vs &lt;code class=&quot;highlighter-rouge&quot;&gt;time blast-radius --svg&lt;/code&gt;)&lt;/p&gt;
+
+&lt;h3 id=&quot;conclusion-and-next-steps&quot;&gt;Conclusion And Next Steps&lt;/h3&gt;
+
+&lt;p&gt;Thus concludes a somewhat delayed chronicle of incremental progress. Thanks for reading this far, and as always:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Comment&lt;/strong&gt; and &lt;strong&gt;Suggestion&lt;/strong&gt; to &lt;strong&gt;&lt;a href=&quot;mailto:patrick.mcmurchie@gmail.com&quot;&gt;patrick.mcmurchie@gmail.com&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;script&gt;
+
+
+blastradius('#pz', '/assets/terraform-graphs-4/pz-demo.svg', '/assets/terraform-graphs-4/pz-demo.json');
+
+
+blastradius('#graph', '/assets/terraform-graphs-4/search-demo.svg', '/assets/terraform-graphs-4/search-demo.json');
+
+&lt;/script&gt;
+
+</description>
+          <pubDate>2018-02-09T23:00:01-08:00</pubDate>
+          <link>http://localhost:4000/notes/d3-terraform-graphs-4</link>
+          <guid isPermaLink="true">http://localhost:4000/notes/d3-terraform-graphs-4</guid>
+        </item>
+      
+    
+      
+        <item>
           <title>Finding New Music: Two Experiments</title>
           <description>&lt;h3 id=&quot;tldr&quot;&gt;TL;DR&lt;/h3&gt;
 
@@ -691,7 +814,7 @@ example3('div#example3',
 
 &lt;div id=&quot;demo1&quot;&gt;&lt;/div&gt;
 
-&lt;p&gt;Above is a representative example. Roll your mouse over one of the nodes to see its definition and to highlight its dependencies. For further information, refer to &lt;a href=&quot;/notes/d3-terraform-graphs&quot;&gt;part one&lt;/a&gt;, &lt;a href=&quot;/notes/d3-terraform-graphs-2&quot;&gt;part two&lt;/a&gt;, or &lt;a href=&quot;/notes/terraform-graphs-3&quot;&gt;part three&lt;/a&gt; of this series; or to &lt;a href=&quot;https://www.github.com/28mm/blast-radius&quot;&gt;GitHub&lt;/a&gt;, where &lt;em&gt;&lt;a href=&quot;/blast-radius-docs&quot;&gt;Blast Radius&lt;/a&gt;&lt;/em&gt; is hosted.&lt;/p&gt;
+&lt;p&gt;Above is a representative example. Roll your mouse over one of the nodes to see its definition and to highlight its dependencies. For further information, refer to &lt;a href=&quot;/notes/d3-terraform-graphs&quot;&gt;part one&lt;/a&gt;, &lt;a href=&quot;/notes/d3-terraform-graphs-2&quot;&gt;part two&lt;/a&gt;, &lt;a href=&quot;/notes/terraform-graphs-3&quot;&gt;part three&lt;/a&gt;, or &lt;a href=&quot;/notes/d3-terraform-graphs-4&quot;&gt;part four&lt;/a&gt; of this series; or to &lt;a href=&quot;https://www.github.com/28mm/blast-radius&quot;&gt;GitHub&lt;/a&gt;, where &lt;em&gt;&lt;a href=&quot;/blast-radius-docs&quot;&gt;Blast Radius&lt;/a&gt;&lt;/em&gt; is hosted.&lt;/p&gt;
 
 &lt;h3 id=&quot;terraform-modules&quot;&gt;Terraform Modules&lt;/h3&gt;
 
@@ -821,7 +944,7 @@ svg_activate('div#demo11',
 
 &lt;h3 id=&quot;tldr&quot;&gt;TL;DR&lt;/h3&gt;
 
-&lt;p&gt;This is the second in a series of posts exploring methods of visualizing Terraform dependency graphs, with the goal of producing a tool useful for learning and documentation. (&lt;a href=&quot;/notes/d3-terraform-graphs&quot;&gt;part one&lt;/a&gt;, &lt;a href=&quot;/notes/d3-terraform-graphs-2&quot;&gt;part two&lt;/a&gt;, &lt;a href=&quot;/notes/terraform-graphs-3&quot;&gt;part three&lt;/a&gt;, &lt;a href=&quot;https://www.github.com/28mm/blast-radius&quot;&gt;code&lt;/a&gt;.)&lt;/p&gt;
+&lt;p&gt;This is the second in a series of posts exploring methods of visualizing Terraform dependency graphs, with the goal of producing a tool useful for learning and documentation. (Parts: &lt;a href=&quot;/notes/d3-terraform-graphs&quot;&gt;one&lt;/a&gt;, &lt;a href=&quot;/notes/d3-terraform-graphs-2&quot;&gt;two&lt;/a&gt;, &lt;a href=&quot;/notes/terraform-graphs-3&quot;&gt;three&lt;/a&gt;, &lt;a href=&quot;/notes/d3-terraform-graphs-4&quot;&gt;four&lt;/a&gt;; &lt;a href=&quot;https://www.github.com/28mm/blast-radius&quot;&gt;code&lt;/a&gt;, &lt;a href=&quot;https://28mm.github.io/blast-radius-docs&quot;&gt;documentation&lt;/a&gt;.)&lt;/p&gt;
 
 &lt;div id=&quot;demo1&quot;&gt;&lt;/div&gt;
 
@@ -967,7 +1090,7 @@ svg_activate('div#demo6',
 
 &lt;p&gt;As a newcomer to Terraform (and to AWS), I sometimes find it difficult to reason about the many available resource types, and the dependencies that can exist between them. Especially when coming to terms with larger configurations.&lt;/p&gt;
 
-&lt;p&gt;To address this difficulty, I want a tool to help me explore dependency graphs, and resource definitions, interactively. This is the first in a series (&lt;a href=&quot;/notes/d3-terraform-graphs&quot;&gt;part one&lt;/a&gt;, &lt;a href=&quot;/notes/d3-terraform-graphs-2&quot;&gt;part two&lt;/a&gt;, &lt;a href=&quot;/notes/terraform-graphs-3&quot;&gt;part three&lt;/a&gt;, &lt;a href=&quot;https://www.github.com/28mm/blast-radius&quot;&gt;code&lt;/a&gt;) of posts about building such a tool, using d3.js, starting with the simple example below&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, and building upon it.&lt;/p&gt;
+&lt;p&gt;To address this difficulty, I want a tool to help me explore dependency graphs, and resource definitions, interactively. This is the first in a series (parts: &lt;a href=&quot;/notes/d3-terraform-graphs&quot;&gt;one&lt;/a&gt;, &lt;a href=&quot;/notes/d3-terraform-graphs-2&quot;&gt;two&lt;/a&gt;, &lt;a href=&quot;/notes/terraform-graphs-3&quot;&gt;three&lt;/a&gt;, &lt;a href=&quot;/notes/d3-terraform-graphs-4&quot;&gt;four&lt;/a&gt;; &lt;a href=&quot;https://www.github.com/28mm/blast-radius&quot;&gt;code&lt;/a&gt;, &lt;a href=&quot;https://28mm.github.io/blast-radius-docs&quot;&gt;documentation&lt;/a&gt;) of posts about building such a tool, using d3.js, starting with the simple example below&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, and building upon it.&lt;/p&gt;
 
 &lt;script src=&quot;/assets/terraform-graphs/js/d3.v3.js&quot;&gt;&lt;/script&gt;
 

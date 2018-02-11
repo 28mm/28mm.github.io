@@ -9,7 +9,7 @@ categories: terraform devops d3 d3.js graphs
 
 As a newcomer to Terraform (and to AWS), I sometimes find it difficult to reason about the many available resource types, and the dependencies that can exist between them. Especially when coming to terms with larger configurations.
 
-To address this difficulty, I want a tool to help me explore dependency graphs, and resource definitions, interactively. This is the first in a series (parts: [one](/notes/d3-terraform-graphs), [two](/notes/d3-terraform-graphs-2), [three](/notes/terraform-graphs-3), [four](/notes/d3-terraform-graphs-4); [code](https://www.github.com/28mm/blast-radius), [documentation](https://28mm.github.io/blast-radius-docs)) of posts about building such a tool, using d3.js, starting with the simple example below[^1], and building upon it.
+To address this difficulty, I want a tool to help me explore dependency graphs, and resource definitions, interactively. This is the first in a series ([part one](/notes/d3-terraform-graphs), [part two](/notes/d3-terraform-graphs-2), [part three](/notes/terraform-graphs-3), [code](https://www.github.com/28mm/blast-radius)) of posts about building such a tool, using d3.js, starting with the simple example below[^1], and building upon it.
 
 <script src="/assets/terraform-graphs/js/d3.v3.js"></script>
 <script src="/assets/terraform-graphs/js/d3-tip.js"></script>

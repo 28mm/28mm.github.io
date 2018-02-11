@@ -38,7 +38,7 @@ title: Patrick McMurchie
 
 IP Geolocation with ICMP: [part 1](/notes/echo-location). *Ping*, *traceroute*, the speed of light, and interactive maps.
 
-Exploring *Terraform* Graphs with *D3.js*: [part 1](/notes/d3-terraform-graphs), [part 2](/notes/d3-terraform-graphs-2), [part 3](/notes/terraform-graphs-3). This project lead to *[Blast Radius](https://www.github.com/28mm/blast-radius)*. 
+Exploring *Terraform* Graphs with *D3.js*: [part 1](/notes/d3-terraform-graphs), [part 2](/notes/d3-terraform-graphs-2), [part 3](/notes/terraform-graphs-3), [part 4](/notes/d3-terraform-graphs-4). This project lead to *[Blast Radius](https://www.github.com/28mm/blast-radius)*. 
 
 [A Quixotic Apartment Search](/notes/a-quixotic-apartment-search): web-scraping and gis methods informed my recent apartment search.
 

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+	<title>Exploring Terraform Graphs With D3.js Part 4 · 28mm.github.io</title>
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:title" content="Exploring Terraform Graphs With D3.js Part 4" />
+<meta name="twitter:description" content="">
+
+<meta name="description" content="">
+
+
+
+<link rel="icon" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/touch-icon.png">
+<link rel="stylesheet" href="/assets/core.css">
+<link rel="canonical" href="/notes/d3-terraform-graphs-4">
+<link rel="alternate" type="application/atom+xml" title="28mm.github.io" href="/feed.xml" />
+
+
+
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+	</head>
+
+	<body>
+
+		<aside class="logo">
+
+	
+
+	<a href="/">
+		<img src="http://www.gravatar.com/avatar/f9ca90ff91459baa73f9be03289a7c80.png?s=80" class="gravatar">
+	</a>
+	<span class="logo-prompt">Back to Home</span>
+
+</aside>
+
+
+		<main>
+			<article>
+
+	<div class="center">
+		<h1>Exploring Terraform Graphs With D3.js Part 4</h1>
+		<time>February 9, 2018</time>
+	</div>
+
+	<div class="divider"></div>
+
+	<script src="/assets/terraform-graphs-4/jquery.slim.min.js"></script>
+
+<!--<script src="/assets/terraform-graphs-4/bootstrap.min.js"></script>-->
+<script src="/assets/terraform-graphs-4/fontawesome-all.min.js"></script>
+
+<script src="/assets/terraform-graphs-4/d3.v4.js"></script>
+
+<script src="/assets/terraform-graphs-4/d3-tip.js"></script>
+
+<script src="/assets/terraform-graphs-4/blast-radius.js"></script>
+
+<script src="/assets/terraform-graphs-4/categories.js"></script>
+
+<script src="/assets/terraform-graphs-4/svg-pan-zoom.js"></script>
+
+<script src="/assets/terraform-graphs-4/selectize.js"></script>
+
+<!--<link rel="stylesheet" type="text/css" href="/assets/terraform-graphs-4/bootstrap.min.css">-->
+<link rel="stylesheet" type="text/css" href="/assets/terraform-graphs-4/selectize.css" />
+
+<link rel="stylesheet" type="text/css" href="/assets/terraform-graphs-4/style.css" />
+
+<h3 id="tldr">TL;DR</h3>
+
+<p>This is the fourth in a series of posts about <em><a href="/blast-radius-docs/">Blast Radius</a></em>, a tool for producing interactive visualizations of <em>Terraform</em> dependency graphs.</p>
+
+<p>Part three (parts: <a href="/notes/d3-terraform-graphs">one</a>, <a href="/notes/d3-terraform-graphs-2">two</a>, <a href="/notes/terraform-graphs-3">three</a>, <a href="/notes/d3-terraform-graphs-4">four</a>) introduced module support, and a marginal improvement in the width of some figures, but stopped short of capably handling large real-world graphs.</p>
+
+<p><img src="/assets/terraform-graphs-4/7-modules.svg" /></p>
+
+<p>The figure above (with interactions <em>disabled</em>) demonstrates the issue: when configurations grow beyond a certain threshold, relationships between resources become harder to follow. This post considers several partial solutions.</p>
+
+<h3 id="pan-and-zoom">Pan and Zoom</h3>
+
+<p>Thus far the best way of navigating larger graphs has been the browser’s scrolling and zoom features. But these are mind-meltingly awkward, for our purpose.</p>
+
+<p>One issue is that browser-zoom applies globally, magnifying unrelated features to grotesque proportions, or causing them to vanish—just as the graph comes fully into view.</p>
+
+<p>And the less said about horizontal scrolling, the better. <em><a href="https://github.com/ariutta/svg-pan-zoom">svg-pan-zoom.js</a></em> implements click-and-drag panning, as well as various zooming mechanisms–the scrollwheel seems most natural to me.</p>
+
+<p><button id="pz-zoom-out" class="btn"><i class="fas fa-search-minus"></i></button>
+<button id="pz-zoom-in" class="btn"><i class="fas fa-search-plus"></i></button>
+<button id="pz-download" class="btn"><i class="fas fa-download"></i></button></p>
+<div id="pz"></div>
+
+<p>This example is somewhat hampered by its small size and mail-slot proportions. Better examples, on broader canvas, such as <a href="https://28mm.github.io/blast-radius-docs/examples/terraform-provider-aws/networking/">this</a> are available <a href="https://28mm.github.io/blast-radius-docs/examples/">here</a></p>
+
+<p>(These features are badly broken on mobile, now, where pan and zoom gestures had worked well-enough, previously. Apologies if you are reading this on a phone or tablet!)</p>
+
+<h3 id="search">Search</h3>
+
+<p>Pan and zoom work best when the resource of interest along with resources related to it are already selected. Until then, panning isn’t a very efficient means of exploration.</p>
+
+<form class="form-inline my-2 my-lg-0" id="graph-search-form">
+<select style="width: 100%" id="graph-search"></select>
+</form>
+<p><button id="graph-zoom-out" class="btn"><i class="fas fa-search-minus"></i></button>
+<button id="graph-zoom-in" class="btn"><i class="fas fa-search-plus"></i></button>
+<button id="graph-download" class="btn"><i class="fas fa-download"></i></button></p>
+<div id="graph"></div>
+
+<p>There are some rough edges to be worked out, but it does what’s needed.</p>
+
+<h3 id="prune-to-sub-graph">Prune to Sub-Graph</h3>
+
+<p>Here is the same graph, again (with interactions <em>disabled</em>).</p>
+
+<p><img src="/assets/terraform-graphs-4/7-modules.svg" /></p>
+
+<p>And below is the same graph with a single resource highlighted, along with its dependencies and dependents. This is an improvement, especially with pan and zoom, but less helpful in cases where the subgraph is not as contained in one region of the figure.</p>
+
+<p><img src="/assets/terraform-graphs-4/7-modules-selected.svg" /></p>
+
+<p>The <em>prune to selection</em> button generates a new figure with only the selected resource’s dependencies and dependents.</p>
+
+<p><img src="/assets/terraform-graphs-4/7-modules-pruned.svg" /></p>
+
+<p>Sub-graphs retain the color scheme from the larger diagram, but their layout differs (often dramtically). Unfortunately, it isn’t easily possible to bias <em>Graphviz</em> in favor of its previous layout; nodes jump around with abandon.</p>
+
+<h3 id="docker-support">Docker Support</h3>
+
+<p>One annoyance often met by new users is <em>Blast Radius</em>’ reliance on recent versions of Python (3.5+), and Graphviz. Docker is a convenient way to hide the sordid details of Python versioning and package management.</p>
+
+<p>An update image is available from the docker registry as <code class="highlighter-rouge">28mm/blast-radius</code>. If the current working directory contains a terraform project, invoke it like so:</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">[...]$ </span>docker run --cap-add<span class="o">=</span>SYS_ADMIN -it --rm -p 5000:5000 -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/workdir:ro 28mm/blast-radius
+</code></pre>
+</div>
+
+<p>Further discussion can be found in the README. Thanks to Buc and Daniel for contributing this.</p>
+
+<h3 id="performance">Performance</h3>
+
+<p>A further limitation–beyond layout and navigability–for larger graphs is performance. I’ve had reports of graphs taking 10+ minutes to generate! A lower bound for runtime is <code class="highlighter-rouge">terraform graph | dot -Tsvg</code>, since <em>Blast Radius</em> depends on both these programs.</p>
+
+<p>Some testing with larger projects would be useful. (If anyone reading this, who has an especially large project, wishes to help: I’m interested in <code class="highlighter-rouge">time terraform graph | dot -Tsvg</code> vs <code class="highlighter-rouge">time blast-radius --svg</code>)</p>
+
+<h3 id="conclusion-and-next-steps">Conclusion And Next Steps</h3>
+
+<p>Thus concludes a somewhat delayed chronicle of incremental progress. Thanks for reading this far, and as always:</p>
+
+<p><strong>Comment</strong> and <strong>Suggestion</strong> to <strong><a href="mailto:patrick.mcmurchie@gmail.com">patrick.mcmurchie@gmail.com</a></strong>.</p>
+
+<script>
+
+
+blastradius('#pz', '/assets/terraform-graphs-4/pz-demo.svg', '/assets/terraform-graphs-4/pz-demo.json');
+
+
+blastradius('#graph', '/assets/terraform-graphs-4/search-demo.svg', '/assets/terraform-graphs-4/search-demo.json');
+
+</script>
+
+
+
+</article>
+<!--
+<div class="page-navigation">
+	
+		<a class="home" href="/" title="Back to Homepage">Home</a>
+  
+		<span> &middot; </span>
+    <a class="prev" href="/notes/the-problem-with-spotify" title="PREV: Finding New Music: Two Experiments">&gt;&gt;</a>
+  
+-->
+</div>
+
+		</main>
+
+		<div class="footer">
+
+<!-- begin social -->
+<!--
+<div class="container">
+	<div class="row">
+		<div class="span10 offset1">
+			<div class="social-icons">
+				<ul>
+					<li><a href="https://facebook.com/patrick.mcmurchie"><i class="fa fa-facebook-official"></i></a></li>
+					<li><a href="https://www.instagram.com/patrick.mcmurchie/"><i class="fa fa-instagram"></i></a></li>
+					<li><a href="https://www.github.com/28mm"><i class="fa fa-github"></i></a></li>
+<li><a href="mailto:patrick.mcmurchie@gmail.com"><i class="fa fa-envelope"></i></a></li>				
+
+</ul>
+			</div>
+		</div>
+	</div>
+</div>
+-->
+<!--<div class="container">
+<div class="row">-->
+<img src="/assets/footer/junkyard.jpg" style="border-radius: 8px;">
+<!--</div>
+</div>-->
+
+<!-- end social -->
+  <span class="block ftr">&copy; 2018 <a href="/about">Patrick McMurchie</a></span>
+</div>
+
+
+	</body>
+
+</html>
