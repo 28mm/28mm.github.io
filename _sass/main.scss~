@@ -393,7 +393,8 @@ section {
     z-index: 99;
    
 }
-@import url("//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css");
+
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 .universal-inline-block {
   display: inline-block;
   zoom: 1;
@@ -427,7 +428,7 @@ section {
   text-decoration: none;
 }
 .social-icons ul li a i {
-  color: #448aaf;
+  color: #C70039;
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
@@ -435,10 +436,16 @@ section {
   transition: all 0.2s ease-in;
 }
 .social-icons ul li a:hover i {
-  color: #275066;
+  color: #FF5733;
 }
 .social-icons ul li a:focus i,
 .social-icons ul li a:active i {
   transition: none;
-  color: #0b161c;
+  color: #FF5733;
+}
+
+span.ftr {
+font-size: 15px;
+line-height: 2.1em;
+color: #000;
 }

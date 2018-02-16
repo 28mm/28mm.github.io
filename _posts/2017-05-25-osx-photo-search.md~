@@ -5,11 +5,11 @@ date:   2017-05-25 00:00:00 -0700
 categories: photos metadata spotlight search
 ---
 
-<a href="https://news.ycombinator.com/item?id=16278637"><img src="/assets/y18.gif"> This article has been discussed on Hacker News.</a>
-
 Apple's Photos.app classifies pictures, identifying subjects such as "boat," and "bicycle," as well as settings like "cafe," and "mountains." It uses this capability to offer vastly better search than before.[^1] 
 
 Unfortunately these improvements are neither visible to Spotlight, nor available in the Finder. This post documents a method of reconciling Photos.app metadata with filesystem metadata, so that they are indexed by Spotlight. 
+
+**I have only tested with MacOS Sierra.** If you encounter issues, [let me know about them](/about). 
 
 1. [The Finder, Extended Attributes, and Spotlight.](#xattrs)
 2. [Photos.app Metadata: A SQLite Adventure](#photos-app)
@@ -72,7 +72,38 @@ COMMAND     PID    USER   FD   TYPE DEVICE  [...snip...]
 photolibr 15432 patrick    4u   REG    1,1  [...snip...]
 ````
 
-The trouble with just killing *photolibraryd*, is that it will re-spawn, repeatedly. <span class="redact">Undoubtedly,</span> *launchd* can be told to disable *photolibraryd*, <span class="redact">but</span> <span class="redact">the</span> <span class="redact">approved</span> <span class="redact">mechanism</span> <span class="redact">wasn't</span> <span class="redact">immediately</span> <span class="redact">obvious</span> <span class="redact">to</span> <span class="redact">me.</span>
+<style>
+
+.redact {
+  position: relative;
+  white-space: pre;
+}
+.redact:after {
+  background: black;
+  border-radius: 0.1em;
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.35);
+          box-shadow: 0 0 1px rgba(0, 0, 0, 0.35);
+  content: " ";
+  width: 100%;
+  height: 1.2em;
+  left: 0;
+  position: absolute;
+  -webkit-transform: skewY(-5deg) rotate(5deg);
+          transform: skewY(-5deg) rotate(5deg);
+}
+
+.new {
+     text-decoration: none;
+     border-bottom: 2px solid #80e4ef;
+     box-shadow: inset 0 -4px 0 #80e4ef;
+     color: inherit;
+     transition: background 0.1s cubic-bezier(.33,.66,.66,1);
+}
+
+
+</style>
+
+&#x1F914; The trouble with just killing `photolibraryd`, is that it will re-spawn, repeatedly. <span class="redact">Undoubtedly,</span> `launchd` can be told to disable `photolibraryd`, <span class="redact">but</span> <span class="redact">the</span> <span class="redact">approved</span> <span class="redact">mechanism</span> <span class="redact">wasn't</span> <span class="redact">immediately</span> <span class="redact">obvious</span> <span class="redact">to</span> <span class="redact">me.</span>
 
 <span class="new">Stop the `photolibraryd` service with `launchctl`</span>
 
@@ -80,7 +111,7 @@ The trouble with just killing *photolibraryd*, is that it will re-spawn, repeate
 [...]$ launchctl stop photolibraryd
 ````
 
-<span class="redact">Instead,</span><span class="new">Initially,</span> I opted for an egregious hack, <span class="new">which you can read about by copying the redacted text.</span><span class="redact">In</span> <span class="redact">order</span> <span class="redact">to</span> <span class="redact">lock</span> <span class="redact">its</span> <span class="redact">database,</span> <span class="redact">photoslibraryd,</span> <span class="redact">need</span> <span class="redact">to</span> <span class="redact">be</span> <span class="redact">able</span> <span class="redact">to</span> <span class="redact">write</span> <span class="redact">to</span> <span class="redact">it.</span> <span class="redact">I</span> <span class="redact">simply</span> <span class="redact">removed</span> <span class="redact">write</span> <span class="redact">permisions.</span>
+<span class="redact">Instead,</span><span class="new">Before I knew about this,</span> I opted for an egregious hack, <span class="new">which you can read about by copying the redacted text.</span><span class="redact">In</span> <span class="redact">order</span> <span class="redact">to</span> <span class="redact">lock</span> <span class="redact">its</span> <span class="redact">database,</span> <span class="redact">`photoslibraryd`,</span> <span class="redact">need</span> <span class="redact">to</span> <span class="redact">be</span> <span class="redact">able</span> <span class="redact">to</span> <span class="redact">write</span> <span class="redact">to</span> <span class="redact">it.</span> <span class="redact">I</span> <span class="redact">simply</span> <span class="redact">removed</span> <span class="redact">write</span> <span class="redact">permisions.</span>
 
 
 ````bash
@@ -91,7 +122,7 @@ The trouble with just killing *photolibraryd*, is that it will re-spawn, repeate
   xargs kill
 ````
 
-<span class="redact">Afterwards--but</span> <span class="redact">not</span> <span class="redact">yet--don't</span> <span class="redact">forget</span> <span class="redact">to</span> <span class="redact">restore</span> <span class="redact">write</span><span class="redact">permissions</span>[^3] <span class="redact">to</span> <span class="redact">your</span> <span class="redact">photos</span> <span class="redact">database!</span> <span class="redact">You</span> <span class="redact">may</span> <span class="redact">want</span> <span class="redact">to</span> <span class="redact">restart</span> <span class="redact">your</span> <span class="redact">computer</span> <span class="redact">to</span> <span class="redact">ensure</span> <span class="redact">that</span> <span class="redact">photolibraryd,</span> <span class="redact">continues</span> <span class="redact">to</span> <span class="redact">work.</span>
+<span class="redact">Afterwards--but not yet--don't</span> <span class="redact">forget to restore</span> <span class="redact">write permissions[^3]</span> <span class="redact">to your photos</span> <span class="redact">database!</span> <span class="redact">You may want to restart</span> <span class="redact">your computer to</span> <span class="redact">ensure that `photolibraryd`,</span> <span class="redact">continues to work.</span>
 
 
 Now, it's possible to open `$photodb`, and poke around.
@@ -153,7 +184,7 @@ Okay, lets put the pieces together. We need four things:
 1. a copy of `photos.db` in a write-able location.
 2. the system-specific value of `$KEYPATH`
 3. the path to our photos library `$PHOTOLIB`
-4. `photos2spotlight.py` (listing [here](https://github.com/28mm/macos-photo-scripts)).
+4. `photos2spotlight.py` (listing [here](https://gist.github.com/28mm/9820bd8b6eb27555efe9d6f46dd95a81)).
 
 Start by getting an idea of what your library contains:
 

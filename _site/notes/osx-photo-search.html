@@ -12,9 +12,9 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@" />
 <meta name="twitter:title" content="Photo Metadata and Search on MacOS" />
-<meta name="twitter:description" content="Apple’s Photos.app classifies pictures, identifying subjects such as “boat,” and “bicycle,” as well as settings like “cafe,” and “mountains.” It uses this capability to offer vastly better search t...">
+<meta name="twitter:description" content=" This article has been discussed on Hacker News.">
 
-<meta name="description" content="Apple’s Photos.app classifies pictures, identifying subjects such as “boat,” and “bicycle,” as well as settings like “cafe,” and “mountains.” It uses this ca...">
+<meta name="description" content=" This article has been discussed on Hacker News.">
 
 
 
@@ -56,11 +56,11 @@
 
 	<div class="divider"></div>
 
-	<p>Apple’s Photos.app classifies pictures, identifying subjects such as “boat,” and “bicycle,” as well as settings like “cafe,” and “mountains.” It uses this capability to offer vastly better search than before.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+	<p><a href="https://news.ycombinator.com/item?id=16278637"><img src="/assets/y18.gif" /> This article has been discussed on Hacker News.</a></p>
+
+<p>Apple’s Photos.app classifies pictures, identifying subjects such as “boat,” and “bicycle,” as well as settings like “cafe,” and “mountains.” It uses this capability to offer vastly better search than before.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
 
 <p>Unfortunately these improvements are neither visible to Spotlight, nor available in the Finder. This post documents a method of reconciling Photos.app metadata with filesystem metadata, so that they are indexed by Spotlight.</p>
-
-<p><strong>I have only tested with MacOS Sierra.</strong> If you encounter issues, <a href="/about">let me know about them</a>.</p>
 
 <ol>
   <li><a href="#xattrs">The Finder, Extended Attributes, and Spotlight.</a></li>
@@ -125,9 +125,15 @@ photolibr 15432 patrick    4u   REG    1,1  <span class="o">[</span>...snip...]
 </code></pre>
 </div>
 
-<p>🤔 The trouble with just killing <code class="highlighter-rouge">photolibraryd</code>, is that it will re-spawn, repeatedly. Undoubtedly, <code class="highlighter-rouge">launchd</code> can be told to disable <code class="highlighter-rouge">photolibraryd</code>, but the approved mechanism wasn’t immediately obvious to me.</p>
+<p>The trouble with just killing <em>photolibraryd</em>, is that it will re-spawn, repeatedly. <span class="redact">Undoubtedly,</span> <em>launchd</em> can be told to disable <em>photolibraryd</em>, <span class="redact">but</span> <span class="redact">the</span> <span class="redact">approved</span> <span class="redact">mechanism</span> <span class="redact">wasn’t</span> <span class="redact">immediately</span> <span class="redact">obvious</span> <span class="redact">to</span> <span class="redact">me.</span></p>
 
-<p>Instead, I opted for an egregious hack. In order to lock its database, <code class="highlighter-rouge">photoslibraryd</code>, need to be able to write to it. I simply removed write permisions.</p>
+<p><span class="new">Stop the <code class="highlighter-rouge">photolibraryd</code> service with <code class="highlighter-rouge">launchctl</code></span></p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">[...]$ </span>launchctl stop photolibraryd
+</code></pre>
+</div>
+
+<p><span class="redact">Instead,</span><span class="new">Initially,</span> I opted for an egregious hack, <span class="new">which you can read about by copying the redacted text.</span><span class="redact">In</span> <span class="redact">order</span> <span class="redact">to</span> <span class="redact">lock</span> <span class="redact">its</span> <span class="redact">database,</span> <span class="redact">photoslibraryd,</span> <span class="redact">need</span> <span class="redact">to</span> <span class="redact">be</span> <span class="redact">able</span> <span class="redact">to</span> <span class="redact">write</span> <span class="redact">to</span> <span class="redact">it.</span> <span class="redact">I</span> <span class="redact">simply</span> <span class="redact">removed</span> <span class="redact">write</span> <span class="redact">permisions.</span></p>
 
 <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">[...]$ </span>chmod -w <span class="s2">"</span><span class="nv">$photodb</span><span class="s2">"</span>
 <span class="gp">[...]$ </span>lsof <span class="s2">"</span><span class="nv">$photodb</span><span class="s2">"</span> | 
@@ -137,7 +143,7 @@ photolibr 15432 patrick    4u   REG    1,1  <span class="o">[</span>...snip...]
 </code></pre>
 </div>
 
-<p>Afterwards–but not yet–don’t forget to restore write permissions<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup> to your photos database! You may want to restart your computer to ensure that <code class="highlighter-rouge">photolibraryd</code>, continues to work.</p>
+<p><span class="redact">Afterwards–but</span> <span class="redact">not</span> <span class="redact">yet–don’t</span> <span class="redact">forget</span> <span class="redact">to</span> <span class="redact">restore</span> <span class="redact">write</span><span class="redact">permissions</span><sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup> <span class="redact">to</span> <span class="redact">your</span> <span class="redact">photos</span> <span class="redact">database!</span> <span class="redact">You</span> <span class="redact">may</span> <span class="redact">want</span> <span class="redact">to</span> <span class="redact">restart</span> <span class="redact">your</span> <span class="redact">computer</span> <span class="redact">to</span> <span class="redact">ensure</span> <span class="redact">that</span> <span class="redact">photolibraryd,</span> <span class="redact">continues</span> <span class="redact">to</span> <span class="redact">work.</span></p>
 
 <p>Now, it’s possible to open <code class="highlighter-rouge">$photodb</code>, and poke around.</p>
 
@@ -198,7 +204,7 @@ Sierras Peaks Mountains Mount
   <li>a copy of <code class="highlighter-rouge">photos.db</code> in a write-able location.</li>
   <li>the system-specific value of <code class="highlighter-rouge">$KEYPATH</code></li>
   <li>the path to our photos library <code class="highlighter-rouge">$PHOTOLIB</code></li>
-  <li><code class="highlighter-rouge">photos2spotlight.py</code> (listing <a href="https://gist.github.com/28mm/9820bd8b6eb27555efe9d6f46dd95a81">here</a>).</li>
+  <li><code class="highlighter-rouge">photos2spotlight.py</code> (listing <a href="https://github.com/28mm/macos-photo-scripts">here</a>).</li>
 </ol>
 
 <p>Start by getting an idea of what your library contains:</p>
