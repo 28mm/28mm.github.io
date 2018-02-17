@@ -23,7 +23,7 @@ layout: default
 					<span>{{ post.date | date: "%b %d" }}</span>
 				</div>
 				<div class="title">
-					<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+					{% if post.yc %}<a href="{{post.yc}}"><img src="/assets/y18.gif" style="height: auto; width: auto; margin: 0; margin-right: 5px;"></a>{% endif %}<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
 				</div>
 			</li>
 		</ul>

@@ -3,6 +3,7 @@ layout: post
 title:  "Photo Metadata and Search on MacOS"
 date:   2017-05-25 00:00:00 -0700
 categories: photos metadata spotlight search
+yc: "https://news.ycombinator.com/item?id=16278637"
 ---
 
 <a href="https://news.ycombinator.com/item?id=16278637"><img src="/assets/y18.gif"> This article has been discussed on Hacker News.</a>
