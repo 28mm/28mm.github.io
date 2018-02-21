@@ -454,13 +454,14 @@ color: #000;
   //position: relative;
   position: relative;
   white-space: pre;
+  content: ' ';
 }
 .redact:after {
   background: black;
   border-radius: 0.1em;
   -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.35);
           box-shadow: 0 0 1px rgba(0, 0, 0, 0.35);
-  content: "x";
+  content: " ";
   width: 100%;
   height: 1.2em;
   left: 0;

@@ -20,8 +20,6 @@ categories: terraform graph visualization d3
 <link rel="stylesheet" type="text/css" href="/assets/terraform-graphs-4/selectize.css">
 <link rel="stylesheet" type="text/css" href="/assets/terraform-graphs-4/style.css">
 
-
-
 ### TL;DR
 
 This is the fourth in a series of posts about *[Blast Radius](/blast-radius-docs/)*, a tool for producing interactive visualizations of *Terraform* dependency graphs.

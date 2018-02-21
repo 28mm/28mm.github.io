@@ -199,7 +199,9 @@ You should now be able to find photos using Spotlight, the Finder, or the relate
 
 ### Conclusion
 
-That's it. Macs are easy, right?
+<span class="redact">That's</span> <span class="redact">it.</span> <span class="redact">Macs</span> <span class="redact">are</span> <span class="redact">easy,</span> <span class="redact">right?</span>
+
+Continue to <a href="/notes/better-photo-search-for-macos">Part 2</a>.
 
 [^1]: Google Photos does this too. It's dramatically less tedious than manual tagging.
 

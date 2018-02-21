@@ -1,7 +1,6 @@
 
 var activate = function(selector, json_url, w, h, curvy) {
 
-
     // establish color scale, and initalize its domain. 
     var color = d3.scale.category20();
     for (var i = 1; i < 21; i++) {
