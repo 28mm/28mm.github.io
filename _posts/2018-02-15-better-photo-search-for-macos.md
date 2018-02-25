@@ -42,7 +42,7 @@ I've previously written about [a method of enabling Spotlight search of Photos.a
 
 But `photoanalysisd` is limited to something like 1,000 unique subjects, while some commercial services advertise  recognition of 10x that number, and might be expected to produce more relevant tags.
 
-This post considers commercial alternatives to `photoanalysisd`, comparing their performance on the task of classifying pictures from my photo library.
+This post considers Clarifai along with `photoanalysisd`, comparing their performance on the task of classifying pictures from my photo library.
 
 ### No Useful Benchmarks
 
@@ -64,7 +64,7 @@ Key: <span class="clarifai">Clarifai</span><span class="photos">Photos.app</span
 
 <select style="width: 100%" id="frequency-search">
 
-Of course these are all pictures from my library, and therefore biased towards my interests. <a href="https://www.github.com/28mm/macos-photo-scripts">I've put code on GitHub if you are interested in doing a similar test, with your own photos.</a>
+Of course these are all pictures from my library, and therefore biased towards my interests, but the code is available on <a href="https://www.github.com/28mm/macos-photo-scripts">GitHub.</a>
 
 Based on this experiment, and in view of my expectations, I'm impressed with the performance of Apple's classifier. As I begin typing a query, Apple often seems to anticipate it with a relevant tag.
 
@@ -114,7 +114,7 @@ Now it should be possible to find Clarifai-specific tags like <span class="clari
 
 My last post on this subject showed how to extract tags from Photos.app, via a `TEXT` column in `photos.db` called `RKVersion_stringNote.value`. With this post, I had hoped it would be possible to do the reverse.
 
-The obvious thing to try: appending to `RKVersion_stringNote.value`, and updating the plist where the list of categories is kept, doesn't get the job done. Incomplete information and wishful thinking weren't enough to get the job done :)
+The obvious thing to try: appending to `RKVersion_stringNote.value`, and updating the plist where the list of categories is kept, doesn't get the job done.
 
 When the last post was discussed on Hacker News, several commentors pointed out how absurd this all is--that it should be trivial to retrieve and update information about your own photographs. I agree with them entirely. 
 

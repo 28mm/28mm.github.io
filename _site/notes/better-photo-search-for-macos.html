@@ -96,7 +96,7 @@
 
 <p>But <code class="highlighter-rouge">photoanalysisd</code> is limited to something like 1,000 unique subjects, while some commercial services advertise  recognition of 10x that number, and might be expected to produce more relevant tags.</p>
 
-<p>This post considers commercial alternatives to <code class="highlighter-rouge">photoanalysisd</code>, comparing their performance on the task of classifying pictures from my photo library.</p>
+<p>This post considers Clarifai along with <code class="highlighter-rouge">photoanalysisd</code>, comparing their performance on the task of classifying pictures from my photo library.</p>
 
 <h3 id="no-useful-benchmarks">No Useful Benchmarks</h3>
 
@@ -118,7 +118,7 @@
 
 <p><select style="width: 100%" id="frequency-search"></select></p>
 
-<p>Of course these are all pictures from my library, and therefore biased towards my interests. <a href="https://www.github.com/28mm/macos-photo-scripts">I’ve put code on GitHub if you are interested in doing a similar test, with your own photos.</a></p>
+<p>Of course these are all pictures from my library, and therefore biased towards my interests, but the code is available on <a href="https://www.github.com/28mm/macos-photo-scripts">GitHub.</a></p>
 
 <p>Based on this experiment, and in view of my expectations, I’m impressed with the performance of Apple’s classifier. As I begin typing a query, Apple often seems to anticipate it with a relevant tag.</p>
 
@@ -168,7 +168,7 @@
 
 <p>My last post on this subject showed how to extract tags from Photos.app, via a <code class="highlighter-rouge">TEXT</code> column in <code class="highlighter-rouge">photos.db</code> called <code class="highlighter-rouge">RKVersion_stringNote.value</code>. With this post, I had hoped it would be possible to do the reverse.</p>
 
-<p>The obvious thing to try: appending to <code class="highlighter-rouge">RKVersion_stringNote.value</code>, and updating the plist where the list of categories is kept, doesn’t get the job done. Incomplete information and wishful thinking weren’t enough to get the job done :)</p>
+<p>The obvious thing to try: appending to <code class="highlighter-rouge">RKVersion_stringNote.value</code>, and updating the plist where the list of categories is kept, doesn’t get the job done.</p>
 
 <p>When the last post was discussed on Hacker News, several commentors pointed out how absurd this all is–that it should be trivial to retrieve and update information about your own photographs. I agree with them entirely.</p>
 
