@@ -7,7 +7,9 @@ title: Patrick McMurchie
 
 # Biography
 
-<a href="mailto:patrick.mcmurchie@gmail.com">Patrick McMurchie</a> is a Seattle-resident systems administrator and quite a strong typist&mdash;or cyclist, rather. **Offers of beer or employment met with great and equal favor.** Strongly interested in IaC, and open to re-location.
+<a href="mailto:patrick.mcmurchie@gmail.com">Patrick McMurchie</a> is a tool using primate, proficient typist, and Seattle-resident systems administrator.
+
+Currently pursuing new opportunities in DevOps and Infrastrucure-as-Code. If this sounds like an opening of you know of, drop me an <a href="mailto:patrick.mcmurchie@gmail.com">email</a>. Broadly open to different roles and re-location.
 
 <img src="/assets/footer/utahdawn.jpg" style="border-radius: 8px;">
 
