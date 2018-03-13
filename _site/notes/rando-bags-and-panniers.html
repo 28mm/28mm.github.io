@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+	<title>Comparing Randonneur Bags and Panniers · 28mm.github.io</title>
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:title" content="Comparing Randonneur Bags and Panniers" />
+<meta name="twitter:description" content="">
+
+<meta name="description" content="">
+
+
+
+<link rel="icon" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/touch-icon.png">
+<link rel="stylesheet" href="/assets/core.css">
+<link rel="canonical" href="/notes/rando-bags-and-panniers">
+<link rel="alternate" type="application/atom+xml" title="28mm.github.io" href="/feed.xml" />
+
+
+
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+	</head>
+
+	<body>
+
+		<aside class="logo">
+
+	
+
+	<a href="/">
+		<img src="http://www.gravatar.com/avatar/f9ca90ff91459baa73f9be03289a7c80.png?s=80" class="gravatar">
+	</a>
+	<span class="logo-prompt">Back to Home</span>
+
+</aside>
+
+
+		<main>
+			<article>
+
+	<div class="center">
+		<h1>Comparing Randonneur Bags and Panniers</h1>
+		<time>March 13, 2018</time>
+	</div>
+
+<div class="divider"></div> 
+	<link rel="stylesheet" type="text/css" href="/assets/rando-bags/datatables.min.css" />
+
+<script src="/assets/rando-bags/jquery.min.js"></script>
+
+<script src="/assets/rando-bags/datatables.min.js"></script>
+
+<style>
+    .dt-right {
+        text-align: right;
+    }
+</style>
+
+<p>This is a quick post about randonneur bags and panniers, containing some overblown criticisms of product review sites, as well as some dubious comparisons of my own.</p>
+
+<h3 id="a-critique-of-outdoor-gear-lab">A Critique of Outdoor Gear Lab</h3>
+
+<p>Outdoor Gear Lab publish methodical reviews of outdoor equipment in various categories (carabiners, ropes, and cams for climbers; frames, tires, and bags for cyclists).</p>
+
+<p>In general, Outdoor Gear Lab do a pretty good job. I place greater weight on their reviews because of their policy of buying equipment for review (instead of accepting gifts, which might influence their assessments).</p>
+
+<p>But they make their money from affiate links–a form of sales commission only offered by the largest outdoor retailers. If a product isn’t available on Amazon or REI, for instance, Outdoor Gear Lab pretend it doesn’t exist.</p>
+
+<p>In some categories–headlamps for instance–this isn’t a problem: there aren’t a lot of smaller companies making them, or relying on direct sales.</p>
+
+<p>But in a category like bike bags, smaller operations–<em>Swift Industries</em>, <em>North St.</em>, and <em>Gilles Berthoud</em>, to name a few–make some of the best, and a lot is lost by ignoring them.</p>
+
+<h3 id="quantitative-comparisons">Quantitative Comparisons</h3>
+
+<p>Rigid handlebar bags (aka rando bags) are probably the most useful bags you can put on a bike, because they’re so easily accessed while riding. But per unit of capacity, they tend to cost more than other options, and may weigh more as well.</p>
+
+<p>There may be ways to minimize those differences–larger rando bags might be expected to offer better value, and weigh less per Liter of capacity. How do a range of randonneur bags, in different sizes, compare with panniers and bikepacking-style framebags?</p>
+
+<p>The table below contains 30+ bags from Ortlieb, Gilles Berthoud, Apidura, Revelate, Swift Industries, and North St. You can sort according to Dollars-per-Liter and Liters-per-Ounce, which I think make particularly useful comparisons.</p>
+
+<table id="table1">
+<thead>
+<tr>
+<th>maker</th>
+<th>type</th>
+<th>bag</th>
+<th>material</th>
+<th>Oz</th>
+<th>L</th>
+<th>$</th>
+<th>L/Oz</th>
+<th>$/L</th>
+</tr>
+</thead>
+</table>
+
+<p>Okay, whoah, that’s a lot of bags. I’d like to offer a couple of observations. The Apidura and Revelate bags clearly offer the best deal in terms of Liters-per-Ounce, but aren’t really in the same category as the other handlebar bags, which are rigid and easily accessible.</p>
+
+<p>In other words: I’m a patient guy, but there’s a limit to how long I’m willing to spend searching for my Cliff Bar (and zero chance I’ll dismount my bike to look for it). Bikepacking-style handlebar bags aren’t really for me.</p>
+
+<p>Also, Larger randonneur bags, like the Hinterland Ozette from Swift Industries weigh as little per Little as conventional Ortlieb rear panniers. Pretty surprising! (Worth noting that mounting hardware–racks and decaleurs–aren’t included in the comparison.)</p>
+
+<h3 id="aesthetics">Aesthetics</h3>
+
+<p>What’s most striking to me in the comparisons above, is how similar these bags all are. For a given type of bag, and capacity, there isn’t a whole lot of variation in weight or price. So what should really drive the choice of a new bag? Probably aesthetics. Your bags ought to look correct.</p>
+
+<p>For me that suggests bags made from newfangled materials like X-Pac, but in woodsy colors; whereas for Eroica types, that probably means leather and waxed canvas.</p>
+
+<p><strong>Comments and Suggestions</strong> to <a href="mailto:patrick.mcmurchie@gmail.com">patrick.mcmurchie@gmail.com</a></p>
+
+<script>
+
+$(document).ready(function() {
+    $('#table1').DataTable( {
+        "ajax": { 'url' : '/assets/rando-bags/all-bags.txt',
+            "dataSrc" : 'data' },
+        'paging' : false,
+        'info' : false,
+        'searching' : true,
+        'columns' :  [
+            { 'visible' : false }, // make
+            { 'visible' : false }, // type
+            { 'width' : '20%'}, // bag
+            { 'visible' : false }, // material
+            { 'className': 'dt-right', 'render' : $.fn.dataTable.render.number(',', '.', 0, '') }, // weight
+            { 'className': 'dt-right', 'render' : $.fn.dataTable.render.number(',', '.', 1, '') }, // capacity
+            { 'className': 'dt-right', 'render' : $.fn.dataTable.render.number( ',','.', 0, '$') }, // cost
+            { 'className': 'dt-right', 'render' : $.fn.dataTable.render.number(',', '.', 2, '') },
+            { 'className': 'dt-right','render' : $.fn.dataTable.render.number( ',','.', 2, '$') },
+        ]
+    } );
+} );
+
+</script>
+
+
+
+</article>
+<!--
+<div class="page-navigation">
+	
+		<a class="home" href="/" title="Back to Homepage">Home</a>
+  
+		<span> &middot; </span>
+    <a class="prev" href="/notes/building-a-linux-hcl" title="PREV: A Multi-Distro Linux Hardware Compatibility List">&gt;&gt;</a>
+  
+-->
+</div>
+
+		</main>
+
+		<div class="footer">
+
+<!-- begin social -->
+<!--
+<div class="container">
+	<div class="row">
+		<div class="span10 offset1">
+			<div class="social-icons">
+				<ul>
+					<li><a href="https://facebook.com/patrick.mcmurchie"><i class="fa fa-facebook-official"></i></a></li>
+					<li><a href="https://www.instagram.com/patrick.mcmurchie/"><i class="fa fa-instagram"></i></a></li>
+					<li><a href="https://www.github.com/28mm"><i class="fa fa-github"></i></a></li>
+<li><a href="mailto:patrick.mcmurchie@gmail.com"><i class="fa fa-envelope"></i></a></li>				
+
+</ul>
+			</div>
+		</div>
+	</div>
+</div>
+-->
+<!--<div class="container">
+<div class="row">-->
+<img src="/assets/footer/junkyard.jpg" style="border-radius: 8px;">
+<!--</div>
+</div>-->
+
+<!-- end social -->
+  <span class="block ftr">&copy; 2018 <a href="/about">Patrick McMurchie</a></span>
+</div>
+
+
+	</body>
+
+</html>

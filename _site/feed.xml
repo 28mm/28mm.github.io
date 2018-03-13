@@ -7,6 +7,105 @@
     
       
         <item>
+          <title>Comparing Randonneur Bags and Panniers</title>
+          <description>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/rando-bags/datatables.min.css&quot; /&gt;
+
+&lt;script src=&quot;/assets/rando-bags/jquery.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;/assets/rando-bags/datatables.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;style&gt;
+    .dt-right {
+        text-align: right;
+    }
+&lt;/style&gt;
+
+&lt;p&gt;This is a quick post about randonneur bags and panniers, containing some overblown criticisms of product review sites, as well as some dubious comparisons of my own.&lt;/p&gt;
+
+&lt;h3 id=&quot;a-critique-of-outdoor-gear-lab&quot;&gt;A Critique of Outdoor Gear Lab&lt;/h3&gt;
+
+&lt;p&gt;Outdoor Gear Lab publish methodical reviews of outdoor equipment in various categories (carabiners, ropes, and cams for climbers; frames, tires, and bags for cyclists).&lt;/p&gt;
+
+&lt;p&gt;In general, Outdoor Gear Lab do a pretty good job. I place greater weight on their reviews because of their policy of buying equipment for review (instead of accepting gifts, which might influence their assessments).&lt;/p&gt;
+
+&lt;p&gt;But they make their money from affiate links–a form of sales commission only offered by the largest outdoor retailers. If a product isn’t available on Amazon or REI, for instance, Outdoor Gear Lab pretend it doesn’t exist.&lt;/p&gt;
+
+&lt;p&gt;In some categories–headlamps for instance–this isn’t a problem: there aren’t a lot of smaller companies making them, or relying on direct sales.&lt;/p&gt;
+
+&lt;p&gt;But in a category like bike bags, smaller operations–&lt;em&gt;Swift Industries&lt;/em&gt;, &lt;em&gt;North St.&lt;/em&gt;, and &lt;em&gt;Gilles Berthoud&lt;/em&gt;, to name a few–make some of the best, and a lot is lost by ignoring them.&lt;/p&gt;
+
+&lt;h3 id=&quot;quantitative-comparisons&quot;&gt;Quantitative Comparisons&lt;/h3&gt;
+
+&lt;p&gt;Rigid handlebar bags (aka rando bags) are probably the most useful bags you can put on a bike, because they’re so easily accessed while riding. But per unit of capacity, they tend to cost more than other options, and may weigh more as well.&lt;/p&gt;
+
+&lt;p&gt;There may be ways to minimize those differences–larger rando bags might be expected to offer better value, and weigh less per Liter of capacity. How do a range of randonneur bags, in different sizes, compare with panniers and bikepacking-style framebags?&lt;/p&gt;
+
+&lt;p&gt;The table below contains 30+ bags from Ortlieb, Gilles Berthoud, Apidura, Revelate, Swift Industries, and North St. You can sort according to Dollars-per-Liter and Liters-per-Ounce, which I think make particularly useful comparisons.&lt;/p&gt;
+
+&lt;table id=&quot;table1&quot;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;maker&lt;/th&gt;
+&lt;th&gt;type&lt;/th&gt;
+&lt;th&gt;bag&lt;/th&gt;
+&lt;th&gt;material&lt;/th&gt;
+&lt;th&gt;Oz&lt;/th&gt;
+&lt;th&gt;L&lt;/th&gt;
+&lt;th&gt;$&lt;/th&gt;
+&lt;th&gt;L/Oz&lt;/th&gt;
+&lt;th&gt;$/L&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Okay, whoah, that’s a lot of bags. I’d like to offer a couple of observations. The Apidura and Revelate bags clearly offer the best deal in terms of Liters-per-Ounce, but aren’t really in the same category as the other handlebar bags, which are rigid and easily accessible.&lt;/p&gt;
+
+&lt;p&gt;In other words: I’m a patient guy, but there’s a limit to how long I’m willing to spend searching for my Cliff Bar (and zero chance I’ll dismount my bike to look for it). Bikepacking-style handlebar bags aren’t really for me.&lt;/p&gt;
+
+&lt;p&gt;Also, Larger randonneur bags, like the Hinterland Ozette from Swift Industries weigh as little per Little as conventional Ortlieb rear panniers. Pretty surprising! (Worth noting that mounting hardware–racks and decaleurs–aren’t included in the comparison.)&lt;/p&gt;
+
+&lt;h3 id=&quot;aesthetics&quot;&gt;Aesthetics&lt;/h3&gt;
+
+&lt;p&gt;What’s most striking to me in the comparisons above, is how similar these bags all are. For a given type of bag, and capacity, there isn’t a whole lot of variation in weight or price. So what should really drive the choice of a new bag? Probably aesthetics. Your bags ought to look correct.&lt;/p&gt;
+
+&lt;p&gt;For me that suggests bags made from newfangled materials like X-Pac, but in woodsy colors; whereas for Eroica types, that probably means leather and waxed canvas.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Comments and Suggestions&lt;/strong&gt; to &lt;a href=&quot;mailto:patrick.mcmurchie@gmail.com&quot;&gt;patrick.mcmurchie@gmail.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;script&gt;
+
+$(document).ready(function() {
+    $('#table1').DataTable( {
+        &quot;ajax&quot;: { 'url' : '/assets/rando-bags/all-bags.txt',
+            &quot;dataSrc&quot; : 'data' },
+        'paging' : false,
+        'info' : false,
+        'searching' : true,
+        'columns' :  [
+            { 'visible' : false }, // make
+            { 'visible' : false }, // type
+            { 'width' : '20%'}, // bag
+            { 'visible' : false }, // material
+            { 'className': 'dt-right', 'render' : $.fn.dataTable.render.number(',', '.', 0, '') }, // weight
+            { 'className': 'dt-right', 'render' : $.fn.dataTable.render.number(',', '.', 1, '') }, // capacity
+            { 'className': 'dt-right', 'render' : $.fn.dataTable.render.number( ',','.', 0, '$') }, // cost
+            { 'className': 'dt-right', 'render' : $.fn.dataTable.render.number(',', '.', 2, '') },
+            { 'className': 'dt-right','render' : $.fn.dataTable.render.number( ',','.', 2, '$') },
+        ]
+    } );
+} );
+
+&lt;/script&gt;
+
+</description>
+          <pubDate>2018-03-13T00:00:01-07:00</pubDate>
+          <link>http://localhost:4000/notes/rando-bags-and-panniers</link>
+          <guid isPermaLink="true">http://localhost:4000/notes/rando-bags-and-panniers</guid>
+        </item>
+      
+    
+      
+        <item>
           <title>A Multi-Distro Linux Hardware Compatibility List</title>
           <description>&lt;p&gt;&lt;img src=&quot;/assets/hcl-part-1/front-page-before.png&quot; /&gt;&lt;/p&gt;
 
