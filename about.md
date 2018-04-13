@@ -9,7 +9,7 @@ title: Patrick McMurchie
 
 <a href="mailto:patrick.mcmurchie@gmail.com">Patrick McMurchie</a> is a tool using primate, proficient typist, and Seattle-resident systems administrator.
 
-Currently pursuing new opportunities in DevOps and Infrastrucure-as-Code. If this sounds like an opening of you know of, drop me an <a href="mailto:patrick.mcmurchie@gmail.com">email</a>. Broadly open to different roles and re-location.
+I am currently pursuing new opportunities in DevOps and Infrastrucure-as-Code. If this sounds like an opening of you know, drop me an <a href="mailto:patrick.mcmurchie@gmail.com">email</a>. I am Broadly open to different roles and re-location.
 
 <img src="/assets/footer/utahdawn.jpg" style="border-radius: 8px;">
 
