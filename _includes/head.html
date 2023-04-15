@@ -24,8 +24,6 @@
 <link rel="canonical" href="{{ page.url | prepend: site.baseurl }}">
 <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ site.baseurl }}/feed.xml" />
 
-{% if jekyll.environment == 'production' %}
-
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-506X8QCF6W"></script>
 <script>
@@ -35,9 +33,6 @@
 
   gtag('config', 'G-506X8QCF6W');
 </script>
-
-
-{% endif %}
 
 {% if site.mathjax == true %}
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
