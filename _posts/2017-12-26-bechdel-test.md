@@ -3,6 +3,7 @@ layout: post
 title:  "The Bechdel Test, FiveThirtyEight, Rotten Tomatoes"
 date:   2017-12-26 00:00:01 -0700
 categories: latency ping icmp ttl rtt aws cloud server d3.js map 
+published: false
 ---
 <link rel="stylesheet" type="text/css" href="/assets/bechdel/style.css">
 ### TL;DR

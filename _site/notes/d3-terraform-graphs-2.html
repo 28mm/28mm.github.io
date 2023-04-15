@@ -63,7 +63,7 @@
 
 <div id="demo1"></div>
 
-<p>The <a href="/notes/d3-terraform-graphs">first post</a><sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> presented experiments with Graphviz and D3.js, resulting in a promising prototype. Posting these to <a href="https://www.reddit.com/r/devops/comments/783prc/exploring_terraform_graphs_with_d3js/">r/devops</a><sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> led to some interesting discussions (online and off), and thoughts about future work.</p>
+<p>The <a href="/notes/d3-terraform-graphs">first post</a><sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> presented experiments with Graphviz and D3.js, resulting in a promising prototype. Posting these to <a href="https://www.reddit.com/r/devops/comments/783prc/exploring_terraform_graphs_with_d3js/">r/devops</a><sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> led to some interesting discussions (online and off), and thoughts about future work.</p>
 
 <p>This post takes up the problems of horizontal sprawl, better tooltips, meaningful coloration, and animations; starting with diagrams like the one above, and introducing a series of refinements.</p>
 
@@ -107,11 +107,11 @@ div#tooltip-demo-1 > svg {
 
 <p>But this is not entirely satisfying. After a certain threshold, the palette becomes confusing; new colors are not easily distinguished from old ones.</p>
 
-<p>Grouping resources of related types might help. The aws provider alone supports 320 distinct types of resource in close to 50 categories,<sup id="fnref:5"><a href="#fn:5" class="footnote">3</a></sup> but typical configurations probably draw from fewer categories.</p>
+<p>Grouping resources of related types might help. The aws provider alone supports 320 distinct types of resource in close to 50 categories,<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">3</a></sup> but typical configurations probably draw from fewer categories.</p>
 
 <div id="demo4"></div>
 
-<p>Here, resources of type <code class="highlighter-rouge">aws_route</code>, <code class="highlighter-rouge">aws_internet_gateway</code>, <code class="highlighter-rouge">aws_security_group</code>, <code class="highlighter-rouge">aws_subnet</code>, and <code class="highlighter-rouge">aws_vpc</code> all have the same color because they belong to the <code class="highlighter-rouge">vpc</code> group. Hopefully this will clarify larger diagrams.</p>
+<p>Here, resources of type <code class="language-plaintext highlighter-rouge">aws_route</code>, <code class="language-plaintext highlighter-rouge">aws_internet_gateway</code>, <code class="language-plaintext highlighter-rouge">aws_security_group</code>, <code class="language-plaintext highlighter-rouge">aws_subnet</code>, and <code class="language-plaintext highlighter-rouge">aws_vpc</code> all have the same color because they belong to the <code class="language-plaintext highlighter-rouge">vpc</code> group. Hopefully this will clarify larger diagrams.</p>
 
 <h3 id="first-animations">First Animations</h3>
 
@@ -123,7 +123,7 @@ div#tooltip-demo-1 > svg {
 
 <p>Compared with the proofs of concept presented the <a href="/notes/d3-terraform-graphs">last post</a>, these are starting to look useful.</p>
 
-<p>Aaaand, It’s exciting to begin thinking about further uses of animation, such as presenting <code class="highlighter-rouge">terraform apply</code> progress in realtime, or highlighting the subgraphs affected by a commit.</p>
+<p>Aaaand, It’s exciting to begin thinking about further uses of animation, such as presenting <code class="language-plaintext highlighter-rouge">terraform apply</code> progress in realtime, or highlighting the subgraphs affected by a commit.</p>
 
 <p>Have a Suggestion? <a href="mailto:patrick.mcmurchie@gmail.com">patrick.mcmurchie@gmail.com</a> / <a href="/about">about</a></p>
 
@@ -178,16 +178,16 @@ svg_activate('div#demo6',
  Below is the default output for a simple configuration.
 <img src="/assets/terraform-graphs/demo-1.svg">
 -->
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p><a href="/notes/d3-terraform-graphs">http://28mm.github.io/notes/d3-terraform-graphs</a>&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;&#xfe0e;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p><a href="/notes/d3-terraform-graphs">http://28mm.github.io/notes/d3-terraform-graphs</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;&#xfe0e;</a></p>
     </li>
-    <li id="fn:2">
-      <p><a href="https://www.reddit.com/r/devops/comments/783prc/exploring_terraform_graphs_with_d3js/">https://www.reddit.com/r/devops/comments/783prc/exploring_terraform_graphs_with_d3js/</a>&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;&#xfe0e;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p><a href="https://www.reddit.com/r/devops/comments/783prc/exploring_terraform_graphs_with_d3js/">https://www.reddit.com/r/devops/comments/783prc/exploring_terraform_graphs_with_d3js/</a> <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;&#xfe0e;</a></p>
     </li>
-    <li id="fn:5">
-      <p>Per the documentation, <a href="https://www.terraform.io/docs/providers/aws/index.html">here</a>&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;&#xfe0e;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>Per the documentation, <a href="https://www.terraform.io/docs/providers/aws/index.html">here</a> <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;&#xfe0e;</a></p>
     </li>
   </ol>
 </div>
@@ -211,33 +211,7 @@ svg_activate('div#demo6',
 		</main>
 
 		<div class="footer">
-
-<!-- begin social -->
-<!--
-<div class="container">
-	<div class="row">
-		<div class="span10 offset1">
-			<div class="social-icons">
-				<ul>
-					<li><a href="https://facebook.com/patrick.mcmurchie"><i class="fa fa-facebook-official"></i></a></li>
-					<li><a href="https://www.instagram.com/patrick.mcmurchie/"><i class="fa fa-instagram"></i></a></li>
-					<li><a href="https://www.github.com/28mm"><i class="fa fa-github"></i></a></li>
-<li><a href="mailto:patrick.mcmurchie@gmail.com"><i class="fa fa-envelope"></i></a></li>				
-
-</ul>
-			</div>
-		</div>
-	</div>
-</div>
--->
-<!--<div class="container">
-<div class="row">-->
-<img src="/assets/footer/junkyard.jpg" style="border-radius: 8px;">
-<!--</div>
-</div>-->
-
-<!-- end social -->
-  <span class="block ftr">&copy; 2018 <a href="/about">Patrick McMurchie</a></span>
+  <span class="block ftr">&copy; 2023 <a href="/about">Patrick McMurchie</a></span>
 </div>
 
 

@@ -138,19 +138,18 @@
 
 <p>One annoyance often met by new users is <em>Blast Radius</em>’ reliance on recent versions of Python (3.5+), and Graphviz. Docker is a convenient way to hide the sordid details of Python versioning and package management.</p>
 
-<p>An update image is available from the docker registry as <code class="highlighter-rouge">28mm/blast-radius</code>. If the current working directory contains a terraform project, invoke it like so:</p>
+<p>An update image is available from the docker registry as <code class="language-plaintext highlighter-rouge">28mm/blast-radius</code>. If the current working directory contains a terraform project, invoke it like so:</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">[...]$ </span>docker run --cap-add<span class="o">=</span>SYS_ADMIN -it --rm -p 5000:5000 -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/workdir:ro 28mm/blast-radius
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>...]<span class="nv">$ </span>docker run <span class="nt">--cap-add</span><span class="o">=</span>SYS_ADMIN <span class="nt">-it</span> <span class="nt">--rm</span> <span class="nt">-p</span> 5000:5000 <span class="nt">-v</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>:/workdir:ro 28mm/blast-radius
+</code></pre></div></div>
 
 <p>Further discussion can be found in the README. Thanks to Buc and Daniel for contributing this.</p>
 
 <h3 id="performance">Performance</h3>
 
-<p>A further limitation–beyond layout and navigability–for larger graphs is performance. I’ve had reports of graphs taking 10+ minutes to generate! A lower bound for runtime is <code class="highlighter-rouge">terraform graph | dot -Tsvg</code>, since <em>Blast Radius</em> depends on both these programs.</p>
+<p>A further limitation–beyond layout and navigability–for larger graphs is performance. I’ve had reports of graphs taking 10+ minutes to generate! A lower bound for runtime is <code class="language-plaintext highlighter-rouge">terraform graph | dot -Tsvg</code>, since <em>Blast Radius</em> depends on both these programs.</p>
 
-<p>Some testing with larger projects would be useful. (If anyone reading this, who has an especially large project, wishes to help: I’m interested in <code class="highlighter-rouge">time terraform graph | dot -Tsvg</code> vs <code class="highlighter-rouge">time blast-radius --svg</code>)</p>
+<p>Some testing with larger projects would be useful. (If anyone reading this, who has an especially large project, wishes to help: I’m interested in <code class="language-plaintext highlighter-rouge">time terraform graph | dot -Tsvg</code> vs <code class="language-plaintext highlighter-rouge">time blast-radius --svg</code>)</p>
 
 <h3 id="conclusion-and-next-steps">Conclusion And Next Steps</h3>
 
@@ -180,7 +179,7 @@ blastradius('#graph', '/assets/terraform-graphs-4/search-demo.svg', '/assets/ter
 		<a class="home" href="/" title="Back to Homepage">Home</a>
   
 		<span> &middot; </span>
-    <a class="prev" href="/notes/the-problem-with-spotify" title="PREV: Finding New Music: Two Experiments">&gt;&gt;</a>
+    <a class="prev" href="/notes/terraform-graphs-3" title="PREV: Exploring Terraform Graphs With D3.js Part 3">&gt;&gt;</a>
   
 -->
 </div>
@@ -188,33 +187,7 @@ blastradius('#graph', '/assets/terraform-graphs-4/search-demo.svg', '/assets/ter
 		</main>
 
 		<div class="footer">
-
-<!-- begin social -->
-<!--
-<div class="container">
-	<div class="row">
-		<div class="span10 offset1">
-			<div class="social-icons">
-				<ul>
-					<li><a href="https://facebook.com/patrick.mcmurchie"><i class="fa fa-facebook-official"></i></a></li>
-					<li><a href="https://www.instagram.com/patrick.mcmurchie/"><i class="fa fa-instagram"></i></a></li>
-					<li><a href="https://www.github.com/28mm"><i class="fa fa-github"></i></a></li>
-<li><a href="mailto:patrick.mcmurchie@gmail.com"><i class="fa fa-envelope"></i></a></li>				
-
-</ul>
-			</div>
-		</div>
-	</div>
-</div>
--->
-<!--<div class="container">
-<div class="row">-->
-<img src="/assets/footer/junkyard.jpg" style="border-radius: 8px;">
-<!--</div>
-</div>-->
-
-<!-- end social -->
-  <span class="block ftr">&copy; 2018 <a href="/about">Patrick McMurchie</a></span>
+  <span class="block ftr">&copy; 2023 <a href="/about">Patrick McMurchie</a></span>
 </div>
 
 

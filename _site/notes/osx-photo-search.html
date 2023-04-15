@@ -57,7 +57,7 @@
 <div class="divider"></div> 
 	<p><a href="https://news.ycombinator.com/item?id=16278637"><img src="/assets/y18.gif" /> This article has been discussed on Hacker News.</a></p>
 
-<p>Apple’s Photos.app classifies pictures, identifying subjects such as “boat,” and “bicycle,” as well as settings like “cafe,” and “mountains.” It uses this capability to offer vastly better search than before.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+<p>Apple’s Photos.app classifies pictures, identifying subjects such as “boat,” and “bicycle,” as well as settings like “cafe,” and “mountains.” It uses this capability to offer vastly better search than before.<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></p>
 
 <p>Unfortunately these improvements are neither visible to Spotlight, nor available in the Finder. This post documents a method of reconciling Photos.app metadata with filesystem metadata, so that they are indexed by Spotlight.</p>
 
@@ -70,13 +70,13 @@
 <p><a name="xattrs"></a></p>
 <h3 id="the-finder-extended-attributes-and-spotlight">The Finder, Extended Attributes, and Spotlight.</h3>
 
-<p>Quite a bit of old information remains in circulation, about tagging and searching for documents in MacOS. The Finder seems to recognize a few extended attributes, for the purpose of associating tags and comments with files.<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></p>
+<p>Quite a bit of old information remains in circulation, about tagging and searching for documents in MacOS. The Finder seems to recognize a few extended attributes, for the purpose of associating tags and comments with files.<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup></p>
 
 <p>To keep things simple, I will present only the method that has worked for me.</p>
 
-<p>The <code class="highlighter-rouge">com.apple.metadata:_kMDItemUserTags</code> xattr is used to associate a plist of tags with a file. Spotlight reads this xattr, and indexes its contents. To assign the tags “mountain,” and “alpine” to a file, for instance, you would create a plist:</p>
+<p>The <code class="language-plaintext highlighter-rouge">com.apple.metadata:_kMDItemUserTags</code> xattr is used to associate a plist of tags with a file. Spotlight reads this xattr, and indexes its contents. To assign the tags “mountain,” and “alpine” to a file, for instance, you would create a plist:</p>
 
-<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE plist PUBLIC
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE plist PUBLIC
  "-//Apple//DTD PLIST 1.0//EN"
   "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;</span>
 <span class="nt">&lt;plist</span> <span class="na">version=</span><span class="s">"1.0"</span><span class="nt">&gt;</span>
@@ -85,113 +85,100 @@
     <span class="nt">&lt;string&gt;</span>alpline<span class="nt">&lt;/string&gt;</span>
  <span class="nt">&lt;/array&gt;</span>
 <span class="nt">&lt;/plist&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<p>To associate this <code class="highlighter-rouge">$plist</code> with a <code class="highlighter-rouge">$file</code>, invoke the <code class="highlighter-rouge">xattr</code> command, as shown below.</p>
+<p>To associate this <code class="language-plaintext highlighter-rouge">$plist</code> with a <code class="language-plaintext highlighter-rouge">$file</code>, invoke the <code class="language-plaintext highlighter-rouge">xattr</code> command, as shown below.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">[...]$ </span>xattr -w <span class="s2">"com.apple.metadata:_kMDItemUserTags"</span> <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>...]<span class="nv">$ </span>xattr <span class="nt">-w</span> <span class="s2">"com.apple.metadata:_kMDItemUserTags"</span> <span class="se">\</span>
       <span class="s2">"</span><span class="nv">$plist</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$file</span><span class="s2">"</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<p>At this point, you should be able to find the file, via the 🔎 icon, or the <code class="highlighter-rouge">mdfind</code> command, as shown below.</p>
+<p>At this point, you should be able to find the file, via the 🔎 icon, or the <code class="language-plaintext highlighter-rouge">mdfind</code> command, as shown below.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[...]$ mdfind tag:mountain
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[...]$ mdfind tag:mountain
 /path/to/matching/file
 /path/to/another/matching/file
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><a name="photos-app"></a></p>
 <h3 id="photosapp-metadata-a-sqlite-adventure">Photos.app Metadata: A SQLite Adventure</h3>
 
-<p>Photos.app does its accounting with a SQLite database, which we’ll call <code class="highlighter-rouge">$photodb</code>, and set thus:</p>
+<p>Photos.app does its accounting with a SQLite database, which we’ll call <code class="language-plaintext highlighter-rouge">$photodb</code>, and set thus:</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">[...]$ </span><span class="nb">cd</span> ~
-<span class="gp">[...]$ </span><span class="nb">cd </span>Pictures
-<span class="gp">[...]$ </span><span class="nb">cd </span>Photo<span class="se">\ </span>Library.photoslibrary
-<span class="gp">[...]$ </span><span class="nb">cd </span>database
-<span class="gp">[...]$ </span><span class="nv">photodb</span><span class="o">=</span><span class="s2">"</span><span class="nv">$PWD</span><span class="s2">/photos.db"</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>...]<span class="nv">$ </span><span class="nb">cd</span> ~
+<span class="o">[</span>...]<span class="nv">$ </span><span class="nb">cd </span>Pictures
+<span class="o">[</span>...]<span class="nv">$ </span><span class="nb">cd </span>Photo<span class="se">\ </span>Library.photoslibrary
+<span class="o">[</span>...]<span class="nv">$ </span><span class="nb">cd </span>database
+<span class="o">[</span>...]<span class="nv">$ photodb</span><span class="o">=</span><span class="s2">"</span><span class="nv">$PWD</span><span class="s2">/photos.db"</span>
+</code></pre></div></div>
 
-<p>Unfortunately, <code class="highlighter-rouge">$photodb</code> is probably open, and locked.</p>
+<p>Unfortunately, <code class="language-plaintext highlighter-rouge">$photodb</code> is probably open, and locked.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">[...]$ </span>lsof <span class="s2">"</span><span class="nv">$photodb</span><span class="s2">"</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>...]<span class="nv">$ </span>lsof <span class="s2">"</span><span class="nv">$photodb</span><span class="s2">"</span>
 COMMAND     PID    USER   FD   TYPE DEVICE  <span class="o">[</span>...snip...]
 photolibr 15432 patrick    4u   REG    1,1  <span class="o">[</span>...snip...]
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The trouble with just killing <em>photolibraryd</em>, is that it will re-spawn, repeatedly. <span class="redact">Undoubtedly,</span> <em>launchd</em> can be told to disable <em>photolibraryd</em>, <span class="redact">but</span> <span class="redact">the</span> <span class="redact">approved</span> <span class="redact">mechanism</span> <span class="redact">wasn’t</span> <span class="redact">immediately</span> <span class="redact">obvious</span> <span class="redact">to</span> <span class="redact">me.</span></p>
 
-<p><span class="new">Stop the <code class="highlighter-rouge">photolibraryd</code> service with <code class="highlighter-rouge">launchctl</code></span></p>
+<p><span class="new">Stop the <code class="language-plaintext highlighter-rouge">photolibraryd</code> service with <code class="language-plaintext highlighter-rouge">launchctl</code></span></p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">[...]$ </span>launchctl stop photolibraryd
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>...]<span class="nv">$ </span>launchctl stop photolibraryd
+</code></pre></div></div>
 
 <p><span class="redact">Instead,</span><span class="new">Initially,</span> I opted for an egregious hack, <span class="new">which you can read about by copying the redacted text.</span><span class="redact">In</span> <span class="redact">order</span> <span class="redact">to</span> <span class="redact">lock</span> <span class="redact">its</span> <span class="redact">database,</span> <span class="redact">photoslibraryd,</span> <span class="redact">need</span> <span class="redact">to</span> <span class="redact">be</span> <span class="redact">able</span> <span class="redact">to</span> <span class="redact">write</span> <span class="redact">to</span> <span class="redact">it.</span> <span class="redact">I</span> <span class="redact">simply</span> <span class="redact">removed</span> <span class="redact">write</span> <span class="redact">permisions.</span></p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">[...]$ </span>chmod -w <span class="s2">"</span><span class="nv">$photodb</span><span class="s2">"</span>
-<span class="gp">[...]$ </span>lsof <span class="s2">"</span><span class="nv">$photodb</span><span class="s2">"</span> | 
-  awk <span class="s1">'{ print $2}'</span>    | 
-  egrep -v PID         | 
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>...]<span class="nv">$ </span><span class="nb">chmod</span> <span class="nt">-w</span> <span class="s2">"</span><span class="nv">$photodb</span><span class="s2">"</span>
+<span class="o">[</span>...]<span class="nv">$ </span>lsof <span class="s2">"</span><span class="nv">$photodb</span><span class="s2">"</span> | 
+  <span class="nb">awk</span> <span class="s1">'{ print $2}'</span>    | 
+  egrep <span class="nt">-v</span> PID         | 
   xargs <span class="nb">kill</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<p><span class="redact">Afterwards–but</span> <span class="redact">not</span> <span class="redact">yet–don’t</span> <span class="redact">forget</span> <span class="redact">to</span> <span class="redact">restore</span> <span class="redact">write</span><span class="redact">permissions</span><sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup> <span class="redact">to</span> <span class="redact">your</span> <span class="redact">photos</span> <span class="redact">database!</span> <span class="redact">You</span> <span class="redact">may</span> <span class="redact">want</span> <span class="redact">to</span> <span class="redact">restart</span> <span class="redact">your</span> <span class="redact">computer</span> <span class="redact">to</span> <span class="redact">ensure</span> <span class="redact">that</span> <span class="redact">photolibraryd,</span> <span class="redact">continues</span> <span class="redact">to</span> <span class="redact">work.</span></p>
+<p><span class="redact">Afterwards–but</span> <span class="redact">not</span> <span class="redact">yet–don’t</span> <span class="redact">forget</span> <span class="redact">to</span> <span class="redact">restore</span> <span class="redact">write</span><span class="redact">permissions</span><sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> <span class="redact">to</span> <span class="redact">your</span> <span class="redact">photos</span> <span class="redact">database!</span> <span class="redact">You</span> <span class="redact">may</span> <span class="redact">want</span> <span class="redact">to</span> <span class="redact">restart</span> <span class="redact">your</span> <span class="redact">computer</span> <span class="redact">to</span> <span class="redact">ensure</span> <span class="redact">that</span> <span class="redact">photolibraryd,</span> <span class="redact">continues</span> <span class="redact">to</span> <span class="redact">work.</span></p>
 
-<p>Now, it’s possible to open <code class="highlighter-rouge">$photodb</code>, and poke around.</p>
+<p>Now, it’s possible to open <code class="language-plaintext highlighter-rouge">$photodb</code>, and poke around.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">[...]$ </span>sqlite3 <span class="s2">"</span><span class="nv">$photodb</span><span class="s2">"</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>...]<span class="nv">$ </span>sqlite3 <span class="s2">"</span><span class="nv">$photodb</span><span class="s2">"</span>
 SQLite version 3.14.0 2016-07-26 15:17:14
 Enter <span class="s2">".help"</span> <span class="k">for </span>usage hints.
-<span class="gp">sqlite&gt; </span>
-</code></pre>
-</div>
+sqlite&gt; 
+</code></pre></div></div>
 
-<p>Review the schema with the <code class="highlighter-rouge">.schema</code> command. Quit by sending <code class="highlighter-rouge">Ctrl-d</code>, or with the <code class="highlighter-rouge">.quit</code> command. Tags (and a lot else) are kept in the <code class="highlighter-rouge">RKVersion_stringNote</code> table.</p>
+<p>Review the schema with the <code class="language-plaintext highlighter-rouge">.schema</code> command. Quit by sending <code class="language-plaintext highlighter-rouge">Ctrl-d</code>, or with the <code class="language-plaintext highlighter-rouge">.quit</code> command. Tags (and a lot else) are kept in the <code class="language-plaintext highlighter-rouge">RKVersion_stringNote</code> table.</p>
 
-<div class="language-sql highlighter-rouge"><pre class="highlight"><code><span class="n">sqlite</span><span class="o">&gt;</span> <span class="p">.</span><span class="n">headers</span> <span class="k">on</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sqlite</span><span class="o">&gt;</span> <span class="p">.</span><span class="n">headers</span> <span class="k">on</span>
 <span class="n">sqlite</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">RKVersion_stringNote</span><span class="p">;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<p>We need to find the appropriate value of <code class="highlighter-rouge">keyPath</code>, since this will vary between systems. The following snippet, should suffice to find it:</p>
+<p>We need to find the appropriate value of <code class="language-plaintext highlighter-rouge">keyPath</code>, since this will vary between systems. The following snippet, should suffice to find it:</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">[...]$ </span><span class="nv">KEYPATH</span><span class="o">=</span><span class="k">$(</span> sqlite3 <span class="s2">"</span><span class="nv">$photodb</span><span class="s2">"</span> .schema       | 
-  grep <span class="s1">'RKVersion_stringNote_skIndexUpdateTrigger'</span> | 
-  grep -Eo <span class="s1">'[0-9]{1,4}'</span> <span class="k">)</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>...]<span class="nv">$ KEYPATH</span><span class="o">=</span><span class="si">$(</span> sqlite3 <span class="s2">"</span><span class="nv">$photodb</span><span class="s2">"</span> .schema       | 
+  <span class="nb">grep</span> <span class="s1">'RKVersion_stringNote_skIndexUpdateTrigger'</span> | 
+  <span class="nb">grep</span> <span class="nt">-Eo</span> <span class="s1">'[0-9]{1,4}'</span> <span class="si">)</span>
+</code></pre></div></div>
 
 <p>Okay, but did it work?</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[...] echo $KEYPATH
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[...] echo $KEYPATH
 719
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<p>Now we can find the strings containing our tags, and associate them with filesystem paths. Be sure to substitute the value of <code class="highlighter-rouge">$KEYPATH</code> determined above, for the literal <code class="highlighter-rouge">719</code>, below.</p>
+<p>Now we can find the strings containing our tags, and associate them with filesystem paths. Be sure to substitute the value of <code class="language-plaintext highlighter-rouge">$KEYPATH</code> determined above, for the literal <code class="language-plaintext highlighter-rouge">719</code>, below.</p>
 
-<div class="language-sql highlighter-rouge"><pre class="highlight"><code><span class="n">sqlite</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="n">RKMaster</span><span class="p">.</span><span class="n">imagePath</span><span class="p">,</span> <span class="n">RKVersion_stringNote</span><span class="p">.</span><span class="n">value</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sqlite</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="n">RKMaster</span><span class="p">.</span><span class="n">imagePath</span><span class="p">,</span> <span class="n">RKVersion_stringNote</span><span class="p">.</span><span class="n">value</span>
 <span class="k">FROM</span> <span class="n">RKVersion_stringNote</span>
 <span class="k">INNER</span> <span class="k">JOIN</span> <span class="n">RKMaster</span>
 <span class="k">ON</span> <span class="n">RKVersion_stringNote</span><span class="p">.</span><span class="n">attachedToId</span> <span class="o">=</span> <span class="n">RKMaster</span><span class="p">.</span><span class="n">modelId</span>
 <span class="k">WHERE</span> <span class="n">RKVersion_stringNote</span><span class="p">.</span><span class="n">keyPath</span> <span class="o">=</span> <span class="mi">719</span> <span class="cm">/* !!! */</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Records will resemble the following:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>2015/04/25/20150425-035012/DSC00435.JPG|DSC00435.JPG  \
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2015/04/25/20150425-035012/DSC00435.JPG|DSC00435.JPG  \
 00435.JPG JPG October 2012 Outdoor Outside Outdoors   \
 Outsides Land Lands Mountain Mounts Peak Sierra       \
 Sierras Peaks Mountains Mount
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Tags aren’t quoted, but always come last. The trouble is that its not obvious which are 1-grams, 2-grams, or n-grams. Various collisions are possible both between tags, and other substrings.</p>
 
@@ -200,21 +187,20 @@ Sierras Peaks Mountains Mount
 
 <p>Okay, lets put the pieces together. We need four things:</p>
 <ol>
-  <li>a copy of <code class="highlighter-rouge">photos.db</code> in a write-able location.</li>
-  <li>the system-specific value of <code class="highlighter-rouge">$KEYPATH</code></li>
-  <li>the path to our photos library <code class="highlighter-rouge">$PHOTOLIB</code></li>
-  <li><code class="highlighter-rouge">photos2spotlight.py</code> (listing <a href="https://github.com/28mm/macos-photo-scripts">here</a>).</li>
+  <li>a copy of <code class="language-plaintext highlighter-rouge">photos.db</code> in a write-able location.</li>
+  <li>the system-specific value of <code class="language-plaintext highlighter-rouge">$KEYPATH</code></li>
+  <li>the path to our photos library <code class="language-plaintext highlighter-rouge">$PHOTOLIB</code></li>
+  <li><code class="language-plaintext highlighter-rouge">photos2spotlight.py</code> (listing <a href="https://github.com/28mm/macos-photo-scripts">here</a>).</li>
 </ol>
 
 <p>Start by getting an idea of what your library contains:</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">[...]$ </span>./photos2spotlight.py --stats <span class="se">\</span>
-  --db /path/to/copy/of/photos.db 
-  --lib <span class="s2">"~/Pictures/Photos</span><span class="se">\ </span><span class="s2">Library.photoslibrary/"</span>
-  --keypath <span class="nv">$KEYPATH</span>
-</code></pre>
-</div>
-<div class="highlighter-rouge"><pre class="highlight"><code>[...snip...]
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>...]<span class="nv">$ </span>./photos2spotlight.py <span class="nt">--stats</span> <span class="se">\</span>
+  <span class="nt">--db</span> /path/to/copy/of/photos.db 
+  <span class="nt">--lib</span> <span class="s2">"~/Pictures/Photos</span><span class="se">\ </span><span class="s2">Library.photoslibrary/"</span>
+  <span class="nt">--keypath</span> <span class="nv">$KEYPATH</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[...snip...]
     16 Duds
     16 Clothing
     16 Accoutrements
@@ -226,26 +212,23 @@ Sierras Peaks Mountains Mount
     18 Inside
     18 Interior Room
     18 Indoors
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<p>By default, <code class="highlighter-rouge">photos2spotlight.py</code> will make a dry run. Use the <code class="highlighter-rouge">--write</code> flag to modify fileystem metadata.</p>
+<p>By default, <code class="language-plaintext highlighter-rouge">photos2spotlight.py</code> will make a dry run. Use the <code class="language-plaintext highlighter-rouge">--write</code> flag to modify fileystem metadata.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">[...]$ </span>./photos2spotlight.py --stats <span class="se">\</span>
-  --db /path/to/copy/of/photos.db
-  --lib	<span class="s2">"~/Pictures/Photos</span><span class="se">\ </span><span class="s2">Library.photoslibrary/"</span>
-  --keypath <span class="nv">$KEYPATH</span>
-  --write
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>...]<span class="nv">$ </span>./photos2spotlight.py <span class="nt">--stats</span> <span class="se">\</span>
+  <span class="nt">--db</span> /path/to/copy/of/photos.db
+  <span class="nt">--lib</span>	<span class="s2">"~/Pictures/Photos</span><span class="se">\ </span><span class="s2">Library.photoslibrary/"</span>
+  <span class="nt">--keypath</span> <span class="nv">$KEYPATH</span>
+  <span class="nt">--write</span>
+</code></pre></div></div>
 
 <p>You should now be able to find photos using Spotlight, the Finder, or the related mdfind command. E.g.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[...]$ mdfind 'tag:Inside'
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[...]$ mdfind 'tag:Inside'
 .../Masters/2015/04/22/20150422-011045/IMG_0083.JPG
 [...snip...]
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="conclusion">Conclusion</h3>
 
@@ -253,16 +236,16 @@ Sierras Peaks Mountains Mount
 
 <p>Continue to <a href="/notes/better-photo-search-for-macos">Part 2</a>.</p>
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>Google Photos does this too. It’s dramatically less tedious than manual tagging.&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;&#xfe0e;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>Google Photos does this too. It’s dramatically less tedious than manual tagging. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;&#xfe0e;</a></p>
     </li>
-    <li id="fn:2">
-      <p>Both <code class="highlighter-rouge">kMDItemFinderComment</code> and <code class="highlighter-rouge">kMDItemOMUserTags</code> are commonly suggested, as well. As far as I can tell, the former is inappropriate, while the latter is disused, except by legacy applications.&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;&#xfe0e;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>Both <code class="language-plaintext highlighter-rouge">kMDItemFinderComment</code> and <code class="language-plaintext highlighter-rouge">kMDItemOMUserTags</code> are commonly suggested, as well. As far as I can tell, the former is inappropriate, while the latter is disused, except by legacy applications. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;&#xfe0e;</a></p>
     </li>
-    <li id="fn:3">
-      <p><code class="highlighter-rouge">[...]$ chmod u+w "$photodb"</code>&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;&#xfe0e;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p><code class="language-plaintext highlighter-rouge">[...]$ chmod u+w "$photodb"</code> <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;&#xfe0e;</a></p>
     </li>
   </ol>
 </div>
@@ -277,42 +260,13 @@ Sierras Peaks Mountains Mount
   
 		<a class="home" href="/" title="Back to Homepage">Home</a>
   
-		<span> &middot; </span>
-    <a class="prev" href="/notes/a-quixotic-apartment-search" title="PREV: A Quixotic Apartment Search (in Seattle)">&gt;&gt;</a>
-  
 -->
 </div>
 
 		</main>
 
 		<div class="footer">
-
-<!-- begin social -->
-<!--
-<div class="container">
-	<div class="row">
-		<div class="span10 offset1">
-			<div class="social-icons">
-				<ul>
-					<li><a href="https://facebook.com/patrick.mcmurchie"><i class="fa fa-facebook-official"></i></a></li>
-					<li><a href="https://www.instagram.com/patrick.mcmurchie/"><i class="fa fa-instagram"></i></a></li>
-					<li><a href="https://www.github.com/28mm"><i class="fa fa-github"></i></a></li>
-<li><a href="mailto:patrick.mcmurchie@gmail.com"><i class="fa fa-envelope"></i></a></li>				
-
-</ul>
-			</div>
-		</div>
-	</div>
-</div>
--->
-<!--<div class="container">
-<div class="row">-->
-<img src="/assets/footer/junkyard.jpg" style="border-radius: 8px;">
-<!--</div>
-</div>-->
-
-<!-- end social -->
-  <span class="block ftr">&copy; 2018 <a href="/about">Patrick McMurchie</a></span>
+  <span class="block ftr">&copy; 2023 <a href="/about">Patrick McMurchie</a></span>
 </div>
 
 

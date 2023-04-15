@@ -7,252 +7,16 @@
     
       
         <item>
-          <title>Comparing Randonneur Bags and Panniers</title>
-          <description>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/rando-bags/datatables.min.css&quot; /&gt;
+          <title>San Juan Islands: Tidal Currents</title>
+          <description>&lt;p&gt;This is a little chart summarizing tidal currents at different NOAA stations in the San Juan Islands, for 2023. I may post an interactive version, later.&lt;/p&gt;
 
-&lt;script src=&quot;/assets/rando-bags/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/tides-and-currents/tides-and-currents.png&quot; /&gt;&lt;/p&gt;
 
-&lt;script src=&quot;/assets/rando-bags/datatables.min.js&quot;&gt;&lt;/script&gt;
-
-&lt;style&gt;
-    .dt-right {
-        text-align: right;
-    }
-&lt;/style&gt;
-
-&lt;p&gt;This is a quick post about randonneur bags and panniers, containing some overblown criticisms of product review sites, as well as some dubious comparisons of my own.&lt;/p&gt;
-
-&lt;h3 id=&quot;a-critique-of-outdoor-gear-lab&quot;&gt;A Critique of Outdoor Gear Lab&lt;/h3&gt;
-
-&lt;p&gt;Outdoor Gear Lab publish methodical reviews of outdoor equipment in various categories (carabiners, ropes, and cams for climbers; frames, tires, and bags for cyclists).&lt;/p&gt;
-
-&lt;p&gt;In general, Outdoor Gear Lab do a pretty good job. I place greater weight on their reviews because of their policy of buying equipment for review (instead of accepting gifts, which might influence their assessments).&lt;/p&gt;
-
-&lt;p&gt;But they make their money from affiate links–a form of sales commission only offered by the largest outdoor retailers. If a product isn’t available on Amazon or REI, for instance, Outdoor Gear Lab pretend it doesn’t exist.&lt;/p&gt;
-
-&lt;p&gt;In some categories–headlamps for instance–this isn’t a problem: there aren’t a lot of smaller companies making them, or relying on direct sales.&lt;/p&gt;
-
-&lt;p&gt;But in a category like bike bags, smaller operations–&lt;em&gt;Swift Industries&lt;/em&gt;, &lt;em&gt;North St.&lt;/em&gt;, and &lt;em&gt;Gilles Berthoud&lt;/em&gt;, to name a few–make some of the best, and a lot is lost by ignoring them.&lt;/p&gt;
-
-&lt;h3 id=&quot;quantitative-comparisons&quot;&gt;Quantitative Comparisons&lt;/h3&gt;
-
-&lt;p&gt;Rigid handlebar bags (aka rando bags) are probably the most useful bags you can put on a bike, because they’re so easily accessed while riding. But per unit of capacity, they tend to cost more than other options, and may weigh more as well.&lt;/p&gt;
-
-&lt;p&gt;There may be ways to minimize those differences–larger rando bags might be expected to offer better value, and weigh less per Liter of capacity. How do a range of randonneur bags, in different sizes, compare with panniers and bikepacking-style framebags?&lt;/p&gt;
-
-&lt;p&gt;The table below contains 30+ bags from Ortlieb, Gilles Berthoud, Apidura, Revelate, Swift Industries, and North St. You can sort according to Dollars-per-Liter and Liters-per-Ounce, which I think make particularly useful comparisons.&lt;/p&gt;
-
-&lt;table id=&quot;table1&quot;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;maker&lt;/th&gt;
-&lt;th&gt;type&lt;/th&gt;
-&lt;th&gt;bag&lt;/th&gt;
-&lt;th&gt;material&lt;/th&gt;
-&lt;th&gt;Oz&lt;/th&gt;
-&lt;th&gt;L&lt;/th&gt;
-&lt;th&gt;$&lt;/th&gt;
-&lt;th&gt;L/Oz&lt;/th&gt;
-&lt;th&gt;$/L&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Okay, whoah, that’s a lot of bags. I’d like to offer a couple of observations. The Apidura and Revelate bags clearly offer the best deal in terms of Liters-per-Ounce, but aren’t really in the same category as the other handlebar bags, which are rigid and easily accessible.&lt;/p&gt;
-
-&lt;p&gt;In other words: I’m a patient guy, but there’s a limit to how long I’m willing to spend searching for my Cliff Bar (and zero chance I’ll dismount my bike to look for it). Bikepacking-style handlebar bags aren’t really for me.&lt;/p&gt;
-
-&lt;p&gt;Also, Larger randonneur bags, like the Hinterland Ozette from Swift Industries weigh as little per Little as conventional Ortlieb rear panniers. Pretty surprising! (Worth noting that mounting hardware–racks and decaleurs–aren’t included in the comparison.)&lt;/p&gt;
-
-&lt;h3 id=&quot;aesthetics&quot;&gt;Aesthetics&lt;/h3&gt;
-
-&lt;p&gt;What’s most striking to me in the comparisons above, is how similar these bags all are. For a given type of bag, and capacity, there isn’t a whole lot of variation in weight or price. So what should really drive the choice of a new bag? Probably aesthetics. Your bags ought to look correct.&lt;/p&gt;
-
-&lt;p&gt;For me that suggests bags made from newfangled materials like X-Pac, but in woodsy colors; whereas for Eroica types, that probably means leather and waxed canvas.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Comments and Suggestions&lt;/strong&gt; to &lt;a href=&quot;mailto:patrick.mcmurchie@gmail.com&quot;&gt;patrick.mcmurchie@gmail.com&lt;/a&gt;&lt;/p&gt;
-
-&lt;script&gt;
-
-$(document).ready(function() {
-    $('#table1').DataTable( {
-        &quot;ajax&quot;: { 'url' : '/assets/rando-bags/all-bags.txt',
-            &quot;dataSrc&quot; : 'data' },
-        'paging' : false,
-        'info' : false,
-        'searching' : true,
-        'columns' :  [
-            { 'visible' : false }, // make
-            { 'visible' : false }, // type
-            { 'width' : '20%'}, // bag
-            { 'visible' : false }, // material
-            { 'className': 'dt-right', 'render' : $.fn.dataTable.render.number(',', '.', 0, '') }, // weight
-            { 'className': 'dt-right', 'render' : $.fn.dataTable.render.number(',', '.', 1, '') }, // capacity
-            { 'className': 'dt-right', 'render' : $.fn.dataTable.render.number( ',','.', 0, '$') }, // cost
-            { 'className': 'dt-right', 'render' : $.fn.dataTable.render.number(',', '.', 2, '') },
-            { 'className': 'dt-right','render' : $.fn.dataTable.render.number( ',','.', 2, '$') },
-        ]
-    } );
-} );
-
-&lt;/script&gt;
-
+&lt;p&gt;Note: duration is given in minutes, speed is in knots. the two crossbars show median duration and speed. The red circles show today’s maximum currents (typically two floods and two ebbs of different magnitude).&lt;/p&gt;
 </description>
-          <pubDate>2018-03-13T00:00:01-07:00</pubDate>
-          <link>http://localhost:4000/notes/rando-bags-and-panniers</link>
-          <guid isPermaLink="true">http://localhost:4000/notes/rando-bags-and-panniers</guid>
-        </item>
-      
-    
-      
-        <item>
-          <title>A Multi-Distro Linux Hardware Compatibility List</title>
-          <description>&lt;p&gt;&lt;img src=&quot;/assets/hcl-part-1/front-page-before.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Years ago, I worked at a Linux-oriented systems integrator in Seattle. We built rackmount servers from commodity parts at a time when Linux support was an afterthought for larger vendors. Back then, drivers were always a problem.&lt;/p&gt;
-
-&lt;p&gt;Today, the situation is vastly better, as many manufacturers prioritize Linux support. But for some components, issues persist in the form of proprietary drivers, complicated 3rd party licenses, lack of backports, and version conflicts.&lt;/p&gt;
-
-&lt;p&gt;This is the first in a series of posts documenting the design of &lt;a href=&quot;http://pci.compatible.sh&quot;&gt;pci.compatible.sh&lt;/a&gt;–a new hardware compatibility database–and various aspects of its implementation.&lt;/p&gt;
-
-&lt;h3 id=&quot;the-shortcomings-of-existing-hcls&quot;&gt;The Shortcomings of Existing HCLs&lt;/h3&gt;
-
-&lt;p&gt;I’ve yet to see an HCL I wanted to use, or often found useful in my work–despite a perceived need for one. Linux Distributors, who by and large do an incredible job, haven’t done as well communicating device support to their users.&lt;/p&gt;
-
-&lt;p&gt;One issue is incentive. So-called “enterprise” distributions seem to view HCLs as a marketing opportunity for preferred hardware vendors, and therefore only include a small subset of nominally compatible systems in their lists.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;p&gt;The Oracle HCL is a shining example of this tendency. It’s brief and difficult. “Enterprise” lists also lack the context of other distributions and the upstream kernel. (Sometimes it’s useful to know when Linus’ tree added support for a device.)&lt;/p&gt;
-
-&lt;p&gt;Another issue is just finding devices.[1] In writing and in conversation, we tend to refer to devices by their common names, e.g. the Intel I350 Network Controller, but this turns out to be ambiguous…&lt;/p&gt;
-
-&lt;h3 id=&quot;identifying-pci-devices&quot;&gt;Identifying PCI Devices&lt;/h3&gt;
-
-&lt;p&gt;PCI Devices are identified with a 16bit vendor id, 16bit vendor id, and optionally 16bit subsystem and subvendor ids (more on those later). For example, Intel’s vendor id is &lt;code class=&quot;highlighter-rouge&quot;&gt;0x8086&lt;/code&gt;, and the device id of the i350 Network Controller is &lt;code class=&quot;highlighter-rouge&quot;&gt;0x1524&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;The canonical, community-edited, directory of pci ids is published at &lt;a href=&quot;https://pci-ids.ucw.cz/&quot;&gt;pci-ids.ucw.cz&lt;/a&gt;,&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; and mirrored on &lt;a href=&quot;https://github.com/pciutils/pciids&quot;&gt;GitHub&lt;/a&gt;. It’s a pretty amazing resource, enabling–among other things–&lt;code class=&quot;highlighter-rouge&quot;&gt;lspci&lt;/code&gt; to return a human-readable inventory of devices installed on a given system.&lt;/p&gt;
-
-&lt;p&gt;According to this resource, the case of the i350 network controller is not as simple as I’ve stated above. It has the device id &lt;code class=&quot;highlighter-rouge&quot;&gt;0x1524&lt;/code&gt;-but also &lt;code class=&quot;highlighter-rouge&quot;&gt;0x1521&lt;/code&gt;, and four others. Subsystem IDs further confuse matters by adding more than fifty closely related devices.&lt;/p&gt;
-
-&lt;p&gt;Corporate Acquisitions create problems, as well. Take AMD (&lt;code class=&quot;highlighter-rouge&quot;&gt;0x1022&lt;/code&gt;), or is it AMD/ATI (&lt;code class=&quot;highlighter-rouge&quot;&gt;0x1002&lt;/code&gt;)? Which does the company use today, for new devices, or does it continue to use both? Questions like these come up often, limiting the user’s confidence.&lt;/p&gt;
-
-&lt;p&gt;Throughout the database, vagaries in naming convention, device classification, and abbreviation standards complicate search. An improved HCL needs to greatly reduce the friction of device search.&lt;/p&gt;
-
-&lt;h3 id=&quot;a-first-stab-at-device-search&quot;&gt;A First Stab at Device Search&lt;/h3&gt;
-
-&lt;p&gt;My first–not wholly successful–attempt at device search for &lt;a href=&quot;http://pci.compatible.sh&quot;&gt;pci.compatible.sh&lt;/a&gt; looks like this.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/hcl-part-1/device-select.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Users first select a vendor. To get around the problem of mergers and name collisions, each vendor is displayed with the number and type of the devices associated with it.&lt;/p&gt;
-
-&lt;p&gt;Here, LSI Logic (v: &lt;code class=&quot;highlighter-rouge&quot;&gt;0x1000&lt;/code&gt;) has 379 storage controllers associated with it, and is therefore a likelier choice than the various other LSIs in the database.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/hcl-part-1/subsystem-select.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Now a device is chosen, and if subsystems exist as well, a 3rd &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;select&amp;gt;&lt;/code&gt; appears populated with those options.&lt;/p&gt;
-
-&lt;p&gt;It works okay, but badly for new users and for non-OEM parts–A later post will explore these inadequacies along with solutions to them.&lt;/p&gt;
-
-&lt;h3 id=&quot;linux-pci-device-drivers&quot;&gt;Linux PCI Device Drivers&lt;/h3&gt;
-
-&lt;p&gt;So with a device chosen, which drivers support it?&lt;/p&gt;
-
-&lt;p&gt;Loadable kernel modules make this easy to check. When drivers are built as modules, an additional ELF section “.modinfo” is added that includes a list of supported devices. Check with &lt;code class=&quot;highlighter-rouge&quot;&gt;modinfo&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;[…]$ &lt;/span&gt;modinfo igb
-filename:       /lib/modules/3.10.0-693.17.1.el7.x86_64/kernel/drivers/net/ethernet/intel/igb/./igb.ko
-version:        5.4.0-k
-license:        GPL
-description:    Intel&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;R&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Gigabit Ethernet Network Driver
-author:         Intel Corporation, &amp;lt;e1000-devel@lists.sourceforge.net&amp;gt;
-rhelversion:    7.4
-srcversion:     10DC5F00A6D6C21896DA93E
-&lt;span class=&quot;nb&quot;&gt;alias&lt;/span&gt;:          pci:v00008086d000010D6sv&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;sd&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;bc&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;sc&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;i&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;alias&lt;/span&gt;:          pci:v00008086d000010A9sv&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;sd&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;bc&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;sc&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;i&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;alias&lt;/span&gt;:          pci:v00008086d000010A7sv&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;sd&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;bc&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;sc&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;i&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;alias&lt;/span&gt;:          pci:v00008086d000010E8sv&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;sd&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;bc&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;sc&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;i&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...snip...]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Or with &lt;code class=&quot;highlighter-rouge&quot;&gt;readelf&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;readelf -p .modinfo ./igb.ko
-String dump of section &lt;span class=&quot;s1&quot;&gt;'.modinfo'&lt;/span&gt;:
-  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;     0]  &lt;span class=&quot;nv&quot;&gt;parm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;debug:Debug level &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;none,...,16&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;all&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;    2b]  &lt;span class=&quot;nv&quot;&gt;parmtype&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;debug:int
-  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;    3e]  &lt;span class=&quot;nv&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;5.4.0-k
-  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;    4e]  &lt;span class=&quot;nv&quot;&gt;license&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;GPL
-  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;    5a]  &lt;span class=&quot;nv&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;Intel&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;R&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Gigabit Ethernet Network Driver
-  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;    8f]  &lt;span class=&quot;nv&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;Intel Corporation, &amp;lt;e1000-devel@lists.sourceforge.net&amp;gt;
-  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;    &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;  &lt;span class=&quot;nv&quot;&gt;parm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;max_vfs:Maximum number of virtual functions to allocate per physical &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;   120]  &lt;span class=&quot;nv&quot;&gt;parmtype&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;max_vfs:uint
-  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;   140]  &lt;span class=&quot;nv&quot;&gt;rhelversion&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;7.4
-  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;   150]  &lt;span class=&quot;nv&quot;&gt;srcversion&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;10DC5F00A6D6C21896DA93E
-  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;   173]  &lt;span class=&quot;nb&quot;&gt;alias&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pci:v00008086d000010D6sv&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;sd&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;bc&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;sc&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;i&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;   19e]  &lt;span class=&quot;nb&quot;&gt;alias&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pci:v00008086d000010A9sv&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;sd&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;bc&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;sc&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;i&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;   1c9]  &lt;span class=&quot;nb&quot;&gt;alias&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pci:v00008086d000010A7sv&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;sd&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;bc&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;sc&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;i&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;   1f4]  &lt;span class=&quot;nb&quot;&gt;alias&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pci:v00008086d000010E8sv&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;sd&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;bc&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;sc&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;i&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;   21f]  &lt;span class=&quot;nb&quot;&gt;alias&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pci:v00008086d00001526sv&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;sd&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;bc&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;sc&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;i&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;   24a]  &lt;span class=&quot;nb&quot;&gt;alias&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pci:v00008086d0000150Dsv&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;sd&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;bc&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;sc&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;i&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;   275]  &lt;span class=&quot;nb&quot;&gt;alias&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pci:v00008086d000010E7sv&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;sd&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;bc&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;sc&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;i&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...snip...]
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Built-ins work differently, so its convenient that most distributions have adopted a policy of shipping device drivers as loadable modules.&lt;/p&gt;
-
-&lt;h3 id=&quot;as-many-distros-as-possible&quot;&gt;As Many Distros As Possible&lt;/h3&gt;
-
-&lt;p&gt;A key feature of &lt;a href=&quot;http://pci.compatible.sh&quot;&gt;pci.compatible.sh&lt;/a&gt; is support for multiple distros, going back to their first use of the 2.6 kernel, and the upstream Linux kernel going back to 2.6.9.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/hcl-part-1/distro-select.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Most HCLs focus on current releases, but issues of driver support are nearly guaranteed when slightly older releases are paired newer hardware–a common enough scenario.&lt;/p&gt;
-
-&lt;p&gt;In such cases it’s useful to know when device support was introduced. Here we can see that CentOS has supported the 3Ware 9000S SATA RAID Controller since its 4.0 release. (It’s an archaic device.)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/hcl-part-1/3w-9xxx.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;At present, support is limited to three rpm-based distros and the upstream kernel. I hope to add Debian and Ubuntu, in the future, but their public archives are less complete. (If you have access to older repositories, please get in touch!)&lt;/p&gt;
-
-&lt;h3 id=&quot;borrowing-a-good-idea-from-debian&quot;&gt;Borrowing A Good Idea From Debian&lt;/h3&gt;
-
-&lt;p&gt;The &lt;a href=&quot;https://kmuto.jp/debian/hcl/index.rhtml&quot;&gt;Debian HCL&lt;/a&gt; is different from others I’ve worked with–and better. You paste the output of &lt;code class=&quot;highlighter-rouge&quot;&gt;lspci -n&lt;/code&gt; into a textarea, as below.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/hcl-part-1/debian-before.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;It reports the compatibility of each device found, so that the system’s compatibility can be understood at a glance.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/hcl-part-1/debian-after.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This approach has some obvious advantages over individual device lookup, and is well worth copying.&lt;/p&gt;
-
-&lt;p&gt;One possible improvement is to call attention–through color or ordering–to the disk and network controllers, since their compatibility has the most to do with problems during installation.&lt;/p&gt;
-
-&lt;h3 id=&quot;next-steps&quot;&gt;Next Steps&lt;/h3&gt;
-
-&lt;p&gt;So that’s the project in outline: a cross-vendor HCL that borrows Debian’s UI for checking full systems, while paying closer attention to device search, and archival releases. A version exists today at &lt;a href=&quot;http://pci.compatible.sh&quot;&gt;pci.compatible.sh&lt;/a&gt;, but it needs work to be more generally useful.&lt;/p&gt;
-
-&lt;p&gt;Subsequent posts will explore improvements to the existing site, as well as any issues around testing, CI, and deployment that cross an arbitrary (and low) threshold of interest.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Comment&lt;/strong&gt; and &lt;strong&gt;Suggestion&lt;/strong&gt; to &lt;strong&gt;&lt;a href=&quot;mailto:patrick.mcmurchie@gmail.com&quot;&gt;patrick.mcmurchie@gmail.com&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;footnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;This post is largely primarily concerned with PCI devices. “Enterprise” HCLs typically require hardware vendors to load-test systems and jump through various other hoops.&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:2&quot;&gt;
-      &lt;p&gt;https://pci-ids.ucw.cz/&amp;nbsp;&lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
-</description>
-          <pubDate>2018-02-25T23:00:01-08:00</pubDate>
-          <link>http://localhost:4000/notes/building-a-linux-hcl</link>
-          <guid isPermaLink="true">http://localhost:4000/notes/building-a-linux-hcl</guid>
+          <pubDate>2023-04-15T00:00:01-07:00</pubDate>
+          <link>http://localhost:4000/notes/tides-and-currents</link>
+          <guid isPermaLink="true">http://localhost:4000/notes/tides-and-currents</guid>
         </item>
       
     
@@ -296,11 +60,11 @@ String dump of section &lt;span class=&quot;s1&quot;&gt;'.modinfo'&lt;/span&gt;:
 
 &lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
 
-&lt;p&gt;I’ve previously written about &lt;a href=&quot;/notes/osx-photo-search&quot;&gt;a method of enabling Spotlight search of Photos.app libraries&lt;/a&gt;&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; using tags generated by &lt;code class=&quot;highlighter-rouge&quot;&gt;photoanalysisd&lt;/code&gt; that are otherwise only available through &lt;em&gt;Photos.app.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I’ve previously written about &lt;a href=&quot;/notes/osx-photo-search&quot;&gt;a method of enabling Spotlight search of Photos.app libraries&lt;/a&gt;&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; using tags generated by &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;photoanalysisd&lt;/code&gt; that are otherwise only available through &lt;em&gt;Photos.app.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;But &lt;code class=&quot;highlighter-rouge&quot;&gt;photoanalysisd&lt;/code&gt; is limited to something like 1,000 unique subjects, while some commercial services advertise  recognition of 10x that number, and might be expected to produce more relevant tags.&lt;/p&gt;
+&lt;p&gt;But &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;photoanalysisd&lt;/code&gt; is limited to something like 1,000 unique subjects, while some commercial services advertise  recognition of 10x that number, and might be expected to produce more relevant tags.&lt;/p&gt;
 
-&lt;p&gt;This post considers Clarifai along with &lt;code class=&quot;highlighter-rouge&quot;&gt;photoanalysisd&lt;/code&gt;, comparing their performance on the task of classifying pictures from my photo library.&lt;/p&gt;
+&lt;p&gt;This post considers Clarifai along with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;photoanalysisd&lt;/code&gt;, comparing their performance on the task of classifying pictures from my photo library.&lt;/p&gt;
 
 &lt;h3 id=&quot;no-useful-benchmarks&quot;&gt;No Useful Benchmarks&lt;/h3&gt;
 
@@ -332,47 +96,43 @@ String dump of section &lt;span class=&quot;s1&quot;&gt;'.modinfo'&lt;/span&gt;:
 
 &lt;h3 id=&quot;implementing-multi-vendor-tagging&quot;&gt;Implementing Multi-Vendor Tagging&lt;/h3&gt;
 
-&lt;p&gt;The approach I settled on was to maintain a sqlite database seperate from &lt;code class=&quot;highlighter-rouge&quot;&gt;photos.db&lt;/code&gt; that contains both the &lt;code class=&quot;highlighter-rouge&quot;&gt;photoanalysisd&lt;/code&gt; tags and tags from 3rd-party services.&lt;/p&gt;
+&lt;p&gt;The approach I settled on was to maintain a sqlite database seperate from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;photos.db&lt;/code&gt; that contains both the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;photoanalysisd&lt;/code&gt; tags and tags from 3rd-party services.&lt;/p&gt;
 
 &lt;p&gt;Find the tools referenced below on &lt;a href=&quot;https://www.github.com/28mm/macos-photo-scripts&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Initialize a database (here: &lt;code class=&quot;highlighter-rouge&quot;&gt;new.db&lt;/code&gt;), populating it with information about your Photos.app library, and synchronize the two.&lt;/p&gt;
+&lt;p&gt;Initialize a database (here: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;new.db&lt;/code&gt;), populating it with information about your Photos.app library, and synchronize the two.&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;./alternative-classifiers.py --init              &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-            --db new.db                                 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-            --photos-db ~/Pictures/..../photos.db       &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-            --lib ~/Pictures/..../library.photoslibrary &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-            --sync
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./alternative-classifiers.py &lt;span class=&quot;nt&quot;&gt;--init&lt;/span&gt;              &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;--db&lt;/span&gt; new.db                                 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;--photos-db&lt;/span&gt; ~/Pictures/..../photos.db       &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;--lib&lt;/span&gt; ~/Pictures/..../library.photoslibrary &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;--sync&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;(Please see the note &lt;a href=&quot;https://www.github.com/28mm/macos-photo-scripts&quot;&gt;here&lt;/a&gt; about stopping &lt;code class=&quot;highlighter-rouge&quot;&gt;photolibraryd&lt;/code&gt;, to release its lock on &lt;code class=&quot;highlighter-rouge&quot;&gt;photos.db&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;(Please see the note &lt;a href=&quot;https://www.github.com/28mm/macos-photo-scripts&quot;&gt;here&lt;/a&gt; about stopping &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;photolibraryd&lt;/code&gt;, to release its lock on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;photos.db&lt;/code&gt;)&lt;/p&gt;
 
 &lt;p&gt;Then add tags from a 3rd-party service like Clarifai.&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;CLARIFAI_API_KEY&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;YOUR_API_KEY_HERE&quot;&lt;/span&gt;
-&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;./alternative-classifiers.py --db new.db --clarifai 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;CLARIFAI_API_KEY&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;YOUR_API_KEY_HERE&quot;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./alternative-classifiers.py &lt;span class=&quot;nt&quot;&gt;--db&lt;/span&gt; new.db &lt;span class=&quot;nt&quot;&gt;--clarifai&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;And finally, update the relevant xattrs, so that spotlight can index our new tags.&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;./alternative-classifiers.py --db new.db --xattrs
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./alternative-classifiers.py &lt;span class=&quot;nt&quot;&gt;--db&lt;/span&gt; new.db &lt;span class=&quot;nt&quot;&gt;--xattrs&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Now it should be possible to find Clarifai-specific tags like &lt;span class=&quot;clarifai&quot;&gt;No Person&lt;/span&gt; with Spotlight:&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;mdfind &lt;span class=&quot;s1&quot;&gt;'tag:no person'&lt;/span&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mdfind &lt;span class=&quot;s1&quot;&gt;&apos;tag:no person&apos;&lt;/span&gt;
 .../Masters/2015/04/22/20150422-011045/IMG_0083.JPG
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;note-adding-new-tags-to-photosapp&quot;&gt;Note: Adding New Tags to Photos.app&lt;/h3&gt;
 
-&lt;p&gt;My last post on this subject showed how to extract tags from Photos.app, via a &lt;code class=&quot;highlighter-rouge&quot;&gt;TEXT&lt;/code&gt; column in &lt;code class=&quot;highlighter-rouge&quot;&gt;photos.db&lt;/code&gt; called &lt;code class=&quot;highlighter-rouge&quot;&gt;RKVersion_stringNote.value&lt;/code&gt;. With this post, I had hoped it would be possible to do the reverse.&lt;/p&gt;
+&lt;p&gt;My last post on this subject showed how to extract tags from Photos.app, via a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TEXT&lt;/code&gt; column in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;photos.db&lt;/code&gt; called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RKVersion_stringNote.value&lt;/code&gt;. With this post, I had hoped it would be possible to do the reverse.&lt;/p&gt;
 
-&lt;p&gt;The obvious thing to try: appending to &lt;code class=&quot;highlighter-rouge&quot;&gt;RKVersion_stringNote.value&lt;/code&gt;, and updating the plist where the list of categories is kept, doesn’t get the job done.&lt;/p&gt;
+&lt;p&gt;The obvious thing to try: appending to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RKVersion_stringNote.value&lt;/code&gt;, and updating the plist where the list of categories is kept, doesn’t get the job done.&lt;/p&gt;
 
 &lt;p&gt;When the last post was discussed on Hacker News, several commentors pointed out how absurd this all is–that it should be trivial to retrieve and update information about your own photographs. I agree with them entirely.&lt;/p&gt;
 
@@ -389,14 +149,14 @@ String dump of section &lt;span class=&quot;s1&quot;&gt;'.modinfo'&lt;/span&gt;:
 &lt;script src=&quot;/assets/mac-photos-2/frequency.js&quot;&gt;&lt;/script&gt;
 
 &lt;script&gt;
-//activate('#coincidence', '/assets/mac-photos-2/blob.json', 1000, 1000);
-freq_activate('#frequency-search', '/assets/mac-photos-2/freq.json');
+//activate(&apos;#coincidence&apos;, &apos;/assets/mac-photos-2/blob.json&apos;, 1000, 1000);
+freq_activate(&apos;#frequency-search&apos;, &apos;/assets/mac-photos-2/freq.json&apos;);
 &lt;/script&gt;
 
-&lt;div class=&quot;footnotes&quot;&gt;
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;/notes/osx-photo-search&quot;&gt;https://28mm.github.io/notes/osx-photo-search&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;/notes/osx-photo-search&quot;&gt;https://28mm.github.io/notes/osx-photo-search&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
@@ -493,19 +253,18 @@ freq_activate('#frequency-search', '/assets/mac-photos-2/freq.json');
 
 &lt;p&gt;One annoyance often met by new users is &lt;em&gt;Blast Radius&lt;/em&gt;’ reliance on recent versions of Python (3.5+), and Graphviz. Docker is a convenient way to hide the sordid details of Python versioning and package management.&lt;/p&gt;
 
-&lt;p&gt;An update image is available from the docker registry as &lt;code class=&quot;highlighter-rouge&quot;&gt;28mm/blast-radius&lt;/code&gt;. If the current working directory contains a terraform project, invoke it like so:&lt;/p&gt;
+&lt;p&gt;An update image is available from the docker registry as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;28mm/blast-radius&lt;/code&gt;. If the current working directory contains a terraform project, invoke it like so:&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;docker run --cap-add&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;SYS_ADMIN -it --rm -p 5000:5000 -v &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;:/workdir:ro 28mm/blast-radius
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker run &lt;span class=&quot;nt&quot;&gt;--cap-add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;SYS_ADMIN &lt;span class=&quot;nt&quot;&gt;-it&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 5000:5000 &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;:/workdir:ro 28mm/blast-radius
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Further discussion can be found in the README. Thanks to Buc and Daniel for contributing this.&lt;/p&gt;
 
 &lt;h3 id=&quot;performance&quot;&gt;Performance&lt;/h3&gt;
 
-&lt;p&gt;A further limitation–beyond layout and navigability–for larger graphs is performance. I’ve had reports of graphs taking 10+ minutes to generate! A lower bound for runtime is &lt;code class=&quot;highlighter-rouge&quot;&gt;terraform graph | dot -Tsvg&lt;/code&gt;, since &lt;em&gt;Blast Radius&lt;/em&gt; depends on both these programs.&lt;/p&gt;
+&lt;p&gt;A further limitation–beyond layout and navigability–for larger graphs is performance. I’ve had reports of graphs taking 10+ minutes to generate! A lower bound for runtime is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;terraform graph | dot -Tsvg&lt;/code&gt;, since &lt;em&gt;Blast Radius&lt;/em&gt; depends on both these programs.&lt;/p&gt;
 
-&lt;p&gt;Some testing with larger projects would be useful. (If anyone reading this, who has an especially large project, wishes to help: I’m interested in &lt;code class=&quot;highlighter-rouge&quot;&gt;time terraform graph | dot -Tsvg&lt;/code&gt; vs &lt;code class=&quot;highlighter-rouge&quot;&gt;time blast-radius --svg&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;Some testing with larger projects would be useful. (If anyone reading this, who has an especially large project, wishes to help: I’m interested in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;time terraform graph | dot -Tsvg&lt;/code&gt; vs &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;time blast-radius --svg&lt;/code&gt;)&lt;/p&gt;
 
 &lt;h3 id=&quot;conclusion-and-next-steps&quot;&gt;Conclusion And Next Steps&lt;/h3&gt;
 
@@ -516,10 +275,10 @@ freq_activate('#frequency-search', '/assets/mac-photos-2/freq.json');
 &lt;script&gt;
 
 
-blastradius('#pz', '/assets/terraform-graphs-4/pz-demo.svg', '/assets/terraform-graphs-4/pz-demo.json');
+blastradius(&apos;#pz&apos;, &apos;/assets/terraform-graphs-4/pz-demo.svg&apos;, &apos;/assets/terraform-graphs-4/pz-demo.json&apos;);
 
 
-blastradius('#graph', '/assets/terraform-graphs-4/search-demo.svg', '/assets/terraform-graphs-4/search-demo.json');
+blastradius(&apos;#graph&apos;, &apos;/assets/terraform-graphs-4/search-demo.svg&apos;, &apos;/assets/terraform-graphs-4/search-demo.json&apos;);
 
 &lt;/script&gt;
 
@@ -527,681 +286,6 @@ blastradius('#graph', '/assets/terraform-graphs-4/search-demo.svg', '/assets/ter
           <pubDate>2018-02-09T23:00:01-08:00</pubDate>
           <link>http://localhost:4000/notes/d3-terraform-graphs-4</link>
           <guid isPermaLink="true">http://localhost:4000/notes/d3-terraform-graphs-4</guid>
-        </item>
-      
-    
-      
-        <item>
-          <title>Finding New Music: Two Experiments</title>
-          <description>&lt;h3 id=&quot;tldr&quot;&gt;TL;DR&lt;/h3&gt;
-
-&lt;p&gt;A summary of my frustrations with Spotify, followed by a description of two software experiments meant to improve my experience finding new music.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/the-problem-with-spotify/splicr-screenshot.png&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
-
-&lt;p&gt;Is good music becoming harder to find, or am I growing lazy? Or, more specifically: are Spotify playlists as bad as they seem, or am I older and less receptive to new things? Something is definitely wrong, but what is to blame?&lt;/p&gt;
-
-&lt;p&gt;Part of the problem, I’ve decided, is down to the way Spotify’s more popular playlists are produced: by employing hipsters (twenty-somethings?) to curate and adjust them according to their measured performance with audiences.&lt;/p&gt;
-
-&lt;p&gt;If listeners skip a particular song, that song is cut from the playlist and replaced with something expected to perform better. Its oddly democratic. Odd because the participants aren’t necessarily aware of their influence, and because good taste is not a democracy.&lt;/p&gt;
-
-&lt;p&gt;Like a centrist politician, the ideal Spotify playlist is meant to appeal broadly and never to offend its audience. Like a politician, it shifts to represent the majority view, in scrupulously anodyne terms.&lt;/p&gt;
-
-&lt;p&gt;Personally, I prefer the benevolent despotism of college radio, where feedback is less direct, less precise, and seemingly less of a consideration. DJs on non-commercial radio have a freer hand, and their playlists are often very good.&lt;/p&gt;
-
-&lt;h3 id=&quot;experiment-1-kexpy&quot;&gt;Experiment #1: KEX.Py&lt;/h3&gt;
-
-&lt;p&gt;A first problem with radio, as I see it, is that I don’t own one. Depending on the station, it can be difficult to access archival radio programs online, or even the most recent broadcasts.&lt;/p&gt;
-
-&lt;p&gt;My local independent music station (90.3FM KEXP) makes archival playlists available through a web interface, but not recordings more than a week old.&lt;/p&gt;
-
-&lt;p&gt;I wanted a way to import these playlists into Spotify, so that I could listen to old programs–minus radio banter–and sift for new music. &lt;a href=&quot;https://github.com/28mm/KEX.Py&quot;&gt;KEX.Py&lt;/a&gt; is the tool I wrote to do this.&lt;/p&gt;
-
-&lt;p&gt;And it works pretty well, given its modest goal. Pictured below is a typical playlist, produced by &lt;a href=&quot;https://github.com/28mm/KEX.Py&quot;&gt;KEX.Py&lt;/a&gt;. (Not shown are the tracks it got wrong!)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/the-problem-with-spotify/spotify-screenshot.png&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;experiment-2-splicr&quot;&gt;Experiment #2: Splicr&lt;/h3&gt;
-
-&lt;p&gt;A second experiment revisits the problem (well, my problem) of listening to a narrowing canon of recordings, most of them discovered a long time ago.&lt;/p&gt;
-
-&lt;p&gt;At some point after Napster (and AudioGalaxy, Limewire, and Soulseek) collapsed, but before Spotify (and Apple Music, and Tidal), I listened to music primarily through Youtube.&lt;/p&gt;
-
-&lt;p&gt;A the time, this seemed like a great hastle: Youtube seldom hosted the official album recording of songs, what it did have was often accompanied by ponderous video montage, and its catalog was always shifting to comply with copyright claims.&lt;/p&gt;
-
-&lt;p&gt;But now that Spotify makes albums easily available, the comparative anarchy of Youtube presents an appealling contrast. What would it be like to listen to the most popular versions of songs, in album-order?&lt;/p&gt;
-
-&lt;p&gt;This is what &lt;a href=&quot;https://github.com/28mm/Splicr&quot;&gt;Splicr&lt;/a&gt; facilitates: “splicing” a playlist together from the most popular version of each song on a given album. But how well does it work?&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/the-problem-with-spotify/splicr-screenshot.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;As you might expect, mileage varies, and sometimes for obscure reasons. For instance: certain artists prohibit Youtube from carrying their recordings, so instead Splicr plays covers by amateur musicians.&lt;/p&gt;
-
-&lt;p&gt;Its impossible to know in advance how far one of Splicr’s playlists will deviate from the album it’s based on. But in general, I find it adds a lot of charm to the otherwise predictable experience of listening to old favorites.&lt;/p&gt;
-
-&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
-
-&lt;p&gt;That’s it: just a couple of experiments meant to address my lack of a radio, and tendency to listen to old music. What am I wrong about? What have I missed?&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Comment&lt;/strong&gt; and &lt;strong&gt;Suggestion&lt;/strong&gt; to &lt;strong&gt;&lt;a href=&quot;mailto:patrick.mcmurchie@gmail.com&quot;&gt;patrick.mcmurchie@gmail.com&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-</description>
-          <pubDate>2018-01-21T23:00:01-08:00</pubDate>
-          <link>http://localhost:4000/notes/the-problem-with-spotify</link>
-          <guid isPermaLink="true">http://localhost:4000/notes/the-problem-with-spotify</guid>
-        </item>
-      
-    
-      
-        <item>
-          <title>The Bechdel Test, FiveThirtyEight, Rotten Tomatoes</title>
-          <description>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/bechdel/style.css&quot; /&gt;
-
-&lt;h3 id=&quot;tldr&quot;&gt;TL;DR&lt;/h3&gt;
-
-&lt;div id=&quot;bechdel-1&quot;&gt;&lt;/div&gt;
-
-&lt;p&gt;Each point in this figure represents one of the top 50 grossing films of 2016, positioned to reflect the number of positive reviews it recieved from top critics (x-axis), and negative reviews (y-axis), both according to &lt;a href=&quot;https://www.rottentomatoes.com/&quot;&gt;Rotten Tomatoes&lt;/a&gt;.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;p&gt;Points are further colored to reflect whether the film passes the &lt;a href=&quot;https://bechdeltest.com&quot;&gt;Bechdel Test&lt;/a&gt;.&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; Mouseover any point to see the film’s name, and additional details.&lt;/p&gt;
-
-&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.fivethirtyeight.com&quot;&gt;FiveThirtyEight&lt;/a&gt; recently published a &lt;a href=&quot;https://projects.fivethirtyeight.com/next-bechdel/&quot;&gt;revisitation of the Bechdel Test&lt;/a&gt;&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;–a litmus for Womens’ representation in film–in which they invited contributors to re-imagine the test, using new criteria.&lt;/p&gt;
-
-&lt;p&gt;The canonical Bechdel Test asks whether a film counts at least two named female characters in its cast, and whether they converse about subjects other than men. A rather low bar!&lt;/p&gt;
-
-&lt;p&gt;FiveThirtyEight’s proposed variants consider the representation of other groups (e.g. Latinas), the role of female supporting cast, and the makeup of the film’s crew.&lt;/p&gt;
-
-&lt;p&gt;How does a film’s performance on the Bechdel Test compare with its critical reception? FiveThirtyEight scored the top-50 grossing films of 2016, on each of its Bechdel Test variants. This post joins those data with critical scores collected from Rotten Tomatoes.&lt;/p&gt;
-
-&lt;h3 id=&quot;rotten-tomatoes-and-critical-opinion&quot;&gt;Rotten Tomatoes and Critical Opinion&lt;/h3&gt;
-
-&lt;p&gt;Do top critics–those who write for large audiences, according to Rotten Tomatoes–prefer films that pass the Bechdel Test? Do they not? This sample suggests little preference, either way.&lt;/p&gt;
-
-&lt;div id=&quot;bechdel-2&quot;&gt;&lt;/div&gt;
-
-&lt;p&gt;What if a more inclusive sample of critics is consulted? Again, little preference is shown.&lt;/p&gt;
-
-&lt;div id=&quot;bechdel-3&quot;&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;critical-consensus&quot;&gt;Critical Consensus&lt;/h3&gt;
-
-&lt;p&gt;It’s also worth wondering how well the two groups of critics agree, in general, since the ability to choose between them is a prominant feature of Rotten Tomatoes.&lt;/p&gt;
-
-&lt;div id=&quot;bechdel-4&quot;&gt;&lt;/div&gt;
-
-&lt;p&gt;They agree fairly well, at least for these 50 commercially successful films.&lt;/p&gt;
-
-&lt;h3 id=&quot;variations-of-the-bechdel-test&quot;&gt;Variations of the Bechdel Test&lt;/h3&gt;
-
-&lt;p&gt;What about FiveThirtyEight’s proposed Bechdel Test variations? Select a variant from the menu below to update the graph. For descriptions of each test, see &lt;a href=&quot;https://projects.fivethirtyeight.com/next-bechdel/&quot;&gt;the article&lt;/a&gt; on FiveThirtyEight.&lt;/p&gt;
-
-&lt;p&gt;&lt;select onchange=&quot;testchange()&quot; id=&quot;testselect&quot;&gt;
-	&lt;option value=&quot;bechdel&quot;&gt;Bechdel&lt;/option&gt;
-	&lt;option value=&quot;peirce&quot; selected=&quot;selected&quot;&gt;Peirce&lt;/option&gt;
-	&lt;option value=&quot;landau&quot;&gt;Landua&lt;/option&gt;
-	&lt;option value=&quot;feldman&quot;&gt;Feldman&lt;/option&gt;
-	&lt;option value=&quot;villareal&quot;&gt;Villareal&lt;/option&gt;
-	&lt;option value=&quot;hagen&quot;&gt;Hagen&lt;/option&gt;
-	&lt;option value=&quot;ko&quot;&gt;Ko&lt;/option&gt;
-	&lt;option value=&quot;villarobos&quot;&gt;Villarobos&lt;/option&gt;
-	&lt;option value=&quot;waithe&quot;&gt;Waithe&lt;/option&gt;
-	&lt;option value=&quot;koeze_dottle&quot;&gt;Koeze-Dottle&lt;/option&gt;
-	&lt;option value=&quot;uphold&quot;&gt;Uphold&lt;/option&gt;
-	&lt;option value=&quot;white&quot;&gt;White&lt;/option&gt;
-	&amp;lt;option value=rees_davies&amp;gt;Rees-Davies&amp;lt;/option&amp;gt;
-&lt;/select&gt;&lt;/p&gt;
-
-&lt;div id=&quot;bechdel-5&quot;&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
-
-&lt;p&gt;The Bechdel Test, and its variations are a useful litmus to use when selecting a film. Combined with critical consensus, it offers a convenient means of avoiding the worst and most redundant films of the year.&lt;/p&gt;
-
-&lt;p&gt;Nevertheless, It’s worth noting that the Bechdel Test alone is no guaruntee of quality.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Comment&lt;/strong&gt; and &lt;strong&gt;Suggestion&lt;/strong&gt; to &lt;strong&gt;&lt;a href=&quot;mailto:patrick.mcmurchie@gmail.com&quot;&gt;patrick.mcmurchie@gmail.com&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;script src=&quot;https://d3js.org/d3.v4.js&quot;&gt;&lt;/script&gt;
-
-&lt;script src=&quot;https://d3js.org/d3-geo.v1.min.js&quot;&gt;&lt;/script&gt;
-
-&lt;script src=&quot;/assets/echo-locate-1/d3-tip.js&quot;&gt;&lt;/script&gt;
-
-&lt;!--&lt;script src=&quot;/assets/bechdel/bechdel.js&quot;&gt;&lt;/script&gt;--&gt;
-
-&lt;script&gt;
-var b1 = function(selector) {
-// set the dimensions and margins of the graph
-var margin = {top: 20, right: 20, bottom: 45, left: 55},
-    width = 500 - margin.left - margin.right,
-    height = 300 - margin.top - margin.bottom;
-
-// set the ranges
-var x = d3.scaleLinear().range([0, width]);
-var y = d3.scaleLinear().range([height, 0]);
-
-// append the svg obgect to the body of the page
-// appends a 'group' element to 'svg'
-// moves the 'group' element to the top left margin
-var svg = d3.select(selector).append(&quot;svg&quot;)
-    .attr(&quot;width&quot;, width + margin.left + margin.right)
-    .attr(&quot;height&quot;, height + margin.top + margin.bottom)
-  .append(&quot;g&quot;)
-    .attr(&quot;transform&quot;,
-          &quot;translate(&quot; + margin.left + &quot;,&quot; + margin.top + &quot;)&quot;);
-
-// Get the data
-d3.csv(&quot;/assets/bechdel/bechdel.csv&quot;, function(error, data) {
-  if (error) throw error;
-
-  // format the data
-  data.forEach(function(d) {
-      d.top_up   = +d.top_up;
-      d.top_down = +d.top_down;
-      d.bechdel  = (+d.bechdel == 0) ? true : false;
-  });
-
-  // Scale the range of the data
-  x.domain(d3.extent(data, function(d) { return d.top_up; }));
-  y.domain(d3.extent(data, function(d) { return d.top_down; }));
-
-  var color = d3.scaleOrdinal(d3['schemeCategory10']);
-
-  // setup tooltips
-  var tip = d3.tip()
-      .attr('class', 'd3-tip')
-      .offset([-10, 0])
-      .html(function (d) {
-          return '&lt;span class=&quot;t&quot;&gt;' + d.movie + ': ' + d.top_critics + '%&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;t&quot;&gt;Bechdel Test: ' + ((d.bechdel) ? &quot;passed&quot; : &quot;failed&quot;) + '&lt;/span&gt;';
-      });
-  svg.call(tip);
-
-
-  
-  // Add the scatterplot
-  svg.selectAll(&quot;dot&quot;)
-      .data(data)
-    .enter().append(&quot;circle&quot;)
-      .attr(&quot;r&quot;, 6)
-      .attr(&quot;cx&quot;, function(d) { return x(d.top_up); })
-      .attr(&quot;cy&quot;, function(d) { return y(d.top_down); })
-      .attr(&quot;fill&quot;, function(d) { return color(d.bechdel); } )
-      .attr(&quot;opacity&quot;, 0.75)
-      .on('mouseover', tip.show)
-      .on('mouseout', tip.hide);
-
-  // Add the X Axis
-  svg.append(&quot;g&quot;)
-      .attr(&quot;transform&quot;, &quot;translate(0,&quot; + height + &quot;)&quot;)
-      .call(d3.axisBottom(x));
-
-  // Add the Y Axis
-  svg.append(&quot;g&quot;)
-      .call(d3.axisLeft(y));
-
-  // text label for the x axis
-  svg.append(&quot;text&quot;)             
-      .attr(&quot;transform&quot;,
-            &quot;translate(&quot; + (width/2) + &quot; ,&quot; + 
-                           (height + margin.top + 20) + &quot;)&quot;)
-      .style(&quot;text-anchor&quot;, &quot;middle&quot;)
-      .style(&quot;font-weight&quot;, &quot;bold&quot;)
-      .text(&quot;Positive Reviews (Top Critics)&quot;);
-
-   });
-
-
-  // text label for the y axis
-  svg.append(&quot;text&quot;)
-      .attr(&quot;transform&quot;, &quot;rotate(-90)&quot;)
-      .attr(&quot;y&quot;, 0 - margin.left)
-      .attr(&quot;x&quot;,0 - (height / 2))
-      .attr(&quot;dy&quot;, &quot;1em&quot;)
-      .style(&quot;text-anchor&quot;, &quot;middle&quot;)
-      .style(&quot;font-weight&quot;, &quot;bold&quot;)
-      .text(&quot;Negative Reviews&quot;);      
-};
-
-
-b1(&quot;#bechdel-1&quot;);
-b1(&quot;#bechdel-2&quot;)
-
-var b2 = function(selector) {
-// set the dimensions and margins of the graph
-var margin = {top: 20, right: 20, bottom: 45, left: 55},
-    width = 500 - margin.left - margin.right,
-    height = 300 - margin.top - margin.bottom;
-
-// set the ranges
-var x = d3.scaleLinear().range([0, width]);
-var y = d3.scaleLinear().range([height, 0]);
-
-// append the svg obgect to the body of the page
-// appends a 'group' element to 'svg'
-// moves the 'group' element to the top left margin
-var svg = d3.select(selector).append(&quot;svg&quot;)
-    .attr(&quot;width&quot;, width + margin.left + margin.right)
-    .attr(&quot;height&quot;, height + margin.top + margin.bottom)
-  .append(&quot;g&quot;)
-    .attr(&quot;transform&quot;,
-          &quot;translate(&quot; + margin.left + &quot;,&quot; + margin.top + &quot;)&quot;);
-
-// Get the data
-d3.csv(&quot;/assets/bechdel/bechdel.csv&quot;, function(error, data) {
-  if (error) throw error;
-
-  // format the data
-  data.forEach(function(d) {
-      d.all_up   = +d.all_up -d.top_up;
-      d.all_down = +d.all_down -d.top_down;
-      d.bechdel  = (+d.bechdel == 0) ? true : false;
-  });
-
-  // Scale the range of the data
-  x.domain(d3.extent(data, function(d) { return d.all_up; }));
-  y.domain(d3.extent(data, function(d) { return d.all_down; }));
-
-  var color = d3.scaleOrdinal(d3['schemeCategory10']);
-
-
-  // setup tooltips
-  var tip = d3.tip()
-      .attr('class', 'd3-tip')
-      .offset([-10, 0])
-      .html(function (d) {
-          return '&lt;span class=&quot;t&quot;&gt;' + d.movie + ': ' + d.all_critics + '%&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;t&quot;&gt;Bechdel Test: ' + ((d.bechdel) ? &quot;passed&quot; : &quot;failed&quot;) + '&lt;/span&gt;';
-      });
-  svg.call(tip);
-
-  // Add the scatterplot
-  svg.selectAll(&quot;dot&quot;)
-      .data(data)
-    .enter().append(&quot;circle&quot;)
-      .attr(&quot;r&quot;, 6)
-      .attr(&quot;cx&quot;, function(d) { return x(d.all_up); })
-      .attr(&quot;cy&quot;, function(d) { return y(d.all_down); })
-      .attr(&quot;fill&quot;, function(d) { return color(d.bechdel); } )
-      .attr(&quot;opacity&quot;, 0.75)
-      .on('mouseover', tip.show)
-      .on('mouseout', tip.hide);
-
-  // Add the X Axis
-  svg.append(&quot;g&quot;)
-      .attr(&quot;transform&quot;, &quot;translate(0,&quot; + height + &quot;)&quot;)
-      .call(d3.axisBottom(x));
-
-  // Add the Y Axis
-  svg.append(&quot;g&quot;)
-      .call(d3.axisLeft(y));
-
-  // text label for the x axis
-  svg.append(&quot;text&quot;)             
-      .attr(&quot;transform&quot;,
-            &quot;translate(&quot; + (width/2) + &quot; ,&quot; + 
-                           (height + margin.top + 20) + &quot;)&quot;)
-      .style(&quot;text-anchor&quot;, &quot;middle&quot;)
-      .style(&quot;font-weight&quot;, &quot;bold&quot;)
-      .text(&quot;Positive Reviews (All Critics)&quot;);
-
-   });
-
-
-  // text label for the y axis
-  svg.append(&quot;text&quot;)
-      .attr(&quot;transform&quot;, &quot;rotate(-90)&quot;)
-      .attr(&quot;y&quot;, 0 - margin.left)
-      .attr(&quot;x&quot;,0 - (height / 2))
-      .attr(&quot;dy&quot;, &quot;1em&quot;)
-      .style(&quot;text-anchor&quot;, &quot;middle&quot;)
-      .style(&quot;font-weight&quot;, &quot;bold&quot;)
-      .text(&quot;Negative Reviews&quot;);      
-};
-
-
-b2(&quot;#bechdel-3&quot;);
-
-
-
-var b3 = function(selector) {
-// set the dimensions and margins of the graph
-var margin = {top: 20, right: 20, bottom: 45, left: 55},
-    width = 500 - margin.left - margin.right,
-    height = 300 - margin.top - margin.bottom;
-
-// set the ranges
-var x = d3.scaleLinear().range([0, width]);
-var y = d3.scaleLinear().range([height, 0]);
-
-// append the svg obgect to the body of the page
-// appends a 'group' element to 'svg'
-// moves the 'group' element to the top left margin
-var svg = d3.select(selector).append(&quot;svg&quot;)
-    .attr(&quot;width&quot;, width + margin.left + margin.right)
-    .attr(&quot;height&quot;, height + margin.top + margin.bottom)
-  .append(&quot;g&quot;)
-    .attr(&quot;transform&quot;,
-          &quot;translate(&quot; + margin.left + &quot;,&quot; + margin.top + &quot;)&quot;);
-
-// Get the data
-d3.csv(&quot;/assets/bechdel/bechdel.csv&quot;, function(error, data) {
-  if (error) throw error;
-
-  // format the data
-  data.forEach(function(d) {
-      d.top_critics   = +d.top_critics;
-      d.all_critics = +d.all_critics;
-      d.bechdel  = (+d.bechdel == 0) ? true : false;
-  });
-
-  // Scale the range of the data
-  x.domain([0, 100]);
-  y.domain([0, 100]);
-
-  var color = d3.scaleOrdinal(d3['schemeCategory10']);
-
-
-  // setup tooltips
-  var tip = d3.tip()
-      .attr('class', 'd3-tip')
-      .offset([-10, 0])
-      .html(function (d) {
-          return '&lt;span class=&quot;t&quot;&gt;' + d.movie + ': ' + d.all_critics + '%&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;t&quot;&gt;Bechdel Test: ' + ((d.bechdel) ? &quot;passed&quot; : &quot;failed&quot;) + '&lt;/span&gt;';
-      });
-  svg.call(tip);
-
-  // Add the scatterplot
-  svg.selectAll(&quot;dot&quot;)
-      .data(data)
-    .enter().append(&quot;circle&quot;)
-      .attr(&quot;r&quot;, 6)
-      .attr(&quot;cx&quot;, function(d) { return x(d.top_critics); })
-      .attr(&quot;cy&quot;, function(d) { return y(d.all_critics); })
-      .attr(&quot;fill&quot;, function(d) { return color(d.bechdel); } )
-      .attr(&quot;opacity&quot;, 0.75)
-      .on('mouseover', tip.show)
-      .on('mouseout', tip.hide);
-
-  // Add the X Axis
-  svg.append(&quot;g&quot;)
-      .attr(&quot;transform&quot;, &quot;translate(0,&quot; + height + &quot;)&quot;)
-      .call(d3.axisBottom(x));
-
-  // Add the Y Axis
-  svg.append(&quot;g&quot;)
-      .call(d3.axisLeft(y));
-
-  // text label for the x axis
-  svg.append(&quot;text&quot;)             
-      .attr(&quot;transform&quot;,
-            &quot;translate(&quot; + (width/2) + &quot; ,&quot; + 
-                           (height + margin.top + 20) + &quot;)&quot;)
-      .style(&quot;text-anchor&quot;, &quot;middle&quot;)
-      .style(&quot;font-weight&quot;, &quot;bold&quot;)
-      .text(&quot;Top Critics (% Positive)&quot;);
-
-   });
-
-  // text label for the y axis
-  svg.append(&quot;text&quot;)
-      .attr(&quot;transform&quot;, &quot;rotate(-90)&quot;)
-      .attr(&quot;y&quot;, 0 - margin.left)
-      .attr(&quot;x&quot;,0 - (height / 2))
-      .attr(&quot;dy&quot;, &quot;1em&quot;)
-      .style(&quot;text-anchor&quot;, &quot;middle&quot;)
-      .style(&quot;font-weight&quot;, &quot;bold&quot;)
-      .text(&quot;All Critics (% Positive)&quot;);      
-};
-
-
-b3(&quot;#bechdel-4&quot;);
-
-//
-//
-
-
-
-var b5 = function(selector) {
-// set the dimensions and margins of the graph
-var margin = {top: 20, right: 20, bottom: 45, left: 55},
-    width = 500 - margin.left - margin.right,
-    height = 300 - margin.top - margin.bottom;
-
-// set the ranges
-var x = d3.scaleLinear().range([0, width]);
-var y = d3.scaleLinear().range([height, 0]);
-
-// append the svg obgect to the body of the page
-// appends a 'group' element to 'svg'
-// moves the 'group' element to the top left margin
-var svg = d3.select(selector).append(&quot;svg&quot;)
-    .attr(&quot;width&quot;, width + margin.left + margin.right)
-    .attr(&quot;height&quot;, height + margin.top + margin.bottom)
-  .append(&quot;g&quot;)
-    .attr(&quot;transform&quot;,
-          &quot;translate(&quot; + margin.left + &quot;,&quot; + margin.top + &quot;)&quot;);
-
-// Get the data
-d3.csv(&quot;/assets/bechdel/bechdel.csv&quot;, function(error, data) {
-  if (error) throw error;
-
-  // format the data
-  data.forEach(function(d) {
-      d.top_critics   = +d.top_critics;
-      d.all_critics = +d.all_critics;
-      d.bechdel  = (+d.bechdel == 0) ? true : false;
-      d.peirce  = (+d.peirce == 0) ? true : false;
-      d.landau  = (+d.landau == 0) ? true : false;
-      d.feldman  = (+d.feldman == 0) ? true : false;
-      d.villareal  = (+d.villareal == 0) ? true : false;
-      d.hagen  = (+d.hagen == 0) ? true : false;
-      d.ko  = (+d.ko == 0) ? true : false;
-      d.villarobos  = (+d.villarobos == 0) ? true : false;
-      d.waithe  = (+d.waithe == 0) ? true : false;
-      d.koeze_dottle  = (+d.koeze_dottle == 0) ? true : false;
-      d.uphold  = (+d.uphold == 0) ? true : false;
-      d.white  = (+d.white == 0) ? true : false;
-      d.rees_davies  = (+d['rees-davis'] == 0) ? true : false;
-  });
-
-  // Scale the range of the data
-  x.domain([0, 100]);
-  y.domain([0, 100]);
-
-  var color = d3.scaleOrdinal(d3['schemeCategory10']);
-
-
-  testchange = function() {
-    var e = document.getElementById(&quot;testselect&quot;);
-    var test = e.options[e.selectedIndex].value;
-    console.log(e.options[e.selectedIndex].text);
-
-    svg.selectAll(&quot;circle&quot;).data([]).exit().remove();
-
-
-  // setup tooltips
-  var tip = d3.tip()
-      .attr('class', 'd3-tip')
-      .offset([-10, 0])
-      .html(function (d) {
-          return '&lt;span class=&quot;t&quot;&gt;' + d.movie + ': ' + d.all_critics + '%&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;t&quot;&gt;' + test + ' test: ' + ((d[test]) ? &quot;passed&quot; : &quot;failed&quot;) + '&lt;/span&gt;';
-      });
-  svg.call(tip);
-
-    svg.selectAll(&quot;dot&quot;)
-      .data(data)
-      .enter()
-      .append(&quot;circle&quot;)
-      .attr(&quot;r&quot;, 6)
-      .attr(&quot;cx&quot;, function(d) { return x(d.top_critics); })
-      .attr(&quot;cy&quot;, function(d) { return y(d.all_critics); })
-      .attr(&quot;fill&quot;, function(d) { return color(d[test]); } )
-      .attr(&quot;opacity&quot;, 0.75)
-      .on('mouseover', tip.show)
-      .on('mouseout', tip.hide);
-      
-
-}
-
-      testchange();
-
-  // Add the X Axis
-  svg.append(&quot;g&quot;)
-      .attr(&quot;transform&quot;, &quot;translate(0,&quot; + height + &quot;)&quot;)
-      .call(d3.axisBottom(x));
-
-  // Add the Y Axis
-  svg.append(&quot;g&quot;)
-      .call(d3.axisLeft(y));
-
-  // text label for the x axis
-  svg.append(&quot;text&quot;)             
-      .attr(&quot;transform&quot;,
-            &quot;translate(&quot; + (width/2) + &quot; ,&quot; + 
-                           (height + margin.top + 20) + &quot;)&quot;)
-      .style(&quot;text-anchor&quot;, &quot;middle&quot;)
-      .style(&quot;font-weight&quot;, &quot;bold&quot;)
-      .text(&quot;Top Critics (% Positive)&quot;);
-
-   });
-
-  // text label for the y axis
-  svg.append(&quot;text&quot;)
-      .attr(&quot;transform&quot;, &quot;rotate(-90)&quot;)
-      .attr(&quot;y&quot;, 0 - margin.left)
-      .attr(&quot;x&quot;,0 - (height / 2))
-      .attr(&quot;dy&quot;, &quot;1em&quot;)
-      .style(&quot;text-anchor&quot;, &quot;middle&quot;)
-      .style(&quot;font-weight&quot;, &quot;bold&quot;)
-      .text(&quot;All Critics (% Positive)&quot;);
-
-};
-
-
-b5(&quot;#bechdel-5&quot;);
-
-
-
-
-&lt;/script&gt;
-
-&lt;div class=&quot;footnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://www.rottentomatoes.com/&quot;&gt;https://www.rottentomatoes.com/&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:2&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;http://bechdeltest.com/&quot;&gt;http://bechdeltest.com/&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:3&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://projects.fivethirtyeight.com/next-bechdel/&quot;&gt;https://projects.fivethirtyeight.com/next-bechdel/&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
-</description>
-          <pubDate>2017-12-25T23:00:01-08:00</pubDate>
-          <link>http://localhost:4000/notes/bechdel-test</link>
-          <guid isPermaLink="true">http://localhost:4000/notes/bechdel-test</guid>
-        </item>
-      
-    
-      
-        <item>
-          <title>IP Geolocation with ICMP (ECHO-location)</title>
-          <description>&lt;!--&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/terraform-graphs-3/style.css&quot;&gt;--&gt;
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/echo-locate-1/style.css&quot; /&gt;
-
-&lt;h3 id=&quot;tldr&quot;&gt;TL;DR&lt;/h3&gt;
-
-&lt;p&gt;Network latency is a measure of time, but also a proxy for distance. Using this property, it’s possible to geolocate a server by measuring the round-trip-time (rtt) of packets sent from multiple locations. This post explores that idea, using the AWS public cloud.&lt;/p&gt;
-
-&lt;div id=&quot;example1&quot;&gt;&lt;/div&gt;
-
-&lt;p&gt;As an illustration, mouseover one of the datacenters in the above figure to see how far it’s requests may have travelled to reach &lt;a href=&quot;https://www.washington.edu&quot;&gt;www.washington.edu&lt;/a&gt; (whose servers are presumably in Seattle, or nearby).&lt;/p&gt;
-
-&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
-
-&lt;p&gt;I became intested in this topic after reading the the apocryphal &lt;em&gt;&lt;a href=&quot;https://www.ibiblio.org/harris/500milemail.html&quot;&gt;case of the 500-mile email&lt;/a&gt;,&lt;/em&gt;&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; which concerns a &lt;em&gt;Sendmail&lt;/em&gt; administrator, in Durham, North Carolina, whose users complain that they cannot send email farther than 500 miles. A preposterous limitation.&lt;/p&gt;
-
-&lt;div id=&quot;example2&quot;&gt;&lt;/div&gt;
-
-&lt;p&gt;He determines that &lt;em&gt;Sendmail&lt;/em&gt; is aborting connections that take longer than 3 milliseconds to establish. Recalling that the speed of light is 2.998e+8 m/s, 3 ms equates to roughly 560 miles. Roughly the distance cited in the users’ reports!&lt;/p&gt;
-
-&lt;p&gt;I’ve always liked this story; I suspect because computer networks are often very abstract, and layer 1 can feel a long way down. Revisiting it recently, I began thinking about other uses of the same principle, and geolocation in particular.&lt;/p&gt;
-
-&lt;h3 id=&quot;a-first-experiment&quot;&gt;A First Experiment&lt;/h3&gt;
-
-&lt;p&gt;I am writing this from a desk in Seattle, but what if I didn’t know that? Could I establish my own location if I were amnesiac and unwilling to ask? What if I only had &lt;em&gt;Ping&lt;/em&gt; and a map of the world?&lt;/p&gt;
-
-&lt;p&gt;To get started I borrowed a list of public IP addresses associated with various AWS regions from the &lt;em&gt;&lt;a href=&quot;https://ec2-reachability.amazonaws.com&quot;&gt;EC2 Reachability Test&lt;/a&gt;&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/em&gt;, and plotted the distance suggested by the least measured rtt from my desk to each one.&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;div id=&quot;experiment1&quot;&gt;&lt;/div&gt;
-
-&lt;p&gt;This experiment places me within 921 miles of AWS’ us-west-2 region. An answer that’s neither wrong, precise, nor all that bad.&lt;/p&gt;
-
-&lt;h3 id=&quot;around-the-world-in-6912e9-milliseconds&quot;&gt;Around The World In 6.912e+9 Milliseconds&lt;/h3&gt;
-
-&lt;p&gt;The global presence of cloud services like AWS, GCP, and Azure makes it both inexpensive and convenient to test latency from various points around the world.&lt;/p&gt;
-
-&lt;p&gt;The map below presents a sample of datacenters from AWS and Google Cloud Platform with the caveat that they may be slightly misplaced, because their precise locations aren’t always known. (Or, aren’t known to &lt;em&gt;me&lt;/em&gt;.)&lt;/p&gt;
-
-&lt;div id=&quot;example3&quot;&gt;&lt;/div&gt;
-
-&lt;p&gt;What’s needed, now, is a mechanism for launching vm instances in a selection of these datacenters. &lt;em&gt;&lt;a href=&quot;https://www.terraform.io/&quot;&gt;Terraform&lt;/a&gt;&lt;/em&gt;&lt;sup id=&quot;fnref:4&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt; provides this, serving as a kind of &lt;em&gt;Make&lt;/em&gt; for cloud infrastructure; and one that supports multiple vendors.&lt;/p&gt;
-
-&lt;p&gt;In a follow-up post, I’ll pursue this idea, using Terraform to manage instances in multiple public clouds at once, to measure latency from various points around the world. &lt;em&gt;Stay tuned…&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Comment&lt;/strong&gt; and &lt;strong&gt;Suggestion&lt;/strong&gt; to &lt;strong&gt;&lt;a href=&quot;mailto:patrick.mcmurchie@gmail.com&quot;&gt;patrick.mcmurchie@gmail.com&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;script src=&quot;https://d3js.org/d3.v4.js&quot;&gt;&lt;/script&gt;
-
-&lt;script src=&quot;https://d3js.org/d3-geo.v1.min.js&quot;&gt;&lt;/script&gt;
-
-&lt;script src=&quot;/assets/echo-locate-1/d3-tip.js&quot;&gt;&lt;/script&gt;
-
-&lt;script src=&quot;/assets/echo-locate-1/example-1.js&quot;&gt;&lt;/script&gt;
-
-&lt;script src=&quot;/assets/echo-locate-1/example-2.js&quot;&gt;&lt;/script&gt;
-
-&lt;script src=&quot;/assets/echo-locate-1/example-3.js&quot;&gt;&lt;/script&gt;
-
-&lt;script src=&quot;/assets/echo-locate-1/experiment-1.js&quot;&gt;&lt;/script&gt;
-
-&lt;script&gt;
-// use the oldest version of svg_activate
-example1('div#example1', 
-    '/assets/echo-locate-1/world-map.json');
-example2('div#example2', 
-    '/assets/echo-locate-1/usa-map.json');
-experiment1('div#experiment1', 
-    '/assets/echo-locate-1/world-map.json');
-example3('div#example3',
-    '/assets/echo-locate-1/world-map.json');
-
-&lt;/script&gt;
-
-&lt;div class=&quot;footnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://www.ibiblio.org/harris/500milemail.html&quot;&gt;https://www.ibiblio.org/harris/500milemail.html&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:2&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;http://ec2-reachability.amazonaws.com&quot;&gt;http://ec2-reachability.amazonaws.com&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:3&quot;&gt;
-      &lt;p&gt;I am using the speed of light in a vacuum (&lt;em&gt;c&lt;/em&gt;) multiplied by 2/3 to correct for its slower passage through fiber optic media.&amp;nbsp;&lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:4&quot;&gt;
-      &lt;p&gt;I’ve written about Terraform in two previous posts: &lt;a href=&quot;https://28mm.github.io/notes/d3-terraform-graphs&quot;&gt;part one&lt;/a&gt;, &lt;a href=&quot;https://28mm.github.io/notes/d3-terraform-graphs-2&quot;&gt;part two&lt;/a&gt;, &lt;a href=&quot;/notes/terraform-graphs-3&quot;&gt;part three&lt;/a&gt;. The project that resulted from these posts is called &lt;em&gt;&lt;a href=&quot;https://www.github.com/28mm/blast-radius&quot;&gt;Blast Radius&lt;/a&gt;&lt;/em&gt;, and is available on GitHub.&amp;nbsp;&lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
-</description>
-          <pubDate>2017-12-02T23:00:01-08:00</pubDate>
-          <link>http://localhost:4000/notes/echo-location</link>
-          <guid isPermaLink="true">http://localhost:4000/notes/echo-location</guid>
         </item>
       
     
@@ -1220,13 +304,13 @@ example3('div#example3',
 
 &lt;h3 id=&quot;terraform-modules&quot;&gt;Terraform Modules&lt;/h3&gt;
 
-&lt;p&gt;Modules greatly simplify Terraform administration, by isolating reusable components. Earlier versions of &lt;em&gt;&lt;a href=&quot;https://www.github.com/28mm/blast-radius&quot;&gt;Blast Radius&lt;/a&gt;&lt;/em&gt;&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; didn’t handle modules very well, or at all.&lt;/p&gt;
+&lt;p&gt;Modules greatly simplify Terraform administration, by isolating reusable components. Earlier versions of &lt;em&gt;&lt;a href=&quot;https://www.github.com/28mm/blast-radius&quot;&gt;Blast Radius&lt;/a&gt;&lt;/em&gt;&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; didn’t handle modules very well, or at all.&lt;/p&gt;
 
-&lt;p&gt;For a &lt;a href=&quot;https://28mm.github.io/notes/echo-location&quot;&gt;recent project&lt;/a&gt;,&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; I wanted to launch a single AWS instance in a large number of AWS regions; a perfect fit for modules. Here is a single instance of that module, launched in the AWS &lt;code class=&quot;highlighter-rouge&quot;&gt;us-east-1&lt;/code&gt; region, and named the same.&lt;/p&gt;
+&lt;p&gt;For a &lt;a href=&quot;https://28mm.github.io/notes/echo-location&quot;&gt;recent project&lt;/a&gt;,&lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; I wanted to launch a single AWS instance in a large number of AWS regions; a perfect fit for modules. Here is a single instance of that module, launched in the AWS &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;us-east-1&lt;/code&gt; region, and named the same.&lt;/p&gt;
 
 &lt;div id=&quot;demo2&quot;&gt;&lt;/div&gt;
 
-&lt;p&gt;Here’s the same module reused to launch copies of that instance in both &lt;code class=&quot;highlighter-rouge&quot;&gt;us-east-1&lt;/code&gt; (Northern Virginia), and &lt;code class=&quot;highlighter-rouge&quot;&gt;ap-northeast-2&lt;/code&gt; (Seoul).&lt;/p&gt;
+&lt;p&gt;Here’s the same module reused to launch copies of that instance in both &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;us-east-1&lt;/code&gt; (Northern Virginia), and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ap-northeast-2&lt;/code&gt; (Seoul).&lt;/p&gt;
 
 &lt;div id=&quot;demo3&quot;&gt;&lt;/div&gt;
 
@@ -1234,7 +318,7 @@ example3('div#example3',
 
 &lt;div id=&quot;demo4&quot;&gt;&lt;/div&gt;
 
-&lt;p&gt;Something like Terraform’s &lt;code class=&quot;highlighter-rouge&quot;&gt;--module-depth&lt;/code&gt; parameter would simplify larger diagrams like this one. Better handling of the module registry and other remote sources, is needed as well… but it’s a start.&lt;/p&gt;
+&lt;p&gt;Something like Terraform’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--module-depth&lt;/code&gt; parameter would simplify larger diagrams like this one. Better handling of the module registry and other remote sources, is needed as well… but it’s a start.&lt;/p&gt;
 
 &lt;h3 id=&quot;narrowing-some-figures&quot;&gt;Narrowing (Some) Figures&lt;/h3&gt;
 
@@ -1254,26 +338,23 @@ example3('div#example3',
 
 &lt;p&gt;If you’re interested in testing &lt;em&gt;&lt;a href=&quot;https://www.github.com/28mm/blast-radius&quot;&gt;Blast Radius&lt;/a&gt;&lt;/em&gt; in your environment, you can obtain an experimental distribution from the Python Package Index.&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;brew install graphviz
-&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;pip3 install blastradius
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;graphviz
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip3 &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;blastradius
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Or clone the GitHub repository, and install an edtitable copy (via &lt;code class=&quot;highlighter-rouge&quot;&gt;pip3 -e&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;Or clone the GitHub repository, and install an edtitable copy (via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pip3 -e&lt;/code&gt;).&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;git clone https://github.com/28mm/blast-radius.git
-&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;blast-radius
-&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;pip3 install -e .
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone https://github.com/28mm/blast-radius.git
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;blast-radius
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip3 &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://www.github.com/28mm/blast-radius&quot;&gt;Blast Radius&lt;/a&gt;&lt;/em&gt; requires an &lt;code class=&quot;highlighter-rouge&quot;&gt;init&lt;/code&gt;-ed Terraform project to run.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://www.github.com/28mm/blast-radius&quot;&gt;Blast Radius&lt;/a&gt;&lt;/em&gt; requires an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;init&lt;/code&gt;-ed Terraform project to run.&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;path/to/terraform/project
-&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;terraform init
-&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;blast-radius --serve
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;path/to/terraform/project
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;terraform init
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;blast-radius &lt;span class=&quot;nt&quot;&gt;--serve&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
 
@@ -1293,42 +374,42 @@ example3('div#example3',
 &lt;script&gt;
 
 // use the oldest version of svg_activate
-svg_activate('div#demo1', 
-    '/assets/terraform-graphs-3/demo-1.svg', 
-    '/assets/terraform-graphs-3/demo-1.json',
-    '65%');
+svg_activate(&apos;div#demo1&apos;, 
+    &apos;/assets/terraform-graphs-3/demo-1.svg&apos;, 
+    &apos;/assets/terraform-graphs-3/demo-1.json&apos;,
+    &apos;65%&apos;);
 
 
-svg_activate('div#demo2', 
-    '/assets/terraform-graphs-3/demo2.svg', 
-    '/assets/terraform-graphs-3/demo2.json',
-    '100%');
+svg_activate(&apos;div#demo2&apos;, 
+    &apos;/assets/terraform-graphs-3/demo2.svg&apos;, 
+    &apos;/assets/terraform-graphs-3/demo2.json&apos;,
+    &apos;100%&apos;);
 
-svg_activate('div#demo3', 
-    '/assets/terraform-graphs-3/demo3.svg', 
-    '/assets/terraform-graphs-3/demo3.json',
-    '100%');
+svg_activate(&apos;div#demo3&apos;, 
+    &apos;/assets/terraform-graphs-3/demo3.svg&apos;, 
+    &apos;/assets/terraform-graphs-3/demo3.json&apos;,
+    &apos;100%&apos;);
 
-svg_activate('div#demo4', 
-    '/assets/terraform-graphs-3/demo4.svg', 
-    '/assets/terraform-graphs-3/demo4.json',
-    '100%');
+svg_activate(&apos;div#demo4&apos;, 
+    &apos;/assets/terraform-graphs-3/demo4.svg&apos;, 
+    &apos;/assets/terraform-graphs-3/demo4.json&apos;,
+    &apos;100%&apos;);
 
-svg_activate('div#demo11', 
-    '/assets/terraform-graphs-3/demo11.svg', 
-    '/assets/terraform-graphs-3/demo11.json',
-    '65%');
+svg_activate(&apos;div#demo11&apos;, 
+    &apos;/assets/terraform-graphs-3/demo11.svg&apos;, 
+    &apos;/assets/terraform-graphs-3/demo11.json&apos;,
+    &apos;65%&apos;);
 
 
 &lt;/script&gt;
 
-&lt;div class=&quot;footnotes&quot;&gt;
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://www.github.com/28mm/blast-radius&quot;&gt;https://www.github.com/28mm/blast-radius&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://www.github.com/28mm/blast-radius&quot;&gt;https://www.github.com/28mm/blast-radius&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:2&quot;&gt;
-      &lt;p&gt;This project attempts to geolocate IPs by measuring latency from points around the world. &lt;a href=&quot;https://28mm.github.io/notes/echo-location&quot;&gt;https://28mm.github.io/notes/echo-location&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;This project attempts to geolocate IPs by measuring latency from points around the world. &lt;a href=&quot;https://28mm.github.io/notes/echo-location&quot;&gt;https://28mm.github.io/notes/echo-location&lt;/a&gt; &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
@@ -1350,7 +431,7 @@ svg_activate('div#demo11',
 
 &lt;div id=&quot;demo1&quot;&gt;&lt;/div&gt;
 
-&lt;p&gt;The &lt;a href=&quot;/notes/d3-terraform-graphs&quot;&gt;first post&lt;/a&gt;&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; presented experiments with Graphviz and D3.js, resulting in a promising prototype. Posting these to &lt;a href=&quot;https://www.reddit.com/r/devops/comments/783prc/exploring_terraform_graphs_with_d3js/&quot;&gt;r/devops&lt;/a&gt;&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; led to some interesting discussions (online and off), and thoughts about future work.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&quot;/notes/d3-terraform-graphs&quot;&gt;first post&lt;/a&gt;&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; presented experiments with Graphviz and D3.js, resulting in a promising prototype. Posting these to &lt;a href=&quot;https://www.reddit.com/r/devops/comments/783prc/exploring_terraform_graphs_with_d3js/&quot;&gt;r/devops&lt;/a&gt;&lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; led to some interesting discussions (online and off), and thoughts about future work.&lt;/p&gt;
 
 &lt;p&gt;This post takes up the problems of horizontal sprawl, better tooltips, meaningful coloration, and animations; starting with diagrams like the one above, and introducing a series of refinements.&lt;/p&gt;
 
@@ -1394,11 +475,11 @@ div#tooltip-demo-1 &gt; svg {
 
 &lt;p&gt;But this is not entirely satisfying. After a certain threshold, the palette becomes confusing; new colors are not easily distinguished from old ones.&lt;/p&gt;
 
-&lt;p&gt;Grouping resources of related types might help. The aws provider alone supports 320 distinct types of resource in close to 50 categories,&lt;sup id=&quot;fnref:5&quot;&gt;&lt;a href=&quot;#fn:5&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt; but typical configurations probably draw from fewer categories.&lt;/p&gt;
+&lt;p&gt;Grouping resources of related types might help. The aws provider alone supports 320 distinct types of resource in close to 50 categories,&lt;sup id=&quot;fnref:5&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:5&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt; but typical configurations probably draw from fewer categories.&lt;/p&gt;
 
 &lt;div id=&quot;demo4&quot;&gt;&lt;/div&gt;
 
-&lt;p&gt;Here, resources of type &lt;code class=&quot;highlighter-rouge&quot;&gt;aws_route&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;aws_internet_gateway&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;aws_security_group&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;aws_subnet&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;aws_vpc&lt;/code&gt; all have the same color because they belong to the &lt;code class=&quot;highlighter-rouge&quot;&gt;vpc&lt;/code&gt; group. Hopefully this will clarify larger diagrams.&lt;/p&gt;
+&lt;p&gt;Here, resources of type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;aws_route&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;aws_internet_gateway&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;aws_security_group&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;aws_subnet&lt;/code&gt;, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;aws_vpc&lt;/code&gt; all have the same color because they belong to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;vpc&lt;/code&gt; group. Hopefully this will clarify larger diagrams.&lt;/p&gt;
 
 &lt;h3 id=&quot;first-animations&quot;&gt;First Animations&lt;/h3&gt;
 
@@ -1410,7 +491,7 @@ div#tooltip-demo-1 &gt; svg {
 
 &lt;p&gt;Compared with the proofs of concept presented the &lt;a href=&quot;/notes/d3-terraform-graphs&quot;&gt;last post&lt;/a&gt;, these are starting to look useful.&lt;/p&gt;
 
-&lt;p&gt;Aaaand, It’s exciting to begin thinking about further uses of animation, such as presenting &lt;code class=&quot;highlighter-rouge&quot;&gt;terraform apply&lt;/code&gt; progress in realtime, or highlighting the subgraphs affected by a commit.&lt;/p&gt;
+&lt;p&gt;Aaaand, It’s exciting to begin thinking about further uses of animation, such as presenting &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;terraform apply&lt;/code&gt; progress in realtime, or highlighting the subgraphs affected by a commit.&lt;/p&gt;
 
 &lt;p&gt;Have a Suggestion? &lt;a href=&quot;mailto:patrick.mcmurchie@gmail.com&quot;&gt;patrick.mcmurchie@gmail.com&lt;/a&gt; / &lt;a href=&quot;/about&quot;&gt;about&lt;/a&gt;&lt;/p&gt;
 
@@ -1425,38 +506,38 @@ div#tooltip-demo-1 &gt; svg {
 &lt;script&gt;
 
 // use the oldest version of svg_activate
-svg_activate_old('div#demo1', 
-    '/assets/terraform-graphs-2/demo-1.svg', 
-    '/assets/terraform-graphs-2/demo-1.json');
+svg_activate_old(&apos;div#demo1&apos;, 
+    &apos;/assets/terraform-graphs-2/demo-1.svg&apos;, 
+    &apos;/assets/terraform-graphs-2/demo-1.json&apos;);
 
-svg_activate_old('div#demo2',
-    '/assets/terraform-graphs-2/demo-2.svg', 
-    '/assets/terraform-graphs-2/demo-2.json');
+svg_activate_old(&apos;div#demo2&apos;,
+    &apos;/assets/terraform-graphs-2/demo-2.svg&apos;, 
+    &apos;/assets/terraform-graphs-2/demo-2.json&apos;);
 
-svg_activate_old('div#demo3',
-    '/assets/terraform-graphs-2/demo-3.svg', 
-    '/assets/terraform-graphs-2/demo-3.json');
+svg_activate_old(&apos;div#demo3&apos;,
+    &apos;/assets/terraform-graphs-2/demo-3.svg&apos;, 
+    &apos;/assets/terraform-graphs-2/demo-3.json&apos;);
 
 
 // use the naive color version of svg_activate w/ tooltips
-svg_activate_simple('div#tooltip-demo-1',
-	'/assets/terraform-graphs-2/tooltip-demo-1.svg',
-	'/assets/terraform-graphs-2/tooltip-demo-1.json')
+svg_activate_simple(&apos;div#tooltip-demo-1&apos;,
+	&apos;/assets/terraform-graphs-2/tooltip-demo-1.svg&apos;,
+	&apos;/assets/terraform-graphs-2/tooltip-demo-1.json&apos;)
 
 
 // better-colors version of svg_activate w/tooltips
-svg_activate_color('div#demo4',
-    '/assets/terraform-graphs-2/demo-3.svg',
-    '/assets/terraform-graphs-2/demo-3.json');
+svg_activate_color(&apos;div#demo4&apos;,
+    &apos;/assets/terraform-graphs-2/demo-3.svg&apos;,
+    &apos;/assets/terraform-graphs-2/demo-3.json&apos;);
 
-//svg_activate_color('div#demo5',
-//    '/assets/terraform-graphs-2/demo-5.svg', 
-//    '/assets/terraform-graphs-2/demo-5.json');
+//svg_activate_color(&apos;div#demo5&apos;,
+//    &apos;/assets/terraform-graphs-2/demo-5.svg&apos;, 
+//    &apos;/assets/terraform-graphs-2/demo-5.json&apos;);
 
 // current version of svg_activate w/colors w/tooltips w/animations
-svg_activate('div#demo6',
-    '/assets/terraform-graphs-2/demo-3.svg',
-    '/assets/terraform-graphs-2/demo-3.json');
+svg_activate(&apos;div#demo6&apos;,
+    &apos;/assets/terraform-graphs-2/demo-3.svg&apos;,
+    &apos;/assets/terraform-graphs-2/demo-3.json&apos;);
 
 
 &lt;/script&gt;
@@ -1465,16 +546,16 @@ svg_activate('div#demo6',
  Below is the default output for a simple configuration.
 &lt;img src=&quot;/assets/terraform-graphs/demo-1.svg&quot;&gt;
 --&gt;
-&lt;div class=&quot;footnotes&quot;&gt;
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;/notes/d3-terraform-graphs&quot;&gt;http://28mm.github.io/notes/d3-terraform-graphs&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;/notes/d3-terraform-graphs&quot;&gt;http://28mm.github.io/notes/d3-terraform-graphs&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:2&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://www.reddit.com/r/devops/comments/783prc/exploring_terraform_graphs_with_d3js/&quot;&gt;https://www.reddit.com/r/devops/comments/783prc/exploring_terraform_graphs_with_d3js/&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://www.reddit.com/r/devops/comments/783prc/exploring_terraform_graphs_with_d3js/&quot;&gt;https://www.reddit.com/r/devops/comments/783prc/exploring_terraform_graphs_with_d3js/&lt;/a&gt; &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:5&quot;&gt;
-      &lt;p&gt;Per the documentation, &lt;a href=&quot;https://www.terraform.io/docs/providers/aws/index.html&quot;&gt;here&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:5&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:5&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Per the documentation, &lt;a href=&quot;https://www.terraform.io/docs/providers/aws/index.html&quot;&gt;here&lt;/a&gt; &lt;a href=&quot;#fnref:5&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
@@ -1492,7 +573,7 @@ svg_activate('div#demo6',
 
 &lt;p&gt;As a newcomer to Terraform (and to AWS), I sometimes find it difficult to reason about the many available resource types, and the dependencies that can exist between them. Especially when coming to terms with larger configurations.&lt;/p&gt;
 
-&lt;p&gt;To address this difficulty, I want a tool to help me explore dependency graphs, and resource definitions, interactively. This is the first in a series (parts: &lt;a href=&quot;/notes/d3-terraform-graphs&quot;&gt;one&lt;/a&gt;, &lt;a href=&quot;/notes/d3-terraform-graphs-2&quot;&gt;two&lt;/a&gt;, &lt;a href=&quot;/notes/terraform-graphs-3&quot;&gt;three&lt;/a&gt;, &lt;a href=&quot;/notes/d3-terraform-graphs-4&quot;&gt;four&lt;/a&gt;; &lt;a href=&quot;https://www.github.com/28mm/blast-radius&quot;&gt;code&lt;/a&gt;, &lt;a href=&quot;https://28mm.github.io/blast-radius-docs&quot;&gt;documentation&lt;/a&gt;) of posts about building such a tool, using d3.js, starting with the simple example below&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, and building upon it.&lt;/p&gt;
+&lt;p&gt;To address this difficulty, I want a tool to help me explore dependency graphs, and resource definitions, interactively. This is the first in a series (parts: &lt;a href=&quot;/notes/d3-terraform-graphs&quot;&gt;one&lt;/a&gt;, &lt;a href=&quot;/notes/d3-terraform-graphs-2&quot;&gt;two&lt;/a&gt;, &lt;a href=&quot;/notes/terraform-graphs-3&quot;&gt;three&lt;/a&gt;, &lt;a href=&quot;/notes/d3-terraform-graphs-4&quot;&gt;four&lt;/a&gt;; &lt;a href=&quot;https://www.github.com/28mm/blast-radius&quot;&gt;code&lt;/a&gt;, &lt;a href=&quot;https://28mm.github.io/blast-radius-docs&quot;&gt;documentation&lt;/a&gt;) of posts about building such a tool, using d3.js, starting with the simple example below&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, and building upon it.&lt;/p&gt;
 
 &lt;script src=&quot;/assets/terraform-graphs/js/d3.v3.js&quot;&gt;&lt;/script&gt;
 
@@ -1508,15 +589,15 @@ svg_activate('div#demo6',
 
 &lt;p&gt;Like Make, Terraform walks a dependency graph to determine the order in which it should create resources, to identify what can be done in parallel, and to re-create resources affected by changes.&lt;/p&gt;
 
-&lt;p&gt;Consider the following example, a straightforward Terraform graph–the same as above–laid out by the graphviz package.&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Consider the following example, a straightforward Terraform graph–the same as above–laid out by the graphviz package.&lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/terraform-graphs/demo-1.svg&quot; class=&quot;figure&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;This graph is easy to understand because it has only a handful of nodes, and an obvious structure. You can easily find the single instance, its provider (aws, in this case), and the few variables they depend on. Here is a slighly more complex example.&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;This graph is easy to understand because it has only a handful of nodes, and an obvious structure. You can easily find the single instance, its provider (aws, in this case), and the few variables they depend on. Here is a slighly more complex example.&lt;sup id=&quot;fnref:3&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/terraform-graphs/demo-2.svg&quot; class=&quot;figure&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;This is graph remains fairly legible. But larger examples tend to sprawl, making resources harder to find, and dependencies harder to trace.&lt;sup id=&quot;fnref:4&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;This is graph remains fairly legible. But larger examples tend to sprawl, making resources harder to find, and dependencies harder to trace.&lt;sup id=&quot;fnref:4&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/terraform-graphs/docker-demo-3.svg&quot; class=&quot;figure&quot; /&gt;&lt;/p&gt;
 
@@ -1553,26 +634,26 @@ svg_activate('div#demo6',
 &lt;script src=&quot;/assets/terraform-graphs/js/terraform-graph.js&quot;&gt;&lt;/script&gt;
 
 &lt;script&gt;
-activate('#demo-1', '/assets/terraform-graphs/demo-1.json', 580, 300, false);
-activate('#demo-2', '/assets/terraform-graphs/demo-1.json', 580, 300, false);
-activate('#demo-3', '/assets/terraform-graphs/demo-3.json', 580, 400, false);
-activate('#demo-4', '/assets/terraform-graphs/demo-3.json', 580, 400, true);
-activate('#demo-5', '/assets/terraform-graphs/docker-demo-3.json', 580, 600, true);
+activate(&apos;#demo-1&apos;, &apos;/assets/terraform-graphs/demo-1.json&apos;, 580, 300, false);
+activate(&apos;#demo-2&apos;, &apos;/assets/terraform-graphs/demo-1.json&apos;, 580, 300, false);
+activate(&apos;#demo-3&apos;, &apos;/assets/terraform-graphs/demo-3.json&apos;, 580, 400, false);
+activate(&apos;#demo-4&apos;, &apos;/assets/terraform-graphs/demo-3.json&apos;, 580, 400, true);
+activate(&apos;#demo-5&apos;, &apos;/assets/terraform-graphs/docker-demo-3.json&apos;, 580, 600, true);
 &lt;/script&gt;
 
-&lt;div class=&quot;footnotes&quot;&gt;
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;.tf&lt;/code&gt; files borrowed from Udemy’s Terraform course materials, &lt;a href=&quot;https://github.com/wardviaene/terraform-course/tree/master/demo-1&quot;&gt;here&lt;/a&gt;.&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.tf&lt;/code&gt; files borrowed from Udemy’s Terraform course materials, &lt;a href=&quot;https://github.com/wardviaene/terraform-course/tree/master/demo-1&quot;&gt;here&lt;/a&gt;. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:2&quot;&gt;
-      &lt;p&gt;Terraform directly supports this type of visualization, through its &lt;code class=&quot;highlighter-rouge&quot;&gt;graph&lt;/code&gt; argument: &lt;code class=&quot;highlighter-rouge&quot;&gt;terraform graph | dot -Tsvg &amp;gt; graph.svg&lt;/code&gt;.&amp;nbsp;&lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Terraform directly supports this type of visualization, through its &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;graph&lt;/code&gt; argument: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;terraform graph | dot -Tsvg &amp;gt; graph.svg&lt;/code&gt;. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:3&quot;&gt;
-      &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;.tf&lt;/code&gt; files borrowed from Hashicorp’s aws provider examples, &lt;a href=&quot;https://github.com/terraform-providers/terraform-provider-aws&quot;&gt;here&lt;/a&gt;.&amp;nbsp;&lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:3&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.tf&lt;/code&gt; files borrowed from Hashicorp’s aws provider examples, &lt;a href=&quot;https://github.com/terraform-providers/terraform-provider-aws&quot;&gt;here&lt;/a&gt;. &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:4&quot;&gt;
-      &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;.tf&lt;/code&gt; files borrowed from Udemy’s Terraform course materials &lt;a href=&quot;https://github.com/wardviaene/terraform-course/tree/master/docker-demo-3&quot;&gt;here&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:4&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.tf&lt;/code&gt; files borrowed from Udemy’s Terraform course materials &lt;a href=&quot;https://github.com/wardviaene/terraform-course/tree/master/docker-demo-3&quot;&gt;here&lt;/a&gt; &lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
@@ -1588,7 +669,7 @@ activate('#demo-5', '/assets/terraform-graphs/docker-demo-3.json', 580, 600, tru
           <title>Photo Metadata and Search on MacOS</title>
           <description>&lt;p&gt;&lt;a href=&quot;https://news.ycombinator.com/item?id=16278637&quot;&gt;&lt;img src=&quot;/assets/y18.gif&quot; /&gt; This article has been discussed on Hacker News.&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Apple’s Photos.app classifies pictures, identifying subjects such as “boat,” and “bicycle,” as well as settings like “cafe,” and “mountains.” It uses this capability to offer vastly better search than before.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Apple’s Photos.app classifies pictures, identifying subjects such as “boat,” and “bicycle,” as well as settings like “cafe,” and “mountains.” It uses this capability to offer vastly better search than before.&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;p&gt;Unfortunately these improvements are neither visible to Spotlight, nor available in the Finder. This post documents a method of reconciling Photos.app metadata with filesystem metadata, so that they are indexed by Spotlight.&lt;/p&gt;
 
@@ -1601,13 +682,13 @@ activate('#demo-5', '/assets/terraform-graphs/docker-demo-3.json', 580, 600, tru
 &lt;p&gt;&lt;a name=&quot;xattrs&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;the-finder-extended-attributes-and-spotlight&quot;&gt;The Finder, Extended Attributes, and Spotlight.&lt;/h3&gt;
 
-&lt;p&gt;Quite a bit of old information remains in circulation, about tagging and searching for documents in MacOS. The Finder seems to recognize a few extended attributes, for the purpose of associating tags and comments with files.&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Quite a bit of old information remains in circulation, about tagging and searching for documents in MacOS. The Finder seems to recognize a few extended attributes, for the purpose of associating tags and comments with files.&lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;p&gt;To keep things simple, I will present only the method that has worked for me.&lt;/p&gt;
 
-&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;com.apple.metadata:_kMDItemUserTags&lt;/code&gt; xattr is used to associate a plist of tags with a file. Spotlight reads this xattr, and indexes its contents. To assign the tags “mountain,” and “alpine” to a file, for instance, you would create a plist:&lt;/p&gt;
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;com.apple.metadata:_kMDItemUserTags&lt;/code&gt; xattr is used to associate a plist of tags with a file. Spotlight reads this xattr, and indexes its contents. To assign the tags “mountain,” and “alpine” to a file, for instance, you would create a plist:&lt;/p&gt;
 
-&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE plist PUBLIC
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE plist PUBLIC
  &quot;-//Apple//DTD PLIST 1.0//EN&quot;
   &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;plist&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;version=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1.0&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
@@ -1616,113 +697,100 @@ activate('#demo-5', '/assets/terraform-graphs/docker-demo-3.json', 580, 600, tru
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;alpline&lt;span class=&quot;nt&quot;&gt;&amp;lt;/string&amp;gt;&lt;/span&gt;
  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/array&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/plist&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;To associate this &lt;code class=&quot;highlighter-rouge&quot;&gt;$plist&lt;/code&gt; with a &lt;code class=&quot;highlighter-rouge&quot;&gt;$file&lt;/code&gt;, invoke the &lt;code class=&quot;highlighter-rouge&quot;&gt;xattr&lt;/code&gt; command, as shown below.&lt;/p&gt;
+&lt;p&gt;To associate this &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$plist&lt;/code&gt; with a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$file&lt;/code&gt;, invoke the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;xattr&lt;/code&gt; command, as shown below.&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;xattr -w &lt;span class=&quot;s2&quot;&gt;&quot;com.apple.metadata:_kMDItemUserTags&quot;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;xattr &lt;span class=&quot;nt&quot;&gt;-w&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;com.apple.metadata:_kMDItemUserTags&quot;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
       &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$plist&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$file&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;At this point, you should be able to find the file, via the 🔎 icon, or the &lt;code class=&quot;highlighter-rouge&quot;&gt;mdfind&lt;/code&gt; command, as shown below.&lt;/p&gt;
+&lt;p&gt;At this point, you should be able to find the file, via the 🔎 icon, or the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mdfind&lt;/code&gt; command, as shown below.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[...]$ mdfind tag:mountain
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[...]$ mdfind tag:mountain
 /path/to/matching/file
 /path/to/another/matching/file
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;a name=&quot;photos-app&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;photosapp-metadata-a-sqlite-adventure&quot;&gt;Photos.app Metadata: A SQLite Adventure&lt;/h3&gt;
 
-&lt;p&gt;Photos.app does its accounting with a SQLite database, which we’ll call &lt;code class=&quot;highlighter-rouge&quot;&gt;$photodb&lt;/code&gt;, and set thus:&lt;/p&gt;
+&lt;p&gt;Photos.app does its accounting with a SQLite database, which we’ll call &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$photodb&lt;/code&gt;, and set thus:&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~
-&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;Pictures
-&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;Photo&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Library.photoslibrary
-&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;database
-&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;photodb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PWD&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/photos.db&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;Pictures
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;Photo&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Library.photoslibrary
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;database
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...]&lt;span class=&quot;nv&quot;&gt;$ photodb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PWD&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/photos.db&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Unfortunately, &lt;code class=&quot;highlighter-rouge&quot;&gt;$photodb&lt;/code&gt; is probably open, and locked.&lt;/p&gt;
+&lt;p&gt;Unfortunately, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$photodb&lt;/code&gt; is probably open, and locked.&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;lsof &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$photodb&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;lsof &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$photodb&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
 COMMAND     PID    USER   FD   TYPE DEVICE  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...snip...]
 photolibr 15432 patrick    4u   REG    1,1  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...snip...]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;The trouble with just killing &lt;em&gt;photolibraryd&lt;/em&gt;, is that it will re-spawn, repeatedly. &lt;span class=&quot;redact&quot;&gt;Undoubtedly,&lt;/span&gt; &lt;em&gt;launchd&lt;/em&gt; can be told to disable &lt;em&gt;photolibraryd&lt;/em&gt;, &lt;span class=&quot;redact&quot;&gt;but&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;approved&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;mechanism&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;wasn’t&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;immediately&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;obvious&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;me.&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;span class=&quot;new&quot;&gt;Stop the &lt;code class=&quot;highlighter-rouge&quot;&gt;photolibraryd&lt;/code&gt; service with &lt;code class=&quot;highlighter-rouge&quot;&gt;launchctl&lt;/code&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;new&quot;&gt;Stop the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;photolibraryd&lt;/code&gt; service with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;launchctl&lt;/code&gt;&lt;/span&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;launchctl stop photolibraryd
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;launchctl stop photolibraryd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;span class=&quot;redact&quot;&gt;Instead,&lt;/span&gt;&lt;span class=&quot;new&quot;&gt;Initially,&lt;/span&gt; I opted for an egregious hack, &lt;span class=&quot;new&quot;&gt;which you can read about by copying the redacted text.&lt;/span&gt;&lt;span class=&quot;redact&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;lock&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;its&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;database,&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;photoslibraryd,&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;need&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;be&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;able&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;write&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;it.&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;I&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;simply&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;removed&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;write&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;permisions.&lt;/span&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;chmod -w &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$photodb&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;lsof &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$photodb&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; | 
-  awk &lt;span class=&quot;s1&quot;&gt;'{ print $2}'&lt;/span&gt;    | 
-  egrep -v PID         | 
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;chmod&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-w&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$photodb&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;lsof &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$photodb&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; | 
+  &lt;span class=&quot;nb&quot;&gt;awk&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;{ print $2}&apos;&lt;/span&gt;    | 
+  egrep &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; PID         | 
   xargs &lt;span class=&quot;nb&quot;&gt;kill&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;span class=&quot;redact&quot;&gt;Afterwards–but&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;yet–don’t&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;forget&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;restore&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;redact&quot;&gt;permissions&lt;/span&gt;&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt; &lt;span class=&quot;redact&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;your&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;photos&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;database!&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;You&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;may&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;want&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;restart&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;your&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;computer&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;ensure&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;that&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;photolibraryd,&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;continues&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;work.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;redact&quot;&gt;Afterwards–but&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;yet–don’t&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;forget&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;restore&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;redact&quot;&gt;permissions&lt;/span&gt;&lt;sup id=&quot;fnref:3&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt; &lt;span class=&quot;redact&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;your&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;photos&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;database!&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;You&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;may&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;want&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;restart&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;your&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;computer&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;ensure&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;that&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;photolibraryd,&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;continues&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;redact&quot;&gt;work.&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;Now, it’s possible to open &lt;code class=&quot;highlighter-rouge&quot;&gt;$photodb&lt;/code&gt;, and poke around.&lt;/p&gt;
+&lt;p&gt;Now, it’s possible to open &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$photodb&lt;/code&gt;, and poke around.&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;sqlite3 &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$photodb&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sqlite3 &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$photodb&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
 SQLite version 3.14.0 2016-07-26 15:17:14
 Enter &lt;span class=&quot;s2&quot;&gt;&quot;.help&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;usage hints.
-&lt;span class=&quot;gp&quot;&gt;sqlite&amp;gt; &lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+sqlite&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Review the schema with the &lt;code class=&quot;highlighter-rouge&quot;&gt;.schema&lt;/code&gt; command. Quit by sending &lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl-d&lt;/code&gt;, or with the &lt;code class=&quot;highlighter-rouge&quot;&gt;.quit&lt;/code&gt; command. Tags (and a lot else) are kept in the &lt;code class=&quot;highlighter-rouge&quot;&gt;RKVersion_stringNote&lt;/code&gt; table.&lt;/p&gt;
+&lt;p&gt;Review the schema with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.schema&lt;/code&gt; command. Quit by sending &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ctrl-d&lt;/code&gt;, or with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.quit&lt;/code&gt; command. Tags (and a lot else) are kept in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RKVersion_stringNote&lt;/code&gt; table.&lt;/p&gt;
 
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;sqlite&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;on&lt;/span&gt;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;sqlite&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;on&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;sqlite&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RKVersion_stringNote&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;We need to find the appropriate value of &lt;code class=&quot;highlighter-rouge&quot;&gt;keyPath&lt;/code&gt;, since this will vary between systems. The following snippet, should suffice to find it:&lt;/p&gt;
+&lt;p&gt;We need to find the appropriate value of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;keyPath&lt;/code&gt;, since this will vary between systems. The following snippet, should suffice to find it:&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;KEYPATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt; sqlite3 &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$photodb&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; .schema       | 
-  grep &lt;span class=&quot;s1&quot;&gt;'RKVersion_stringNote_skIndexUpdateTrigger'&lt;/span&gt; | 
-  grep -Eo &lt;span class=&quot;s1&quot;&gt;'[0-9]{1,4}'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...]&lt;span class=&quot;nv&quot;&gt;$ KEYPATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt; sqlite3 &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$photodb&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; .schema       | 
+  &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;RKVersion_stringNote_skIndexUpdateTrigger&apos;&lt;/span&gt; | 
+  &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-Eo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;[0-9]{1,4}&apos;&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Okay, but did it work?&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[...] echo $KEYPATH
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[...] echo $KEYPATH
 719
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Now we can find the strings containing our tags, and associate them with filesystem paths. Be sure to substitute the value of &lt;code class=&quot;highlighter-rouge&quot;&gt;$KEYPATH&lt;/code&gt; determined above, for the literal &lt;code class=&quot;highlighter-rouge&quot;&gt;719&lt;/code&gt;, below.&lt;/p&gt;
+&lt;p&gt;Now we can find the strings containing our tags, and associate them with filesystem paths. Be sure to substitute the value of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$KEYPATH&lt;/code&gt; determined above, for the literal &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;719&lt;/code&gt;, below.&lt;/p&gt;
 
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;sqlite&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RKMaster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imagePath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RKVersion_stringNote&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;sqlite&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RKMaster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imagePath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RKVersion_stringNote&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RKVersion_stringNote&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;INNER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RKMaster&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RKVersion_stringNote&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;attachedToId&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RKMaster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;modelId&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RKVersion_stringNote&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keyPath&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;719&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* !!! */&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Records will resemble the following:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;2015/04/25/20150425-035012/DSC00435.JPG|DSC00435.JPG  \
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;2015/04/25/20150425-035012/DSC00435.JPG|DSC00435.JPG  \
 00435.JPG JPG October 2012 Outdoor Outside Outdoors   \
 Outsides Land Lands Mountain Mounts Peak Sierra       \
 Sierras Peaks Mountains Mount
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Tags aren’t quoted, but always come last. The trouble is that its not obvious which are 1-grams, 2-grams, or n-grams. Various collisions are possible both between tags, and other substrings.&lt;/p&gt;
 
@@ -1731,21 +799,20 @@ Sierras Peaks Mountains Mount
 
 &lt;p&gt;Okay, lets put the pieces together. We need four things:&lt;/p&gt;
 &lt;ol&gt;
-  &lt;li&gt;a copy of &lt;code class=&quot;highlighter-rouge&quot;&gt;photos.db&lt;/code&gt; in a write-able location.&lt;/li&gt;
-  &lt;li&gt;the system-specific value of &lt;code class=&quot;highlighter-rouge&quot;&gt;$KEYPATH&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;the path to our photos library &lt;code class=&quot;highlighter-rouge&quot;&gt;$PHOTOLIB&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;photos2spotlight.py&lt;/code&gt; (listing &lt;a href=&quot;https://github.com/28mm/macos-photo-scripts&quot;&gt;here&lt;/a&gt;).&lt;/li&gt;
+  &lt;li&gt;a copy of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;photos.db&lt;/code&gt; in a write-able location.&lt;/li&gt;
+  &lt;li&gt;the system-specific value of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$KEYPATH&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;the path to our photos library &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$PHOTOLIB&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;photos2spotlight.py&lt;/code&gt; (listing &lt;a href=&quot;https://github.com/28mm/macos-photo-scripts&quot;&gt;here&lt;/a&gt;).&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;Start by getting an idea of what your library contains:&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;./photos2spotlight.py --stats &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  --db /path/to/copy/of/photos.db 
-  --lib &lt;span class=&quot;s2&quot;&gt;&quot;~/Pictures/Photos&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Library.photoslibrary/&quot;&lt;/span&gt;
-  --keypath &lt;span class=&quot;nv&quot;&gt;$KEYPATH&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[...snip...]
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./photos2spotlight.py &lt;span class=&quot;nt&quot;&gt;--stats&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;--db&lt;/span&gt; /path/to/copy/of/photos.db 
+  &lt;span class=&quot;nt&quot;&gt;--lib&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;~/Pictures/Photos&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Library.photoslibrary/&quot;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;--keypath&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$KEYPATH&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[...snip...]
     16 Duds
     16 Clothing
     16 Accoutrements
@@ -1757,26 +824,23 @@ Sierras Peaks Mountains Mount
     18 Inside
     18 Interior Room
     18 Indoors
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;By default, &lt;code class=&quot;highlighter-rouge&quot;&gt;photos2spotlight.py&lt;/code&gt; will make a dry run. Use the &lt;code class=&quot;highlighter-rouge&quot;&gt;--write&lt;/code&gt; flag to modify fileystem metadata.&lt;/p&gt;
+&lt;p&gt;By default, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;photos2spotlight.py&lt;/code&gt; will make a dry run. Use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--write&lt;/code&gt; flag to modify fileystem metadata.&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;[...]$ &lt;/span&gt;./photos2spotlight.py --stats &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  --db /path/to/copy/of/photos.db
-  --lib	&lt;span class=&quot;s2&quot;&gt;&quot;~/Pictures/Photos&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Library.photoslibrary/&quot;&lt;/span&gt;
-  --keypath &lt;span class=&quot;nv&quot;&gt;$KEYPATH&lt;/span&gt;
-  --write
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./photos2spotlight.py &lt;span class=&quot;nt&quot;&gt;--stats&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;--db&lt;/span&gt; /path/to/copy/of/photos.db
+  &lt;span class=&quot;nt&quot;&gt;--lib&lt;/span&gt;	&lt;span class=&quot;s2&quot;&gt;&quot;~/Pictures/Photos&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Library.photoslibrary/&quot;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;--keypath&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$KEYPATH&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;--write&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;You should now be able to find photos using Spotlight, the Finder, or the related mdfind command. E.g.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[...]$ mdfind 'tag:Inside'
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[...]$ mdfind &apos;tag:Inside&apos;
 .../Masters/2015/04/22/20150422-011045/IMG_0083.JPG
 [...snip...]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
 
@@ -1784,16 +848,16 @@ Sierras Peaks Mountains Mount
 
 &lt;p&gt;Continue to &lt;a href=&quot;/notes/better-photo-search-for-macos&quot;&gt;Part 2&lt;/a&gt;.&lt;/p&gt;
 
-&lt;div class=&quot;footnotes&quot;&gt;
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;Google Photos does this too. It’s dramatically less tedious than manual tagging.&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Google Photos does this too. It’s dramatically less tedious than manual tagging. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:2&quot;&gt;
-      &lt;p&gt;Both &lt;code class=&quot;highlighter-rouge&quot;&gt;kMDItemFinderComment&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;kMDItemOMUserTags&lt;/code&gt; are commonly suggested, as well. As far as I can tell, the former is inappropriate, while the latter is disused, except by legacy applications.&amp;nbsp;&lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Both &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;kMDItemFinderComment&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;kMDItemOMUserTags&lt;/code&gt; are commonly suggested, as well. As far as I can tell, the former is inappropriate, while the latter is disused, except by legacy applications. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:3&quot;&gt;
-      &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[...]$ chmod u+w &quot;$photodb&quot;&lt;/code&gt;&amp;nbsp;&lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:3&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[...]$ chmod u+w &quot;$photodb&quot;&lt;/code&gt; &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
@@ -1801,288 +865,6 @@ Sierras Peaks Mountains Mount
           <pubDate>2017-05-25T00:00:00-07:00</pubDate>
           <link>http://localhost:4000/notes/osx-photo-search</link>
           <guid isPermaLink="true">http://localhost:4000/notes/osx-photo-search</guid>
-        </item>
-      
-    
-      
-        <item>
-          <title>A Quixotic Apartment Search (in Seattle)</title>
-          <description>&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;#introduction&quot;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#lease-less-in-seattle&quot;&gt;Lease-less In Seattle&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#how-many-npr-moments-is-too-many&quot;&gt;How Many NPR Moments is Too Many?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#what-does-walkability-measure&quot;&gt;What Does Walkability Measure?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#eyes-on-the-street&quot;&gt;Eyes On The Street&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#conclusion&quot;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
-
-&lt;p&gt;Finding an apartment is a chore like few others. For one thing, it can be difficult to recognize a good deal, without closely following the market. For another, realtors often misrepresent their properties in an effort to make them more attractive.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; It can be exhausting to evaluate the thousands of apartments listed in a busy market, but renting an apartment is &lt;em&gt;significant&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;For most of us, rent constitutes a large fraction of income, while our address determines the amount of time we lose commuting, and if we can reasonably bike to work. For these reasons alone, it is worth making a deliberate, rather than improvised search, for a next apartment. Where to start?&lt;/p&gt;
-
-&lt;p&gt;Services like Craigslist and Zillow are like a firehose of listings, brimming with useful information, including: price, area (ft&lt;sup&gt;2&lt;/sup&gt;), floorplan, neighborhood, and pet-tolerance. Perhaps collecting data from these services could help characterize the rental market, and inform an apartment search?&lt;/p&gt;
-
-&lt;h2 id=&quot;lease-less-in-seattle&quot;&gt;Lease-less In Seattle&lt;/h2&gt;
-
-&lt;p&gt;A couple years ago, the blog &lt;a href=&quot;http://chrisholdgraf.com/quick-craigslist-data-analysis/&quot;&gt;Predictably Noisy&lt;/a&gt; carried an analysis of Bay Area rents–based on Craigslist data–with a series of figures showing the relationship between apartment size and price per square foot, as well as the distribution of these two variables. To get started, I reproduced those plots for Seattle.&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/seattle-apartments/see-ppsf-by-bedrooms.png&quot; class=&quot;figure&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;In this figure, price per square foot is plotted against area, and the most common floorplans are assigned a color. Space tends to become cheaper, per unit area, as you rent more of it.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/seattle-apartments/see-ppsf-dist.png&quot; class=&quot;figure&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Here we see that apartments of each type are available at a wide range of prices per square foot. (And that studios command sometimes astonishing rents.)&lt;/p&gt;
-
-&lt;p&gt;Immediately north of Seattle, Snohomish County provides an interesting counterpoint. Fewer apartments are listed here, but only a handful cost more than $3/ft&lt;sup&gt;2&lt;/sup&gt;. In fact a majority are available for around $2/ft&lt;sup&gt;2&lt;/sup&gt;, or less.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/seattle-apartments/sno-ppsf-by-bedrooms.png&quot; class=&quot;figure&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;how-many-npr-moments-is-too-many&quot;&gt;How Many NPR Moments Is Too Many?&lt;/h2&gt;
-
-&lt;p&gt;Apartments in Snohomish County are offered for reliably low rates, but another feature they share is a long, dystopian commute into seattle. Jean Luc Godard’s 1967 film, &lt;em&gt;Weekend&lt;/em&gt;, neatly captures the experience.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/seattle-apartments/weekend.jpg&quot; alt=&quot;Weekend - Jean Luc Godard (1967)&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Is a comparison to &lt;em&gt;Weekend&lt;/em&gt; hyperbolic? The &lt;a href=&quot;http://www.wsdot.com&quot;&gt;WSDOT&lt;/a&gt; publish estimated travel times between Lynnwood and Downtown Seattle. I collected these estimates for the first two weeks of May, 2017, and plotted them, below.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/seattle-apartments/traffic.png&quot; class=&quot;figure&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;And this is only southbound traffic. Actual commute times from Snohomish County likely exceed these, because most apartments are neither adjacent to the freeway, nor close to Lynnwood.&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;is-distance-a-reliable-proxy-for-commute-duration&quot;&gt;Is Distance A Reliable Proxy For Commute Duration?&lt;/h3&gt;
-
-&lt;p&gt;So far, Craigslist data have been enough to get a general picture of the apartment rental market, and WSDOT traffic estimates have been enough to to rule-out Snohomish County, altogether. But, Seattle’s crosstown traffic is no picnic, either.&lt;/p&gt;
-
-&lt;p&gt;Neighborhood and distance are commonly used as proxies for commute duration, which we assume increases with distance. But, how much influence do the vagaries of Seattle’s arterial, and public transit infrastructure, exert?&lt;/p&gt;
-
-&lt;p&gt;To understand these effects, we need greater location precision. On craigslist, the location field is often empty, or uselessly vague. Zillow, on the other hand, is a more reliable source of addresses, and other structured data.&lt;sup id=&quot;fnref:4&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;p&gt;The &lt;a href=&quot;https://developers.google.com/maps/documentation/directions/&quot;&gt;Google Directions API&lt;/a&gt; estimates trip duration, between arbitrary locations. It supports a variety of transit modes (walking, biking, driving, public transit), and can factor expected traffic into its calculations.&lt;/p&gt;
-
-&lt;p&gt;Since I am currently interviewing for jobs,&lt;sup id=&quot;fnref:5&quot;&gt;&lt;a href=&quot;#fn:5&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt; I was interested in the expected commute times from available rentals to prospective offices. I wanted to test the assumption that a nearby apartment offers a shorter commute.&lt;/p&gt;
-
-&lt;p&gt;To that end, the following figures show expected commutes from Zillow-listed apartments in Seattle, to an office in Ballard, by 9:00 AM on a weekday morning. Walking trips are shown in blue; bus trips are colored according to the number of transfers needed, following an obvious pattern.&lt;/p&gt;
-
-&lt;p&gt;&lt;img class=&quot;figure&quot; src=&quot;http://localhost:4000/assets/seattle-apartments/distance-vs-commute-by-legs.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Here we see the expected linear relationship between distance and commute duration. However, there is quite a bit of variance (r&lt;sup&gt;2&lt;/sup&gt; = 0.794). We can conclude that proximity alone is a dubious predictor of time lost riding and transferring between buses.&lt;/p&gt;
-
-&lt;h3 id=&quot;what-about-nearby-apartments&quot;&gt;What About Nearby Apartments?&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/seattle-apartments/dvc-small.png&quot; class=&quot;figure&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;For commutes shorter than 1.7 km, distance more reliably predicts commute duration. Perhaps a walking tour within this radius would locate a suitable apartment more quickly? This approach would be considerably less complicated.&lt;/p&gt;
-
-&lt;p&gt;Ideally, I would find an apartment featuring a short commute (less than a half hour) for less than $2.5/ft&lt;sup&gt;2&lt;/sup&gt;. The figure below presents listings in three adjacent postal codes.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/seattle-apartments/zip-search.png&quot; class=&quot;figure&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;98107 encompases lower Ballard, and the neighborhood realtors have dubbed &lt;em&gt;Frelard&lt;/em&gt;. Unsurprisingly, it seems to offer the best commute. 98103 extends from Lake Union, in Fremont, to N. 100&lt;sup&gt;th&lt;/sup&gt; St, in Greenwood, and also offers reasonable commutes.&lt;/p&gt;
-
-&lt;p&gt;98199 is a different story. Queen Anne and Magnolia are separated from Ballard and Fremont by only the Ship Canal. These are &lt;em&gt;long&lt;/em&gt; commutes, so I am better off looking North of the Ship Canal.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-does-walkability-measure&quot;&gt;What Does Walkability Measure?&lt;/h2&gt;
-
-&lt;p&gt;Rents and commute durations have proven easy quantities to obtain. And, because of their importance, they form a good basis for comparing listings. But, given a choice, few of us would rent an apartment because it optimized &lt;em&gt;just&lt;/em&gt; these variables.&lt;/p&gt;
-
-&lt;p&gt;In practice, we are concerned with a lot else. For instance, we might want an apartment located close to friends, or one with trustworthy management. But, individually, few of these concerns are as significant, or as easily quantified.&lt;/p&gt;
-
-&lt;p&gt;With that said, I live close to several independent cafés–this being Seattle–and rather enjoy my options. Access to cafés, like these, as well as to grocers, laundromats, and other everyday businesses, is important to me. In realtors’ parlance, I prize &lt;em&gt;walkability&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Walkability indices summarize certain of these secondary concerns in a single comparable quantity. To the extent that they succeed, in this, they promise to reduce the tedium of prioritizing listings.&lt;/p&gt;
-
-&lt;h3 id=&quot;walk-score&quot;&gt;Walk Score&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.walkscore.com/&quot;&gt;Walk Score&lt;/a&gt;, along with the related Bike and Transit Scores, is a proprietary metric promoted by the real estate company, Redfin. The Walk Score associated with an address estimates how easily everyday errands can be accomplished there, without a car.&lt;/p&gt;
-
-&lt;p&gt;Walk Scores are a function of the distances to ammentities in various categories. &lt;a href=&quot;https://en.wikipedia.org/wiki/Walk_Score#cite_note-7&quot;&gt;Wikipedia&lt;/a&gt; have a dated (2013) run-down of the algorthim. My (limited) efforts did not turn up a more recent or authoratative description.&lt;/p&gt;
-
-&lt;p&gt;The following scale is used for interpretation. E.g. since my apartment has a Walk Score of 85, I should be able to accomplish most errands on foot. Evidently my neighborhood is missing something.&lt;sup id=&quot;fnref:6&quot;&gt;&lt;a href=&quot;#fn:6&quot; class=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Score&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Interpretation&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;90-100&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Everyday errands are possible without a car&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;70-89&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Most errands can be accomplished on foot&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;50-60&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Some errands can be accomplished on foot&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;25-49&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Most errands require a car&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;0-24&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Almost all errands require a car&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;I had hoped to do more with Walk Score, perhaps using it to exclude certain listings, or give priority to others. Because I wasn’t granted an API key, I decided to look elsewhere. 🤷&lt;/p&gt;
-
-&lt;h3 id=&quot;the-epa-walkability-index&quot;&gt;The EPA Walkability Index&lt;/h3&gt;
-
-&lt;p&gt;I have to admit that I was feeling just a little let down by the private sector, so I turned, instead, to Uncle Sam. The EPA calculate a &lt;a href=&quot;https://developer.epa.gov/walkability-index-2/&quot;&gt;walkability index&lt;/a&gt; for each of the 2010 census block groups.&lt;sup id=&quot;fnref:7&quot;&gt;&lt;a href=&quot;#fn:7&quot; class=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;p&gt;So, how does walkability vary between census block groups, in Seattle, and what does it measure?&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/seattle-apartments/map.png&quot; class=&quot;figure&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Outside of a few neighborhoods: Downtown, Belltown, Fremont, Wallingford, parts of Ballard, and Capitol Hill, the EPA estimate middling walkability across Seattle.&lt;/p&gt;
-
-&lt;p&gt;Certainly, the highest ranked neighborhoods &lt;em&gt;are&lt;/em&gt; walkable, but I expected others to score higher than they did. Just what are we looking at? Certainly not &lt;em&gt;my&lt;/em&gt; assessments. The EPA walkability index is a weighted combination of terms drawn from the EPA’s &lt;a href=&quot;https://www.epa.gov/smartgrowth/smart-location-mapping#walkability&quot;&gt;Smart Location Database&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The full documentation is worth reading, but I will briefly highlight four terms of interest.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;#density&quot;&gt;Density&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#land-use-diversity&quot;&gt;Land use diversity&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#distance-to-fixed-guideway-transit&quot;&gt;Distance to fixed-guideway transit&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#destination-accessibility&quot;&gt;Destination accessibility&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;a name=&quot;density&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&quot;1-density&quot;&gt;1. Density&lt;/h4&gt;
-
-&lt;p&gt;Here, density can refer to housing units per acre, or residents per acre, in areas where development &lt;em&gt;can&lt;/em&gt; occur. Because public parks, zoos, beaches, and cemeteries cannot be developed, their area is subtracted from the total area of the block group.&lt;/p&gt;
-
-&lt;p&gt;The exclusion of protected areas from the density term may explain the otherwise surprising coloration of the block groups containing &lt;em&gt;Seward&lt;/em&gt;, &lt;em&gt;Discovery&lt;/em&gt;, and &lt;em&gt;Carkeek&lt;/em&gt; Parks.&lt;/p&gt;
-
-&lt;p&gt;&lt;a name=&quot;land-use-diversity&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&quot;2land-use-diversity&quot;&gt;2.Land use diversity&lt;/h4&gt;
-
-&lt;p&gt;Jane Jacobs advocated for neighborhoods that support diverse uses, i.e. both residential, and commercial. Employment and population aggregates combine to measure this diversity.&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;E = [\sum_{i=1}^{4} P_{i}*ln(P_{i})] /ln(n)&lt;/script&gt;
-
-&lt;p&gt;Values of &lt;script type=&quot;math/tex&quot;&gt;P_{i}&lt;/script&gt; reflect the number of jobs in 3 sectors, and the number of residents: (1) commercial, industrial, and instituational jobs, (2) retail jobs, (3) recreational jobs, and (4) resdients.&lt;/p&gt;
-
-&lt;p&gt;&lt;a name=&quot;distance-to-fixed-guideway-transit&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&quot;3-distance-to-fixed-guideway-transit&quot;&gt;3. Distance to fixed-guideway transit&lt;/h4&gt;
-
-&lt;p&gt;Fixed guideway, here, refers to rail, light rail, subways, ferries, and trollies, but &lt;em&gt;not&lt;/em&gt; buses. Rather than a distance, this metric counts the number of fixed-guideway transit stations within 1/4 mile, and 1/2 mile.&lt;/p&gt;
-
-&lt;p&gt;Seattle is interesting because it has many more bus routes (including so-called &lt;em&gt;bus rapid transit&lt;/em&gt;) than it has fixed-guideway routes. Additionally, its street cars and monorail are completely useless (although some will disagree).&lt;/p&gt;
-
-&lt;p&gt;&lt;a name=&quot;destination-accessibility&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&quot;4-destination-accessibility&quot;&gt;4. Destination accessibility&lt;/h4&gt;
-
-&lt;p&gt;Destination accessibility measures, on the one hand, how many working age residents of nearby census tracts can access jobs in a given block group via different modes of transportation. On the other it measures the accessability of jobs in nearby census tracts to residents of the given block group.&lt;/p&gt;
-
-&lt;h4 id=&quot;application-of-the-epa-walkability-index&quot;&gt;Application of the EPA walkability index&lt;/h4&gt;
-
-&lt;p&gt;The EPA walkability index is a good case study in the creation of such an index, and is probably useful to its intended audience of city planners. However, it isn’t well suited to helping choose between apartments.&lt;/p&gt;
-
-&lt;p&gt;For one thing, the calculated walkability of neighboring block groups often varies. What would happen if their borders moved, or shrank? Esepcially along the borders of census block groups, these differences give a distorted picture of actual walkability.&lt;/p&gt;
-
-&lt;p&gt;The data are old. The last census was taken in 2010, and Seattle has changed, considerably, since then. For starters, its density has increased, and more fixed guideway transit exists.&lt;/p&gt;
-
-&lt;p&gt;Nevertheless, it has nice qualities. Not least of these: it’s derived from easily understood terms. As I think about what I want from a walkable neighborhood, I am glad to have adaptable public domain tools, where I might otherwise depend on proprietary solutions, like Walk Score.&lt;/p&gt;
-
-&lt;h2 id=&quot;eyes-on-the-street&quot;&gt;Eyes On The Street&lt;/h2&gt;
-
-&lt;p&gt;We can see many of Jane Jacobs’ views reflected in tools like Walk Score and The EPA’s Walkability Index, but her methods are at least as interesting.&lt;/p&gt;
-
-&lt;p&gt;Essentially, Jacobs advocated for close observation. The illustation credit to her &lt;em&gt;Death and Life of Great American Cities&lt;/em&gt;, reads:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&quot;The scenes that illustrate this book are all about us. For illustrations, please look closely at real cities. While you are looking, you might as well listen, linger, and think about what you see.&quot;
-&lt;/blockquote&gt;
-
-&lt;p&gt;And, in the following pages, she offers a suggestion about what we can hope to discover, by paying attention to the &lt;em&gt;look of things&lt;/em&gt;, namely: &lt;em&gt;the way they work&lt;/em&gt;.&lt;/p&gt;
-
-&lt;blockquote&gt;
- &quot;the look of things and the way they work are inextricably bound together...&quot;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Measures of walkability depend on demographics, land use, and transit, in part because these quanitities are readily available, and easy to work with. They can’t as easily consider &lt;em&gt;the look of things&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Compared with measures like these, field observations would be expensive to make, and confounding to work with. Thats an oft repeated assumption, at least, but recent advances in computer vision could challange it.&lt;/p&gt;
-
-&lt;h3 id=&quot;general-image-classification&quot;&gt;General Image Classification&lt;/h3&gt;
-
-&lt;p&gt;For a first experiment, I collected several hundred pictures each, of three distinctive neighborhoods: the &lt;em&gt;&lt;font color=&quot;#4e73b0&quot;&gt;Lower East Side&lt;/font&gt;&lt;/em&gt;, &lt;em&gt;&lt;font color=&quot;#68ae7c&quot;&gt;Le Marais&lt;/font&gt;&lt;/em&gt;, and San Francisco’s &lt;em&gt;&lt;font color=&quot;#c45155&quot;&gt;Mission District&lt;/font&gt;&lt;/em&gt;. I wanted to know if a general image classifier would identify the unique visual character of these neighborhoods.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/seattle-apartments/google-tsne.png&quot; class=&quot;figure&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;In the figure above, each picture was processed by Google’s &lt;a href=&quot;https://cloud.google.com/vision/&quot;&gt;Cloud Vision API&lt;/a&gt;&lt;sup id=&quot;fnref:8&quot;&gt;&lt;a href=&quot;#fn:8&quot; class=&quot;footnote&quot;&gt;8&lt;/a&gt;&lt;/sup&gt; to produce a vector of confidence scores (i.e. the confidence that a picture depicts a given subject). &lt;em&gt;In other words, they’re grouped by subject, to the extent that an image classifier has made sense of them.&lt;/em&gt;&lt;sup id=&quot;fnref:9&quot;&gt;&lt;a href=&quot;#fn:9&quot; class=&quot;footnote&quot;&gt;9&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;p&gt;Because I sampled pictures from Bing Image Search, they reflect what people have found interesting in each neighborhood. In the &lt;em&gt;&lt;font color=&quot;#c45155&quot;&gt;Mission District&lt;/font&gt;&lt;/em&gt;, murals make a popular subject (you can see this cluster in the lower left), while fire escapes feature in many photographs of the &lt;em&gt;&lt;font color=&quot;#4e73b0&quot;&gt;Lower East Side&lt;/font&gt;&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;It’s worth noting that Google’s Cloud Vision API lacks some of Jacobs’ descriptive genius. Where Jacobs saw “promenades that go from no place to nowhere, and have no promenaders,” software might instead report &lt;em&gt;buildings&lt;/em&gt;, and &lt;em&gt;atmospheric phenomena&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;In some places, as with murals in the &lt;em&gt;&lt;font color=&quot;#c45155&quot;&gt;Mission&lt;/font&gt;&lt;/em&gt;, pictures of a certain neighborhood cluster together. Isolated clusters indicate something unique, either about that neighborhood or the pictures chosen to represent it.&lt;/p&gt;
-
-&lt;p&gt;Conversely, areas where pictures from different neighborhoods overlap suggest more generic subjects that might be found in any neighborhood: &lt;em&gt;buildings&lt;/em&gt;, &lt;em&gt;people&lt;/em&gt;, and &lt;em&gt;cars&lt;/em&gt;, for instance.&lt;/p&gt;
-
-&lt;p&gt;And what of Seattle’s &lt;em&gt;&lt;font color=&quot;#4e73b0&quot;&gt;Capitol Hill&lt;/font&gt;&lt;/em&gt;, &lt;em&gt;&lt;font color=&quot;#68ae7c&quot;&gt;Belltown&lt;/font&gt;&lt;/em&gt;, and &lt;em&gt;&lt;font color=&quot;#c45155&quot;&gt;Ballard&lt;/font&gt;&lt;/em&gt; neighborhoods? I would’ve hoped for more distinct groupings. For example, old brick buildings get grouped with new ones.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/seattle-apartments/google-tsne-seattle.png&quot; class=&quot;figure&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;A general image classifier may be the wrong tool. A human observer given the same task would likely identify different features in each picture, and arrange them according to a different logic.&lt;/p&gt;
-
-&lt;p&gt;A more fruitful approach might involve a domain specific model, trained to identify features of particular interest: distinguishing between different kinds of building, for instance, or registering eyesores of various description.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;It took just a little code to scrape and interrogate an interesting dataset, with considerable relevance to my daily life. Happily, my initial focus on rents and commuting yielded the most benefit for the least work.&lt;/p&gt;
-
-&lt;p&gt;Looking past these first experiments, towards the complexities of neighborhoods and urban design, has been no less interesting. However, for a greater investment of effort, I have less to show. Neighborhood trivia, and a few GIS tricks, for instance, but nothing directly useful.&lt;/p&gt;
-
-&lt;p&gt;A lot could still be done, in this more quixotic direction. Urban life raises many intriguing questions; public-ish data and simple methods may answer some of them.&lt;/p&gt;
-
-&lt;p&gt;However, in the face of diminishing returns, I exect I’ll move my apartment search back into meatspace— knowing, at least, that I won’t have my time wasted by as many bogus listings.&lt;/p&gt;
-
-&lt;div class=&quot;footnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;Realtors engage in photographic trickery, commonly using fisheye lenses and manipulated colors, to give false impressions. Furthermore, they often mis-state the proximity of their properties to public transportation, popular neighborhoods, and major employers.&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:2&quot;&gt;
-      &lt;p&gt;To collect enough listings for this project, I used &lt;a href=&quot;https://github.com/juliomalegria/python-craigslist&quot;&gt;python-cragislist&lt;/a&gt;, and &lt;a href=&quot;https://www.crummy.com/software/BeautifulSoup/&quot;&gt;BeautifulSoup4&lt;/a&gt; to retrieve and parse them, and a &lt;a href=&quot;https://www.sqlite.org/&quot;&gt;sqlite&lt;/a&gt; database, for persistent storage.&amp;nbsp;&lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:3&quot;&gt;
-      &lt;p&gt;In fact, most apartments in Lynnwood are listed on the see (Seattle) Craigslist, rather than the sno (Snohomish County) Craigslist. Most sno listings are further north.&amp;nbsp;&lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:4&quot;&gt;
-      &lt;p&gt;Zillow use javascript and asynchronous loading techniques extensively on their website, making it more difficult to scrape. I used &lt;a href=&quot;http://www.seleniumhq.org/&quot;&gt;Selenium&lt;/a&gt;, and &lt;a href=&quot;https://sites.google.com/a/chromium.org/chromedriver/downloads&quot;&gt;ChromeDriver&lt;/a&gt; to collect listings.&amp;nbsp;&lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:5&quot;&gt;
-      &lt;p&gt;Considering &lt;em&gt;systems administration&lt;/em&gt; and &lt;em&gt;systems engineering&lt;/em&gt; roles, in the Seattle area. Email me: &lt;a href=&quot;mailto:patrick.mcmurchie@gmail.com&quot;&gt;patrick.mcmurchie@gmail.com&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:5&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:6&quot;&gt;
-      &lt;p&gt;Looking closer at my apartment’s Walk Score, it appears to lack nearby &lt;em&gt;entertainment&lt;/em&gt;. My current activity– &lt;em&gt;blogging&lt;/em&gt;– doesn’t suggest otherwise.&amp;nbsp;&lt;a href=&quot;#fnref:6&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:7&quot;&gt;
-      &lt;p&gt;Census blocks are the smallest geographic unit used for the US Census. Block groups are composed of census blocks, and are the smallest unit for which the Census publish aggregate data. Tracts are larger.&amp;nbsp;&lt;a href=&quot;#fnref:7&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:8&quot;&gt;
-      &lt;p&gt;I tried the same exercise with equivalent APIs from Clarifai, Amazon, and Microsoft, with superficially similiar results, but have not probed deeply.&amp;nbsp;&lt;a href=&quot;#fnref:8&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:9&quot;&gt;
-      &lt;p&gt;Dimensionality reduction was accomplished with &lt;a href=&quot;https://lvdmaaten.github.io/tsne/&quot;&gt;t-SNE&lt;/a&gt;, as implemented in &lt;a href=&quot;http://scikit-learn.org/stable/&quot;&gt;scikit-learn&lt;/a&gt;.&amp;nbsp;&lt;a href=&quot;#fnref:9&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
-</description>
-          <pubDate>2017-05-23T00:00:00-07:00</pubDate>
-          <link>http://localhost:4000/notes/a-quixotic-apartment-search</link>
-          <guid isPermaLink="true">http://localhost:4000/notes/a-quixotic-apartment-search</guid>
         </item>
       
     

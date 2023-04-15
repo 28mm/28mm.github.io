@@ -3,6 +3,7 @@ layout: post
 title:  "A Multi-Distro Linux Hardware Compatibility List"
 date:   2018-02-26 00:00:01 -0700
 categories: linux hcl pci pci.ids driver "device drivers" "hardware compatibility list"
+published: false
 ---
 
 <img src="/assets/hcl-part-1/front-page-before.png">
