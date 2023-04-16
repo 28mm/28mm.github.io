@@ -404,9 +404,9 @@ section {
 .social-icons {
   text-align: center;
   font-family: "Open Sans";
-  font-weight: 300;
-  font-size: 1.5em;
-  color: #448aaf;
+  font-weight: 200;
+  font-size: 1em;
+  color: black;
 }
 .social-icons h1 {
   margin: 40px 0;
@@ -429,7 +429,7 @@ section {
   text-decoration: none;
 }
 .social-icons ul li a i {
-  color: #C70039;
+  color: black;
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
@@ -437,7 +437,7 @@ section {
   transition: all 0.2s ease-in;
 }
 .social-icons ul li a:hover i {
-  color: #FF5733;
+  color: gray;
 }
 .social-icons ul li a:focus i,
 .social-icons ul li a:active i {
